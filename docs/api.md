@@ -28,7 +28,7 @@
 
 ## 検索 API (`?q=`)
 
-**`GET https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q={薬の名前}&limit={1-100}`**
+**`GET https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q={薬の名前}&limit={1-100}`** ([仕様ページ](https://numero-uno-jpn.github.io/kyuyaku-data/search-api.html)、 その場で 試せる 欄 付き)
 
 一般名・別名・商品名・後発品名・薬効分類名で 検索し、 一致した薬を **一致度の 高い順の 配列** で 返します。 打ち間違い・表記ゆれも 吸収します (参照アプリと 同じ 検索です)。 認証不要・CORS 全開放。
 

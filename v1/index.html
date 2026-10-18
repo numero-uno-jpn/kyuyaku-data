@@ -26,7 +26,7 @@ pre{background:#f2f2f2;padding:.6rem;overflow-x:auto;border-radius:4px}pre code{
 <tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json</code></a></td><td>あいまい検索用の 索引</td></tr>
 </table>
 <h2>検索 (?q=)</h2>
-<p><strong>検索 API</strong>: <a href="https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン"><code>https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン</code></a></p>
+<p><strong>検索 API</strong>: <a href="https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン"><code>https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン</code></a> (<a href="../search-api.html">仕様ページ</a>)</p>
 <p>一致した薬を 一致度の 高い順の 配列 (JSON) で 返します (打ち間違い・表記ゆれも 吸収、 <code>limit</code> で 件数 1〜100)。 各結果に 休薬日数・詳細 JSON の URL・参照アプリの ページが 付き、 0 件の 時は 「もしかして」 候補を 返します。 認証不要・CORS 全開放。 Python 標準の urllib から 呼ぶ 場合は User-Agent を 指定してください。</p>
 <p>そのほかの 方法:</p>
 <ul>

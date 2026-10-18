@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>検索 API 仕様 — 休薬情報データベース (Kyuyaku Data)</title>
+<meta name="description" content="休薬情報データベースの検索 API (?q=) の仕様。一般名・商品名・後発品名であいまい検索し、一致した薬を一致度順の配列 JSON で返す。">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .doc h1 { font-size: 1.6rem; margin: 0 0 8px; }
+  .doc h2 { font-size: 1.25rem; margin: 32px 0 10px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+  .doc h3 { font-size: 1.05rem; margin: 20px 0 6px; }
+  .doc ul { padding-left: 1.4em; }
+  .doc li { margin-bottom: 4px; }
+  .doc table { background: var(--surface); }
+  .doc td code, .doc p code, .doc li code { background: var(--subtle); padding: 0 .3em; border-radius: 3px; word-break: break-all; }
+  .doc pre { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; overflow-x: auto; font-size: .9rem; line-height: 1.55; }
+  .endpoint { background: var(--surface); border: 2px solid var(--primary); border-radius: var(--radius); padding: 12px 16px; font-size: 1.05rem; word-break: break-all; }
+  .endpoint .m { display: inline-block; font-weight: 700; color: var(--on-primary); background: var(--primary); border-radius: 4px; padding: 0 8px; margin-right: 8px; }
+  .toc { background: var(--subtle); border-radius: var(--radius); padding: 10px 16px; }
+  .toc ol { margin: 4px 0; }
+  .try { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .try .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; }
+  .try label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: 4px; }
+  .try input { min-height: 44px; padding: 6px 12px; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--text); border-radius: var(--radius); }
+  .try input[name="q"] { width: min(22rem, 100%); }
+  .try input[name="limit"] { width: 6rem; }
+  .try .url { font-size: .9rem; color: var(--muted); margin: 10px 0 4px; word-break: break-all; }
+  .try pre { max-height: 28rem; margin: 0; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="./">休薬情報データベース <span class="en">Kyuyaku Data</span></a>
+    <p class="site-lead">検索 API 仕様 / <a href="./">参照アプリ</a> / <a href="guide.html">使い方</a> / <a href="v1/">静的 API</a></p>
+  </div>
+</header>
+
+<main id="main" class="wrap doc" tabindex="-1">
+  <h1>検索 API 仕様</h1>
+  <p>薬の名前で 検索し、 一致した薬を <strong>一致度の 高い順の 配列 (JSON)</strong> で 返す API です。 一般名・別名・商品名・後発品名・薬効分類名で 検索でき、 打ち間違いや 表記ゆれも 吸収します。 検索の 仕組みは <a href="./">参照アプリ</a> と 同じです。 <strong>認証・登録は 不要</strong>で、 無料で 使えます。</p>
+
+  <div class="endpoint"><span class="m">GET</span>https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=<em>薬の名前</em></div>
+
+  <nav class="toc" aria-label="目次" style="margin-top:16px">
+    <strong>目次</strong>
+    <ol>
+      <li><a href="#try">試してみる</a></li>
+      <li><a href="#request">リクエスト</a></li>
+      <li><a href="#response">レスポンス</a></li>
+      <li><a href="#match">一致の 種類と 得点</a></li>
+      <li><a href="#errors">エラー</a></li>
+      <li><a href="#examples">コード例</a></li>
+      <li><a href="#notes">データの 鮮度・キャッシュ・利用上の 注意</a></li>
+      <li><a href="#license">ライセンスと 帰属表示</a></li>
+      <li><a href="#related">関連する API</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="try">1. 試してみる</h2>
+  <form class="try" id="try-form">
+    <div class="row">
+      <div><label for="try-q">q (薬の名前)</label><input id="try-q" name="q" value="エンレスト" autocomplete="off"></div>
+      <div><label for="try-limit">limit</label><input id="try-limit" name="limit" type="number" min="1" max="100" value="20"></div>
+      <button type="submit" class="btn">検索する</button>
+    </div>
+    <p class="url" id="try-url" aria-live="polite"></p>
+    <pre id="try-out" aria-live="polite">「検索する」を 押すと、 実際の API の 応答が ここに 表示されます。</pre>
+  </form>
+
+  <h2 id="request">2. リクエスト</h2>
+  <table>
+    <thead><tr><th scope="col">パラメータ</th><th scope="col">必須</th><th scope="col">説明</th></tr></thead>
+    <tbody>
+      <tr><td><code>q</code></td><td>必須</td><td>検索語 (100 文字以内)。 URL エンコードして 渡す。 一般名・別名・商品名・後発品名・薬効分類名 (例: <code>DOAC</code>) のどれでも、 一部だけでも可。 ひらがな・半角カナ・英字も 可</td></tr>
+      <tr><td><code>limit</code></td><td>任意</td><td>返す 最大件数。 1〜100、 既定 20</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li>メソッドは <code>GET</code> のみ (<code>OPTIONS</code> は CORS の 事前確認用)。</li>
+    <li>CORS は 全開放 (<code>Access-Control-Allow-Origin: *</code>)。 ブラウザの JavaScript から 直接 呼べます。</li>
+  </ul>
+
+  <h2 id="response">3. レスポンス</h2>
+  <p><code>Content-Type: application/json; charset=utf-8</code>。 例 (<code>q=エンレスト</code>、 一部省略):</p>
+<pre>{
+  "query": "エンレスト",
+  "count": 2,
+  "results": [
+    {
+      "name": "バルサルタン",
+      "category": "ARB (降圧薬)",
+      "score": 90,
+      "kind": "prefix",
+      "matched": "エンレスト錠50mg",
+      "surgery_high_risk_days_before": 1,
+      "surgery_low_risk_days_before": 0,
+      "contrast_required": false,
+      "contrast_days_before": null,
+      "detail": "https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/バルサルタン.json",
+      "page": "https://numero-uno-jpn.github.io/kyuyaku-data/#/drugs/バルサルタン"
+    },
+    { "name": "サクビトリル・バルサルタン", … }
+  ],
+  "suggestions": [],
+  "_notice": {
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_exceptions": "quote_excerpt / quote_translation_excerpt は CC BY 4.0 の 対象外 …",
+    "attribution": "梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data",
+    "disclaimer": "本データは 意思決定支援のための 参考情報です。 …"
+  }
+}</pre>
+  <h3>トップレベル</h3>
+  <table>
+    <thead><tr><th scope="col">項目</th><th scope="col">型</th><th scope="col">説明</th></tr></thead>
+    <tbody>
+      <tr><td><code>query</code></td><td>文字列</td><td>受け付けた 検索語 (前後の 空白は 除去)</td></tr>
+      <tr><td><code>count</code></td><td>数値</td><td><code>results</code> の 件数</td></tr>
+      <tr><td><code>results</code></td><td>配列</td><td>一致した薬。 <strong>一致度 (<code>score</code>) の 高い順</strong>。 一致なしなら 空配列</td></tr>
+      <tr><td><code>suggestions</code></td><td>配列</td><td>一致なしの 時のみ、 「もしかして」 の 候補 (最大 3 件)。 各要素は <code>name</code> (一般名)・<code>term</code> (近い名前)・<code>distance</code> (違う文字数)</td></tr>
+      <tr><td><code>_notice</code></td><td>オブジェクト</td><td>ライセンス・帰属表示・免責</td></tr>
+    </tbody>
+  </table>
+  <h3><code>results[]</code> の 各要素</h3>
+  <table>
+    <thead><tr><th scope="col">項目</th><th scope="col">型</th><th scope="col">説明</th></tr></thead>
+    <tbody>
+      <tr><td><code>name</code></td><td>文字列</td><td>一般名 (この データベースでの 薬の 名前)</td></tr>
+      <tr><td><code>category</code></td><td>文字列</td><td>薬効分類</td></tr>
+      <tr><td><code>score</code></td><td>数値</td><td>一致度 (40〜100)。 <a href="#match">下表</a> 参照</td></tr>
+      <tr><td><code>kind</code></td><td>文字列</td><td>一致の 種類。 <a href="#match">下表</a> 参照</td></tr>
+      <tr><td><code>matched</code></td><td>文字列 / null</td><td>一致した 名前 (商品名など)。 薬効分類で 一致した 場合は null</td></tr>
+      <tr><td><code>surgery_high_risk_days_before</code></td><td>数値 / null</td><td>出血リスクの 高い 手術・処置の 前の 休薬日数 (安全側の値)。 <code>0</code> は 休薬不要、 null は 記載なし</td></tr>
+      <tr><td><code>surgery_low_risk_days_before</code></td><td>数値 / null</td><td>出血リスクの 低い 手術・処置の 前の 休薬日数 (同上)</td></tr>
+      <tr><td><code>contrast_required</code></td><td>真偽 / null</td><td>造影 CT 前の 休薬が 必要か</td></tr>
+      <tr><td><code>contrast_days_before</code></td><td>数値 / null</td><td>造影 CT 前の 休薬日数</td></tr>
+      <tr><td><code>detail</code></td><td>文字列</td><td>その薬の 詳細 JSON (ガイドライン別の値・根拠・出典) の URL</td></tr>
+      <tr><td><code>page</code></td><td>文字列</td><td>参照アプリの その薬の ページの URL</td></tr>
+    </tbody>
+  </table>
+  <p>休薬日数は、 現行版の ガイドラインの 最長値 (安全側)、 記載が なければ PMDA 添付文書の 値です。 ガイドラインごとの 値・値の出どころ・根拠は <code>detail</code> の JSON で 確認してください。</p>
+
+  <h2 id="match">4. 一致の 種類と 得点</h2>
+  <table>
+    <thead><tr><th scope="col"><code>kind</code></th><th scope="col"><code>score</code></th><th scope="col">意味</th><th scope="col">例 (検索語 → 一致)</th></tr></thead>
+    <tbody>
+      <tr><td><code>exact</code></td><td>100</td><td>名前と 完全に 一致</td><td>アスピリン → アスピリン</td></tr>
+      <tr><td><code>prefix</code></td><td>90</td><td>名前の 先頭と 一致</td><td>ばいあすぴりん → バイアスピリン錠100mg</td></tr>
+      <tr><td><code>partial</code></td><td>80</td><td>名前の 一部と 一致</td><td>ピドグレル → クロピドグレル</td></tr>
+      <tr><td><code>variant</code></td><td>70</td><td>長音・濁点などの 表記ゆれを 吸収して 一致</td><td>リバロキサバン → リバーロキサバン</td></tr>
+      <tr><td><code>category</code></td><td>66</td><td>薬効分類名と 一致</td><td>DOAC → アピキサバン ほか</td></tr>
+      <tr><td><code>typo</code></td><td>40〜65</td><td>打ち間違いを 補って 一致 (4 文字以上で 1 文字、 8 文字以上で 2 文字まで)</td><td>アスピリソ → アスピリン</td></tr>
+    </tbody>
+  </table>
+  <p>比較の 前に、 全角/半角・ひらがな/カタカナ・小書き文字 (ュ/ユ)・大文字/小文字・空白の 違いは すべて 吸収します。 同じ得点の 場合は 名前の 短い順です。</p>
+
+  <h2 id="errors">5. エラー</h2>
+  <table>
+    <thead><tr><th scope="col">状態</th><th scope="col">HTTP</th><th scope="col">応答</th></tr></thead>
+    <tbody>
+      <tr><td><code>q</code> が ない・空</td><td>400</td><td><code>{"error": "q is required", "usage": …}</code></td></tr>
+      <tr><td><code>q</code> が 100 文字超</td><td>400</td><td><code>{"error": "q is too long (max 100 chars)"}</code></td></tr>
+      <tr><td>GET 以外の メソッド</td><td>405</td><td><code>{"error": "Method not allowed (GET only)"}</code></td></tr>
+      <tr><td>存在しない パス</td><td>404</td><td><code>{"error": "unknown endpoint", …}</code></td></tr>
+      <tr><td>データの 取得に 一時的に 失敗</td><td>503</td><td><code>{"error": "data unavailable"}</code> (<code>Retry-After: 60</code>)</td></tr>
+    </tbody>
+  </table>
+  <p>一致が 0 件の 場合は エラーでは なく、 <code>200</code> で <code>count: 0</code>・空の <code>results</code>・<code>suggestions</code> を 返します。</p>
+
+  <h2 id="examples">6. コード例</h2>
+  <h3>curl</h3>
+<pre>curl -G https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search --data-urlencode "q=エンレスト"</pre>
+  <h3>JavaScript (ブラウザ / Node.js)</h3>
+<pre>const url = new URL('https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search');
+url.searchParams.set('q', 'エリキュース');
+const { results } = await (await fetch(url)).json();
+for (const r of results) {
+  console.log(r.name, r.surgery_high_risk_days_before, r.surgery_low_risk_days_before);
+}
+// → アピキサバン 3 1</pre>
+  <h3>Python (requests)</h3>
+<pre>import requests
+r = requests.get('https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search', params={'q': 'アスピリン'})
+print(r.json()['results'][0]['name'])   # アスピリン</pre>
+  <h3>Python (標準ライブラリ urllib)</h3>
+  <p><strong>urllib では <code>User-Agent</code> を 必ず 指定してください。</strong> 既定の <code>Python-urllib/…</code> は 配信基盤 (Cloudflare) の 仕組みで 拒否されます (HTTP 403、 error code 1010)。</p>
+<pre>import json, urllib.parse, urllib.request
+url = 'https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?' + urllib.parse.urlencode({'q': 'アスピリン'})
+req = urllib.request.Request(url, headers={'User-Agent': 'my-app/1.0'})
+print(json.load(urllib.request.urlopen(req))['results'][0]['name'])   # アスピリン</pre>
+  <h3>検索結果から 詳細を 取得する</h3>
+<pre>const { results } = await (await fetch('https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=' + encodeURIComponent('プラビックス'))).json();
+const { drug } = await (await fetch(results[0].detail)).json();
+console.log(drug.guideline_variations.surgery);   // ガイドライン別の値・値の出どころ・根拠</pre>
+
+  <h2 id="notes">7. データの 鮮度・キャッシュ・利用上の 注意</h2>
+  <ul>
+    <li>データは <a href="v1/">静的 API</a> (GitHub Pages) と 同じものを、 <strong>最大 10 分</strong>の 遅れで 反映します。 データの版は <a href="v1/meta.json"><code>v1/meta.json</code></a> の <code>data_version</code> で 確認できます。</li>
+    <li>検索結果の 応答は <code>Cache-Control: public, max-age=300</code> (5 分) です。</li>
+    <li>無料の 配信基盤 (Cloudflare Workers) で 運用しています。 全体で 1 日 10 万件程度が 目安です。 大量に 使う 場合は、 <a href="https://github.com/numero-uno-jpn/kyuyaku-data/blob/main/data/washout_public_v1.json">全件データ</a> を 取り込むか、 手元で 動く 同じ 検索 (<a href="assets/search.js"><code>assets/search.js</code></a> と <a href="v1/search-index.json"><code>v1/search-index.json</code></a>) を 使ってください。</li>
+    <li>予告なく 仕様を 変える ことは しない 方針ですが、 無保証です。 変更する 場合は <a href="https://github.com/numero-uno-jpn/kyuyaku-data">GitHub</a> で お知らせします。</li>
+    <li>本データは 意思決定支援のための <strong>参考情報</strong>です。 最終的な 休薬判断は 医療者の 責任で 行ってください (<a href="https://github.com/numero-uno-jpn/kyuyaku-data/blob/main/DISCLAIMER.md">免責事項</a>)。</li>
+  </ul>
+
+  <h2 id="license">8. ライセンスと 帰属表示</h2>
+  <ul>
+    <li>データは <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC BY 4.0</a>。 次の 帰属表示を すれば、 商用を含め 自由に 利用できます: <br><code>梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data</code></li>
+    <li>詳細 JSON の <code>quote_excerpt</code> / <code>quote_translation_excerpt</code> (一次資料からの 引用または抜粋) は 各出典の 著作物で、 CC BY 4.0 の 対象外です。</li>
+  </ul>
+
+  <h2 id="related">9. 関連する API</h2>
+  <ul>
+    <li><a href="v1/">静的 API</a> (GitHub Pages): <code>meta.json</code> / <code>drugs.json</code> / <code>drugs/{一般名}.json</code> / <code>lookup.json</code> / <code>search-index.json</code></li>
+    <li><a href="https://github.com/numero-uno-jpn/kyuyaku-data/blob/main/docs/api.md">API・データ項目の 仕様 (docs/api.md)</a></li>
+    <li>参照アプリの URL 検索: <a href="./?q=アスピリン"><code>https://numero-uno-jpn.github.io/kyuyaku-data/?q=アスピリン</code></a></li>
+  </ul>
+  <p><a href="./">← 参照アプリへ</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>帰属表示: 梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data<br>
+      <a href="https://github.com/numero-uno-jpn/kyuyaku-data">GitHub</a> /
+      <a href="https://github.com/numero-uno-jpn/kyuyaku-data/issues/new?template=correction.md">誤りの報告</a> /
+      <a href="https://github.com/numero-uno-jpn/kyuyaku-data/blob/main/DISCLAIMER.md">免責事項</a></p>
+  </div>
+</footer>
+<script>
+  // 「試してみる」: 実際の 検索 API を 呼んで 応答を 表示
+  const API = 'https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search';
+  const form = document.getElementById('try-form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const url = new URL(API);
+    url.searchParams.set('q', form.q.value);
+    if (form.limit.value) url.searchParams.set('limit', form.limit.value);
+    document.getElementById('try-url').textContent = `GET ${decodeURIComponent(url.href)}`;
+    const out = document.getElementById('try-out');
+    out.textContent = '問い合わせ中…';
+    try {
+      const r = await fetch(url);
+      const j = await r.json();
+      out.textContent = `HTTP ${r.status}\n` + JSON.stringify(j, null, 2);
+    } catch (err) {
+      out.textContent = `取得に 失敗しました: ${err.message}`;
+    }
+  });
+</script>
+</body>
+</html>
