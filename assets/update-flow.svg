@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 640" width="720" height="640" role="img" aria-labelledby="t d">
+  <title id="t">データを正しく・網羅的に更新し続ける仕組み</title>
+  <desc id="d">1 変化を検知する(毎月・自動)、2 作者が原文を読んで確認・反映、3 誤りを入れない(自動の検査)の三段階を経て、すべて通過したものだけが正本から公開データ・API・参照アプリへ自動反映される流れ図。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3f4a45"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif; fill: #1a1a1c; }
+    .ttl { font-size: 17px; font-weight: 700; fill: #14532d; }
+    .body { font-size: 15px; }
+    .lbl { font-size: 14px; fill: #3f4a45; }
+    .fin { font-size: 16px; font-weight: 700; fill: #14532d; }
+  </style>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="640" rx="12" fill="#f3f8f5"/>
+
+  <!-- ① -->
+  <rect x="40" y="24" width="640" height="124" rx="10" fill="#ffffff" stroke="#3d7a5a" stroke-width="2"/>
+  <text class="ttl" x="64" y="58">① 変化を 検知する (毎月・自動)</text>
+  <text class="body" x="64" y="94">商品名・後発品 / 薬価基準 / 学会ガイドライン (Web・PDF)</text>
+  <text class="body" x="64" y="124">PMDA 添付文書の 改訂 / PMDA 新規承認薬</text>
+
+  <line x1="360" y1="150" x2="360" y2="204" stroke="#3f4a45" stroke-width="2" marker-end="url(#arrow)"/>
+  <text class="lbl" x="378" y="182">通知 (Issue・メール) または 自動の 更新提案</text>
+
+  <!-- ② -->
+  <rect x="40" y="210" width="640" height="104" rx="10" fill="#ffffff" stroke="#3d7a5a" stroke-width="2"/>
+  <text class="ttl" x="64" y="244">② 作者が 原文を 読んで 確認・反映</text>
+  <text class="body" x="64" y="282">原文を 取得 → 該当箇所を 読む → 値・所在・引用を 記録</text>
+
+  <line x1="360" y1="316" x2="360" y2="370" stroke="#3f4a45" stroke-width="2" marker-end="url(#arrow)"/>
+  <text class="lbl" x="378" y="348">変更の たびに</text>
+
+  <!-- ③ -->
+  <rect x="40" y="376" width="640" height="124" rx="10" fill="#ffffff" stroke="#3d7a5a" stroke-width="2"/>
+  <text class="ttl" x="64" y="410">③ 誤りを 入れない (自動の 検査)</text>
+  <text class="body" x="64" y="446">引用が 原文に 実在するか / 数値が 原文に あるか</text>
+  <text class="body" x="64" y="476">既存の値が 意図せず 変わっていないか / 公開物の 整合性</text>
+
+  <line x1="360" y1="502" x2="360" y2="556" stroke="#3f4a45" stroke-width="2" marker-end="url(#arrow)"/>
+  <text class="lbl" x="378" y="534">すべて 通過したものだけ</text>
+
+  <!-- 反映 -->
+  <rect x="40" y="562" width="640" height="56" rx="10" fill="#e3efe7" stroke="#3d7a5a" stroke-width="2"/>
+  <text class="fin" x="360" y="596" text-anchor="middle">正本 → 公開データ・API・参照アプリへ 自動反映</text>
+</svg>

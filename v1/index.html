@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>休薬情報データベース (Kyuyaku Data) API</title>
 <style>
-body{font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;line-height:1.7;color:#1a1a1a;background:#fff}
+body{font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;line-height:1.7;color:#1a1a1a;background:#f3f8f5}
+table{background:#fff}
 code{background:#f2f2f2;padding:.1em .3em;border-radius:3px;word-break:break-all}
 table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:.4rem;text-align:left;vertical-align:top}
 .note{background:#fff8e1;border-left:4px solid #f0b400;padding:.6rem .9rem}
-@media (prefers-color-scheme:dark){body{color:#e6e6e6;background:#141414}code{background:#2a2a2a}td,th{border-color:#333}.note{background:#2b2512}a{color:#8ab4ff}}
+pre{background:#f2f2f2;padding:.6rem;overflow-x:auto;border-radius:4px}pre code{background:none;padding:0}
+@media (prefers-color-scheme:dark){body{color:#e6e6e6;background:#141414}table{background:#141414}code,pre{background:#2a2a2a}td,th{border-color:#333}.note{background:#2b2512}a{color:#8ab4ff}}
 </style>
 </head>
 <body>
@@ -21,7 +23,18 @@ table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;pad
 <tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs.json</code></a></td><td>全薬剤の 一覧</td></tr>
 <tr><td><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/{一般名}.json</code><br>例: <a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/アピキサバン.json">アピキサバン.json</a></td><td>1 薬剤の 休薬詳細</td></tr>
 <tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/lookup.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/lookup.json</code></a></td><td>一般名・別名・商品名 → 一般名</td></tr>
+<tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json</code></a></td><td>あいまい検索用の 索引</td></tr>
 </table>
+<h2>検索 (?q=)</h2>
+<p>静的配信のため、 この API 自体は <code>?q=</code> に 答えません。 次の 2 つの 方法で 検索できます。</p>
+<ul>
+<li><strong>参照アプリの URL 検索</strong>: <a href="../?q=アスピリン"><code>https://numero-uno-jpn.github.io/kyuyaku-data/?q=アスピリン</code></a> のように 開くと 検索済みの 状態で 表示されます (打ち間違い・表記ゆれも 吸収)。</li>
+<li><strong>プログラムから</strong>: あいまい検索の 関数 <a href="../assets/search.js"><code>assets/search.js</code></a> と 索引 <code>search-index.json</code> を 使います。
+<pre><code>import { buildIndex, search } from 'https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js';
+const index = buildIndex((await (await fetch('https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json')).json()).drugs);
+search(index, 'アスピリソ');   // → [{ name: 'アスピリン', score: 63, … }]</code></pre>
+(ブラウザ用。 Node.js では search.js を ダウンロードして import)</li>
+</ul>
 <p>仕様・全件データ・ライセンス: <a href="https://github.com/numero-uno-jpn/kyuyaku-data">github.com/numero-uno-jpn/kyuyaku-data</a></p>
 <p>帰属表示: 梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data<br>ライセンス: データ CC BY 4.0 (quote_excerpt / quote_translation_excerpt は 対象外)</p>
 <p class="note">本データは 意思決定支援のための 参考情報です。 最終的な 休薬判断は 医療者の 責任で 行ってください。 内容は 無保証で、 継続的に 更新されます。</p>
