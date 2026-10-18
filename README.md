@@ -262,7 +262,7 @@ console.log(drug.surgery.display_high_risk_days_before);   // 3
 
 ### あいまい検索
 
-サーバー側の `?q=` 検索は ありませんが、 参照アプリと 同じ あいまい検索の 関数 [`assets/search.js`](assets/search.js) (外部ライブラリなし) と 索引 `v1/search-index.json` で、 打ち間違い・表記ゆれに 強い 検索が できます。
+サーバー側の `?q=` 検索は ありませんが、 参照アプリと 同じ あいまい検索の 関数 [`assets/search.js`](assets/search.js) (外部ライブラリなし) と 索引 `v1/search-index.json` で、 打ち間違い・表記ゆれに 強い 検索が できます。 下の例は ブラウザ用です (Node.js では `search.js` を ダウンロードして `import` してください)。
 
 ```js
 import { buildIndex, search } from 'https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js';

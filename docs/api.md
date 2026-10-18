@@ -27,7 +27,7 @@
 
 ## あいまい検索 (`?q=` の 代わり)
 
-静的配信のため、 サーバー側で `?q=` に 答える 検索 API は ありません。 代わりに、 参照アプリと 同じ **あいまい検索の 関数** (`assets/search.js`、 外部ライブラリなし・MIT) と その **索引** (`v1/search-index.json`) を 公開しています。 ブラウザでも Node.js でも、 参照アプリと 同じ 結果が 得られます。
+静的配信のため、 サーバー側で `?q=` に 答える 検索 API は ありません。 代わりに、 参照アプリと 同じ **あいまい検索の 関数** (`assets/search.js`、 外部ライブラリなし・MIT) と その **索引** (`v1/search-index.json`) を 公開しています。 参照アプリと 同じ 結果が 得られます。 ブラウザでは 下の例のように URL から 直接 読み込めます。 Node.js では URL からの import に 対応していないので、 `search.js` を ダウンロードして 読み込んでください (`curl -O https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js`)。
 
 ```js
 import { buildIndex, search, suggest } from 'https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js';
