@@ -2,7 +2,7 @@
 /**
  * 公開 API v1 — 休薬情報データベース (Kyuyaku Data, 梅谷 直亨) (read-only, CC BY 4.0)
  *
- * ルーティング (.htaccess で /kyuyakulens/v1/... → 本ファイル?_path=... に rewrite):
+ * ルーティング (.htaccess で /<設置パス>/v1/... → 本ファイル?_path=... に rewrite):
  *   GET /v1/meta            … メタ情報 (version / license / disclaimer / 件数)
  *   GET /v1/drugs           … 全薬剤の 一覧 (name / category / washout サマリ)
  *   GET /v1/drugs/{name}    … 1 薬剤の 休薬詳細 (name / alias / 商品名 で lookup)

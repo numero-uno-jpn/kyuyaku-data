@@ -5,7 +5,7 @@
 - 作者: 梅谷 直亨 (Naoyuki Umetani, 医師)
 - データ: [`data/washout_public_v1.json`](data/washout_public_v1.json) (継続更新)
 - ライセンス: データ [CC BY 4.0](LICENSE-DATA) / コード [MIT](LICENSE)
-- API: `https://api.emuyn.net/kyuyakulens/v1/` (read-only、 無料、 [仕様](docs/api.md))
+- API: `https://numero-uno-jpn.github.io/kyuyaku-data/v1/` (静的 JSON、 read-only、 無料、 [仕様](docs/api.md))
 
 > ⚠ 本データは 意思決定支援のための 参考情報です。 最終的な休薬判断は 医療者の責任で 行ってください。 無保証です。 詳しくは [DISCLAIMER.md](DISCLAIMER.md)。
 
@@ -28,8 +28,11 @@
 # 全件データ
 curl -O https://raw.githubusercontent.com/numero-uno-jpn/kyuyaku-data/main/data/washout_public_v1.json
 
-# API で 1 薬剤
-curl https://api.emuyn.net/kyuyakulens/v1/drugs/アピキサバン
+# API で 1 薬剤 (一般名)
+curl https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/アピキサバン.json
+
+# 商品名・別名 → 一般名 の 索引
+curl https://numero-uno-jpn.github.io/kyuyaku-data/v1/lookup.json
 ```
 
 ## 帰属表示
