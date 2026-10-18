@@ -1,24 +1,20 @@
-// 休薬情報データベース 検索サイト (ビルド不要・外部ライブラリなし)。 データは 同じサイトの v1/*.json。
+// 休薬情報データベース 参照アプリ (ビルド不要・外部ライブラリなし)。 データは 同じサイトの v1/*.json。
+import { buildIndex, search as fuzzySearch, suggest } from './search.js';
+
 const API = 'v1';
 const ATTRIBUTION = '梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data';
 
 const $ = (id) => document.getElementById(id);
-const state = { drugs: [], byName: new Map(), lookup: [], meta: null, q: '', group: '', cache: new Map() };
-
-// ---- 文字の 正規化 (全角/半角・ひらがな→カタカナ・小書き文字・空白・大文字小文字) ----
-const SMALL_KANA = { 'ァ': 'ア', 'ィ': 'イ', 'ゥ': 'ウ', 'ェ': 'エ', 'ォ': 'オ', 'ッ': 'ツ', 'ャ': 'ヤ', 'ュ': 'ユ', 'ョ': 'ヨ', 'ヮ': 'ワ', 'ヵ': 'カ', 'ヶ': 'ケ' };
-const norm = (s) => (s ?? '').toString()
-  .normalize('NFKC')
-  .replace(/[\s　]/g, '')
-  .replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60))
-  .replace(/[ァィゥェォッャュョヮヵヶ]/g, (c) => SMALL_KANA[c] ?? c)
-  .toLowerCase();
+const state = { drugs: [], byName: new Map(), index: [], meta: null, q: '', group: '', cache: new Map() };
 
 const esc = (s) => (s ?? '').toString()
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 // **強調** と 改行だけを 反映 (それ以外は エスケープ)
 const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
 const plain = (s) => (s ?? '').toString().replace(/\*\*/g, '');
+// 一次資料への リンク (別タブで 開く。 読み上げ用に その旨を 付記)
+const extLink = (url, label) =>
+  `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${label}<span class="ext" aria-hidden="true">↗</span><span class="sr">(新しいタブで開く)</span></a>`;
 const days = (v) => (v === 0 ? '休薬不要' : v == null ? null : `${v} 日`);
 
 // ---- 薬効分類の グループ (DokuWiki 版 検索ページと 同じ 規則) ----
@@ -59,21 +55,39 @@ const SHORT = { high: '周術期(高)', low: '周術期(低)', ct: '造影CT', o
 const badgeHtml = (bs) => `<span class="badges">${bs.map(([k, , v]) => `<span class="badge ${k}">${esc(`${SHORT[k]} ${v}`)}</span>`).join('')}</span>`;
 
 // ---- 一覧 ----
+// 入力が あれば あいまい検索 (一致度順)、 無ければ 全件 (分類の 絞り込みは 併用)
 function search() {
-  const q = norm(state.q);
-  const hits = new Map();   // name → 一致した 別名 (一般名/分類で 一致なら '')
-  if (q) {
-    for (const d of state.drugs) {
-      if (d._n.includes(q) || d._c.includes(q)) hits.set(d.name, '');
-    }
-    for (const [k, raw, names] of state.lookup) {
-      if (!k.includes(q)) continue;
-      for (const n of names) if (!hits.has(n)) hits.set(n, raw);
-    }
-  }
-  return state.drugs
-    .filter((d) => (!state.group || d._g === state.group) && (!q || hits.has(d.name)))
-    .map((d) => [d, hits.get(d.name) ?? '']);
+  const inGroup = (d) => !state.group || d._g === state.group;
+  if (!state.q.trim()) return state.drugs.filter(inGroup).map((d) => [d, null]);
+  return fuzzySearch(state.index, state.q)
+    .map((h) => [state.byName.get(h.name), h])
+    .filter(([d]) => d && inGroup(d));
+}
+
+// 一致の 説明 (一般名そのものでの 一致なら 何も 出さない)
+function hitNote(d, h) {
+  if (!h || (h.term === d.name && h.kind !== 'typo' && h.kind !== 'variant')) return '';
+  if (h.kind === 'category') return '<div class="hit">薬効分類に一致</div>';
+  const label = { typo: 'に近い名前', variant: 'に一致 (表記ゆれ)' }[h.kind] ?? 'に一致';
+  return `<div class="hit">「${esc(h.term)}」${label}</div>`;
+}
+
+// 入力に 合わせて URL の ?q= を 更新 (共有・ブックマーク用。 #/drugs/… は 保持)
+let urlTimer;
+function syncUrl() {
+  clearTimeout(urlTimer);
+  urlTimer = setTimeout(() => {
+    const u = new URL(location.href);
+    if (state.q.trim()) u.searchParams.set('q', state.q.trim()); else u.searchParams.delete('q');
+    history.replaceState(history.state, '', u);
+  }, 300);
+}
+
+function setQuery(q) {
+  state.q = q;
+  $('q').value = q;
+  renderList();
+  syncUrl();
 }
 
 function renderGroups() {
@@ -88,14 +102,22 @@ function renderGroups() {
 function renderList() {
   const rows = search();
   $('status').textContent = state.q || state.group ? `${rows.length} 件` : `全 ${state.drugs.length} 剤`;
+  let empty = '<li class="status">該当する薬剤が ありません。 一般名・商品名の 一部でも 検索できます。</li>';
+  if (!rows.length && state.q.trim()) {
+    const sg = suggest(state.index, state.q).filter((s) => !state.group || state.byName.get(s.name)?._g === state.group);
+    if (sg.length) {
+      empty = `<li class="status">該当する薬剤が ありません。 もしかして: ${sg.map((s) =>
+        `<button type="button" class="link-btn" data-suggest="${esc(s.term)}">${esc(s.term)}</button>${s.term !== s.name ? ` (${esc(s.name)})` : ''}`).join('、 ')}</li>`;
+    }
+  }
   $('list').innerHTML = rows.length
-    ? rows.map(([d, hit]) => `<li><a class="card" href="#/drugs/${encodeURIComponent(d.name)}">
+    ? rows.map(([d, h]) => `<li><a class="card" href="#/drugs/${encodeURIComponent(d.name)}">
         <span class="name">${esc(d.name)}</span>
         <span class="cat"> ${esc(d.category ?? '')}</span>
-        ${hit ? `<div class="hit">「${esc(hit)}」に一致</div>` : ''}
+        ${hitNote(d, h)}
         ${badgeHtml(badgesOf(d, { required: d.contrast_required, contrast_days_before: d.contrast_days_before }))}
       </a></li>`).join('')
-    : '<li class="status">該当する薬剤がありません。 一般名・商品名の 一部でも 検索できます。</li>';
+    : empty;
   for (const b of $('groups').querySelectorAll('.chip')) b.setAttribute('aria-pressed', String(b.dataset.group === state.group));
 }
 
@@ -127,7 +149,7 @@ function variationsTable(vs, kind) {
     : '<th scope="col">出典</th><th scope="col">日数</th><th scope="col">値の出どころ / 備考</th>';
   const rows = vs.map((v) => {
     const [dl, dt] = DERIV[v.value_derivation] ?? [];
-    const src = v.source_url ? `<a href="${esc(v.source_url)}" rel="noopener">${esc(v.source)}</a>` : esc(v.source);
+    const src = v.source_url ? extLink(v.source_url, esc(v.source)) : esc(v.source);
     const ver = v.version_label ? ` <span class="loc">(${esc(v.version_label)})</span>` : '';
     const nums = kind === 'surgery'
       ? `<td class="num">${esc(days(v.high_risk_days) ?? '—')}</td><td class="num">${esc(days(v.low_risk_days) ?? '—')}</td>`
@@ -187,7 +209,7 @@ async function renderDetail(name) {
   const ex = (arr, label) => (arr?.length ? `<p class="hint">${label}: ${arr.map(esc).join('、 ')}</p>` : '');
   const refs = (d.references ?? []).map((r) => {
     const title = esc(`${r.source ? `[${r.source}] ` : ''}${r.title ?? r.url ?? ''}`);
-    return `<li>${r.url ? `<a href="${esc(r.url)}" rel="noopener">${title}</a>` : title}
+    return `<li>${r.url ? extLink(r.url, title) : title}
       ${r.year ? `<span class="loc"> (${esc(r.year)})</span>` : ''}
       ${quoteBlock(r.quote_excerpt, r.quote_translation_excerpt, r.location_in_source)}</li>`;
   }).join('');
@@ -235,15 +257,15 @@ async function route() {
 async function init() {
   $('status').textContent = '読み込み中…';
   try {
-    const [meta, list, lookup] = await Promise.all(
-      ['meta.json', 'drugs.json', 'lookup.json'].map((f) => fetch(`${API}/${f}`).then((r) => {
+    const [meta, list, idx] = await Promise.all(
+      ['meta.json', 'drugs.json', 'search-index.json'].map((f) => fetch(`${API}/${f}`).then((r) => {
         if (!r.ok) throw new Error(`${f}: HTTP ${r.status}`);
         return r.json();
       })));
     state.meta = meta.meta;
-    state.drugs = list.drugs.map((d) => ({ ...d, _n: norm(d.name), _c: norm(d.category), _g: groupOf(d.category ?? '') }));
+    state.drugs = list.drugs.map((d) => ({ ...d, _g: groupOf(d.category ?? '') }));
     state.byName = new Map(state.drugs.map((d) => [d.name, d]));
-    state.lookup = Object.entries(lookup.lookup).map(([k, names]) => [norm(k), k, names]);
+    state.index = buildIndex(idx.drugs);
   } catch (e) {
     $('status').textContent = `データの読み込みに 失敗しました (${e.message})。 時間をおいて 再読み込みしてください。`;
     return;
@@ -251,8 +273,15 @@ async function init() {
   const m = state.meta ?? {};
   $('meta-line').textContent = `データ版 ${m.data_version ?? ''} (${m.data_updated_at ?? ''} 更新)・ 収載 ${state.drugs.length} 剤`;
   renderGroups();
+  // ?q=アスピリン で 開いたら 検索済みの 状態に
+  state.q = new URLSearchParams(location.search).get('q') ?? '';
+  $('q').value = state.q;
   renderList();
-  $('q').addEventListener('input', (e) => { state.q = e.target.value; renderList(); });
+  $('q').addEventListener('input', (e) => { state.q = e.target.value; renderList(); syncUrl(); });
+  $('list').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-suggest]');
+    if (b) setQuery(b.dataset.suggest);
+  });
   $('groups').addEventListener('click', (e) => {
     const b = e.target.closest('.chip');
     if (!b) return;

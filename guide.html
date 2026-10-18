@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>使い方 — 休薬情報データベース (Kyuyaku Data)</title>
+<meta name="description" content="休薬情報データベース 参照アプリの使い方。薬剤の検索、分類での絞り込み、休薬日数とガイドライン別の値・根拠の見方。">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .guide h1 { font-size: 1.6rem; margin: 0 0 8px; }
+  .guide h2 { font-size: 1.25rem; margin: 32px 0 10px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+  .guide h3 { font-size: 1.05rem; margin: 20px 0 6px; }
+  .guide figure { margin: 12px 0 18px; }
+  .guide img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+  .guide figcaption { color: var(--muted); font-size: .9rem; margin-top: 4px; }
+  .guide ol, .guide ul { padding-left: 1.4em; }
+  .guide li { margin-bottom: 4px; }
+  .toc { background: var(--surface); border-radius: var(--radius); padding: 10px 16px; }
+  .toc ol { margin: 4px 0; }
+  .demo { display: inline-block; font-size: .85rem; font-weight: 700; padding: 0 8px; border: 2px solid currentColor; border-radius: 4px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="./">休薬情報データベース <span class="en">Kyuyaku Data</span></a>
+    <p class="site-lead">参照アプリの 使い方</p>
+  </div>
+</header>
+
+<main id="main" class="wrap guide" tabindex="-1">
+  <p><a href="./">← 参照アプリへ</a></p>
+  <h1>参照アプリの 使い方</h1>
+  <p>この参照アプリでは、 手術・処置の前や 造影 CT 検査の前に 休薬が 必要な 薬について、 学会ガイドラインや PMDA 添付文書などの 一次資料に基づく 情報を 調べられます。 登録・ログインは 不要で、 スマートフォンでも 使えます。</p>
+
+  <nav class="toc" aria-label="目次">
+    <strong>目次</strong>
+    <ol>
+      <li><a href="#search">薬を 探す</a></li>
+      <li><a href="#group">薬効分類で 絞り込む</a></li>
+      <li><a href="#list">一覧の 見方</a></li>
+      <li><a href="#detail">薬の 詳細ページ</a></li>
+      <li><a href="#guidelines">ガイドライン別の値と 根拠</a></li>
+      <li><a href="#refs">出典</a></li>
+      <li><a href="#share">コピー・共有</a></li>
+      <li><a href="#mobile">スマートフォンで 使う</a></li>
+      <li><a href="#caution">使うときの 注意</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="search">1. 薬を 探す</h2>
+  <p>画面上部の 検索欄に 薬の名前を 入力すると、 入力するそばから 一覧が 絞り込まれます。</p>
+  <ul>
+    <li><strong>一般名・商品名・別名・後発品名</strong>の どれでも 検索できます (例: 「エリキュース」 で アピキサバンが 出ます)。</li>
+    <li><strong>名前の 一部</strong>だけでも 検索できます。</li>
+    <li><strong>ひらがな・半角カナ・英字</strong>でも 検索できます (例: 「えりきゅーす」「apixaban」)。</li>
+    <li><strong>多少の 打ち間違いや 表記ゆれ</strong>でも 見つかります (例: 「アスピリソ」→ アスピリン、 「リバロキサバン」→ リバーロキサバン、 「プラビクス」→ クロピドグレル)。 長音 (ー) の 有無や 濁点の 違いも 吸収します。</li>
+    <li>結果は <strong>一致度の 高い順</strong>に 並びます。 商品名で 一致した場合は 「○○ に一致」、 打ち間違いを 補って 見つけた場合は 「○○ に近い名前」 と 表示されます。 配合剤などで 1 つの 商品名が 複数の 薬に 当たる場合は、 すべて 表示されます。</li>
+    <li>「DOAC」「SGLT2」 のように <strong>薬効分類の 名前</strong>でも 検索できます。</li>
+  </ul>
+  <figure>
+    <img src="assets/guide/02-search.png" alt="検索欄に「えりきゅーす」と入力すると、アピキサバンのカードが1件表示され、「エリキュース錠2.5mg」に一致と表示されている画面" width="1000" height="380" loading="lazy">
+    <figcaption>ひらがなで 「えりきゅーす」 と 入力した例</figcaption>
+  </figure>
+  <h3>見つからない ときは 「もしかして」</h3>
+  <p>何も 当たらない 場合は、 近い 名前の 候補を 「もしかして」 として 表示します。 候補を 押すと、 その名前で 検索し直します。</p>
+  <figure>
+    <img src="assets/guide/09-suggest.png" alt="「ワルハリソ」と入力して該当がなく、「もしかして: ワルファリン」などの候補が表示されている画面" width="1100" height="330" loading="lazy">
+    <figcaption>「ワルハリソ」 と 入力した例</figcaption>
+  </figure>
+  <h3>URL で 検索する</h3>
+  <p><code>https://numero-uno-jpn.github.io/kyuyaku-data/?q=アスピリン</code> のように URL の 末尾に <code>?q=薬の名前</code> を 付けて 開くと、 検索済みの 状態で 表示されます。 検索欄に 入力すると、 アドレス欄の URL も 自動で 変わるので、 そのまま 共有や ブックマークに 使えます。</p>
+
+  <h2 id="group">2. 薬効分類で 絞り込む</h2>
+  <p>検索欄の下の ボタン (抗血栓薬、 糖尿病薬、 降圧・利尿薬 など) を 押すと、 その分類の 薬だけが 表示されます。 もう一度 押すか 「すべて」 を 押すと 解除されます。 検索欄と 組み合わせることもできます。</p>
+  <figure>
+    <img src="assets/guide/03-group.png" alt="「糖尿病薬」ボタンを押して、糖尿病薬のカードだけが表示されている画面" width="1000" height="520" loading="lazy">
+    <figcaption>「糖尿病薬」 で 絞り込んだ例</figcaption>
+  </figure>
+
+  <h2 id="list">3. 一覧の 見方</h2>
+  <p>カードには 薬の 一般名・分類と、 休薬日数の バッジが 表示されます。</p>
+  <ul>
+    <li><span class="demo" style="color:var(--high)">周術期(高) 3 日</span> 出血リスクの 高い 手術・処置の 前の 休薬日数</li>
+    <li><span class="demo" style="color:var(--low)">周術期(低) 1 日</span> 出血リスクの 低い 手術・処置の 前の 休薬日数</li>
+    <li><span class="demo" style="color:var(--ct)">造影CT 2 日</span> 造影 CT 検査の 前の 休薬</li>
+    <li>「休薬不要」 は 休薬の 必要がない (継続してよい) という 意味、 「休薬 記載なし」 は 休薬の 記載が ない 薬です。</li>
+  </ul>
+  <p>ここに 表示される 日数は、 現行版の ガイドラインの 中で <strong>いちばん長い 値 (安全側)</strong> です。 ガイドラインに 記載が なければ PMDA 添付文書の 値を 使います。</p>
+
+  <h2 id="detail">4. 薬の 詳細ページ</h2>
+  <p>カードを 押すと、 その薬の 詳細ページが 開きます。 ブラウザの 「戻る」 で 一覧に 戻れます (絞り込みは そのまま 残ります)。</p>
+  <figure>
+    <img src="assets/guide/04-detail.png" alt="アピキサバンの詳細ページ。周術期（出血リスク高）3日、周術期（出血リスク低）1日が大きく表示され、補足と手術の例が続く" width="1000" height="900" loading="lazy">
+    <figcaption>詳細ページの 上部 (アピキサバン)</figcaption>
+  </figure>
+  <ul>
+    <li><strong>休薬日数</strong>を 大きく 表示します (一覧と 同じ 安全側の値)。</li>
+    <li><strong>補足</strong> (黄色の欄) に、 用量・腎機能による 違いや、 ガイドライン改訂の 要点などを 記載しています。</li>
+    <li><strong>高リスク / 低リスク手術の例</strong>を 載せています。 出血リスクの 分類は ガイドラインごとに 異なるので、 目安として ご覧ください。</li>
+  </ul>
+
+  <h2 id="guidelines">5. ガイドライン別の値と 根拠</h2>
+  <p>「ガイドライン別」 の 表には、 資料ごとの 休薬日数が 並びます。 資料によって 値が 違う ことが 一目で 分かります。</p>
+  <figure>
+    <img src="assets/guide/05-guidelines.png" alt="ガイドライン別の表。出典、高リスク・低リスクの日数、値の出どころのラベルと備考が並び、ASRA 2018 の根拠の引用が展開されている" width="968" height="1028" loading="lazy">
+    <figcaption>ガイドライン別の表 (根拠を 開いた 状態)</figcaption>
+  </figure>
+  <ul>
+    <li><strong>出典名</strong>を 押すと、 一次資料 (PDF は 該当頁) が 新しいタブで 開きます。</li>
+    <li><strong>値の出どころ</strong>のラベル:
+      <ul>
+        <li><span class="deriv">直接記載</span> ガイドラインが その薬の 値を 直接 書いている</li>
+        <li><span class="deriv">クラス推奨</span> ガイドラインは 「SGLT2 阻害薬」 のように 薬の 種類 単位で 推奨しており、 その値を この薬に 当てはめた</li>
+        <li><span class="deriv">計算値</span> ガイドラインの 「半減期の N 倍」 などの ルールから 計算した値</li>
+      </ul>
+      「直接記載」 以外は、 ガイドラインに この薬の 日数が 明記されているわけでは ありません。</li>
+    <li><strong>備考</strong>に、 用量別・腎機能別などの 条件を 要約しています。</li>
+    <li><strong>「根拠 (引用または抜粋) と 所在」</strong>を 押すと、 一次資料からの 引用または抜粋と、 資料の どこに 書かれているか (頁・表) が 表示されます。 長いものは 抜粋 (「 … 」 は 中略) で、 一部に 参考資料・作者による 注記を 含みます。 正確な 記載は 原典で 確認してください。</li>
+  </ul>
+
+  <h2 id="refs">6. 出典</h2>
+  <p>ページの 下部に、 その薬の 出典 (ガイドライン・添付文書・文献) を 一覧で 載せています。 リンクは 新しいタブで 開きます。 「根拠」 を 開くと、 引用または抜粋・英文の 和訳・所在が 表示されます。</p>
+  <figure>
+    <img src="assets/guide/06-references.png" alt="出典の一覧。番号付きで資料名と発行年が並び、1件目の根拠が展開されている" width="968" height="420" loading="lazy">
+    <figcaption>出典の 一覧</figcaption>
+  </figure>
+
+  <h2 id="share">7. コピー・共有</h2>
+  <figure>
+    <img src="assets/guide/07-actions.png" alt="「内容をコピー」と「リンクをコピー」の2つのボタン" width="968" height="46" loading="lazy">
+  </figure>
+  <ul>
+    <li><strong>内容をコピー</strong>: 薬の名前・休薬日数・補足・ガイドライン別の値・出典を テキストで コピーします。 カルテや 院内の 資料に 貼り付けるときに 便利です (末尾に 出典の 表示が 付きます)。</li>
+    <li><strong>リンクをコピー</strong>: その薬の ページの URL を コピーします。 URL を 開くと 直接 その薬の ページが 表示されるので、 共有や ブックマーク、 スライドへの 掲載に 使えます。</li>
+  </ul>
+
+  <h2 id="mobile">8. スマートフォンで 使う</h2>
+  <p>スマートフォンの ブラウザでも 同じように 使えます。 ホーム画面に 追加しておくと、 すぐに 開けます。 端末が ダークモードの 場合は 暗い配色で 表示されます。</p>
+  <figure>
+    <img src="assets/guide/08-mobile.png" alt="スマートフォンでダパグリフロジンの詳細ページを表示した画面" width="390" height="760" loading="lazy" style="max-width:320px">
+    <figcaption>スマートフォンでの 表示</figcaption>
+  </figure>
+
+  <h2 id="caution">9. 使うときの 注意</h2>
+  <ul>
+    <li>このアプリの 情報は 意思決定を 支援するための <strong>参考情報</strong> です。 休薬・再開の 最終判断は、 患者の状態・手術の内容・血栓と出血の リスクを 踏まえて 担当の 医療者が 行ってください。</li>
+    <li>冠動脈ステント留置後の 抗血小板薬など、 <strong>休薬しないことが 推奨される</strong> 場合が あります。 日数だけで 判断せず、 補足と ガイドラインの 推奨文を 確認してください。</li>
+    <li>ガイドラインや 添付文書の 改訂から 反映までに 時間差が あることが あります。 データの版と 更新日は ページ下部に 表示しています。</li>
+    <li>誤りに 気づいた 場合は、 <a href="https://github.com/numero-uno-jpn/kyuyaku-data/issues/new?template=correction.md" target="_blank" rel="noopener noreferrer">誤りの報告<span class="sr">(新しいタブで開く)</span></a> から、 根拠となる 資料と 頁を 添えて お知らせください。</li>
+  </ul>
+  <p><a href="./">← 参照アプリへ</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>帰属表示: 梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data<br>
+      ライセンス: データ <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC BY 4.0</a> (引用または抜粋の部分は 対象外) /
+      <a href="https://github.com/numero-uno-jpn/kyuyaku-data">GitHub</a> /
+      <a href="https://github.com/numero-uno-jpn/kyuyaku-data/blob/main/DISCLAIMER.md">免責事項</a></p>
+  </div>
+</footer>
+</body>
+</html>

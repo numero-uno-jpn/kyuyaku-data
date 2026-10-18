@@ -54,6 +54,8 @@ body {
 .wrap { max-width: 64rem; margin: 0 auto; padding: 0 16px; }
 a { color: var(--link); text-underline-offset: 2px; }
 :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; box-shadow: 0 0 0 6px var(--focus); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ext { font-size: .8em; margin-left: .15em; }
 .skip { position: absolute; left: -999px; top: 0; }
 .skip:focus { left: 8px; top: 8px; background: var(--bg); padding: 8px 12px; z-index: 10; }
 
@@ -78,6 +80,8 @@ main:focus, main:focus-visible { outline: none; box-shadow: none; }  /* 画面�
 }
 .chip[aria-pressed="true"] { color: var(--on-primary); background: var(--chip-on); border-color: var(--chip-on); }
 .status { color: var(--muted); margin: 8px 0; min-height: 1.7em; }
+.link-btn { font: inherit; color: var(--link); background: none; border: none; padding: 4px 2px; min-height: 44px;
+  text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
 
 .cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); }

@@ -2,8 +2,9 @@ MIT License
 
 Copyright (c) 2026 Naoyuki Umetani
 
-This license applies to the source code in the `code/` directory.
-The data in the `data/` directory is licensed separately under CC BY 4.0 (see LICENSE-DATA).
+This license applies to the source code in the `code/` and `assets/` directories
+and to `index.html` (the search site).
+The data in the `data/` and `v1/` directories is licensed separately under CC BY 4.0 (see LICENSE-DATA).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

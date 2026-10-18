@@ -20,9 +20,35 @@
 | GET | `v1/drugs.json` | 全薬剤の 一覧 (name / category / 別名 / 商品名 / washout サマリ / 詳細ファイルの パス `file`) |
 | GET | `v1/drugs/{一般名}.json` | 1 薬剤の 休薬詳細 (`{"drug": …}`) |
 | GET | `v1/lookup.json` | 一般名・別名・商品名・後発品名 (小文字) → 一般名の 配列 |
+| GET | `v1/search-index.json` | あいまい検索用の 索引 (`assets/search.js` と 組み合わせる。 下記) |
 
 **別名・商品名で 引くとき**は、 `lookup.json` で 一般名を 得てから `drugs/{一般名}.json` を 取得します。 1 つの 商品名が 複数の 一般名に 対応する場合 (配合剤 等) は 配列に 複数 入ります。
 ファイル名に 使えない 文字 (`/` 等) を 含む 一般名は 全角に 置き換えています。 `drugs.json` の `file` を 使うと 確実です。
+
+## あいまい検索 (`?q=` の 代わり)
+
+静的配信のため、 サーバー側で `?q=` に 答える 検索 API は ありません。 代わりに、 参照アプリと 同じ **あいまい検索の 関数** (`assets/search.js`、 外部ライブラリなし・MIT) と その **索引** (`v1/search-index.json`) を 公開しています。 ブラウザでも Node.js でも、 参照アプリと 同じ 結果が 得られます。
+
+```js
+import { buildIndex, search, suggest } from 'https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js';
+
+const BASE = 'https://numero-uno-jpn.github.io/kyuyaku-data/v1';
+const index = buildIndex((await (await fetch(`${BASE}/search-index.json`)).json()).drugs);
+
+search(index, 'アスピリソ');
+// → [{ name: 'アスピリン', score: 63, term: 'アスピリン', kind: 'typo' }]
+search(index, 'ばいあすぴりん');
+// → [{ name: 'アスピリン', score: 90, term: 'バイアスピリン錠100mg', kind: 'prefix' }]
+suggest(index, 'ワルハリソ');    // 何も 当たらない 時の 「もしかして」 候補
+// → [{ name: 'ワルファリン', term: 'ワルファリン', distance: 3 }, …]
+```
+
+- 対象: 一般名・別名・商品名・後発品名 (+ 薬効分類名)
+- 吸収する 違い: 全角/半角、 ひらがな/カタカナ、 小書き文字 (ュ/ユ)、 大文字/小文字、 長音 (ー) の 有無、 濁点・半濁点、 ヴ/ブ、 打ち間違い (4 文字以上で 1 文字、 8 文字以上で 2 文字まで)
+- 一致の 種類 (`kind`) と 得点 (`score`): `exact` 100 / `prefix` 90 / `partial` 80 / `variant` (表記ゆれ) 70 / `category` (薬効分類) 66 / `typo` (打ち間違い) 40〜65。 得点の 高い順に 並びます
+- 結果の `name` (一般名) で `drugs/{一般名}.json` を 取得します (`search-index.json` の `file` も 使えます)
+
+**参照アプリの URL 検索**: `https://numero-uno-jpn.github.io/kyuyaku-data/?q=アスピリン` のように 開くと、 検索済みの 状態で 表示されます。 他の サイトや 院内資料からの リンクに 使えます。
 
 ## 値のセマンティクス (重要)
 
