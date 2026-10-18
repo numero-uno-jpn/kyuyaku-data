@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>休薬情報データベース (Kyuyaku Data) API</title>
+<style>
+body{font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;line-height:1.7;color:#1a1a1a;background:#fff}
+code{background:#f2f2f2;padding:.1em .3em;border-radius:3px;word-break:break-all}
+table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:.4rem;text-align:left;vertical-align:top}
+.note{background:#fff8e1;border-left:4px solid #f0b400;padding:.6rem .9rem}
+@media (prefers-color-scheme:dark){body{color:#e6e6e6;background:#141414}code{background:#2a2a2a}td,th{border-color:#333}.note{background:#2b2512}a{color:#8ab4ff}}
+</style>
+</head>
+<body>
+<h1>休薬情報データベース (Kyuyaku Data) API v1</h1>
+<p>周術期・造影 CT 検査前の 休薬情報 (静的 JSON、 read-only、 無料)。 データ版 0.8.0 (2026-10-18更新)、 152 剤。</p>
+<table>
+<tr><th>URL</th><th>内容</th></tr>
+<tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/meta.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/meta.json</code></a></td><td>データ版・ライセンス・免責</td></tr>
+<tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs.json</code></a></td><td>全薬剤の 一覧</td></tr>
+<tr><td><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/{一般名}.json</code><br>例: <a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/アピキサバン.json">アピキサバン.json</a></td><td>1 薬剤の 休薬詳細</td></tr>
+<tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/lookup.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/lookup.json</code></a></td><td>一般名・別名・商品名 → 一般名</td></tr>
+</table>
+<p>仕様・全件データ・ライセンス: <a href="https://github.com/numero-uno-jpn/kyuyaku-data">github.com/numero-uno-jpn/kyuyaku-data</a></p>
+<p>帰属表示: 梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data<br>ライセンス: データ CC BY 4.0 (quote_excerpt / quote_translation_excerpt は 対象外)</p>
+<p class="note">本データは 意思決定支援のための 参考情報です。 最終的な 休薬判断は 医療者の 責任で 行ってください。 内容は 無保証で、 継続的に 更新されます。</p>
+</body>
+</html>
