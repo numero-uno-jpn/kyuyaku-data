@@ -7,6 +7,7 @@
 | **参照アプリ** | **https://numero-uno-jpn.github.io/kyuyaku-data/** (ブラウザで そのまま使えます。 登録不要) |
 | **使い方** | [参照アプリの 使い方 (画面付き)](https://numero-uno-jpn.github.io/kyuyaku-data/guide.html) |
 | **API** | `https://numero-uno-jpn.github.io/kyuyaku-data/v1/` (静的 JSON、 [仕様](docs/api.md)) |
+| **検索 API** | `https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン` (一致した薬を 配列で 返す) |
 | **全件データ** | [`data/washout_public_v1.json`](data/washout_public_v1.json) |
 | **作者** | 梅谷 直亨 (Naoyuki Umetani、 外科医) |
 | **ライセンス** | データ [CC BY 4.0](LICENSE-DATA) (引用部分を除く) / コード [MIT](LICENSE) |
@@ -220,6 +221,7 @@
 | `v1/drugs/{一般名}.json` | 1 薬の 詳細 |
 | `v1/lookup.json` | 一般名・別名・商品名・後発品名 (小文字) → 一般名の 配列 |
 | `v1/search-index.json` | あいまい検索用の 索引 (`assets/search.js` と 組み合わせる) |
+| **`https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=…`** | **検索 API** (`?q=` に 答える。 下記) |
 | `data/washout_public_v1.json` | 全件 (1 ファイル) |
 
 - 認証・利用登録は 不要です。 どのサイトからでも 呼び出せます (CORS: `Access-Control-Allow-Origin: *`)。
@@ -244,9 +246,20 @@ const { drug } = await (await fetch(`${BASE}/drugs/${encodeURIComponent(name)}.j
 console.log(drug.surgery.display_high_risk_days_before);   // 3
 ```
 
-### あいまい検索
+### 検索 API (`?q=`)
 
-サーバー側の `?q=` 検索は ありませんが、 参照アプリと 同じ あいまい検索の 関数 [`assets/search.js`](assets/search.js) (外部ライブラリなし) と 索引 `v1/search-index.json` で、 打ち間違い・表記ゆれに 強い 検索が できます。 下の例は ブラウザ用です (Node.js では `search.js` を ダウンロードして `import` してください)。
+`https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン&limit=20` で、 一致した薬を **一致度の 高い順の 配列 (JSON)** で 返します (参照アプリと 同じ あいまい検索。 打ち間違い・表記ゆれも 吸収)。 各結果には 休薬日数 (安全側の値)・詳細 JSON の URL・参照アプリの ページの URL が 付きます。 0 件の 時は 「もしかして」 の 候補を `suggestions` で 返します。 認証不要・CORS 全開放。
+
+```bash
+curl -G https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search --data-urlencode "q=エンレスト"
+# → {"query":"エンレスト","count":2,"results":[{"name":"バルサルタン",…},{"name":"サクビトリル・バルサルタン",…}],…}
+```
+
+応答の 項目と エラーの 扱いは [docs/api.md](docs/api.md#検索-api-q) を 参照してください。 Python 標準の `urllib` から 呼ぶ 場合は `User-Agent` を 指定してください (既定の 名乗りは 配信基盤で 拒否されます)。
+
+### あいまい検索 (ブラウザ・プログラム内で 使う)
+
+ネットワーク越しに 呼ばず 手元で 検索したい 場合は、 参照アプリと 同じ あいまい検索の 関数 [`assets/search.js`](assets/search.js) (外部ライブラリなし) と 索引 `v1/search-index.json` で、 打ち間違い・表記ゆれに 強い 検索が できます。 下の例は ブラウザ用です (Node.js では `search.js` を ダウンロードして `import` してください)。
 
 ```js
 import { buildIndex, search } from 'https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js';
@@ -255,7 +268,7 @@ const index = buildIndex((await (await fetch(`${BASE}/search-index.json`)).json(
 search(index, 'アスピリソ');   // → [{ name: 'アスピリン', score: 63, term: 'アスピリン', kind: 'typo' }]
 ```
 
-吸収する 違いと 得点の 詳細は [docs/api.md](docs/api.md#あいまい検索-q-の-代わり) を 参照してください。
+吸収する 違いと 得点の 詳細は [docs/api.md](docs/api.md#あいまい検索-ブラウザプログラム内で-使う) を 参照してください。
 
 ## 利用上の注意 (制限事項)
 

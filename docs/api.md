@@ -20,14 +20,64 @@
 | GET | `v1/drugs.json` | 全薬剤の 一覧 (name / category / 別名 / 商品名 / washout サマリ / 詳細ファイルの パス `file`) |
 | GET | `v1/drugs/{一般名}.json` | 1 薬剤の 休薬詳細 (`{"drug": …}`) |
 | GET | `v1/lookup.json` | 一般名・別名・商品名・後発品名 (小文字) → 一般名の 配列 |
+| GET | **`https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=…`** | **検索 API** (一致した薬を 一致度順の 配列で。 下記) |
 | GET | `v1/search-index.json` | あいまい検索用の 索引 (`assets/search.js` と 組み合わせる。 下記) |
 
 **別名・商品名で 引くとき**は、 `lookup.json` で 一般名を 得てから `drugs/{一般名}.json` を 取得します。 1 つの 商品名が 複数の 一般名に 対応する場合 (配合剤 等) は 配列に 複数 入ります。
 ファイル名に 使えない 文字 (`/` 等) を 含む 一般名は 全角に 置き換えています。 `drugs.json` の `file` を 使うと 確実です。
 
-## あいまい検索 (`?q=` の 代わり)
+## 検索 API (`?q=`)
 
-静的配信のため、 サーバー側で `?q=` に 答える 検索 API は ありません。 代わりに、 参照アプリと 同じ **あいまい検索の 関数** (`assets/search.js`、 外部ライブラリなし・MIT) と その **索引** (`v1/search-index.json`) を 公開しています。 参照アプリと 同じ 結果が 得られます。 ブラウザでは 下の例のように URL から 直接 読み込めます。 Node.js では URL からの import に 対応していないので、 `search.js` を ダウンロードして 読み込んでください (`curl -O https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js`)。
+**`GET https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q={薬の名前}&limit={1-100}`**
+
+一般名・別名・商品名・後発品名・薬効分類名で 検索し、 一致した薬を **一致度の 高い順の 配列** で 返します。 打ち間違い・表記ゆれも 吸収します (参照アプリと 同じ 検索です)。 認証不要・CORS 全開放。
+
+```bash
+curl "https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=%E3%82%A8%E3%83%B3%E3%83%AC%E3%82%B9%E3%83%88"   # q=エンレスト
+```
+
+```json
+{
+  "query": "エンレスト",
+  "count": 2,
+  "results": [
+    {
+      "name": "バルサルタン", "category": "ARB (降圧薬)",
+      "score": 90, "kind": "prefix", "matched": "エンレスト錠50mg",
+      "surgery_high_risk_days_before": 1, "surgery_low_risk_days_before": 0,
+      "contrast_required": false, "contrast_days_before": null,
+      "detail": "https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/バルサルタン.json",
+      "page": "https://numero-uno-jpn.github.io/kyuyaku-data/#/drugs/バルサルタン"
+    },
+    { "name": "サクビトリル・バルサルタン", "...": "..." }
+  ],
+  "suggestions": [],
+  "_notice": { "license": "CC BY 4.0", "attribution": "…", "disclaimer": "…" }
+}
+```
+
+| 項目 | 意味 |
+|---|---|
+| `q` (必須) | 検索語 (100 文字以内)。 URL エンコードして 渡す |
+| `limit` | 返す 最大件数 (1〜100、 既定 20) |
+| `results[]` | 一致した薬 (一致度順)。 `score` / `kind` は 下の「あいまい検索」 と 同じ。 `matched` は 一致した 名前。 休薬日数は 安全側の値 (`display_*` と 同じ) |
+| `results[].detail` | その薬の 詳細 JSON の URL |
+| `results[].page` | 参照アプリの その薬の ページ |
+| `suggestions[]` | 0 件の 時のみ。 「もしかして」 の 候補 (`name` / `term` / `distance`) |
+
+- エラー: `q` なし・長すぎ → 400、 GET 以外 → 405、 データ取得の 一時的な 失敗 → 503。 応答は 5 分 キャッシュされます。 データは 参照アプリと 同じものを 最大 10 分の 遅れで 反映します。
+- **Python の 標準ライブラリ `urllib` で 呼ぶ 場合は `User-Agent` を 指定してください** (既定の `Python-urllib/…` は 配信基盤 (Cloudflare) の 仕組みで 拒否されます。 `requests`・curl・ブラウザ等は そのままで 使えます)。
+
+```python
+import json, urllib.parse, urllib.request
+url = 'https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?' + urllib.parse.urlencode({'q': 'アスピリン'})
+req = urllib.request.Request(url, headers={'User-Agent': 'my-app/1.0'})
+print(json.load(urllib.request.urlopen(req))['results'][0]['name'])   # アスピリン
+```
+
+## あいまい検索 (ブラウザ・プログラム内で 使う)
+
+上の 検索 API と 同じ **あいまい検索の 関数** (`assets/search.js`、 外部ライブラリなし・MIT) と その **索引** (`v1/search-index.json`) も 公開しています。 ネットワーク越しに 呼ばず、 ブラウザや 自分の プログラムの 中で 検索したい 場合に 使えます。
 
 ```js
 import { buildIndex, search, suggest } from 'https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js';

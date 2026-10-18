@@ -26,10 +26,12 @@ pre{background:#f2f2f2;padding:.6rem;overflow-x:auto;border-radius:4px}pre code{
 <tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json</code></a></td><td>あいまい検索用の 索引</td></tr>
 </table>
 <h2>検索 (?q=)</h2>
-<p>静的配信のため、 この API 自体は <code>?q=</code> に 答えません。 次の 2 つの 方法で 検索できます。</p>
+<p><strong>検索 API</strong>: <a href="https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン"><code>https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン</code></a></p>
+<p>一致した薬を 一致度の 高い順の 配列 (JSON) で 返します (打ち間違い・表記ゆれも 吸収、 <code>limit</code> で 件数 1〜100)。 各結果に 休薬日数・詳細 JSON の URL・参照アプリの ページが 付き、 0 件の 時は 「もしかして」 候補を 返します。 認証不要・CORS 全開放。 Python 標準の urllib から 呼ぶ 場合は User-Agent を 指定してください。</p>
+<p>そのほかの 方法:</p>
 <ul>
 <li><strong>参照アプリの URL 検索</strong>: <a href="../?q=アスピリン"><code>https://numero-uno-jpn.github.io/kyuyaku-data/?q=アスピリン</code></a> のように 開くと 検索済みの 状態で 表示されます (打ち間違い・表記ゆれも 吸収)。</li>
-<li><strong>プログラムから</strong>: あいまい検索の 関数 <a href="../assets/search.js"><code>assets/search.js</code></a> と 索引 <code>search-index.json</code> を 使います。
+<li><strong>手元で 検索</strong> (ネットワーク越しに 呼ばない): あいまい検索の 関数 <a href="../assets/search.js"><code>assets/search.js</code></a> と 索引 <code>search-index.json</code> を 使います。
 <pre><code>import { buildIndex, search } from 'https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js';
 const index = buildIndex((await (await fetch('https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json')).json()).drugs);
 search(index, 'アスピリソ');   // → [{ name: 'アスピリン', score: 63, … }]</code></pre>
