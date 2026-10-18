@@ -40,6 +40,8 @@ VAR_CONTRAST_KEEP = ["source", "days", "value_derivation", "dose_dependent_summa
                      "version_label", "version_year"]
 # 参照の citation field (quote / quote_translation は そのまま 出さず、 _public_reference で 短い引用に 置換)
 REF_KEEP = ["source", "title", "url", "verification_status", "year"]
+# _build_guideline_variations.py が variation の quote を 切り詰める 長さ
+GV_QUOTE_MAX = 400
 
 
 def _pick(d, keys):
@@ -91,6 +93,10 @@ def _public_variations(gv_entry, keep, entries, warnings):
         rec = _pick(v, keep)
         if rec.get("source"):
             q, page = public_quote_fields(v.get("source"), v.get("quote"), None, entries, warnings)
+            # guideline_variations の quote は 生成時に 400 字で 切り詰められている → 続きが あることを 示す
+            if len(v.get("quote") or "") >= GV_QUOTE_MAX and q.get("quote_excerpt") \
+                    and not q["quote_excerpt"].endswith("…"):
+                q["quote_excerpt"] += " …"
             rec.update(q)
             if v.get("source_location"):
                 rec["source_location"] = v["source_location"]

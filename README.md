@@ -2,6 +2,7 @@
 
 周術期・造影 CT 検査前の **休薬情報** を、学会ガイドライン・PMDA 添付文書などの一次資料に基づいて整理したオープンデータです。
 
+- **検索サイト: https://numero-uno-jpn.github.io/kyuyaku-data/** (一般名・商品名で 検索、 薬効分類で 絞り込み)
 - 作者: 梅谷 直亨 (Naoyuki Umetani, 医師)
 - データ: [`data/washout_public_v1.json`](data/washout_public_v1.json) (継続更新)
 - ライセンス: データ [CC BY 4.0](LICENSE-DATA) / コード [MIT](LICENSE)
