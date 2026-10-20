@@ -1,4 +1,4 @@
-// 休薬情報データベース — あいまい検索 (ブラウザ / Node.js 共通、 外部ライブラリなし、 MIT)
+// 休薬情報データベース — あいまい検索 (ブラウザ / Node.js 共通、 外部ライブラリなし、 CC BY 4.0)
 //
 // 使い方 (ブラウザ。 Node.js は URL からの import 非対応なので、 このファイルを ダウンロードして import する):
 //   import { buildIndex, search, suggest } from 'https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js';

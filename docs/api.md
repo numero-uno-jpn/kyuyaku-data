@@ -77,7 +77,7 @@ print(json.load(urllib.request.urlopen(req))['results'][0]['name'])   # アス�
 
 ## あいまい検索 (ブラウザ・プログラム内で 使う)
 
-上の 検索 API と 同じ **あいまい検索の 関数** (`assets/search.js`、 外部ライブラリなし・MIT) と その **索引** (`v1/search-index.json`) も 公開しています。 ネットワーク越しに 呼ばず、 ブラウザや 自分の プログラムの 中で 検索したい 場合に 使えます。
+上の 検索 API と 同じ **あいまい検索の 関数** (`assets/search.js`、 外部ライブラリなし・CC BY 4.0) と その **索引** (`v1/search-index.json`) も 公開しています。 ネットワーク越しに 呼ばず、 ブラウザや 自分の プログラムの 中で 検索したい 場合に 使えます。
 
 ```js
 import { buildIndex, search, suggest } from 'https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js';

@@ -10,7 +10,8 @@
 | **検索 API** | `https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン` (一致した薬を 配列で 返す、 [仕様ページ](https://numero-uno-jpn.github.io/kyuyaku-data/search-api.html)) |
 | **全件データ** | [`data/washout_public_v1.json`](data/washout_public_v1.json) |
 | **作者** | 梅谷 直亨 (Naoyuki Umetani、 外科医) |
-| **ライセンス** | データ [CC BY 4.0](LICENSE-DATA) (引用部分を除く) / コード [MIT](LICENSE) |
+| **利用報告** | 使っていただいたら [利用報告フォーム](https://docs.google.com/forms/d/e/1FAIpQLSfHIxbqLm4XuO1nWAMrJVIOAkKdi_uDpndWw0CVE17Jb6cC_A/viewform) から お知らせください (任意・非公開。 励みに なります) |
+| **ライセンス** | [CC BY 4.0](LICENSE) (データ・コードとも。 引用部分を除く。 [NOTICE.md](NOTICE.md)) |
 
 > ⚠ **本データは 意思決定支援のための 参考情報です。** 最終的な 休薬・再開の 判断は、 患者の状態・手術や処置の内容・血栓と出血のリスクを 踏まえて 担当の医療者が 行ってください。 無保証です。 詳しくは [DISCLAIMER.md](DISCLAIMER.md)。
 
@@ -331,12 +332,16 @@ search(index, 'アスピリソ');   // → [{ name: 'アスピリン', score: 63
 梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data
 ```
 
+あわせて ライセンス名 (CC BY 4.0) を 示し、 改変した 場合は その旨を 明記してください。 例: `梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data (CC BY 4.0) を 改変して 作成`
+
+**院内マニュアル・電子カルテ等で 利用する 際の お願い**: 帰属表示に 加えて、 **データの版** (`meta.json` の `data_version`、 参照アプリの 下部に 表示) と **参照日** を 記載してください。 休薬の 推奨は 改訂されるため、 いつの 情報かが 分からないと 古い値が 使われ続ける おそれが あります。 あわせて [利用報告フォーム](https://docs.google.com/forms/d/e/1FAIpQLSfHIxbqLm4XuO1nWAMrJVIOAkKdi_uDpndWw0CVE17Jb6cC_A/viewform) から お知らせいただけると 嬉しいです (任意。 内容は 公開しません)。
+
 **論文・学会発表での 引用**: [CITATION.cff](CITATION.cff) の 情報を 使い、 **データの版** (`meta.json` の `data_version`) と **参照日** を 併記してください。 GitHub の 「Cite this repository」 からも 書式を 取得できます。
 
 **ライセンス**:
-- データ (`data/`、 `v1/`): [CC BY 4.0](LICENSE-DATA)。 帰属表示を すれば、 商用を含め 自由に 利用・改変・再配布できます。
+- このリポジトリの 内容 (データ `data/`・`v1/`、 参照アプリ、 コード `code/`・`assets/`、 説明文書・図): [CC BY 4.0](LICENSE)。 帰属表示を すれば、 商用を含め 自由に 利用・改変・再配布できます。 著作権表示と 帰属表示は [NOTICE.md](NOTICE.md)。
 - **例外**: `quote_excerpt` / `quote_translation_excerpt` は 各出典 (学会ガイドライン・添付文書 等) の 著作物からの 引用または抜粋であり、 **CC BY 4.0 の 対象外** です (著作権法 32 条に基づく 引用。 著作権は 各権利者に 帰属)。 再利用する 場合は 出典を 明示し、 各権利者の 条件に 従ってください。
-- コード (`code/`、 `assets/`): [MIT](LICENSE)
+- 2026-10-21 より前に MIT ライセンスで 配布した コードは、 その版について MIT のままです。
 
 ## 更新と版
 
@@ -359,11 +364,11 @@ v1/                        静的 JSON API (meta / drugs / drugs/{一般名} / l
 data/                      全件データ washout_public_v1.json
 docs/api.md                API・項目の 仕様
 code/                      公開データの 整形ロジックと PHP 版 API の 参照実装 (透明性のための 掲載。 AI を 使って データを 作る 部分と 正本データは 含まない)
-LICENSE, LICENSE-DATA      ライセンス (コード MIT / データ CC BY 4.0)
+LICENSE, NOTICE.md         ライセンス (CC BY 4.0 全文) / 著作権・帰属表示・引用の例外
 DISCLAIMER.md              免責事項
 CITATION.cff               引用情報
 ```
 
 ---
 
-作者: 梅谷 直亨 (Naoyuki Umetani)。 ご意見・誤りの報告は [Issue](https://github.com/numero-uno-jpn/kyuyaku-data/issues) へ。
+作者: 梅谷 直亨 (Naoyuki Umetani)。 誤りの報告は [Issue](https://github.com/numero-uno-jpn/kyuyaku-data/issues) へ、 利用の お知らせは [利用報告フォーム](https://docs.google.com/forms/d/e/1FAIpQLSfHIxbqLm4XuO1nWAMrJVIOAkKdi_uDpndWw0CVE17Jb6cC_A/viewform) へ。
