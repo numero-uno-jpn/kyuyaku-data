@@ -6,6 +6,7 @@
 |---|---|
 | **参照アプリ** | **https://numero-uno-jpn.github.io/kyuyaku-data/** (ブラウザで そのまま使えます。 登録不要) |
 | **使い方** | [参照アプリの 使い方 (画面付き)](https://numero-uno-jpn.github.io/kyuyaku-data/guide.html) |
+| **紹介スライド** | [学会・研究会向け](https://drive.google.com/file/d/1jELm31CoAxMsWOySwyynz3S43J6RAYB4/view) / [病院 (薬剤部・医療安全) 向け](https://drive.google.com/file/d/1TRripgsM6t6_ewGEaO80LyIclhFur-zz/view) (Google ドライブ、 閲覧のみ) |
 | **API** | `https://numero-uno-jpn.github.io/kyuyaku-data/v1/` (静的 JSON、 [仕様](docs/api.md)) |
 | **検索 API** | `https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン` (一致した薬を 配列で 返す、 [仕様ページ](https://numero-uno-jpn.github.io/kyuyaku-data/search-api.html)) |
 | **全件データ** | [`data/washout_public_v1.json`](data/washout_public_v1.json) |
