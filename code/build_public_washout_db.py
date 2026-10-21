@@ -18,7 +18,7 @@
   python tools/build_public_washout_db.py           # 生成
   python tools/build_public_washout_db.py --check   # commit 済みが 最新か 検査 (CI 用、 generated_at は 無視)
 再生成は .githooks/pre-commit (drug_list / guideline_variations の stage 時) と
-月次 KEGG sync workflow が 自動で行い、 gl-variation-integrity CI が 不一致を 検出する。
+月次 KEGG sync workflow が 自動で行い、 data-checks CI (tools/run_data_checks.py) が 不一致を 検出する。
 """
 import json
 import os
