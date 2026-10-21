@@ -5,7 +5,7 @@
     "api_version": "1.0",
     "data_version": "0.8.0",
     "data_updated_at": "2026-10-18",
-    "generated_at": "2026-10-18",
+    "generated_at": "2026-10-21",
     "scope": "周術期・造影CT の 休薬情報のみ",
     "drug_count": 152,
     "license": "CC BY 4.0",
@@ -1555,8 +1555,8 @@
             "low_risk_days": 0,
             "value_derivation": "direct",
             "dose_dependent_summary": "出血リスク 低 5日, 出血リスク 中〜高 5日, 出血リスク 極低 継続可",
-            "quote_excerpt": "p.36 本文: 「ワルファリン服用患者では、 手術前 3〜5 日の服用中止を考慮する」\n表 6 パネル A (出血リスク極低): 継続\n表 6 パネル B (出血リスク低): 3〜5 日前 中止、 術後 24 時間再開\n表 6 パネル C (出血リスク中〜高): 3〜5 日前 中止、 術後 24 時間再開、 高血栓リスク症例では ヘパリン置換 検討\n",
-            "source_location": "p.36 本文 + p.41 表 6 (3 パネルすべて)",
+            "quote_excerpt": "p.36 本文: 「ワルファリン服用患者では、 手術前 3〜5 日の服用中止を考慮する」\n表 27 パネル A (出血リスク極低): 継続\n表 27 パネル B (出血リスク低): 3〜5 日前 中止、 術後 24 時間再開\n表 27 パネル C (出血リスク中〜高): 3〜5 日前 中止、 術後 24 時間再開、 高血栓リスク症例では ヘパリン置換 検討\n",
+            "source_location": "p.36 本文 + p.41 表 27 (3 パネルすべて)",
             "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
           {
@@ -1720,10 +1720,10 @@
           {
             "source": "JCS 2020 抗血栓",
             "value_derivation": "direct",
-            "dose_dependent_summary": "表 6 パネル C 48時間, 表 6 パネル B 36時間, 表 6 パネル B 24時間, 表 6 パネル A 12時間",
-            "quote_excerpt": "p.39 本文: 「リバーロキサバン・アピキサバン・エドキサバン服用中の患者では、 CCr が 15〜29 mL/分であれば手術の 36 時間以前を、 最終の服用時間とすることが望ましい (表 6)」\np.40 本文: 「出血リスクが中等度〜高度の手術を受ける場合は、 DOAC 服用中の患者では 48 時間以前を最終の服用時間とすることが推奨される」\n",
-            "source_location": "p.39-40 本文 + p.41 表 6 (「他 DOAC」 行)",
-            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf#page=39"
+            "dose_dependent_summary": "表 27 パネル C 48時間, 表 27 パネル B 36時間, 表 27 パネル B 24時間, 表 27 パネル A 12時間",
+            "quote_excerpt": "p.39 本文: 「リバーロキサバン・アピキサバン・エドキサバン服用中の患者では、 CCr が 15〜29 mL/分であれば手術の 36 時間以前を、 最終の服用時間とすることが望ましい (表 27)」\np.40 本文: 「出血リスクが中等度〜高度の手術を受ける場合は、 DOAC 服用中の患者では 48 時間以前を最終の服用時間とすることが推奨される」\n",
+            "source_location": "p.39-40 本文 + p.41 表 27 (「他 DOAC」 行)",
+            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
           {
             "source": "JCS/JHRS 2020 不整脈",
@@ -1890,10 +1890,10 @@
           {
             "source": "JCS 2020 抗血栓",
             "value_derivation": "direct",
-            "dose_dependent_summary": "表 6 パネル C 96時間, 表 6 パネル C 72時間, 表 6 パネル B 48時間, 表 6 パネル C 48時間, 表 6 パネル B 36時間, 表 6 パネル B 24時間, 表 6 パネル A 12時間",
-            "quote_excerpt": "p.39 本文: 「ダビガトラン服用中の患者では、 クレアチニン・クリアランス (CCr) が 50〜79 mL/分であれば手術の 36 時間以前、 CCr が 30〜49 mL/分であれば手術の 48 時間以前 ... 最終の服用時間とすることが望ましい (表 6)」\np.40 本文: 「出血リスクが中等度〜高度の手術を受ける場合は、 ... ダビガトランに関しては、 CCr が 50〜79 mL/分であれば 72 時間以前、 CCr が 30〜49 mL/分であれば 96 時間以前を最終の服用時間とすることが望まれる (表 6)」\n",
-            "source_location": "p.39-40 本文 + p.41 表 6 (3 パネル ダビガトラン行)",
-            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf#page=40"
+            "dose_dependent_summary": "表 27 パネル C 96時間, 表 27 パネル C 72時間, 表 27 パネル B 48時間, 表 27 パネル C 48時間, 表 27 パネル B 36時間, 表 27 パネル B 24時間, 表 27 パネル A 12時間",
+            "quote_excerpt": "p.39 本文: 「ダビガトラン服用中の患者では、 クレアチニン・クリアランス (CCr) が 50〜79 mL/分であれば手術の 36 時間以前、 CCr が 30〜49 mL/分であれば手術の 48 時間以前 ... 最終の服用時間とすることが望ましい (表 27)」\np.40 本文: 「出血リスクが中等度〜高度の手術を受ける場合は、 ... ダビガトランに関しては、 CCr が 50〜79 mL/分であれば 72 時間以前、 CCr が 30〜49 mL/分であれば 96 時間以前を最終の服用時間とすることが望まれる (表 27)」\n",
+            "source_location": "p.39-40 本文 + p.41 表 27 (3 パネル ダビガトラン行)",
+            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
           {
             "source": "JCS/JHRS 2020 不整脈",
@@ -2050,10 +2050,10 @@
           {
             "source": "JCS 2020 抗血栓",
             "value_derivation": "direct",
-            "dose_dependent_summary": "表 6 パネル C 48時間, 表 6 パネル B 36時間, 表 6 パネル B 24時間, 表 6 パネル A 12時間",
-            "quote_excerpt": "「リバーロキサバン・アピキサバン・エドキサバン服用中の患者では、 CCr が 15〜29 mL/分であれば手術の 36 時間以前を、 最終の服用時間とすることが望ましい (表 6)」\n「出血リスクが中等度〜高度の手術を受ける場合は、 DOAC 服用中の患者では 48 時間以前を最終の服用時間とすることが推奨される」\n",
-            "source_location": "p.39-40 本文 + p.41 表 6",
-            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf#page=39"
+            "dose_dependent_summary": "表 27 パネル C 48時間, 表 27 パネル B 36時間, 表 27 パネル B 24時間, 表 27 パネル A 12時間",
+            "quote_excerpt": "「リバーロキサバン・アピキサバン・エドキサバン服用中の患者では、 CCr が 15〜29 mL/分であれば手術の 36 時間以前を、 最終の服用時間とすることが望ましい (表 27)」\n「出血リスクが中等度〜高度の手術を受ける場合は、 DOAC 服用中の患者では 48 時間以前を最終の服用時間とすることが推奨される」\n",
+            "source_location": "p.39-40 本文 + p.41 表 27",
+            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
           {
             "source": "JCS/JHRS 2020 不整脈",
@@ -2197,7 +2197,7 @@
           {
             "source": "ASRA 2018 (4th ed)",
             "value_derivation": "direct",
-            "dose_dependent_summary": "Higher dose >3 120時間, Standard dose  72時間",
+            "dose_dependent_summary": "Standard dose  72時間, Higher dose >3 70時間",
             "quote_excerpt": "Rec 8.1 (NEW): \"We suggest that edoxaban be discontinued 72 hours prior to neuraxial block. Consider checking edoxaban or anti-factor Xa activity level if less than 72 hours.\"\nRec 8.2 (NEW): \"neuraxial catheters be removed 6 hours prior to the first (postoperative) dose\"\nRec 8.3 (NEW): \"edoxaban dosing be held for 20 to 28 hours or an anti-factor Xa assay calibrated to edoxaban\"\n",
             "source_location": "p.279 §8.0 Rec 8.1-8.3",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
@@ -2213,10 +2213,10 @@
           {
             "source": "JCS 2020 抗血栓",
             "value_derivation": "direct",
-            "dose_dependent_summary": "表 6 パネル C 48時間, 表 6 パネル B 36時間, 表 6 パネル B 24時間, 表 6 パネル A 12時間",
-            "quote_excerpt": "「リバーロキサバン・アピキサバン・エドキサバン服用中の患者では、 CCr が 15〜29 mL/分であれば手術の 36 時間以前を、 最終の服用時間とすることが望ましい (表 6)」\n",
-            "source_location": "p.39-40 本文 + p.41 表 6",
-            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf#page=39"
+            "dose_dependent_summary": "表 27 パネル C 48時間, 表 27 パネル B 36時間, 表 27 パネル B 24時間, 表 27 パネル A 12時間",
+            "quote_excerpt": "「リバーロキサバン・アピキサバン・エドキサバン服用中の患者では、 CCr が 15〜29 mL/分であれば手術の 36 時間以前を、 最終の服用時間とすることが望ましい (表 27)」\n",
+            "source_location": "p.39-40 本文 + p.41 表 27",
+            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
           {
             "source": "JCS/JHRS 2020 不整脈",
@@ -2396,9 +2396,9 @@
           {
             "source": "JCS 2020 抗血栓",
             "value_derivation": "direct",
-            "dose_dependent_summary": "表 6 パネル C 48時間",
-            "quote_excerpt": "表 6 パネル C: ヘパリン 48〜72 時間前中止、 術後 24 時間再開",
-            "source_location": "p.41 表 6 パネル C ヘパリン行",
+            "dose_dependent_summary": "表 27 パネル C 48時間",
+            "quote_excerpt": "表 27 パネル C: ヘパリン 48〜72 時間前中止、 術後 24 時間再開",
+            "source_location": "p.41 表 27 パネル C ヘパリン行",
             "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
           {
@@ -3091,7 +3091,6 @@
           {
             "source": "ESC 2022 non-cardiac",
             "high_risk_days": 3,
-            "low_risk_days": 3,
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate-  3日",
             "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis …",
@@ -3225,7 +3224,6 @@
           {
             "source": "ESC 2022 non-cardiac",
             "high_risk_days": 3,
-            "low_risk_days": 3,
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate-  3日",
             "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis …",
@@ -3363,7 +3361,6 @@
           {
             "source": "ESC 2022 non-cardiac",
             "high_risk_days": 3,
-            "low_risk_days": 3,
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate-  3日",
             "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis …",
@@ -3501,7 +3498,6 @@
           {
             "source": "ESC 2022 non-cardiac",
             "high_risk_days": 3,
-            "low_risk_days": 3,
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate-  3日",
             "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis …",
@@ -3610,7 +3606,6 @@
           {
             "source": "ESC 2022 non-cardiac",
             "high_risk_days": 3,
-            "low_risk_days": 3,
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate-  3日",
             "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis …",
@@ -3721,7 +3716,6 @@
           {
             "source": "ESC 2022 non-cardiac",
             "high_risk_days": 3,
-            "low_risk_days": 3,
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate-  3日",
             "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis …",
@@ -6599,7 +6593,7 @@
             "source": "ACR/AAHKS 2022",
             "high_risk_days": 180,
             "value_derivation": "direct",
-            "dose_dependent_summary": "RA/AS/PsA/JIA 180日, not-severe SLE 180日, severe SLE 120日",
+            "dose_dependent_summary": "RA/AS/PsA/JIA 180日, not-severe SLE 180日, severe SLE 90日",
             "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding all biologics, including rituximab, prior to surgery and planning the surgery after the next dose is due is conditionally recommended. Perioperative management of rituximab has been a challenge given the long dosing interval of 6 months and the recognized risk of severe infection linked to its use. In this updated guideline,  …",
             "source_location": "p.4 Table 2 (biologics withhold + severe SLE continue + not-severe SLE withhold の 3 行に収載); p.5 Table 3 rows 2-4; pp.6-8 discussion",
             "source_url": "https://doi.org/10.1002/acr.24893"
@@ -6840,7 +6834,7 @@
         "high_risk_days_before": 105,
         "low_risk_days_before": 84,
         "display_high_risk_days_before": 105,
-        "display_low_risk_days_before": 91,
+        "display_low_risk_days_before": 84,
         "high_risk_surgery_examples": [
           "人工関節置換術",
           "脊椎手術",
@@ -6871,19 +6865,19 @@
           {
             "source": "BSR 2019",
             "high_risk_days": 105,
-            "low_risk_days": 91,
+            "low_risk_days": 84,
             "value_derivation": "direct",
-            "dose_dependent_summary": "Higher infecti 105日, Standard risk  91日",
+            "dose_dependent_summary": "Higher infecti 105日, Standard risk  84日",
             "quote_excerpt": "Table 7: Ustekinumab - Every 12 weeks - Week 13 - One half-life 21 days - Five half-lives 105 days.",
             "source_location": "p.e29 Peri-operative care (ii); p.e30 Table 7",
             "source_url": "https://doi.org/10.1093/rheumatology/key208"
           },
           {
             "source": "JDA 2022 乾癬",
-            "high_risk_days": 105,
-            "low_risk_days": 84,
+            "high_risk_days": 84,
+            "low_risk_days": 63,
             "value_derivation": "derived",
-            "dose_dependent_summary": "欧州 GL 105日, 米国 GL 84日",
+            "dose_dependent_summary": "米国 GL 4x 84日, 米国 GL 3x 63日",
             "version_label": "2022 版",
             "version_year": 2022,
             "quote_excerpt": "p.2289: 「ウステキヌマブが 約 21 日」",
@@ -10381,9 +10375,8 @@
           {
             "source": "JSN 神経 2018 パーキンソン MAOB",
             "high_risk_days": 40,
-            "low_risk_days": 14,
             "value_derivation": "direct",
-            "dose_dependent_summary": "完全 washout 40日, 麻酔科 一般推奨 14日",
+            "dose_dependent_summary": "完全 washout 40日",
             "quote_excerpt": "p.58 [3.1 セレギリン]: 「セレギリンはアンフェタミン骨格構造をもつ MAOB 阻害薬で、 現在本邦で使用可能な唯一の MAOB 阻害薬である。 健常成人にセレギリン 2.5〜10 mg を単回投与した際の 最高血中濃度到達時間 (Tmax) は 0.08〜2.42 時間、 半減期 (T½) は 0.22〜0.48 時間であるが、 MAOB 阻害効果は 非可逆的なため、 最高 40 日まで効果が持続する」\np.59 [2. 安全性]: 「三環系抗うつ薬、 SSRI、 SNRI、 ペチジン、 トラマドールなどとの併用は、 セロトニン症候群を引き起こす可能性があるために 禁忌 である」\n",
             "source_location": "p.58-59 [3.1 セレギリン] + p.59 [2. 安全性]",
             "source_url": "https://www.neurology-jp.org/guidelinem/pdgl/parkinson_2018_11.pdf#page=1"
@@ -10453,9 +10446,8 @@
           {
             "source": "JSN 神経 2018 パーキンソン MAOB",
             "high_risk_days": 40,
-            "low_risk_days": 14,
             "value_derivation": "direct",
-            "dose_dependent_summary": "完全 washout 40日, 麻酔科 一般推奨 14日",
+            "dose_dependent_summary": "完全 washout 40日",
             "quote_excerpt": "p.60 [3.2 ラサギリン]: 「ラサギリンはアンフェタミン骨格構造をもたない MAOB 阻害薬で、 セレギリンの 5〜10 倍の MAOB 阻害効果を認める。 健常成人にラサギリン 1〜2 mg を単回投与した際の Tmax は 0.5〜1 時間、 T½ は 1.5〜3.5 時間であるが、 MAOB 阻害効果は非可逆的なため、 最高 40 日まで効果が持続する」\np.61 [2. 安全性]: 「ラサギリンは CYP1A2 で代謝を受けるので、 シプロフロキサシンなどの CYP1A2 を抑制する薬剤との併用、 肝障害のある患者には注意が必要である」\n",
             "source_location": "p.60-62 [3.2 ラサギリン] + p.61 [2. 安全性]",
             "source_url": "https://www.neurology-jp.org/guidelinem/pdgl/parkinson_2018_11.pdf#page=4"
