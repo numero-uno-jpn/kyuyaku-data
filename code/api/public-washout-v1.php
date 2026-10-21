@@ -145,9 +145,13 @@ if ($parts[0] === 'drugs' && count($parts) === 1) {
             // 表示推奨値 (安全側) を 一覧でも 提供
             'surgery_high_risk_days_before' => isset($surg['display_high_risk_days_before']) ? $surg['display_high_risk_days_before'] : null,
             'surgery_low_risk_days_before' => isset($surg['display_low_risk_days_before']) ? $surg['display_low_risk_days_before'] : null,
+            // true は 手術当日 の 休薬 (前日 まで 服用可、 日数 は null)。 静的 drugs.json・検索 API と 同じ 名前
+            'surgery_high_risk_day_of' => !empty($surg['display_high_risk_day_of']),
+            'surgery_low_risk_day_of' => !empty($surg['display_low_risk_day_of']),
             'surgery_required' => isset($surg['required']) ? $surg['required'] : null,
             'contrast_required' => isset($cont['required']) ? $cont['required'] : null,
             'contrast_days_before' => isset($cont['display_days_before']) ? $cont['display_days_before'] : null,
+            'contrast_day_of' => !empty($cont['display_day_of']),
         ];
     }
     respond(['count' => count($list), 'drugs' => $list], $notice, $JSON);

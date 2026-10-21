@@ -255,10 +255,12 @@ AI は、 原文に ない 数値や 引用を もっともらしく 作り出�
 
 | 項目 | 意味 |
 |---|---|
-| `surgery.display_high_risk_days_before` / `display_low_risk_days_before` | 出血リスクの 高い / 低い 手術の 前の 休薬日数 (**安全側の値。 利用時は こちらを 推奨**)。 `0` は 休薬不要、 `null` は 記載なし |
+| `surgery.display_high_risk_days_before` / `display_low_risk_days_before` | 出血リスクの 高い / 低い 手術の 前の 休薬日数 (**安全側の値。 利用時は こちらを 推奨**)。 `0` は 休薬不要、 `null` は 記載なし (ただし 次の `*_day_of` が `true` なら 当日休薬) |
+| `surgery.display_high_risk_day_of` / `display_low_risk_day_of` | `true` は 安全側の値が **手術当日の休薬** (前日まで服用可) であること。 このとき 日数は `null` |
 | `surgery.high_risk_days_before` / `low_risk_days_before` | 作者の 採用値 (表示用の値の 決定に 使う 第 3 候補) |
+| `surgery.high_risk_day_of` / `low_risk_day_of` | `true` は 作者の 採用値が **手術当日の休薬** (日数は `null`) |
 | `contrast_ct.required` / `display_days_before` | 造影 CT 前の 休薬の 要否 / 日数 |
-| `guideline_variations.surgery[]` / `contrast_ct[]` | ガイドライン別の値。 `high_risk_days` / `low_risk_days` / `days`、 `value_derivation`、 `dose_dependent_summary` (用量・腎機能別の要約)、 `version_label` / `version_year`、 `source_location`、 `source_url`、 `quote_excerpt` |
+| `guideline_variations.surgery[]` / `contrast_ct[]` | ガイドライン別の値。 `high_risk_days` / `low_risk_days` / `days`、 原文が 時間の値は `*_hours` / `hours`、 手術当日の休薬は `*_day_of` / `day_of` (いずれも 日数は `null`)、 `value_derivation`、 `dose_dependent_summary` (用量・腎機能別の要約)、 `version_label` / `version_year`、 `source_location`、 `source_url`、 `quote_excerpt` |
 | `references[]` | 出典。 `source` / `title` / `year` / `url` / `verification_status` / `location_in_source` / `quote_excerpt` / `quote_translation_excerpt` (英文の和訳) |
 | URL の `#page=N` | PDF の 該当頁 (PDF の 頁番号で、 印刷頁とは 異なることがある) |
 

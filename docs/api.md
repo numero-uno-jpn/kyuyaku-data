@@ -45,7 +45,8 @@ curl "https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=%E3%82%A8%E3%8
       "name": "バルサルタン", "category": "ARB (降圧薬)",
       "score": 90, "kind": "prefix", "matched": "エンレスト錠50mg",
       "surgery_high_risk_days_before": 1, "surgery_low_risk_days_before": 0,
-      "contrast_required": false, "contrast_days_before": null,
+      "surgery_high_risk_day_of": false, "surgery_low_risk_day_of": false,
+      "contrast_required": false, "contrast_days_before": null, "contrast_day_of": false,
       "detail": "https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/バルサルタン.json",
       "page": "https://numero-uno-jpn.github.io/kyuyaku-data/#/drugs/バルサルタン"
     },
@@ -105,15 +106,27 @@ suggest(index, 'ワルハリソ');    // 何も 当たらない 時の 「もし
 | フィールド | 意味 |
 |---|---|
 | `surgery.high_risk_days_before` / `low_risk_days_before` | 作者の 採用値 (primary) |
+| `surgery.high_risk_day_of` / `low_risk_day_of` / `contrast_ct.day_of` | `true` は 作者の 採用値が **手術当日の休薬** (日数の欄は `null`) |
 | `surgery.display_high_risk_days_before` / `display_low_risk_days_before` | **表示推奨値** = 現行ガイドラインの 最長値 (安全側)。 **消費側は こちらの使用を 推奨** |
 | `contrast_ct.days_before` / `display_days_before` | 同上 (造影CT) |
+| `surgery.display_high_risk_day_of` / `display_low_risk_day_of` / `contrast_ct.display_day_of` | `true` は 表示推奨値が **手術当日の休薬** (前日まで服用可) であること。 このとき 日数の欄は `null` |
+| 日数の値 | `0` = 休薬不要、 `null` = 記載なし。 `1` は 1 日休薬 (前日から休薬) で、 手術当日だけの休薬は 日数ではなく `*_day_of: true` で 表す。 **日数が `null` でも 対応する `*_day_of` が `true` なら 「記載なし」 ではなく 当日休薬** (`api_version` 1.1 から。 1.0 では 当日休薬の 薬に 1 などの 日数が 入っていた ため、 印を 読まない 利用側は 「記載なし」 と 誤読しない よう 対応が 必要) |
 | `guideline_variations.surgery[]` / `contrast_ct[]` | ガイドライン別の 個別値 + 出典ラベル (+ eGFR/用量別の `dose_dependent_summary`)。 `source_location` (所在) / `source_url` / `quote_excerpt` (引用または抜粋) を 含む場合あり |
+| `guideline_variations.*[].high_risk_hours` / `low_risk_hours` / `hours` | 原文が 時間で 書かれた 値 (日数の欄は `null`)。 表示推奨値の 計算では 日数に 切り上げる (12 時間 → 1 日、 48 時間 → 2 日。 手術時刻が 当日 動くため 前日から 休薬する 扱い) |
+| `guideline_variations.*[].high_risk_day_of` / `low_risk_day_of` / `day_of` | `true` は 原文が 「手術当日の休薬」 (日数の欄は `null`) |
 | `guideline_variations.*[].value_derivation` | **値の出どころ** (重要)。 `direct` = ガイドラインが その薬剤の 値を 直接記載 / `class` = ガイドラインは 薬効クラス (SGLT2 阻害薬 等) 単位で 推奨しており、 その値を 個別薬に 当てはめた / `derived` = ガイドラインの 半減期 × N 倍 ルール等から 作者が 計算した値。 未設定は 未分類 (PMDA 添付文書 等の 手入力値)。 **`direct` 以外は ガイドラインに その日数が 明記されているわけでは ない** |
 | `references[]` | 出典 (source / title / url / verification_status) + `location_in_source` (所在)。 `quote_excerpt` (引用または抜粋) / `quote_translation_excerpt` (英文引用の 和訳) を 含む場合あり |
 | `quote_excerpt` | 一次資料からの 引用または抜粋 (一部、 参考資料・作者による注記を 含む)。 和文 300 / 英文 600 字を 超えるものは 抜粋 (最大 2 断片を ` … ` で 連結)、 抜粋が 未確定のものは 省略 (所在 + URL のみ) |
 | `url` / `source_url` の `#page=N` | PDF の 該当頁 (PDF のページ番号。 印刷ページ番号とは 異なることがある) |
 
-`display_*` は 「現行 版の ガイドラインの 最大値 > PMDA 添付文書の 最大値 > 作者の 採用値」 の 順で 決めた 安全側の 値です。 短い 採用値だけを 表示すると 安全側を 下回るため 注意してください。
+`display_*` は 「現行 版の ガイドラインの 最大値 > PMDA 添付文書の 最大値 > 作者の 採用値」 の 順で 決めた 安全側の 値です。 比べる ときは 時間を 日数に 切り上げ、 当日休薬は 0 日 (休薬不要) より 長く 1 日より 短い ものとして 扱います。 短い 採用値だけを 表示すると 安全側を 下回るため 注意してください。
+
+### 版の 変更履歴
+
+| api_version | 内容 |
+|---|---|
+| 1.1 (2026-10) | 当日休薬の 印 (`*_day_of` / `day_of`、 `display_*_day_of`、 検索 API の `surgery_*_day_of` / `contrast_day_of`) と、 ガイドライン別の 時間の 値 (`*_hours`) を 追加。 当日休薬の 薬は 日数が `null` に なった |
+| 1.0 | 初版 |
 
 ## 例
 

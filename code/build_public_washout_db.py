@@ -27,6 +27,10 @@ import datetime
 
 from public_quotes import load_excerpts, public_quote_fields, with_page, within_limit
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                "backend", "data", "references", "verification"))
+from _washout_days import effective_days as _eff, DAY_OF_RANK  # 比較・表示用 日数 の 単一 規則 (アプリ と 同じ)
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DL = os.path.join(ROOT, "frontend", "data", "drug_list.json")
 GV = os.path.join(ROOT, "frontend", "data", "guideline_variations.json")
@@ -34,9 +38,11 @@ OUT = os.path.join(ROOT, "frontend", "data", "washout_public_v1.json")
 
 # --- 公開して よい variation field (値 + 出典ラベル + 派生サマリ のみ。 短い引用・所在・URL は _public_variations で 付加) ---
 # 除外: note / purpose / quote / quote_verbatim / _manual / _note_* / dose_dependent_is_complex 等
-VAR_SURGERY_KEEP = ["source", "high_risk_days", "low_risk_days", "value_derivation",
+# *_hours: 原文 が 時間 の 値 (日数 は null)。 *_day_of / day_of: 原文 が 「手術当日 の 休薬」 (日数 は null)
+VAR_SURGERY_KEEP = ["source", "high_risk_days", "low_risk_days", "high_risk_hours", "low_risk_hours",
+                    "high_risk_day_of", "low_risk_day_of", "value_derivation",
                     "dose_dependent_summary", "version_label", "version_year"]
-VAR_CONTRAST_KEEP = ["source", "days", "value_derivation", "dose_dependent_summary",
+VAR_CONTRAST_KEEP = ["source", "days", "hours", "day_of", "value_derivation", "dose_dependent_summary",
                      "version_label", "version_year"]
 # 参照の citation field (quote / quote_translation は そのまま 出さず、 _public_reference で 短い引用に 置換)
 REF_KEEP = ["source", "title", "url", "verification_status", "year"]
@@ -71,20 +77,38 @@ def _filter_current_series(vs):
     return out
 
 
-def _nums(vs, key):
-    return [v[key] for v in vs if isinstance(v.get(key), (int, float))]
+# slot → (日数 key, 時間 key, 当日休薬 key)
+SLOT_KEYS = {
+    "high": ("high_risk_days", "high_risk_hours", "high_risk_day_of"),
+    "low": ("low_risk_days", "low_risk_hours", "low_risk_day_of"),
+    "contrast": ("days", "hours", "day_of"),
+}
 
 
-def effective_days(variations, master, key):
-    """daysBadge 相当: 現行GL最大 > PMDA最大 > master。 全て無ければ None。"""
+def _nums(vs, slot):
+    dk, hk, ok = SLOT_KEYS[slot]
+    out = []
+    for v in vs:
+        e = _eff(v.get(dk), v.get(hk), bool(v.get(ok)))
+        if e is not None:
+            out.append(e)
+    return out
+
+
+def effective_days(variations, master, slot, master_day_of=False):
+    """daysBadge 相当: 現行GL最大 > PMDA最大 > master。 全て無ければ None。
+    比較 は _washout_days.effective_days (時間 は 日数 に 切り上げ、 当日休薬 は 0.5)。
+    master_day_of: drug_list 本体 の 当日休薬 の 印 (このとき master は None)。
+    戻り値 (日数, 当日休薬か): 当日休薬 が 最長 の とき は (None, True)。"""
     variations = variations or []
-    gl = _nums(_filter_current_series([v for v in variations if not _is_pmda(v)]), key)
-    if gl:
-        return max(gl)
-    pm = _nums([v for v in variations if _is_pmda(v)], key)
-    if pm:
-        return max(pm)
-    return master
+    gl = _nums(_filter_current_series([v for v in variations if not _is_pmda(v)]), slot)
+    pm = _nums([v for v in variations if _is_pmda(v)], slot)
+    best = max(gl) if gl else (max(pm) if pm else None)
+    if best is None:
+        return (None, True) if master_day_of else (master, False)
+    if best == DAY_OF_RANK:
+        return None, True
+    return (int(best) if float(best).is_integer() else best), False
 
 
 def _public_variations(gv_entry, keep, entries, warnings):
@@ -134,6 +158,12 @@ def build(warnings=None):
         surg = d.get("surgery") or {}
         cont = d.get("contrast_ct") or {}
         gentry = gv_drugs.get(name, {})
+        _hi = effective_days(gentry.get("surgery"), surg.get("high_risk_days_before"), "high",
+                             bool(surg.get("high_risk_day_of")))
+        _lo = effective_days(gentry.get("surgery"), surg.get("low_risk_days_before"), "low",
+                             bool(surg.get("low_risk_day_of")))
+        _co = effective_days(gentry.get("contrast_ct"), cont.get("days_before"), "contrast",
+                             bool(cont.get("day_of")))
 
         rec = {
             "name": name,
@@ -147,11 +177,13 @@ def build(warnings=None):
                 # master (drug_list の primary 採用値)
                 "high_risk_days_before": surg.get("high_risk_days_before"),
                 "low_risk_days_before": surg.get("low_risk_days_before"),
+                "high_risk_day_of": bool(surg.get("high_risk_day_of")),
+                "low_risk_day_of": bool(surg.get("low_risk_day_of")),
                 # 表示推奨値 (アプリのバッジ相当: 現行GL最大 = 安全側)。 consumer は これを 使うと 安全
-                "display_high_risk_days_before": effective_days(
-                    (gentry.get("surgery")), surg.get("high_risk_days_before"), "high_risk_days"),
-                "display_low_risk_days_before": effective_days(
-                    (gentry.get("surgery")), surg.get("low_risk_days_before"), "low_risk_days"),
+                "display_high_risk_days_before": _hi[0],
+                "display_high_risk_day_of": _hi[1],
+                "display_low_risk_days_before": _lo[0],
+                "display_low_risk_day_of": _lo[1],
                 "high_risk_surgery_examples": surg.get("high_risk_surgery_examples") or [],
                 "low_risk_surgery_examples": surg.get("low_risk_surgery_examples") or [],
                 "note": surg.get("note"),
@@ -159,8 +191,9 @@ def build(warnings=None):
             "contrast_ct": {
                 "required": cont.get("required"),
                 "days_before": cont.get("days_before"),
-                "display_days_before": effective_days(
-                    (gentry.get("contrast_ct")), cont.get("days_before"), "days"),
+                "day_of": bool(cont.get("day_of")),
+                "display_days_before": _co[0],
+                "display_day_of": _co[1],
                 "note": cont.get("note"),
             },
             # ガイドライン別 washout (値 + 出典ラベル + 短い引用 + 所在。 全文 quote / note は 含めない)
@@ -177,7 +210,7 @@ def build(warnings=None):
         "_meta": {
             "name": "休薬情報データベース (Kyuyaku Data)",
             "author": "梅谷 直亨 (Naoyuki Umetani)",
-            "api_version": "1.0",
+            "api_version": "1.1",
             "data_version": dl.get("version"),
             "data_updated_at": dl.get("updated_at"),
             "generated_at": datetime.date.today().isoformat(),
@@ -189,7 +222,7 @@ def build(warnings=None):
             "attribution": "梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data",
             "disclaimer": "本データは 意思決定支援のための 参考情報です。 最終的な 休薬判断は 医療者の 責任で 行ってください。 内容は 無保証で、 継続的に 更新されます。",
             "verbatim_quotes": "quote_excerpt は 一次資料 (学会GL / PMDA添付文書 等) からの 引用または抜粋です (一部、 参考資料・作者による注記を 含みます。 極端に長いものは 抜粋、 ' … ' は 中略)。 正確な 記載は location_in_source / source_location と url / source_url (PDF は 該当頁に 移動) で 原典を 確認してください。",
-            "value_semantics": "high_risk_days_before 等は 作者の 採用値 (primary)。 display_* は 現行GLの最長値 (安全側) — 消費側は display_* の使用を推奨。 各GLの個別値は guideline_variations 参照。",
+            "value_semantics": "high_risk_days_before 等は 作者の 採用値 (primary)。 display_* は 現行GLの最長値 (安全側) — 消費側は display_* の使用を推奨。 各GLの個別値は guideline_variations 参照。 日数は 0 = 休薬不要、 null = 記載なし。 *_day_of / day_of: true は 「手術当日の休薬」 (前日まで服用可、 日数は null。 作者の 採用値の high_risk_day_of 等も 同じ)。 *_hours は 原文が 時間の値 (日数は null)。 display_* では 時間を 日数に 切り上げ (手術時刻が動くため 前日から休薬する扱い)、 当日休薬は 0 日より長く 1 日より短い として 比較。",
             "source_of_truth": "https://github.com/numero-uno-jpn/kyuyaku-data",
         },
         "drugs": drugs_out,

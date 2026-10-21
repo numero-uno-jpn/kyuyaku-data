@@ -97,8 +97,11 @@
       "matched": "エンレスト錠50mg",
       "surgery_high_risk_days_before": 1,
       "surgery_low_risk_days_before": 0,
+      "surgery_high_risk_day_of": false,
+      "surgery_low_risk_day_of": false,
       "contrast_required": false,
       "contrast_days_before": null,
+      "contrast_day_of": false,
       "detail": "https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/バルサルタン.json",
       "page": "https://numero-uno-jpn.github.io/kyuyaku-data/#/drugs/バルサルタン"
     },
@@ -134,14 +137,17 @@
       <tr><td><code>kind</code></td><td>文字列</td><td>一致の 種類。 <a href="#match">下表</a> 参照</td></tr>
       <tr><td><code>matched</code></td><td>文字列 / null</td><td>一致した 名前 (商品名など)。 薬効分類で 一致した 場合は null</td></tr>
       <tr><td><code>surgery_high_risk_days_before</code></td><td>数値 / null</td><td>出血リスクの 高い 手術・処置の 前の 休薬日数 (安全側の値)。 <code>0</code> は 休薬不要、 null は 記載なし</td></tr>
+      <tr><td><code>surgery_high_risk_day_of</code></td><td>真偽</td><td><code>true</code> は 出血リスクの 高い 手術・処置で <strong>手術当日の休薬</strong> (前日まで服用可)。 このとき 日数は null</td></tr>
       <tr><td><code>surgery_low_risk_days_before</code></td><td>数値 / null</td><td>出血リスクの 低い 手術・処置の 前の 休薬日数 (同上)</td></tr>
+      <tr><td><code>surgery_low_risk_day_of</code></td><td>真偽</td><td>同上 (出血リスクの 低い 手術・処置)</td></tr>
       <tr><td><code>contrast_required</code></td><td>真偽 / null</td><td>造影 CT 前の 休薬が 必要か</td></tr>
       <tr><td><code>contrast_days_before</code></td><td>数値 / null</td><td>造影 CT 前の 休薬日数</td></tr>
+      <tr><td><code>contrast_day_of</code></td><td>真偽</td><td>造影 CT 当日の 休薬</td></tr>
       <tr><td><code>detail</code></td><td>文字列</td><td>その薬の 詳細 JSON (ガイドライン別の値・根拠・出典) の URL</td></tr>
       <tr><td><code>page</code></td><td>文字列</td><td>参照アプリの その薬の ページの URL</td></tr>
     </tbody>
   </table>
-  <p>休薬日数は、 現行版の ガイドラインの 最長値 (安全側)、 記載が なければ PMDA 添付文書の 値です。 ガイドラインごとの 値・値の出どころ・根拠は <code>detail</code> の JSON で 確認してください。</p>
+  <p>休薬日数は、 現行版の ガイドラインの 最長値 (安全側)、 記載が なければ PMDA 添付文書の 値です。 時間で 書かれた 値は 日数に 切り上げ (48 時間 → 2 日)、 手術当日の休薬は 0 日より 長く 1 日より 短い ものとして 比べます。 ガイドラインごとの 値・値の出どころ・根拠は <code>detail</code> の JSON で 確認してください。</p>
 
   <h2 id="match">4. 一致の 種類と 得点</h2>
   <table>

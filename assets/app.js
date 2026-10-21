@@ -15,7 +15,14 @@ const plain = (s) => (s ?? '').toString().replace(/\*\*/g, '');
 // 一次資料への リンク (別タブで 開く。 読み上げ用に その旨を 付記)
 const extLink = (url, label) =>
   `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${label}<span class="ext" aria-hidden="true">↗</span><span class="sr">(新しいタブで開く)</span></a>`;
-const days = (v) => (v === 0 ? '休薬不要' : v == null ? null : `${v} 日`);
+// 休薬の 表示: 当日休薬 (原文が 手術当日の休薬) → 「当日休薬」、 0 → 休薬不要、 時間だけ → 日数に 切り上げて 原文の 時間を 併記
+const days = (v, dayOf, hours) => {
+  if (dayOf) return '当日休薬';
+  if (v === 0) return '休薬不要';
+  if (v != null) return `${v} 日`;
+  if (hours > 0) return `${Math.ceil(hours / 24)} 日 (${hours} 時間)`;
+  return null;
+};
 
 // ---- 薬効分類の グループ (DokuWiki 版 検索ページと 同じ 規則) ----
 function groupOf(c = '') {
@@ -43,11 +50,11 @@ const DERIV = {
 // ---- 休薬バッジ ----
 function badgesOf(s = {}, c = {}) {
   const out = [];
-  const hi = days(s.display_high_risk_days_before ?? s.surgery_high_risk_days_before);
-  const lo = days(s.display_low_risk_days_before ?? s.surgery_low_risk_days_before);
+  const hi = days(s.display_high_risk_days_before ?? s.surgery_high_risk_days_before, s.display_high_risk_day_of ?? s.surgery_high_risk_day_of);
+  const lo = days(s.display_low_risk_days_before ?? s.surgery_low_risk_days_before, s.display_low_risk_day_of ?? s.surgery_low_risk_day_of);
   if (hi) out.push(['high', '周術期 (出血リスク高)', hi]);
   if (lo) out.push(['low', '周術期 (出血リスク低)', lo]);
-  if (c.required) out.push(['ct', '造影CT', days(c.display_days_before ?? c.contrast_days_before) ?? '要休薬']);
+  if (c.required) out.push(['ct', '造影CT', days(c.display_days_before ?? c.contrast_days_before, c.display_day_of ?? c.contrast_day_of) ?? '要休薬']);
   if (!out.length) out.push(['ok', '休薬', '記載なし']);
   return out;
 }
@@ -152,8 +159,8 @@ function variationsTable(vs, kind) {
     const src = v.source_url ? extLink(v.source_url, esc(v.source)) : esc(v.source);
     const ver = v.version_label ? ` <span class="loc">(${esc(v.version_label)})</span>` : '';
     const nums = kind === 'surgery'
-      ? `<td class="num">${esc(days(v.high_risk_days) ?? '—')}</td><td class="num">${esc(days(v.low_risk_days) ?? '—')}</td>`
-      : `<td class="num">${esc(days(v.days) ?? '—')}</td>`;
+      ? `<td class="num">${esc(days(v.high_risk_days, v.high_risk_day_of, v.high_risk_hours) ?? '—')}</td><td class="num">${esc(days(v.low_risk_days, v.low_risk_day_of, v.low_risk_hours) ?? '—')}</td>`
+      : `<td class="num">${esc(days(v.days, v.day_of, v.hours) ?? '—')}</td>`;
     return `<tr><td>${src}${ver}${quoteBlock(v.quote_excerpt, null, v.source_location)}</td>${nums}
       <td>${dl ? `<span class="deriv" title="${esc(dt)}">${esc(dl)}</span> ` : ''}${esc(v.dose_dependent_summary ?? '')}</td></tr>`;
   }).join('');
@@ -163,16 +170,17 @@ function variationsTable(vs, kind) {
 function infoText(d) {
   const s = d.surgery ?? {}, c = d.contrast_ct ?? {};
   const L = [`【${d.name}】${d.category ?? ''}`];
-  const hi = days(s.display_high_risk_days_before), lo = days(s.display_low_risk_days_before);
+  const hi = days(s.display_high_risk_days_before, s.display_high_risk_day_of), lo = days(s.display_low_risk_days_before, s.display_low_risk_day_of);
   if (hi || lo) L.push(`周術期休薬: 高リスク ${hi ?? '—'} / 低リスク ${lo ?? '—'}`);
-  if (c.required) L.push(`造影CT: ${days(c.display_days_before) ?? '要休薬'}`);
+  if (c.required) L.push(`造影CT: ${days(c.display_days_before, c.display_day_of) ?? '要休薬'}`);
   if (s.note) L.push(`補足: ${plain(s.note)}`);
   const gv = d.guideline_variations?.surgery ?? [];
   if (gv.length) {
     L.push('ガイドライン別(周術期):');
     for (const v of gv) {
       let t = `  - ${v.source}`;
-      if (v.high_risk_days != null || v.low_risk_days != null) t += `: 高${v.high_risk_days ?? '—'}日/低${v.low_risk_days ?? '—'}日`;
+      const vh = days(v.high_risk_days, v.high_risk_day_of, v.high_risk_hours), vl = days(v.low_risk_days, v.low_risk_day_of, v.low_risk_hours);
+      if (vh || vl) t += `: 高 ${vh ?? '—'} / 低 ${vl ?? '—'}`;
       if (v.dose_dependent_summary) t += ` (${v.dose_dependent_summary})`;
       L.push(t);
     }
