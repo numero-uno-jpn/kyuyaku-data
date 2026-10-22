@@ -106,7 +106,7 @@
             "low_risk_days": 0,
             "value_derivation": "direct",
             "dose_dependent_summary": "出血リスク 高 かつ 血栓リ 7日, 第 1 選択 継続可",
-            "quote_excerpt": "p.39 図 6 説明文: 「アスピリンは継続を基本とするが、 出血リスクが高い手術において、 周術期血栓リスクが低い患者や出血が重篤な状態を引き起こしうる患者などでは、 手術の 7 日前からのアスピリン休薬を考慮する」\n図 6 (p.39): パネル A = アスピリン継続、 パネル B = アスピリン 7 日前休薬。 両パネルとも 術後再開は 24-72 時間。\n",
+            "quote_excerpt": "p.39 図 6 説明文: 「アスピリンは継続を基本とするが、 出血リスクが高い手術において、 周術期血栓リスクが低い患者や出血が重篤な状態を引き起こしうる患者などでは、 手術の 7 日前からのアスピリン休薬を考慮する」\n",
             "source_location": "p.36-37 本文 + p.39 図 6 パネル A・B",
             "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
@@ -1639,8 +1639,8 @@
             "source": "JCS/JHRS 2020 不整脈",
             "value_derivation": "direct",
             "dose_dependent_summary": "非弁膜症性 AF、 70 歳 記載なし, 非弁膜症性 AF、 70 歳 記載なし, 弁膜症性 AF 記載なし, 弁膜症性 AF 記載なし, 弁膜症性 AF 記載なし",
-            "quote_excerpt": "「非弁膜症性心房細動 70 歳未満で 高リスクの場合: PT-INR 2.0-3.0 の管理」\n「70 歳以上: PT-INR 1.6-2.6」\n「弁膜症性 AF (機械弁): 症例別 INR 2.0-2.5 or 2.0-3.0」\n",
-            "source_location": "p.44-50 + p.55-56 除細動 + 表 30 前後",
+            "quote_excerpt": "p.54 3.2.4: 「弁膜症性心房細動では、 INR は 2.0〜3.0 に管理する。」\n「すなわち、 本ガイドラインでは非弁膜症性心房細動患者におけるワルファリン治療域を、 一次予防・血栓低リスク患者と二次予防・血栓高リスク患者を分けて取り扱う。 前者に対しては年齢によらず INR 1.6〜2.6 という治療域をあらたに設定し、 後者に対しては年齢≧70 歳で INR 1.6〜2.6、 ＜70 歳で INR 2.0〜3.0 という従来の治療域を踏襲することとする。」\n",
+            "source_location": "p.54 3.2.4 + p.44-50 + p.55-56 除細動 + 表 30 前後",
             "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/01/JCS2020_Ono.pdf"
           },
           {
@@ -1816,7 +1816,7 @@
           {
             "source": "JCS/JHRS 2020 不整脈",
             "value_derivation": "direct",
-            "dose_dependent_summary": "侵襲的処置時 CCr 別 記載なし, 標準用量 記載なし, 低用量 記載なし",
+            "dose_dependent_summary": "大手術 記載なし, 標準用量 記載なし, 低用量 記載なし",
             "source_location": "p.52 表 35 + p.53 表 36",
             "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/01/JCS2020_Ono.pdf"
           },
@@ -1963,7 +1963,7 @@
             "low_risk_days": 1,
             "value_derivation": "direct",
             "dose_dependent_summary": "高出血リスク + CrCl  4日, 高出血リスク + CrCl  2日, 低/中等度出血リスク + C 2日, 低/中等度出血リスク + C 1日, 微小出血リスク 継続可",
-            "quote_excerpt": "Table 13: \"Dabigatran CrCl >=50 mL/min\" separate schedule from \"Dabigatran CrCl <50 mL/min\"\n(the ONLY DOAC treated differently by renal function threshold vs the -xaban group's <30 mL/min).\nTable 15: \"Dabigatran t1/2 12-15 h, Renal Clearance 85% (partially dialyzable), Bioavailability 3-7%,\nAntidote/Reversal 4F-PCC, idarucizumab\"\n",
+            "quote_excerpt": "Table 13: \"Dabigatran CrCl >=50 mL/min\" separate schedule from \"Dabigatran CrCl <50 mL/min\"\nTable 15: \"Dabigatran t1/2 12-15 h, Renal Clearance 85% (partially dialyzable), Bioavailability 3-7%,\nAntidote/Reversal 4F-PCC, idarucizumab\"\n",
             "source_location": "p.80 Table 13 (has SEPARATE rows for CrCl >=50 vs <50 mL/min); p.85-86 Table 15 (Dabigatran t1/2 12-15h, renal clearance 85% [partially dialyzable], bioavailability 3-7%, direct thrombin inhibitor, antidote idarucizumab or 4F-PCC)",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           },
@@ -1999,9 +1999,9 @@
           {
             "source": "JCS/JHRS 2020 不整脈",
             "value_derivation": "direct",
-            "dose_dependent_summary": "侵襲的処置 CCr 30-4 4日 (96時間), 侵襲的処置 CCr 50-7 3日 (72時間), 侵襲的処置 2日 (48時間), 標準用量 記載なし, 低用量 記載なし",
-            "quote_excerpt": "p.59: 「侵襲的処置時の中断時間は、 CCr ≥80 mL/min: 48 時間、 CCr 50-79 mL/min: 72 時間、 CCr 30-49 mL/min: 96 時間」\n特異的中和薬: イダルシズマブ (プリズバインド)\n",
-            "source_location": "p.52 表 35 + p.53 表 36 + p.59 侵襲的処置時中断時間",
+            "dose_dependent_summary": "大手術 CCr 30-49 4日 (96時間), 大手術 CCr 50-79 3日 (72時間), 大手術 CCr ≥ 80 2日 (48時間), 標準用量 記載なし, 低用量 記載なし",
+            "quote_excerpt": "p.59 3.4.3 外科手術: 「出血高リスクの大手術において、 DOAC を 48 時間以上前より休薬することが推奨されている。 ダビガトランのみ腎機能により CCr ≧80 mL/分であれば 48 時間以上前、 同 50〜79 mL/分では 72 時間以上前、 同 30〜49 mL/分で 96 時間以上前に休薬するのが望ましいとされている。」\n",
+            "source_location": "p.52 表 35 + p.53 表 36 + p.59 3.4.3 外科手術",
             "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/01/JCS2020_Ono.pdf"
           },
           {
@@ -2137,7 +2137,7 @@
             "low_risk_days": 1,
             "value_derivation": "direct",
             "dose_dependent_summary": "高出血リスク + CrCl  3日, 高出血リスク + CrCl  2日, 低/中等度出血リスク + C 2日, 低/中等度出血リスク + C 1日, 微小出血リスク 継続可",
-            "quote_excerpt": "Table 13 Preoperative DOAC Schedule (Apixaban, edoxaban, rivaroxaban):\n- High bleeding risk: withhold Day -2, -1, 0, +1, +2\n- Low/Moderate bleeding risk: withhold Day -1, 0, +1\n- Minimal bleeding risk: administer throughout\nWith renal impairment (CrCl <30 mL/min):\n- High bleeding risk: withhold Day -3, -2, -1, 0, +1, +2\n- Low/Moderate: withhold Day -2, -1, 0\nTable 15: \"Apixaban t1/2 9-14 h, Renal  …",
+            "quote_excerpt": "Table 13 Preoperative DOAC Schedule (Apixaban, edoxaban, rivaroxaban):\n- High bleeding risk: withhold Day -2, -1, 0, +1, +2\n- Low/Moderate bleeding risk: withhold Day -1, 0\n- Minimal bleeding risk: administer throughout\nWith renal impairment (CrCl <30 mL/min):\n- High bleeding risk: withhold Day -3, -2, -1, 0, +1, +2\n- Low/Moderate: withhold Day -2, -1, 0\nTable 15: \"Apixaban t1/2 9-14 h, Renal Clea …",
             "source_location": "p.78 Oral Anticoagulants; p.80 Table 13 Preoperative DOAC Schedule; p.85-86 Table 15 (Apixaban t1/2 9-14 h, renal clearance 27%, factor Xa inhibitor, reversal 4F-PCC / andexanet alfa)",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           },
@@ -3179,7 +3179,7 @@
         },
         {
           "source": "JRS 造影剤安全性委員会",
-          "title": "ヨード造影剤 (尿路・血管用) とビグアナイド系糖尿病薬との併用注意ポスター (No.1: 単剤・配合錠)",
+          "title": "ヨード造影剤 (尿路・血管用) とビグアナイド系糖尿病薬との併用注意ポスター (1 枚版: 単剤・配合錠)",
           "url": "https://www.radiology.jp/content/files/20260625_02_01j.pdf#page=1",
           "verification_status": "verified",
           "year": 2026,
@@ -3188,12 +3188,12 @@
         },
         {
           "source": "JRS 造影剤安全性委員会",
-          "title": "ヨード造影剤 (尿路・血管用) とビグアナイド系糖尿病薬との併用注意ポスター (No.2: 配合錠詳細)",
+          "title": "ヨード造影剤 (尿路・血管用) とビグアナイド系糖尿病薬との併用注意ポスター (3 枚版 No.1〜3: 配合錠・先発品 (No.1)、 後発品 (No.2・3))",
           "url": "https://www.radiology.jp/content/files/20260625_02_02j.pdf#page=1",
           "verification_status": "verified",
           "year": 2026,
           "quote_excerpt": "下の写真の \"糖尿病薬\" を飲まれている方は造影 CT 検査や尿路造影検査を受ける前に放射線科スタッフにお知らせください (2026 年 5 月、 日本医学放射線学会 造影剤安全性委員会)",
-          "location_in_source": "配合錠識別図 (エクメット LD/HD / メタクト LD/HD / メトアナ LD/HD / イニシンク / グリコラン / メトグルコ / メホビル LD/HD)"
+          "location_in_source": "No.1 (PDF p.1): 配合錠識別図 (エクメット LD/HD / メタクト LD/HD / メトアナ LD/HD / イニシンク / グリコラン / メトグルコ / メホビル LD/HD)。 No.2・3 (PDF p.2-3) はメトホルミン後発品"
         },
         {
           "source": "JDS (日本糖尿病学会) ビグアナイド薬の適正使用に関する委員会",
@@ -3254,9 +3254,9 @@
             "high_risk_days": 3,
             "value_derivation": "class",
             "dose_dependent_summary": "2 型糖尿病合併 HF 患者 3日, 2 型糖尿病 非合併 HF  当日休薬",
-            "quote_excerpt": "p.2 第 4 bullet「SGLT2 阻害薬」 class 記述",
+            "quote_excerpt": "2 型糖尿病を合併した SGLT2 阻害薬を使用中の心不全患者が、 食事摂取制限を伴う手術を受ける場合には、 手術 3 日前から休薬し、 術後は食事摂取が可能になってから再開する。 一方、 2 型糖尿病を合併しない心不全患者では、 術前の終日絶食日に SGLT2 阻害薬を休薬し、 術後は食事摂取が可能になってから再開する。 なお、 2 型糖尿病の合併・非合併にかかわらず、 SGLT2 阻害薬を服用中の心不全患者が緊急手術を受ける場合には、 同薬の休薬について リスクとベネフィットを十分に勘案して現場での判断を許容する。",
             "source_location": "p.2 第 4 bullet (SGLT2 阻害薬 class)",
-            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2023/06/jcs_jhfs_Recommendation_SGLT2_Inhibitors__HF.pdf"
+            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2023/06/jcs_jhfs_Recommendation_SGLT2_Inhibitors__HF.pdf#page=2"
           },
           {
             "source": "JDS SGLT2",
@@ -3271,7 +3271,7 @@
             "source": "JSN 2022 CKD SGLT2",
             "high_risk_days": 3,
             "value_derivation": "class",
-            "quote_excerpt": "p.4 最初の項目「SGLT2 阻害薬」 class 記述",
+            "quote_excerpt": "p.4 最初の項目: 「糖尿病 \"非\" 合併 CKD 患者においても、 食事摂取量の不足、 栄養不良状態、 飢餓状態、 激しい筋肉運動、 過度のアルコール摂取、 副腎機能不全、 下垂体機能不全、 シックデイなどの状況下では 低血糖や 正常血糖ケトアシドーシスなどの代謝異常を生じる可能性があるため、 SGLT2 阻害薬の中止を考慮する。 食事摂取ができない手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する」\n",
             "source_location": "p.4 Recommendation 箇条書き (p.4 の最初の項目) (SGLT2 阻害薬 class)",
             "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf"
           },
@@ -3524,9 +3524,9 @@
             "high_risk_days": 3,
             "value_derivation": "class",
             "dose_dependent_summary": "2 型糖尿病合併 HF 患者 3日, 2 型糖尿病 非合併 HF  当日休薬, 緊急手術 記載なし",
-            "quote_excerpt": "p.2 第 4 bullet (ダパグリフロジンと 同じ推奨、 SGLT2 阻害薬として class 扱い)",
+            "quote_excerpt": "2 型糖尿病を合併した SGLT2 阻害薬を使用中の心不全患者が、 食事摂取制限を伴う手術を受ける場合には、 手術 3 日前から休薬し、 術後は食事摂取が可能になってから再開する。 一方、 2 型糖尿病を合併しない心不全患者では、 術前の終日絶食日に SGLT2 阻害薬を休薬し、 術後は食事摂取が可能になってから再開する。 なお、 2 型糖尿病の合併・非合併にかかわらず、 SGLT2 阻害薬を服用中の心不全患者が緊急手術を受ける場合には、 同薬の休薬について リスクとベネフィットを十分に勘案して現場での判断を許容する。",
             "source_location": "p.2 第 4 bullet",
-            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2023/06/jcs_jhfs_Recommendation_SGLT2_Inhibitors__HF.pdf"
+            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2023/06/jcs_jhfs_Recommendation_SGLT2_Inhibitors__HF.pdf#page=2"
           },
           {
             "source": "JDS SGLT2",
@@ -3541,7 +3541,7 @@
             "source": "JSN 2022 CKD SGLT2",
             "high_risk_days": 3,
             "value_derivation": "class",
-            "quote_excerpt": "p.4 最初の項目 (SGLT2 阻害薬 class 記述、 EMPA-KIDNEY 試験名で 明示)",
+            "quote_excerpt": "p.4 最初の項目: 「糖尿病 \"非\" 合併 CKD 患者においても、 食事摂取量の不足、 栄養不良状態、 飢餓状態、 激しい筋肉運動、 過度のアルコール摂取、 副腎機能不全、 下垂体機能不全、 シックデイなどの状況下では 低血糖や 正常血糖ケトアシドーシスなどの代謝異常を生じる可能性があるため、 SGLT2 阻害薬の中止を考慮する。 食事摂取ができない手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する」\n",
             "source_location": "p.4 Recommendation 箇条書き (p.4 の最初の項目)",
             "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf"
           },
@@ -3551,7 +3551,7 @@
             "low_risk_day_of": true,
             "value_derivation": "direct",
             "dose_dependent_summary": "1 泊以上の入院を要する手術 2日, Day-stay 当日休薬",
-            "quote_excerpt": "Practice Point 1.3.3: \"It is reasonable to withhold SGLT2i during times of prolonged\nfasting, surgery, or critical medical illness (when patients may be at greater risk\nfor ketosis).\"\nFigure 6 perioperative footnote (same as dapagliflozin entry).\n",
+            "quote_excerpt": "Practice Point 1.3.3: \"It is reasonable to withhold SGLT2i during times of prolonged\nfasting, surgery, or critical medical illness (when patients may be at greater risk\nfor ketosis).\"\nFigure 6 perioperative footnote: \"withhold SGLT2i the day of day-stay procedures\nand limit fasting to minimum required; withhold SGLT2i at least 2 days in advance\nand the day of procedures/surgery requiring 1 or more …",
             "source_location": "p.S21 Practice Point 1.3.3、 p.S22/S47 Figure 6 脚注",
             "source_url": "https://doi.org/10.1016/j.kint.2022.06.008"
           },
@@ -3666,9 +3666,9 @@
             "high_risk_days": 3,
             "value_derivation": "class",
             "dose_dependent_summary": "2 型糖尿病合併 HF 患者 3日, 2 型糖尿病 非合併 HF  当日休薬",
-            "quote_excerpt": "p.2 第 4 bullet「SGLT2 阻害薬」 class 記述",
+            "quote_excerpt": "2 型糖尿病を合併した SGLT2 阻害薬を使用中の心不全患者が、 食事摂取制限を伴う手術を受ける場合には、 手術 3 日前から休薬し、 術後は食事摂取が可能になってから再開する。 一方、 2 型糖尿病を合併しない心不全患者では、 術前の終日絶食日に SGLT2 阻害薬を休薬し、 術後は食事摂取が可能になってから再開する。 なお、 2 型糖尿病の合併・非合併にかかわらず、 SGLT2 阻害薬を服用中の心不全患者が緊急手術を受ける場合には、 同薬の休薬について リスクとベネフィットを十分に勘案して現場での判断を許容する。",
             "source_location": "p.2 第 4 bullet (SGLT2 阻害薬 class として 適用)",
-            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2023/06/jcs_jhfs_Recommendation_SGLT2_Inhibitors__HF.pdf"
+            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2023/06/jcs_jhfs_Recommendation_SGLT2_Inhibitors__HF.pdf#page=2"
           },
           {
             "source": "JDS SGLT2",
@@ -3683,7 +3683,7 @@
             "source": "JSN 2022 CKD SGLT2",
             "high_risk_days": 3,
             "value_derivation": "class",
-            "quote_excerpt": "p.4 最初の項目 (SGLT2 阻害薬 class 記述、 CREDENCE 試験名で 明示)",
+            "quote_excerpt": "p.4 最初の項目: 「糖尿病 \"非\" 合併 CKD 患者においても、 食事摂取量の不足、 栄養不良状態、 飢餓状態、 激しい筋肉運動、 過度のアルコール摂取、 副腎機能不全、 下垂体機能不全、 シックデイなどの状況下では 低血糖や 正常血糖ケトアシドーシスなどの代謝異常を生じる可能性があるため、 SGLT2 阻害薬の中止を考慮する。 食事摂取ができない手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する」\n",
             "source_location": "p.4 Recommendation 箇条書き (p.4 の最初の項目)",
             "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf"
           },
@@ -3693,7 +3693,7 @@
             "low_risk_day_of": true,
             "value_derivation": "direct",
             "dose_dependent_summary": "1 泊以上の入院を要する手術 2日, Day-stay 当日休薬",
-            "quote_excerpt": "Practice Point 1.3.3: \"It is reasonable to withhold SGLT2i during times of prolonged\nfasting, surgery, or critical medical illness (when patients may be at greater risk\nfor ketosis).\"\nFigure 6 perioperative footnote (same wording as class recommendation).\n",
+            "quote_excerpt": "Practice Point 1.3.3: \"It is reasonable to withhold SGLT2i during times of prolonged\nfasting, surgery, or critical medical illness (when patients may be at greater risk\nfor ketosis).\"\nFigure 6 perioperative footnote: \"withhold SGLT2i the day of day-stay procedures\nand limit fasting to minimum required; withhold SGLT2i at least 2 days in advance\nand the day of procedures/surgery requiring 1 or more …",
             "source_location": "p.S21 Practice Point 1.3.3、 p.S22/S47 Figure 6 脚注",
             "source_url": "https://doi.org/10.1016/j.kint.2022.06.008"
           },
@@ -3789,9 +3789,9 @@
             "high_risk_days": 3,
             "value_derivation": "class",
             "dose_dependent_summary": "2 型糖尿病合併 HF 患者 3日, 2 型糖尿病 非合併 HF  当日休薬",
-            "quote_excerpt": "p.2 第 4 bullet「SGLT2 阻害薬」 class 記述",
+            "quote_excerpt": "2 型糖尿病を合併した SGLT2 阻害薬を使用中の心不全患者が、 食事摂取制限を伴う手術を受ける場合には、 手術 3 日前から休薬し、 術後は食事摂取が可能になってから再開する。 一方、 2 型糖尿病を合併しない心不全患者では、 術前の終日絶食日に SGLT2 阻害薬を休薬し、 術後は食事摂取が可能になってから再開する。 なお、 2 型糖尿病の合併・非合併にかかわらず、 SGLT2 阻害薬を服用中の心不全患者が緊急手術を受ける場合には、 同薬の休薬について リスクとベネフィットを十分に勘案して現場での判断を許容する。",
             "source_location": "p.2 第 4 bullet (SGLT2 阻害薬 class)",
-            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2023/06/jcs_jhfs_Recommendation_SGLT2_Inhibitors__HF.pdf"
+            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2023/06/jcs_jhfs_Recommendation_SGLT2_Inhibitors__HF.pdf#page=2"
           },
           {
             "source": "JDS SGLT2",
@@ -3806,7 +3806,7 @@
             "source": "JSN 2022 CKD SGLT2",
             "high_risk_days": 3,
             "value_derivation": "class",
-            "quote_excerpt": "p.4 最初の項目「SGLT2 阻害薬」 class 記述",
+            "quote_excerpt": "p.4 最初の項目: 「糖尿病 \"非\" 合併 CKD 患者においても、 食事摂取量の不足、 栄養不良状態、 飢餓状態、 激しい筋肉運動、 過度のアルコール摂取、 副腎機能不全、 下垂体機能不全、 シックデイなどの状況下では 低血糖や 正常血糖ケトアシドーシスなどの代謝異常を生じる可能性があるため、 SGLT2 阻害薬の中止を考慮する。 食事摂取ができない手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する」\n",
             "source_location": "p.4 Recommendation 箇条書き (p.4 の最初の項目) (SGLT2 阻害薬 class)",
             "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf"
           },
@@ -3904,9 +3904,9 @@
             "high_risk_days": 3,
             "value_derivation": "class",
             "dose_dependent_summary": "2 型糖尿病合併 HF 患者 3日, 2 型糖尿病 非合併 HF  当日休薬",
-            "quote_excerpt": "p.2 第 4 bullet「SGLT2 阻害薬」 class 記述",
+            "quote_excerpt": "2 型糖尿病を合併した SGLT2 阻害薬を使用中の心不全患者が、 食事摂取制限を伴う手術を受ける場合には、 手術 3 日前から休薬し、 術後は食事摂取が可能になってから再開する。 一方、 2 型糖尿病を合併しない心不全患者では、 術前の終日絶食日に SGLT2 阻害薬を休薬し、 術後は食事摂取が可能になってから再開する。 なお、 2 型糖尿病の合併・非合併にかかわらず、 SGLT2 阻害薬を服用中の心不全患者が緊急手術を受ける場合には、 同薬の休薬について リスクとベネフィットを十分に勘案して現場での判断を許容する。",
             "source_location": "p.2 第 4 bullet (SGLT2 阻害薬 class)",
-            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2023/06/jcs_jhfs_Recommendation_SGLT2_Inhibitors__HF.pdf"
+            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2023/06/jcs_jhfs_Recommendation_SGLT2_Inhibitors__HF.pdf#page=2"
           },
           {
             "source": "JDS SGLT2",
@@ -3921,7 +3921,7 @@
             "source": "JSN 2022 CKD SGLT2",
             "high_risk_days": 3,
             "value_derivation": "class",
-            "quote_excerpt": "p.4 最初の項目「SGLT2 阻害薬」 class 記述",
+            "quote_excerpt": "p.4 最初の項目: 「糖尿病 \"非\" 合併 CKD 患者においても、 食事摂取量の不足、 栄養不良状態、 飢餓状態、 激しい筋肉運動、 過度のアルコール摂取、 副腎機能不全、 下垂体機能不全、 シックデイなどの状況下では 低血糖や 正常血糖ケトアシドーシスなどの代謝異常を生じる可能性があるため、 SGLT2 阻害薬の中止を考慮する。 食事摂取ができない手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する」\n",
             "source_location": "p.4 Recommendation 箇条書き (p.4 の最初の項目) (SGLT2 阻害薬 class)",
             "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf"
           },
@@ -5869,7 +5869,7 @@
             "value_derivation": "class",
             "version_label": "2023 旧版",
             "version_year": 2023,
-            "quote_excerpt": "週 1 回 = 1 週間前休薬 (2023 ASA 一律推奨に該当)",
+            "quote_excerpt": "\"For patients on weekly dosing consider holding GLP-1 agonists a week prior to the procedure/surgery.\"",
             "source_location": "ASA newsroom 2023-06-29",
             "source_url": "https://www.asahq.org/about-asa/newsroom/news-releases/2023/06/american-society-of-anesthesiologists-consensus-based-guidance-on-preoperative"
           },
@@ -6810,7 +6810,7 @@
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
             "high_risk_days": 14,
             "low_risk_days": 14,
-            "value_derivation": "direct",
+            "value_derivation": "derived",
             "dose_dependent_summary": "JCR 用法・用量 14日, 感染ハイリスク手術 記載なし",
             "quote_excerpt": "「本剤の休薬期間のエビデンスは限られるが、 投与間隔、 投与量、 半減期などを考慮して決定することが望ましい。」 「英国 (BSR) でも同様に、 静注 1 か月毎の場合は 少なくとも 4 週皮下注毎週投与の場合は 少なくとも 2 週の休薬を推奨している。 感染のハイリスクの手術においては、 半減期の 3〜5 倍の休薬を推奨している」",
             "source_location": "tebiki_il-6_240710.pdf p.6 「8. 周術期管理」",
@@ -6904,7 +6904,7 @@
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
             "high_risk_days": 28,
             "low_risk_days": 7,
-            "value_derivation": "direct",
+            "value_derivation": "derived",
             "dose_dependent_summary": "点滴静注製剤 28日, 皮下注製剤 7日, 感染ハイリスク手術 記載なし, ACR/AAHKS 参照 記載なし",
             "quote_excerpt": "「米国リウマチ学会と 米国股・膝関節学会 との共同ガイドラインにおいては、 人工膝および股関節全置換術の周術期の場合、 それぞれの bDMARD の予定投与日以降を推奨している (推奨の強さ:弱い)。 これは 半減期を超える期間の休薬で、 薬物の血中濃度は安全域に低下していると考えられることや、 インフリキシマブ、 アバタセプトの休薬期間に関するエビデンスをもとにしている」 「英国 (BSR) でも同様に、 少なくとも 1 投与間隔は休薬することを推奨している。 感染のハイリスクの手術においては、 半減期の 3〜5 倍の休薬を推奨している」",
             "source_location": "tebiki_abt_240710.pdf p.4-5 「4. 周術期管理」",
@@ -9693,6 +9693,9 @@
       "guideline_variations": {
         "surgery": [
           {
+            "source": "PMDA 添付文書"
+          },
+          {
             "source": "jsoms_2023_mronj",
             "value_derivation": "direct",
             "dose_dependent_summary": "経口 BP 投与期間 3 年 継続可, 経口 BP 投与期間 3 年 記載なし",
@@ -11975,7 +11978,7 @@
             "high_risk_hours": 24,
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コ 1日 (24時間), HFrEF 継続可",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R) & Rec 2 (COR 2a, LOE C-EO) - identical to ACEi (RAASi grouped as one class).\n",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and under …",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -12001,7 +12004,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12114,7 +12117,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12217,7 +12220,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12317,7 +12320,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12420,7 +12423,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12514,7 +12517,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12591,7 +12594,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         }
@@ -12663,7 +12666,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12747,7 +12750,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12838,7 +12841,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12930,7 +12933,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13020,7 +13023,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13112,7 +13115,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13183,7 +13186,7 @@
             "high_risk_hours": 24,
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コ 1日 (24時間), HFrEF 継続可",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R) & Rec 2 (COR 2a, LOE C-EO) - identical to ACEi (RAASi grouped as one class).\n",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and under …",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -13218,7 +13221,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13292,7 +13295,7 @@
             "high_risk_hours": 24,
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コ 1日 (24時間), HFrEF 継続可",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R) & Rec 2 (COR 2a, LOE C-EO) - identical to ACEi (RAASi grouped as one class).\n",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and under …",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -13327,7 +13330,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13410,7 +13413,7 @@
             "high_risk_hours": 24,
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コ 1日 (24時間), HFrEF 継続可",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R) & Rec 2 (COR 2a, LOE C-EO) - identical to ACEi (RAASi grouped as one class).\n",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and under …",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -13445,7 +13448,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13515,7 +13518,7 @@
             "high_risk_hours": 24,
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コ 1日 (24時間), HFrEF 継続可",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R) & Rec 2 (COR 2a, LOE C-EO) - identical to ACEi (RAASi grouped as one class).\n",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and under …",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -13550,7 +13553,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13624,7 +13627,7 @@
             "high_risk_hours": 24,
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コ 1日 (24時間), HFrEF 継続可",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R) & Rec 2 (COR 2a, LOE C-EO) - identical to ACEi (RAASi grouped as one class).\n",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and under …",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -13659,7 +13662,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13731,7 +13734,7 @@
             "high_risk_hours": 24,
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コ 1日 (24時間), HFrEF 継続可",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R) & Rec 2 (COR 2a, LOE C-EO) - identical to ACEi (RAASi grouped as one class).\n",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and under …",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -13766,7 +13769,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI … If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13832,7 +13835,7 @@
             "source": "ACC/AHA 2024",
             "value_derivation": "class",
             "dose_dependent_summary": "HTN 単独適応 1日 (24時間), HFrEF 継続可",
-            "quote_excerpt": "Rec 2 (COR 2a, LOE C-EO) is annotated \"Modified from the 2022 AHA/ACC/HFSA Guideline for the\nManagement of Heart Failure.\" ARNI is a HFrEF GDMT component and thus falls under this rec.\nNo dedicated ARNI recommendation exists in the slide set.\n",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and under …",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors (subsumed under RAASi)",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
