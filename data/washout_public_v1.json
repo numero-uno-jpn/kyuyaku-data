@@ -71,8 +71,7 @@
       "guideline_variations": {
         "surgery": [
           {
-            "source": "PMDA 添付文書",
-            "high_risk_days": 7
+            "source": "PMDA 添付文書"
           },
           {
             "source": "ACC/AHA 2024",
@@ -1973,7 +1972,7 @@
             "source": "ASRA 2018 (4th ed)",
             "high_risk_hours": 120,
             "value_derivation": "direct",
-            "dose_dependent_summary": "CrCl 30-49 5日 (120時間), CrCl 50-79 4日 (96時間), CrCl ≥ 80 3日 (72時間), CrCl < 30 記載なし",
+            "dose_dependent_summary": "CrCl 30-49 5日 (120時間), CrCl 50-79 4日 (96時間), CrCl ≥ 80 3日 (72時間), CrCl < 30 神経軸ブロック非推奨",
             "quote_excerpt": "Rec 11.1 (Preamble): \"We suggest that dabigatran be discontinued 120 hours prior to neuraxial block. However, if renal function has been reliably determined, and there are no additional risk factors for bleeding (eg, age >65 years, hypertension, concomitant antiplatelet medications), a more graded approach may be considered.\"\nRec 11.1.1 (NEW): \"dabigatran be discontinued 72 hours in patients with  …",
             "source_location": "p.281 §11.0 Rec 11.1-11.3 + Table 11 (Dabigatran indications, dosing, half-life by CrCl)",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
@@ -2322,7 +2321,6 @@
             "source": "ASRA 2018 (4th ed)",
             "high_risk_hours": 72,
             "value_derivation": "direct",
-            "dose_dependent_summary": "Standard dose  3日 (72時間), Higher dose >3 3日 (70時間)",
             "quote_excerpt": "Rec 8.1 (NEW): \"We suggest that edoxaban be discontinued 72 hours prior to neuraxial block. Consider checking edoxaban or anti-factor Xa activity level if less than 72 hours.\"\nRec 8.2 (NEW): \"neuraxial catheters be removed 6 hours prior to the first (postoperative) dose\"\nRec 8.3 (NEW): \"edoxaban dosing be held for 20 to 28 hours or an anti-factor Xa assay calibrated to edoxaban\"\n",
             "source_location": "p.279 §8.0 Rec 8.1-8.3",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
@@ -2675,6 +2673,7 @@
           {
             "source": "JSA 2016 初版",
             "high_risk_hours": 12,
+            "low_risk_hours": 12,
             "value_derivation": "direct",
             "version_label": "初版",
             "version_year": 2016,
@@ -2793,6 +2792,7 @@
           {
             "source": "JSA 2016 初版",
             "high_risk_hours": 12,
+            "low_risk_hours": 12,
             "value_derivation": "direct",
             "version_label": "初版",
             "version_year": 2016,
@@ -2977,7 +2977,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "静注のみ。手術 2-4 時間前に中止し APTT 正常化確認。HIT・脳梗塞超急性期・PCI で使用"
+        "note": "静注のみ。手術 4 時間前に中止し APTT 正常化確認 (ASRA 2018 表 7 が引く ESA の値。区域麻酔の穿刺・カテーテル操作前の間隔)。HIT・脳梗塞超急性期・PCI で使用"
       },
       "contrast_ct": {
         "required": false,
@@ -3003,11 +3003,11 @@
         {
           "source": "JSA・JSRA・JSPC",
           "title": "抗血栓療法中の区域麻酔・神経ブロックガイドライン",
-          "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=26",
+          "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=127",
           "verification_status": "landing_only",
           "year": 2016,
-          "quote_excerpt": "表 7 への明示的記載なし。 半減期 30-40 分の直接トロンビン阻害薬として、 半減期の数倍 (2-4 時間) の休薬で対応可能との臨床判断による",
-          "location_in_source": "JSA 2016 本文中で個別記載なし"
+          "quote_excerpt": "表15 (妊婦の脊髄幹ブロック): アルガトロバン ― 区域麻酔の施行は禁忌",
+          "location_in_source": "p.115 (PDF p.127) 表 15 抗凝固療法中の妊婦における脊髄幹ブロック施行ガイドライン"
         },
         {
           "source": "KEGG MEDICUS",
@@ -6184,7 +6184,7 @@
         "low_risk_day_of": false,
         "display_high_risk_days_before": 70,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 56,
+        "display_low_risk_days_before": 14,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "人工関節置換術",
@@ -6247,7 +6247,7 @@
           {
             "source": "JDA 2022 乾癬",
             "high_risk_days": 70,
-            "low_risk_days": 56,
+            "low_risk_days": 0,
             "value_derivation": "derived",
             "dose_dependent_summary": "半減期 × 5 倍 70日, 半減期 × 3-4 倍 56日",
             "version_label": "2022 版",
@@ -6307,7 +6307,7 @@
         "low_risk_day_of": false,
         "display_high_risk_days_before": 50,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 40,
+        "display_low_risk_days_before": 28,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "人工関節置換術",
@@ -6370,7 +6370,7 @@
           {
             "source": "JDA 2022 乾癬",
             "high_risk_days": 50,
-            "low_risk_days": 40,
+            "low_risk_days": 0,
             "value_derivation": "derived",
             "dose_dependent_summary": "半減期 × 3-5 倍 50日, 半減期 × 3-4 倍 40日, 低リスク手術 継続可",
             "version_label": "2022 版",
@@ -6540,7 +6540,7 @@
         "low_risk_day_of": false,
         "display_high_risk_days_before": 70,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 56,
+        "display_low_risk_days_before": 14,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "人工関節置換術",
@@ -6604,7 +6604,7 @@
           {
             "source": "JDA 2022 乾癬",
             "high_risk_days": 70,
-            "low_risk_days": 56,
+            "low_risk_days": 0,
             "value_derivation": "derived",
             "dose_dependent_summary": "欧州 GL 70日, 米国 GL 56日",
             "version_label": "2022 版",
@@ -7066,7 +7066,7 @@
         "low_risk_day_of": false,
         "display_high_risk_days_before": 108,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 81,
+        "display_low_risk_days_before": 0,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "人工関節置換術",
@@ -7107,7 +7107,7 @@
           {
             "source": "JDA 2022 乾癬",
             "high_risk_days": 108,
-            "low_risk_days": 81,
+            "low_risk_days": 0,
             "value_derivation": "derived",
             "dose_dependent_summary": "米国 GL 4x 108日, 米国 GL 3x 81日",
             "version_label": "2022 版",
@@ -7155,7 +7155,7 @@
         "low_risk_day_of": false,
         "display_high_risk_days_before": 52,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 39,
+        "display_low_risk_days_before": 0,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "人工関節置換術",
@@ -7189,7 +7189,7 @@
           {
             "source": "JDA 2022 乾癬",
             "high_risk_days": 52,
-            "low_risk_days": 39,
+            "low_risk_days": 0,
             "value_derivation": "derived",
             "dose_dependent_summary": "米国 GL 4x 52日, 米国 GL 3x 39日",
             "version_label": "2022 版",
@@ -7292,7 +7292,7 @@
           {
             "source": "JDA 2022 乾癬",
             "high_risk_days": 84,
-            "low_risk_days": 63,
+            "low_risk_days": 0,
             "value_derivation": "derived",
             "dose_dependent_summary": "米国 GL 4x 84日, 米国 GL 3x 63日",
             "version_label": "2022 版",
@@ -7369,7 +7369,7 @@
         "low_risk_day_of": false,
         "display_high_risk_days_before": 44,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 33,
+        "display_low_risk_days_before": 0,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "人工関節置換術",
@@ -7395,7 +7395,7 @@
           {
             "source": "JDA 2022 乾癬",
             "high_risk_days": 44,
-            "low_risk_days": 33,
+            "low_risk_days": 0,
             "value_derivation": "derived",
             "dose_dependent_summary": "米国 GL 4x 44日, 米国 GL 3x 33日",
             "version_label": "2022 版",
@@ -7452,7 +7452,7 @@
         "low_risk_day_of": false,
         "display_high_risk_days_before": 72,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 54,
+        "display_low_risk_days_before": 0,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "人工関節置換術",
@@ -7493,7 +7493,7 @@
           {
             "source": "JDA 2022 乾癬",
             "high_risk_days": 72,
-            "low_risk_days": 54,
+            "low_risk_days": 0,
             "value_derivation": "derived",
             "dose_dependent_summary": "米国 GL 4x 72日, 米国 GL 3x 54日",
             "version_label": "2022 版",
@@ -8718,9 +8718,7 @@
       "guideline_variations": {
         "surgery": [
           {
-            "source": "PMDA 添付文書",
-            "high_risk_days": 0,
-            "low_risk_days": 0
+            "source": "PMDA 添付文書"
           }
         ],
         "contrast_ct": []
@@ -8828,7 +8826,12 @@
         "note": null
       },
       "guideline_variations": {
-        "surgery": [],
+        "surgery": [
+          {
+            "source": "PMDA 添付文書",
+            "high_risk_days": 28
+          }
+        ],
         "contrast_ct": []
       },
       "references": [
@@ -10213,8 +10216,7 @@
       "guideline_variations": {
         "surgery": [
           {
-            "source": "PMDA 添付文書",
-            "low_risk_days": 0
+            "source": "PMDA 添付文書"
           },
           {
             "source": "jsoms_2023_mronj",
@@ -11011,13 +11013,13 @@
       ],
       "surgery": {
         "required": true,
-        "high_risk_days_before": 40,
-        "low_risk_days_before": 14,
+        "high_risk_days_before": null,
+        "low_risk_days_before": null,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 40,
+        "display_high_risk_days_before": null,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 14,
+        "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "全身麻酔を伴う手術全般"
@@ -11026,7 +11028,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "不可逆的MAO-B選択的阻害薬。GL準拠で術前40日休薬（MAO活性回復に2週間以上 + 安全域）。PMDA添付文書に手術休薬の記載なし。"
+        "note": "不可逆的 MAO-B 選択的阻害薬。手術前の休薬日数を示す資料はない (パーキンソン病診療 GL 2018 の「最高 40 日まで効果が持続する」は薬理の記述で、休薬の推奨ではない)。添付文書: ペチジン・トラマドール・タペンタドールは併用禁忌 (2.2)。本剤の投与を中止してからこれらの投与を開始するまでに、少なくとも 14 日間の間隔を置く (10.1)。"
       },
       "contrast_ct": {
         "required": false,
@@ -11040,9 +11042,7 @@
         "surgery": [
           {
             "source": "JSN 神経 2018 パーキンソン MAOB",
-            "high_risk_days": 40,
             "value_derivation": "direct",
-            "dose_dependent_summary": "完全 washout 40日",
             "quote_excerpt": "p.58 [3.1 セレギリン]: 「セレギリンはアンフェタミン骨格構造をもつ MAOB 阻害薬で、 現在本邦で使用可能な唯一の MAOB 阻害薬である。 健常成人にセレギリン 2.5〜10 mg を単回投与した際の 最高血中濃度到達時間 (Tmax) は 0.08〜2.42 時間、 半減期 (T½) は 0.22〜0.48 時間であるが、 MAOB 阻害効果は 非可逆的なため、 最高 40 日まで効果が持続する」\np.59 [2. 安全性]: 「三環系抗うつ薬、 SSRI、 SNRI、 ペチジン、 トラマドールなどとの併用は、 セロトニン症候群を引き起こす可能性があるために 禁忌 である」\n",
             "source_location": "p.58-59 [3.1 セレギリン] + p.59 [2. 安全性]",
             "source_url": "https://www.neurology-jp.org/guidelinem/pdgl/parkinson_2018_11.pdf#page=1"
@@ -11088,13 +11088,13 @@
       "generic_brands": [],
       "surgery": {
         "required": true,
-        "high_risk_days_before": 40,
-        "low_risk_days_before": 14,
+        "high_risk_days_before": null,
+        "low_risk_days_before": null,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 40,
+        "display_high_risk_days_before": null,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 14,
+        "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "全身麻酔を伴う手術全般"
@@ -11103,7 +11103,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "不可逆的MAO-B選択的阻害薬。GL準拠で術前40日休薬（MAO活性回復に2週間以上 + 安全域）。PMDA添付文書に手術休薬の記載なし。"
+        "note": "不可逆的 MAO-B 選択的阻害薬。手術前の休薬日数を示す資料はない (パーキンソン病診療 GL 2018 の「最高 40 日まで効果が持続する」は薬理の記述で、休薬の推奨ではない)。添付文書: ペチジン・トラマドール・タペンタドールは併用禁忌 (2.2)。本剤の投与を中止してからこれらの投与を開始するまでに、少なくとも 14 日間の間隔を置く (10.1)。"
       },
       "contrast_ct": {
         "required": false,
@@ -11117,9 +11117,7 @@
         "surgery": [
           {
             "source": "JSN 神経 2018 パーキンソン MAOB",
-            "high_risk_days": 40,
             "value_derivation": "direct",
-            "dose_dependent_summary": "完全 washout 40日",
             "quote_excerpt": "p.60 [3.2 ラサギリン]: 「ラサギリンはアンフェタミン骨格構造をもたない MAOB 阻害薬で、 セレギリンの 5〜10 倍の MAOB 阻害効果を認める。 健常成人にラサギリン 1〜2 mg を単回投与した際の Tmax は 0.5〜1 時間、 T½ は 1.5〜3.5 時間であるが、 MAOB 阻害効果は非可逆的なため、 最高 40 日まで効果が持続する」\np.61 [2. 安全性]: 「ラサギリンは CYP1A2 で代謝を受けるので、 シプロフロキサシンなどの CYP1A2 を抑制する薬剤との併用、 肝障害のある患者には注意が必要である」\n",
             "source_location": "p.60-62 [3.2 ラサギリン] + p.61 [2. 安全性]",
             "source_url": "https://www.neurology-jp.org/guidelinem/pdgl/parkinson_2018_11.pdf#page=4"
@@ -11164,13 +11162,13 @@
       "generic_brands": [],
       "surgery": {
         "required": true,
-        "high_risk_days_before": 40,
-        "low_risk_days_before": 14,
+        "high_risk_days_before": null,
+        "low_risk_days_before": null,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 40,
+        "display_high_risk_days_before": null,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 14,
+        "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "全身麻酔を伴う手術全般"
@@ -11179,7 +11177,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "MAO-B阻害薬クラスに準じて術前40日休薬（セレギリン・ラサギリンと同様）。PMDA添付文書に手術休薬の記載なし。2015年文献ではセレギリン2週間の記載あり。"
+        "note": "可逆的 MAO-B 選択的阻害薬。手術前の休薬日数を示す資料はない (パーキンソン病診療 GL 2018 は承認前の記述のみ)。添付文書: ペチジン・トラマドール・タペンタドールは併用禁忌 (2.2)。本剤の投与を中止してからこれらの投与を開始するまでに、少なくとも 14 日間の間隔を置く (10.1)。"
       },
       "contrast_ct": {
         "required": false,
