@@ -106,9 +106,9 @@
             "low_risk_days": 0,
             "value_derivation": "direct",
             "dose_dependent_summary": "出血リスク 高 かつ 血栓リ 7日, 第 1 選択 継続可",
-            "quote_excerpt": "p.36 本文: 「アスピリンは継続を基本とするが、 出血リスクが高い手術において、 周術期血栓リスクが低い患者や出血が重篤な状態を引き起こしうる患者などでは、 手術の 7 日前からのアスピリン休薬を考慮する」\n図 7 (p.39): パネル A = アスピリン継続、 パネル B = アスピリン 7 日前休薬。 両パネルとも 術後再開は 24-72 時間。\n",
-            "source_location": "p.36 本文 + p.39 図 7 パネル A・B",
-            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf#page=37"
+            "quote_excerpt": "p.39 図 6 説明文: 「アスピリンは継続を基本とするが、 出血リスクが高い手術において、 周術期血栓リスクが低い患者や出血が重篤な状態を引き起こしうる患者などでは、 手術の 7 日前からのアスピリン休薬を考慮する」\n図 6 (p.39): パネル A = アスピリン継続、 パネル B = アスピリン 7 日前休薬。 両パネルとも 術後再開は 24-72 時間。\n",
+            "source_location": "p.36-37 本文 + p.39 図 6 パネル A・B",
+            "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
           {
             "source": "JCS/JHRS 2020 不整脈",
@@ -140,9 +140,9 @@
             "dose_dependent_summary": "高リスク群 7日, 中リスク群 症例毎に決定, 低リスク群 継続可",
             "version_label": "初版",
             "version_year": 2016,
-            "quote_excerpt": "高リスク群の手技では、 不可逆的な抗血小板作用を有するアスピリン、 チクロピジン、 クロピドグレル、 プラスグレル、 イコサペント酸エチルは、 血小板の平均的な寿命に相当する 7〜10 日間の休薬期間を設定することが望ましい。 抗血小板薬が脳梗塞や虚血性心疾患の二次予防を目的に投与され、 休薬による血栓性リスクが高い患者の場合では、 5 日間の休薬期間も許容されるかもしれない … アスピリン (バイアスピリン®): 血小板膜の COX 阻害、 半減期 2h、 高リスク群 7 日 (5日)、 中リスク群 TBD、 低リスク群 なし",
+            "quote_excerpt": "p.20 推奨: 「高リスク群の手技では、 不可逆的な抗血小板作用を有するアスピリン、 チクロピジン、 クロピドグレル、 プラスグレル、 イコサペント酸エチルは、 血小板の平均的な寿命に相当する 7〜10 日間の休薬期間を設定することが望ましい。 抗血小板薬が脳梗塞や虚血性心疾患の二次予防を目的に投与され、 休薬による血栓性リスクが高い患者の場合では、 5 日間の休薬期間も許容されるかもしれない」\n表 6 - アスピリン (バイアスピリン®): TXA2 阻害、 半減期 2h、 高リスク群 7 日 (5日)、 中リスク群 TBD、 低リスク群 なし、 カテーテル抜去→再開 術後早期より\n",
             "source_location": "p.21 表 6 + p.20 推奨",
-            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=32"
+            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf"
           },
           {
             "source": "JSA 2018 追補",
@@ -283,8 +283,8 @@
             "source": "JCS 2020 抗血栓",
             "high_risk_days": 5,
             "value_derivation": "direct",
-            "quote_excerpt": "p.36 本文: 「チカグレロルでは遅くとも 3 日前、 クロピドグレルでは遅くとも 5 日前、 プラスグレルでは遅くとも 7 日前からの休薬が考慮される (参考文献 143-145)」\n図 7 (p.39): クロピドグレル 5 日前 (green bar、 円で囲まれた 5)\n",
-            "source_location": "p.36 本文 + p.39 図 7 (green bar)",
+            "quote_excerpt": "p.37 本文: 「チカグレロルでは遅くとも 3 日前、 クロピドグレルでは遅くとも 5 日前、 プラスグレルでは遅くとも 7 日前からの休薬が考慮される (参考文献 143-145)」\n図 6 (p.39): クロピドグレル 5 日前 (green bar、 円で囲まれた 5)\n",
+            "source_location": "p.37 本文 + p.39 図 6 (green bar)",
             "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
           {
@@ -348,7 +348,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: プラビックス®。 半減期 5-9 時間 (活性代謝物)。 休薬期間: 高リスク群 7 日 (5 日)、 中リスク群 7 日 (5 日)、 低リスク群 なし",
+          "quote_excerpt": "商品名: プラビックス®。 半減期 0.5-3.0 時間。 休薬期間: 高リスク群 7 日 (5 日)、 中リスク群 7 日 (5 日)、 低リスク群 なし",
           "location_in_source": "表 6 (p.21)"
         },
         {
@@ -453,8 +453,8 @@
             "source": "JCS 2020 抗血栓",
             "high_risk_days": 7,
             "value_derivation": "direct",
-            "quote_excerpt": "「プラスグレルでは遅くとも 7 日前からの休薬が考慮される」 (p.36、 参考文献 143-145)\n図 7 (p.39): プラスグレル 7 日前 (magenta bar、 円で囲まれた 7)\n",
-            "source_location": "p.36 本文 + p.39 図 7 (magenta bar)",
+            "quote_excerpt": "「プラスグレルでは遅くとも 7 日前からの休薬が考慮される」 (p.37、 参考文献 143-145)\n図 6 (p.39): プラスグレル 7 日前 (purple bar、 円で囲まれた 7)\n",
+            "source_location": "p.37 本文 + p.39 図 6 (purple bar)",
             "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
           {
@@ -504,7 +504,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: エフィエント®。 半減期 8 時間 (活性代謝物)。 休薬期間: 高リスク群 7-10 日、 中リスク群 7-10 日 (5 日)、 低リスク群 なし",
+          "quote_excerpt": "商品名: エフィエント®。 半減期 5 時間。 休薬期間: 高リスク群 7-10 日 (5 日)、 中リスク群 7-10 日 (5 日)、 低リスク群 なし",
           "location_in_source": "表 6 (p.21)"
         },
         {
@@ -584,7 +584,7 @@
             "high_risk_days": 7,
             "low_risk_days": 5,
             "value_derivation": "direct",
-            "quote_excerpt": "Rec 13.4.1 (grade 1C, NEW): \"the recommended time interval between discontinuation of ticagrelor therapy and neuraxial blockade is 5 to 7 days\"\nRec 13.4.2 (grade 1A): \"ticagrelor therapy may be reinstituted 24 hours postoperatively\"\nRec 13.4.3 (grade 2C): \"Neuraxial catheters should not be maintained with ticagrelor because of the rapid onset\"\n",
+            "quote_excerpt": "Rec 13.4.1 (grade 1C, NEW): \"the recommended time interval between discontinuation of ticagrelor therapy is 5 to 7 days\"\nRec 13.4.2 (grade 1A): \"ticagrelor therapy may be reinstituted 24 hours postoperatively\"\nRec 13.4.3 (grade 2C): \"Neuraxial catheters should not be maintained with ticagrelor because of the rapid onset\"\n",
             "source_location": "p.286 §13.4 Rec 13.4.1-13.4.4",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
@@ -601,8 +601,8 @@
             "source": "JCS 2020 抗血栓",
             "high_risk_days": 3,
             "value_derivation": "direct",
-            "quote_excerpt": "「チカグレロルでは遅くとも 3 日前、 ... からの休薬が考慮される」 (p.36、 参考文献 143-145)\n図 7 (p.39): チカグレロル 3 日前 (blue bar、 円で囲まれた 3)\n",
-            "source_location": "p.36 本文 + p.39 図 7 (blue bar)",
+            "quote_excerpt": "「チカグレロルでは遅くとも 3 日前、 ... からの休薬が考慮される」 (p.37、 参考文献 143-145)\n図 6 (p.39): チカグレロル 3 日前 (blue bar、 円で囲まれた 3)\n",
+            "source_location": "p.37 本文 + p.39 図 6 (blue bar)",
             "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
           {
@@ -740,7 +740,7 @@
             "source": "ASRA 2018 (4th ed)",
             "high_risk_days": 2,
             "value_derivation": "direct",
-            "quote_excerpt": "Rec 13.6.1 (grade 2C, NEW): \"we suggest that neuraxial techniques be avoided for 2 days after discontinuation of cilostazol therapy\"\nRec 13.6.2 (grade 2C): \"neuraxial catheters be removed prior to reinstitution of cilostazol therapy postoperatively\"\nRec 13.6.3 (grade 2C): \"first postoperative dose of cilostazol be administered 6 hours after neuraxial catheter removal\"\n",
+            "quote_excerpt": "Rec 13.6.1 (grade 2C, NEW): \"we suggest that neuraxial techniques be avoided for 2 days after discontinuation of cilostazol\"\nRec 13.6.2 (grade 2C): \"neuraxial catheters be removed prior to reinstitution of cilostazol therapy postoperatively\"\nRec 13.6.3 (grade 2C): \"first postoperative dose of cilostazol be administered 6 hours after neuraxial catheter removal\"\n",
             "source_location": "p.286 §13.6 Rec 13.6.1-13.6.3 + p.271 Table 7 (ESA: 42 h before / 5 h after)",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
@@ -806,7 +806,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: プレタール®。 半減期 11-13 時間。 休薬期間: 高リスク群 なし、 中リスク群 2 日、 低リスク群 なし",
+          "quote_excerpt": "商品名: プレタール®。 半減期 11-13 時間。 休薬期間: 高リスク群 2 日、 中リスク群 なし、 低リスク群 なし",
           "location_in_source": "表 6 (p.21)"
         },
         {
@@ -930,7 +930,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: パナルジン®。 半減期 8 時間。 休薬期間: 高リスク群 7-10 日、 中リスク群 7-10 日 (5 日)、 低リスク群 なし",
+          "quote_excerpt": "商品名: パナルジン®。 半減期 1.5 時間。 休薬期間: 高リスク群 7-10 日 (5 日)、 中リスク群 7-10 日 (5 日)、 低リスク群 なし",
           "location_in_source": "表 6 (p.21)"
         },
         {
@@ -1031,7 +1031,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: アンプラーグ®。 半減期 0.5-0.7 時間。 休薬期間: 高リスク群 なし、 中リスク群 1 日、 低リスク群 なし",
+          "quote_excerpt": "商品名: アンプラーグ®。 半減期 0.8 時間。 休薬期間: 高リスク群 1 日、 中リスク群 なし、 低リスク群 なし",
           "location_in_source": "表 6 (p.21)"
         },
         {
@@ -1119,7 +1119,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: ドルナー®、プロサイリン®。 半減期 1.5 時間。 休薬期間: 高リスク群 TBD、 中リスク群 1 日、 低リスク群 なし",
+          "quote_excerpt": "商品名: ドルナー®、プロサイリン®。 半減期 0.5-0.7 時間。 休薬期間: 高リスク群 1 日、 中リスク群 なし、 低リスク群 なし",
           "location_in_source": "表 6 (p.21)"
         },
         {
@@ -1241,7 +1241,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: ペルサンチン®、ヘルベッサー®。 半減期 10 時間。 休薬期間: 高リスク群 なし、 中リスク群 1 日、 低リスク群 なし",
+          "quote_excerpt": "商品名: ペルサンチン®。 半減期 10 時間。 休薬期間: 高リスク群 2 日、 中リスク群 なし、 低リスク群 なし",
           "location_in_source": "表 6 (p.21)"
         },
         {
@@ -1344,8 +1344,7 @@
         "エパデールS300",
         "エパデールS600",
         "エパデールS900",
-        "エパデールカプセル300",
-        "ロトリガ粒状カプセル2g"
+        "エパデールカプセル300"
       ],
       "generic_brands": [
         "イコサペント酸エチル粒状カプセル300mg「メーカー名」",
@@ -1409,9 +1408,9 @@
             "value_derivation": "direct",
             "version_label": "初版",
             "version_year": 2016,
-            "quote_excerpt": "表 6 - イコサペント酸エチル (エパデール®): TXA 阻害、 半減期 60-65 時間、 高リスク群 7-10 日、 中リスク群 なし、 低リスク群 なし\np.20 推奨: 「不可逆的な抗血小板作用を有する ... イコサペント酸エチルは、 血小板の平均的な寿命に相当する 7〜10 日間の休薬期間」\n",
+            "quote_excerpt": "表 6 - イコサペント酸エチル (エパデール®): TXA2 阻害、 半減期 60-65 時間、 高リスク群 7-10 日、 中リスク群 7-10 日、 低リスク群 なし\np.20 推奨: 「不可逆的な抗血小板作用を有する ... イコサペント酸エチルは、 血小板の平均的な寿命に相当する 7〜10 日間の休薬期間」\n",
             "source_location": "p.21 表 6 + p.20 推奨",
-            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33"
+            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf"
           },
           {
             "source": "JSA 2018 追補",
@@ -1447,8 +1446,8 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: エパデール®。 半減期 60-65 時間。 休薬期間: 高リスク群 7-10 日、 中リスク群 7-10 日、 低リスク群 なし。 p.22 推奨: 「不可逆的な抗血小板作用を有するアスピリン、 チクロピジン、 クロピドグレル、 プラスグレル、 イコサペント酸エチルは、 血小板の平均的の寿命に相当する 7〜10 日間の休薬期間を設定することが望ましい」 推奨グレード 2、 エビデンスレベル D",
-          "location_in_source": "表 6 (p.21) + 5 章 (p.22)"
+          "quote_excerpt": "商品名: エパデール®。 半減期 60-65 時間。 休薬期間: 高リスク群 7-10 日、 中リスク群 7-10 日、 低リスク群 なし。 p.20 推奨: 「不可逆的な抗血小板作用を有するアスピリン、 チクロピジン、 クロピドグレル、 プラスグレル、 イコサペント酸エチルは、 血小板の平均的な寿命に相当する 7〜10 日間の休薬期間を設定することが望ましい」 推奨グレード 2、 エビデンスレベル D",
+          "location_in_source": "表 6 (p.21) + 5 章 推奨 (p.20)"
         },
         {
           "source": "KEGG MEDICUS",
@@ -1632,8 +1631,8 @@
             "low_risk_days": 5,
             "value_derivation": "direct",
             "dose_dependent_summary": "出血リスク 低 5日, 出血リスク 中〜高 5日, 出血リスク 極低 継続可",
-            "quote_excerpt": "p.36 本文: 「ワルファリン服用患者では、 手術前 3〜5 日の服用中止を考慮する」\n表 27 パネル A (出血リスク極低): 継続\n表 27 パネル B (出血リスク低): 3〜5 日前 中止、 術後 24 時間再開\n表 27 パネル C (出血リスク中〜高): 3〜5 日前 中止、 術後 24 時間再開、 高血栓リスク症例では ヘパリン置換 検討\n",
-            "source_location": "p.36 本文 + p.41 表 27 (3 パネルすべて)",
+            "quote_excerpt": "p.40 本文: 「ワルファリン服用患者では、 手術前 3〜5 日の服用中止を考慮する」\n表 27 パネル A (出血リスク極低): 継続\n表 27 パネル B (出血リスク低): 3〜5 日前 中止、 術後 24 時間再開\n表 27 パネル C (出血リスク中〜高): 3〜5 日前 中止、 術後 24 時間再開、 高血栓リスク症例では ヘパリン置換 検討\n",
+            "source_location": "p.40 本文 + p.41 表 27 (3 パネルすべて)",
             "source_url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/04/JCS2020_Kimura_Nakamura.pdf"
           },
           {
@@ -1660,7 +1659,7 @@
             "value_derivation": "direct",
             "version_label": "初版",
             "version_year": 2016,
-            "quote_excerpt": "p.22 推奨: 「高リスク群の手技を施行する場合には、 ... ワルファリン: 5 日間 ... の休薬期間を設けることが推奨される (表 3)。 推奨グレード 2、 エビデンスレベル D」\n表 7 (p.23) — ワルファリン: 高リスク群 5 日、 中リスク群 5 日、 低リスク群 TBD、 抜去後→再開 6 時間\n",
+            "quote_excerpt": "p.22 推奨: 「高リスク群の手技を施行する場合には、 ... ワルファリン: 5 日間 ... の休薬期間を設けることが推奨される (表 3)。 推奨グレード 2、 エビデンスレベル D」\n表 7 (p.23) — ワルファリン: 高リスク群 5 日、 中リスク群 5 日、 低リスク群 TBD、 抜去後に再開\n",
             "source_location": "p.22 推奨 + p.23 表 7",
             "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf"
           },
@@ -1701,7 +1700,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=35",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: ワーファリン®。 半減期 17-20 時間。 排泄経路: 肝臓 (CYP2C9)。 休薬期間: 高リスク群 5 日、 中リスク群 5 日、 低リスク群 5 日。 p.22 推奨: 「ワルファリン:5 日間の休薬期間を設けることが推奨される (表 7)」 推奨グレード 2、 エビデンスレベル D。 術前に PT-INR ≤1.2 を確認",
+          "quote_excerpt": "商品名: ワーファリン®。 半減期 4-5 日。 排泄経路: 肝臓 (CYP2C9)。 休薬期間: 高リスク群 5 日、 中リスク群 5 日、 低リスク群 TBD。 p.22 推奨: 「… ワルファリン: 5 日間 … の休薬期間を設けることが推奨される (表 3)」 推奨グレード 2、 エビデンスレベル D。 術前に PT-INR ≤1.2 を確認",
           "location_in_source": "表 7 抗凝固薬の取り扱い (p.23) + 5 章 推奨 (p.22)"
         },
         {
@@ -1717,7 +1716,7 @@
           "verification_status": "verified",
           "year": 2026,
           "quote_excerpt": "ワルファリンの投与患者では 5 日間の休薬期間を設ける。 ワルファリンは投与量によって薬物半減期が比例して延長する。 薬理作用はビタミン K 依存性凝固因子の制御程度に依存することから、 その活性が正常域まで復帰する 5 日間を休薬期間の目安とする。 穿刺の実施前にプロトロンビン時間国際標準比 (PT-INR) ≦1.2 であることを確認することが望ましい。",
-          "location_in_source": "p.25 表 9 (5 日 / 再開 0 時間) + p.24 解説"
+          "location_in_source": "p.25 Summary Statement + 解説 + 表 9 (5 日 / 再開 0 時間)"
         }
       ]
     },
@@ -1828,7 +1827,7 @@
             "high_risk_day_of": true,
             "value_derivation": "direct",
             "quote_excerpt": "S4-S6 の 全 DOAC 一括推奨に含まれる。 詳細は ダビガトラン エントリ quote 参照。\nTable 2 (p.1551): リバーロキサバン 半減期 5〜13h、 ピーク期 0.5〜4h、 利用率 ほぼ 100%\n",
-            "source_location": "p.1553 S4 + S5 + p.1554 S6",
+            "source_location": "p.1553 S4 + p.1554 S5 + S6",
             "source_url": "https://www.jstage.jst.go.jp/article/gee/59/7/59_1547/_pdf/-char/ja"
           },
           {
@@ -1848,7 +1847,7 @@
             "version_label": "追補",
             "version_year": 2018,
             "quote_excerpt": "「総論」の p.23「表 7」の「中リスク群」では…リバーロキサバン（イグザレルト®）の休薬期間が 2 日と明示されています．一方，「各論」の p.29「表 8」では…リバーロキサバンは「3 日前に中止」…",
-            "source_location": "p.2 質問 2 回答",
+            "source_location": "p.2 質問 2 (質問文)",
             "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen_tsuiho.pdf#page=5"
           },
           {
@@ -1880,7 +1879,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=35",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: イグザレルト®。 阻害凝固因子: FXa。 半減期 5-9 時間。 排泄: 腎臓 36% (活性体)。 休薬期間: 高リスク群 2 日、 中リスク群 TBD、 低リスク群 TBD。 p.22 推奨: 「リバーロキサバン:2 日間の休薬期間を設けることが推奨される」",
+          "quote_excerpt": "商品名: イグザレルト®。 阻害凝固因子: FXa。 半減期 5-9 時間。 排泄: 腎臓 36% (活性体)。 休薬期間: 高リスク群 2 日、 中リスク群 2 日、 低リスク群 TBD。 p.22 推奨: 「… リバーロキサバン: 2 日間 … の休薬期間を設けることが推奨される」",
           "location_in_source": "表 7 (p.23) + 5 章 推奨 (p.22)"
         },
         {
@@ -2012,7 +2011,7 @@
             "high_risk_day_of": true,
             "value_derivation": "direct",
             "quote_excerpt": "DOAC 服用時の通常の消化器内視鏡は休薬なしに施行可能である」\nS5 (Ev C, 推奨度 1): 「DOAC 服用時の粘膜生検や出血低危険度の消化器内視鏡は、 DOAC の休薬なく施行しても良い。 ただし、 服薬時間から推定した血中濃度のピーク期を避けて処置を施行することが望ましい … 出血高危険度の消化器内視鏡において、 DOAC 服用者は前日まで内服を継続し、 処置当日の朝から内服を中止する。 内服は翌日の朝から再開する …",
-            "source_location": "p.1553 S4 + S5 + p.1554 S6 + p.1555 単独投与 table",
+            "source_location": "p.1553 S4 + p.1554 S5 + S6 + p.1555 単独投与 table",
             "source_url": "https://www.jstage.jst.go.jp/article/gee/59/7/59_1547/_pdf/-char/ja"
           },
           {
@@ -2055,7 +2054,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=35",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: プラザキサ®。 阻害凝固因子: トロンビン (IIa)。 半減期 12 時間 (経口)。 排泄: 腎臓 80%。 休薬期間 (Ccr 別): Ccr 60+ で 4 日、 Ccr 30-60 で 4 日、 Ccr<60 で 5 日。 p.22 推奨: 「ダビガトラン:4〜5 日間の休薬期間を設けることが推奨される」",
+          "quote_excerpt": "商品名: プラザキサ®。 阻害凝固因子: トロンビン。 半減期 CrCl≧60: 14 時間、 30<CrCl<60: 18 時間。 排泄: 腎臓 80%。 休薬期間: 高リスク群 4 日 (CrCl≧60)、 5 日 (30<CrCl<60)、 中リスク群 4 日 (CrCl≧60)、 5 日 (30<CrCl<60)、 低リスク群 TBD。 p.22 推奨: 「… ダビガトラン: 4〜5 日間 … の休薬期間を設けることが推奨される」",
           "location_in_source": "表 7 (p.23) + 5 章 推奨 (p.22)"
         },
         {
@@ -2184,7 +2183,7 @@
             "high_risk_day_of": true,
             "value_derivation": "direct",
             "quote_excerpt": "S4-S6 の 全 DOAC 一括推奨に含まれる。\nTable 2 (p.1551): アピキサバン 半減期 6〜8h、 ピーク期 3〜3.5h、 利用率 50%\n",
-            "source_location": "p.1553 S4 + S5 + p.1554 S6",
+            "source_location": "p.1553 S4 + p.1554 S5 + S6",
             "source_url": "https://www.jstage.jst.go.jp/article/gee/59/7/59_1547/_pdf/-char/ja"
           },
           {
@@ -2226,7 +2225,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=35",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: エリキュース®。 阻害凝固因子: FXa。 半減期 8-15 時間。 排泄: 腎臓 27%。 休薬期間: 高リスク群 3 日、 中リスク群 TBD、 低リスク群 TBD。 p.22 推奨: 「アピキサバン:3 日間の休薬期間を設けることが推奨される」",
+          "quote_excerpt": "商品名: エリキュース®。 阻害凝固因子: FXa。 半減期 8-15 時間。 排泄: 腎臓 27%。 休薬期間: 高リスク群 3 日、 中リスク群 3 日、 低リスク群 TBD。 p.22 推奨: 「… アピキサバン: 3 日間 … の休薬期間を設けることが推奨される」",
           "location_in_source": "表 7 (p.23) + 5 章 推奨 (p.22)"
         },
         {
@@ -2359,7 +2358,7 @@
             "high_risk_day_of": true,
             "value_derivation": "direct",
             "quote_excerpt": "S4-S6 の 全 DOAC 一括推奨に含まれる。\nTable 2 (p.1551): エドキサバン 半減期 10〜14h、 ピーク期 1〜3h、 利用率 62%\n",
-            "source_location": "p.1553 S4 + S5 + p.1554 S6",
+            "source_location": "p.1553 S4 + p.1554 S5 + S6",
             "source_url": "https://www.jstage.jst.go.jp/article/gee/59/7/59_1547/_pdf/-char/ja"
           },
           {
@@ -2379,7 +2378,7 @@
             "version_label": "追補",
             "version_year": 2018,
             "quote_excerpt": "「総論」の p.23「表 7　抗凝固薬の取り扱い」の「中リスク群」では，ワルファリン（ワーファリン®）の休薬期間が 5 日，エドキサバン（リクシアナ®），リバーロキサバン（イグザレルト®）の休薬期間が 2 日と明示されています．一方，「各論」の p.29「表 8」では，同じエドキサバンは「12 時間以上前に中止」…",
-            "source_location": "p.2 質問 2 回答",
+            "source_location": "p.2 質問 2 (質問文)",
             "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen_tsuiho.pdf#page=5"
           },
           {
@@ -2411,7 +2410,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=35",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: リクシアナ®。 阻害凝固因子: FXa。 半減期 6-11 時間。 排泄: 腎臓 50%。 休薬期間: 高リスク群 2 日、 中リスク群 TBD、 低リスク群 TBD。 p.22 推奨: 「エドキサバン:2 日間の休薬期間を設けることが推奨される」",
+          "quote_excerpt": "商品名: リクシアナ®。 阻害凝固因子: FXa。 半減期 6-11 時間。 排泄: 腎臓 50%。 休薬期間: 高リスク群 2 日、 中リスク群 2 日、 低リスク群 TBD。 p.22 推奨: 「エドキサバン:2 日間の休薬期間を設けることが推奨される」",
           "location_in_source": "表 7 (p.23) + 5 章 推奨 (p.22)"
         },
         {
@@ -2567,7 +2566,7 @@
             "version_label": "追補",
             "version_year": 2018,
             "quote_excerpt": "「総論」の p.23 表 7 で，未分画ヘパリンは「カテーテル抜去から投薬再開までの時間」が「2 時間」となっていますが，「各論」の p.34 本文では，「穿刺やカテーテル抜去の 4 時間前には休薬，再開は 1 時間後から」となっています．記述に違いがある理由を教えてください．",
-            "source_location": "p.4 質問 5 回答",
+            "source_location": "p.4 質問 5 (質問文)",
             "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen_tsuiho.pdf#page=7"
           },
           {
@@ -2607,8 +2606,8 @@
           "url": "https://www.regional-anesth.jp/docs/education/antithrombotic-guideline/guideline-kaitei02.pdf",
           "verification_status": "verified",
           "year": 2026,
-          "quote_excerpt": "未分画ヘパリンの投与患者では静脈内投与で 4 時間、 皮下投与で 8〜10 時間の休薬期間を設ける。 穿刺手技前に APTT (activated partial thromboplastin time) および血小板数が基準値内であることを確認する。",
-          "location_in_source": "p.25 表 9 (未分画ヘパリン: 静注 4h / 皮下 8-10h / 再開 2h)"
+          "quote_excerpt": "未分画ヘパリンの投与患者では静脈内投与で 4 時間、 皮下投与で 8〜10 時間の休薬期間を設ける。 神経ブロックの実施前に活性化部分トロンボプラスチン時間 (APTT) や活性化凝固時間 (ACT) が基準値にあることを確認することが望ましい。",
+          "location_in_source": "p.25 表 9 (未分画ヘパリン: 静注 4h / 皮下 8-10h / 再開 2h) + p.26 解説"
         }
       ]
     },
@@ -2702,7 +2701,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=35",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: クレキサン®。 阻害凝固因子: FXa >> トロンビン。 半減期 3-6 時間 (皮下)。 排泄: 腎臓。 休薬期間: 高リスク群 12 時間、 中リスク群 12 時間、 低リスク群 12 時間",
+          "quote_excerpt": "商品名: クレキサン®。 阻害凝固因子: FXa > トロンビン。 半減期 3-6 時間 (皮下)。 排泄: 腎臓。 休薬期間: 高リスク群 12 時間、 中リスク群 12 時間、 低リスク群 12 時間",
           "location_in_source": "表 7 (p.23) + 5 章 推奨 (p.22)"
         },
         {
@@ -2786,7 +2785,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Therapeutic do 1日 (24時間), Prophylactic d 1日 (12時間)",
             "quote_excerpt": "\"Experience in Europe suggests that the rate of spinal hematoma is similar among LMWH preparations.\"",
-            "source_location": "p.273-274 §§4.5-4.6",
+            "source_location": "p.272 (LMWH 薬理の項、 quote) + p.274 §§4.5-4.6",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
           {
@@ -2810,7 +2809,7 @@
           "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=35",
           "verification_status": "verified",
           "year": 2016,
-          "quote_excerpt": "商品名: フラグミン®。 阻害凝固因子: FXa >> トロンビン。 半減期 2-4 時間 (静注 / 皮下)。 排泄: 腎臓。 休薬期間: 高リスク群 12 時間、 中リスク群 12 時間、 低リスク群 TBD",
+          "quote_excerpt": "商品名: フラグミン®。 阻害凝固因子: FXa > トロンビン。 半減期 2-4 時間 (静注)。 排泄: 腎臓。 休薬期間: 高リスク群 12 時間、 中リスク群 12 時間、 低リスク群 12 時間",
           "location_in_source": "表 7 (p.23)"
         },
         {
@@ -3165,7 +3164,7 @@
         },
         {
           "source": "JDS",
-          "title": "ビグアナイド薬服用中の患者に対するヨード造影剤投与の注意喚起",
+          "title": "ビグアナイド薬の適正使用・ヨード造影剤との併用についての注意",
           "url": "https://www.jds.or.jp/modules/important/index.php?content_id=82",
           "verification_status": "landing_only",
           "year": 2017,
@@ -3272,8 +3271,8 @@
             "source": "JSN 2022 CKD SGLT2",
             "high_risk_days": 3,
             "value_derivation": "class",
-            "quote_excerpt": "p.4 第 2 bullet「SGLT2 阻害薬」 class 記述",
-            "source_location": "p.4 第 2 bullet (SGLT2 阻害薬 class)",
+            "quote_excerpt": "p.4 最初の項目「SGLT2 阻害薬」 class 記述",
+            "source_location": "p.4 Recommendation 箇条書き (p.4 の最初の項目) (SGLT2 阻害薬 class)",
             "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf"
           },
           {
@@ -3301,7 +3300,7 @@
           "url": "https://fa.kyorin.co.jp/jds/uploads/recommendation_SGLT2.pdf#page=2",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とする",
+          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とし、 再開後のケトアシドーシスの症状に留意する",
           "location_in_source": "Recommendation 5 (p.2) + ケトアシドーシス節 (p.3)。 2022 年 7 月 26 日改訂版"
         },
         {
@@ -3400,9 +3399,9 @@
             "source": "JSN 2022 CKD SGLT2",
             "high_risk_days": 3,
             "value_derivation": "class",
-            "quote_excerpt": "p.4 第 2 bullet: 「糖尿病 \"非\" 合併 CKD 患者においても、 食事摂取量の不足、 栄養不良状態、 飢餓状態、 激しい筋肉運動、 過度のアルコール摂取、 副腎機能不全、 下垂体機能不全、 シックデイなどの状況下では 低血糖や 正常血糖ケトアシドーシスなどの代謝異常を生じる可能性があるため、 SGLT2 阻害薬の中止を考慮する。 食事摂取ができない手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する」\n",
-            "source_location": "p.4 第 2 bullet",
-            "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf#page=4"
+            "quote_excerpt": "p.4 最初の項目: 「糖尿病 \"非\" 合併 CKD 患者においても、 食事摂取量の不足、 栄養不良状態、 飢餓状態、 激しい筋肉運動、 過度のアルコール摂取、 副腎機能不全、 下垂体機能不全、 シックデイなどの状況下では 低血糖や 正常血糖ケトアシドーシスなどの代謝異常を生じる可能性があるため、 SGLT2 阻害薬の中止を考慮する。 食事摂取ができない手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する」\n",
+            "source_location": "p.4 Recommendation 箇条書き (p.4 の最初の項目)",
+            "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf"
           },
           {
             "source": "KDIGO 2022",
@@ -3439,7 +3438,7 @@
           "url": "https://fa.kyorin.co.jp/jds/uploads/recommendation_SGLT2.pdf#page=2",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とする",
+          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とし、 再開後のケトアシドーシスの症状に留意する",
           "location_in_source": "Recommendation 5 (p.2) + ケトアシドーシス節 (p.3)。 2022 年 7 月 26 日改訂版"
         },
         {
@@ -3542,8 +3541,8 @@
             "source": "JSN 2022 CKD SGLT2",
             "high_risk_days": 3,
             "value_derivation": "class",
-            "quote_excerpt": "p.4 第 2 bullet (SGLT2 阻害薬 class 記述、 EMPA-KIDNEY 試験名で 明示)",
-            "source_location": "p.4 第 2 bullet",
+            "quote_excerpt": "p.4 最初の項目 (SGLT2 阻害薬 class 記述、 EMPA-KIDNEY 試験名で 明示)",
+            "source_location": "p.4 Recommendation 箇条書き (p.4 の最初の項目)",
             "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf"
           },
           {
@@ -3581,7 +3580,7 @@
           "url": "https://fa.kyorin.co.jp/jds/uploads/recommendation_SGLT2.pdf#page=2",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とする",
+          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とし、 再開後のケトアシドーシスの症状に留意する",
           "location_in_source": "Recommendation 5 (p.2) + ケトアシドーシス節 (p.3)。 2022 年 7 月 26 日改訂版"
         },
         {
@@ -3684,8 +3683,8 @@
             "source": "JSN 2022 CKD SGLT2",
             "high_risk_days": 3,
             "value_derivation": "class",
-            "quote_excerpt": "p.4 第 2 bullet (SGLT2 阻害薬 class 記述、 CREDENCE 試験名で 明示)",
-            "source_location": "p.4 第 2 bullet",
+            "quote_excerpt": "p.4 最初の項目 (SGLT2 阻害薬 class 記述、 CREDENCE 試験名で 明示)",
+            "source_location": "p.4 Recommendation 箇条書き (p.4 の最初の項目)",
             "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf"
           },
           {
@@ -3717,7 +3716,7 @@
           "url": "https://fa.kyorin.co.jp/jds/uploads/recommendation_SGLT2.pdf#page=2",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とする",
+          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とし、 再開後のケトアシドーシスの症状に留意する",
           "location_in_source": "Recommendation 5 (p.2) + ケトアシドーシス節 (p.3)。 2022 年 7 月 26 日改訂版"
         },
         {
@@ -3807,8 +3806,8 @@
             "source": "JSN 2022 CKD SGLT2",
             "high_risk_days": 3,
             "value_derivation": "class",
-            "quote_excerpt": "p.4 第 2 bullet「SGLT2 阻害薬」 class 記述",
-            "source_location": "p.4 第 2 bullet (SGLT2 阻害薬 class)",
+            "quote_excerpt": "p.4 最初の項目「SGLT2 阻害薬」 class 記述",
+            "source_location": "p.4 Recommendation 箇条書き (p.4 の最初の項目) (SGLT2 阻害薬 class)",
             "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf"
           },
           {
@@ -3830,7 +3829,7 @@
           "url": "https://fa.kyorin.co.jp/jds/uploads/recommendation_SGLT2.pdf#page=2",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とする",
+          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とし、 再開後のケトアシドーシスの症状に留意する",
           "location_in_source": "Recommendation 5 (p.2) + ケトアシドーシス節 (p.3)。 2022 年 7 月 26 日改訂版"
         },
         {
@@ -3922,8 +3921,8 @@
             "source": "JSN 2022 CKD SGLT2",
             "high_risk_days": 3,
             "value_derivation": "class",
-            "quote_excerpt": "p.4 第 2 bullet「SGLT2 阻害薬」 class 記述",
-            "source_location": "p.4 第 2 bullet (SGLT2 阻害薬 class)",
+            "quote_excerpt": "p.4 最初の項目「SGLT2 阻害薬」 class 記述",
+            "source_location": "p.4 Recommendation 箇条書き (p.4 の最初の項目) (SGLT2 阻害薬 class)",
             "source_url": "https://jsn.or.jp/medic/data/SGLT2_recommendation20221129.pdf"
           },
           {
@@ -3945,7 +3944,7 @@
           "url": "https://fa.kyorin.co.jp/jds/uploads/recommendation_SGLT2.pdf#page=2",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とする",
+          "quote_excerpt": "発熱・下痢・嘔吐などがあるときないしは食思不振で食事が十分摂れないような場合 (シックデイ) には必ず休薬する。 また、 手術が予定されている場合には、 術前 3 日前から休薬し、 食事が十分摂取できるようになってから再開する … 緊急手術の場合には、 休薬は必須ではないが、 再開については予定手術の場合と同様とし、 再開後のケトアシドーシスの症状に留意する",
           "location_in_source": "Recommendation 5 (p.2) + ケトアシドーシス節 (p.3)。 2022 年 7 月 26 日改訂版"
         },
         {
@@ -6023,7 +6022,7 @@
           "url": "https://doi.org/10.1002/acr.24893",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "For patients with RA, AS, PsA, JIA, or all SLE undergoing elective THA or TKA, continuing the usual dosing of the following disease-modifying antirheumatic drugs (DMARDs) through surgery is conditionally recommended: methotrexate, leflunomide, hydroxychloroquine, sulfasalazine, and/or apremilast.",
+          "quote_excerpt": "For patients with RA, AS, PsA, JIA, or all SLE undergoing THA or TKA, continuing the usual dosing of the following disease-modifying antirheumatic drugs (DMARDs) through surgery is conditionally recommended: methotrexate, leflunomide, hydroxychloroquine, sulfasalazine, and/or apremilast.",
           "quote_translation_excerpt": "RA / AS / PsA / JIA / SLE 全患者で 待機的 人工膝/股関節全置換術を受ける場合、 メトトレキサート / レフルノミド / ヒドロキシクロロキン / スルファサラジン / アプレミラスト の 通常用量継続を条件付きで推奨 (Table 2 上段、 Recommended timing = Anytime)",
           "location_in_source": "p.4 Table 2 上段 (DMARDs: continue through surgery, all patients) + p.5 Recommendations"
         }
@@ -6110,7 +6109,7 @@
             "value_derivation": "direct",
             "quote_excerpt": "Compte-tenu de leurs demi-vies respectives, en cas de chirurgie programmee, il est recommande de stopper le traitement par anti-TNF au moins 15 jours avant la chirurgie concernant l'etanercept, et au moins 4 semaines pour l'infliximab, l'adalimumab, le certolizumab et le golimumab (AE).",
             "source_location": "p.464, section 7.1 Chirurgie programmee",
-            "source_url": "https://doi.org/10.1016/j.jbspin.2013.03.008"
+            "source_url": "https://doi.org/10.1016/j.jbspin.2013.09.001"
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
@@ -6138,7 +6137,7 @@
         {
           "source": "CRI/SFR (フランス リウマチ学会 / HAS)",
           "title": "Conseils d'utilisation des traitements anti-TNF et recommandations nationales de bonne pratique labellisées par la HAS (2013)",
-          "url": "https://doi.org/10.1016/j.jbspin.2013.03.008",
+          "url": "https://doi.org/10.1016/j.jbspin.2013.09.001",
           "verification_status": "verified",
           "year": 2013,
           "quote_excerpt": "Compte-tenu de leurs demi-vies respectives, en cas de chirurgie programmée, il est recommandé de stopper le traitement par anti-TNF au moins 15 jours avant la chirurgie concernant l'etanercept, et au moins 4 semaines pour l'infliximab, l'adalimumab, le certolizumab et le golimumab. La reprise de l'anti-TNF, quel qu'il soit, ne pourra être effectuée qu'après cicatrisation complète du site opératoire et en l'absence formelle de toute infection postopératoire.",
@@ -6232,7 +6231,7 @@
             "value_derivation": "direct",
             "quote_excerpt": "Compte-tenu de leurs demi-vies respectives, en cas de chirurgie programmee, il est recommande de stopper le traitement par anti-TNF au moins 15 jours avant la chirurgie concernant l'etanercept, et au moins 4 semaines pour l'infliximab, l'adalimumab, le certolizumab et le golimumab (AE).",
             "source_location": "p.464, section 7.1 Chirurgie programmee",
-            "source_url": "https://doi.org/10.1016/j.jbspin.2013.03.008"
+            "source_url": "https://doi.org/10.1016/j.jbspin.2013.09.001"
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
@@ -6272,7 +6271,7 @@
         {
           "source": "CRI/SFR (フランス リウマチ学会 / HAS)",
           "title": "Conseils d'utilisation des traitements anti-TNF et recommandations nationales de bonne pratique labellisées par la HAS (2013)",
-          "url": "https://doi.org/10.1016/j.jbspin.2013.03.008",
+          "url": "https://doi.org/10.1016/j.jbspin.2013.09.001",
           "verification_status": "verified",
           "year": 2013,
           "quote_excerpt": "Compte-tenu de leurs demi-vies respectives, en cas de chirurgie programmée, il est recommandé de stopper le traitement par anti-TNF au moins 15 jours avant la chirurgie concernant l'etanercept, et au moins 4 semaines pour l'infliximab, l'adalimumab, le certolizumab et le golimumab. La reprise de l'anti-TNF, quel qu'il soit, ne pourra être effectuée qu'après cicatrisation complète du site opératoire et en l'absence formelle de toute infection postopératoire.",
@@ -6356,7 +6355,7 @@
             "value_derivation": "direct",
             "quote_excerpt": "Compte-tenu de leurs demi-vies respectives, en cas de chirurgie programmee, il est recommande de stopper le traitement par anti-TNF au moins 15 jours avant la chirurgie concernant l'etanercept, et au moins 4 semaines pour l'infliximab, l'adalimumab, le certolizumab et le golimumab (AE).",
             "source_location": "p.464, section 7.1 Chirurgie programmee",
-            "source_url": "https://doi.org/10.1016/j.jbspin.2013.03.008"
+            "source_url": "https://doi.org/10.1016/j.jbspin.2013.09.001"
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
@@ -6395,7 +6394,7 @@
         {
           "source": "CRI/SFR (フランス リウマチ学会 / HAS)",
           "title": "Conseils d'utilisation des traitements anti-TNF et recommandations nationales de bonne pratique labellisées par la HAS (2013)",
-          "url": "https://doi.org/10.1016/j.jbspin.2013.03.008",
+          "url": "https://doi.org/10.1016/j.jbspin.2013.09.001",
           "verification_status": "verified",
           "year": 2013,
           "quote_excerpt": "Compte-tenu de leurs demi-vies respectives, en cas de chirurgie programmée, il est recommandé de stopper le traitement par anti-TNF au moins 15 jours avant la chirurgie concernant l'etanercept, et au moins 4 semaines pour l'infliximab, l'adalimumab, le certolizumab et le golimumab. La reprise de l'anti-TNF, quel qu'il soit, ne pourra être effectuée qu'après cicatrisation complète du site opératoire et en l'absence formelle de toute infection postopératoire.",
@@ -6478,7 +6477,7 @@
             "value_derivation": "direct",
             "quote_excerpt": "Compte-tenu de leurs demi-vies respectives, en cas de chirurgie programmee, il est recommande de stopper le traitement par anti-TNF au moins 15 jours avant la chirurgie concernant l'etanercept, et au moins 4 semaines pour l'infliximab, l'adalimumab, le certolizumab et le golimumab (AE).",
             "source_location": "p.464, section 7.1 Chirurgie programmee",
-            "source_url": "https://doi.org/10.1016/j.jbspin.2013.03.008"
+            "source_url": "https://doi.org/10.1016/j.jbspin.2013.09.001"
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
@@ -6506,7 +6505,7 @@
         {
           "source": "CRI/SFR (フランス リウマチ学会 / HAS)",
           "title": "Conseils d'utilisation des traitements anti-TNF et recommandations nationales de bonne pratique labellisées par la HAS (2013)",
-          "url": "https://doi.org/10.1016/j.jbspin.2013.03.008",
+          "url": "https://doi.org/10.1016/j.jbspin.2013.09.001",
           "verification_status": "verified",
           "year": 2013,
           "quote_excerpt": "Compte-tenu de leurs demi-vies respectives, en cas de chirurgie programmée, il est recommandé de stopper le traitement par anti-TNF au moins 15 jours avant la chirurgie concernant l'etanercept, et au moins 4 semaines pour l'infliximab, l'adalimumab, le certolizumab et le golimumab. La reprise de l'anti-TNF, quel qu'il soit, ne pourra être effectuée qu'après cicatrisation complète du site opératoire et en l'absence formelle de toute infection postopératoire.",
@@ -6589,7 +6588,7 @@
             "value_derivation": "direct",
             "quote_excerpt": "Compte-tenu de leurs demi-vies respectives, en cas de chirurgie programmee, il est recommande de stopper le traitement par anti-TNF au moins 15 jours avant la chirurgie concernant l'etanercept, et au moins 4 semaines pour l'infliximab, l'adalimumab, le certolizumab et le golimumab (AE).",
             "source_location": "p.464, section 7.1 Chirurgie programmee",
-            "source_url": "https://doi.org/10.1016/j.jbspin.2013.03.008"
+            "source_url": "https://doi.org/10.1016/j.jbspin.2013.09.001"
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
@@ -6629,7 +6628,7 @@
         {
           "source": "CRI/SFR (フランス リウマチ学会 / HAS)",
           "title": "Conseils d'utilisation des traitements anti-TNF et recommandations nationales de bonne pratique labellisées par la HAS (2013)",
-          "url": "https://doi.org/10.1016/j.jbspin.2013.03.008",
+          "url": "https://doi.org/10.1016/j.jbspin.2013.09.001",
           "verification_status": "verified",
           "year": 2013,
           "quote_excerpt": "Compte-tenu de leurs demi-vies respectives, en cas de chirurgie programmée, il est recommandé de stopper le traitement par anti-TNF au moins 15 jours avant la chirurgie concernant l'etanercept, et au moins 4 semaines pour l'infliximab, l'adalimumab, le certolizumab et le golimumab. La reprise de l'anti-TNF, quel qu'il soit, ne pourra être effectuée qu'après cicatrisation complète du site opératoire et en l'absence formelle de toute infection postopératoire.",
@@ -7040,7 +7039,7 @@
           "url": "https://doi.org/10.1002/acr.24893",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing elective THA or TKA, withholding all biologics, including rituximab, prior to surgery and planning the surgery after the next dose is due is conditionally recommended.",
+          "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding all biologics, including rituximab, prior to surgery and planning the surgery after the next dose is due is conditionally recommended.",
           "quote_translation_excerpt": "RA / AS / PsA / JIA 患者で待機的 THA/TKA を受ける場合、 リツキシマブを含む全ての生物学的製剤を術前に休薬し、 次回投与予定日の後に手術を計画することを条件付きで推奨",
           "location_in_source": "p.4 Table 2 (Biologics: Rituximab, 2 doses 2 weeks apart every 4–6 months → Month 7) + p.5 Recommendations"
         }
@@ -7340,7 +7339,7 @@
           "url": "https://doi.org/10.1002/acr.24893",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing elective THA or TKA, withholding all biologics, including rituximab, prior to surgery and planning the surgery after the next dose is due is conditionally recommended.",
+          "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding all biologics, including rituximab, prior to surgery and planning the surgery after the next dose is due is conditionally recommended.",
           "quote_translation_excerpt": "RA / AS / PsA / JIA 患者で待機的 THA/TKA を受ける場合、 リツキシマブを含む全ての生物学的製剤を術前に休薬し、 次回投与予定日の後に手術を計画することを条件付きで推奨",
           "location_in_source": "p.4 Table 2 (Biologics: Ustekinumab (Stelara), Every 12 weeks → Week 13) + p.5 Recommendations"
         }
@@ -7575,7 +7574,7 @@
             "source": "ACR/AAHKS 2022",
             "high_risk_days": 3,
             "value_derivation": "direct",
-            "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding tofacitinib, baricitinib, and upadacitinib for at least 3 days prior to surgery is conditionally recommended. This conditional recommendation was changed from the prior guideline. For the previous guideline, while the serum half-life of tofacitinib was known, concern for a longer duration of the immune effect prompted the rec …",
+            "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding tofacitinib, baricitinib, and upadacitinib for at least 3 days prior to surgery is conditionally recommended. This conditional recommendation was changed from the prior guideline. For the previous guideline, while the short serum half-life of tofacitinib was known, concern for a longer duration of the immune effect prompted t …",
             "source_location": "p.4 Table 2 (JAK inhibitors: withhold 3 days prior); p.5 Table 3 row 3; p.6 discussion",
             "source_url": "https://doi.org/10.1002/acr.24893"
           },
@@ -7615,8 +7614,8 @@
           "url": "https://doi.org/10.1002/acr.24893",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing elective THA or TKA, withholding tofacitinib, baricitinib, and upadacitinib for at least 3 days prior to surgery is conditionally recommended.",
-          "quote_translation_excerpt": "RA / AS / PsA / JIA 患者で elective THA/TKA を受ける場合、 トファシチニブ / バリシチニブ / ウパダシチニブ を手術の少なくとも 3 日前から中止することを条件付きで推奨",
+          "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding tofacitinib, baricitinib, and upadacitinib for at least 3 days prior to surgery is conditionally recommended.",
+          "quote_translation_excerpt": "RA / AS / PsA / JIA 患者で THA/TKA を受ける場合、 トファシチニブ / バリシチニブ / ウパダシチニブ を手術の少なくとも 3 日前から中止することを条件付きで推奨",
           "location_in_source": "p.4 Table 2 (JAK inhibitors: Daily → Day 4) + p.5 Recommendations + p.6 本文"
         },
         {
@@ -7716,8 +7715,8 @@
           "url": "https://doi.org/10.1002/acr.24893",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing elective THA or TKA, withholding tofacitinib, baricitinib, and upadacitinib for at least 3 days prior to surgery is conditionally recommended.",
-          "quote_translation_excerpt": "RA / AS / PsA / JIA 患者で elective THA/TKA を受ける場合、 トファシチニブ / バリシチニブ / ウパダシチニブ を手術の少なくとも 3 日前から中止することを条件付きで推奨",
+          "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding tofacitinib, baricitinib, and upadacitinib for at least 3 days prior to surgery is conditionally recommended.",
+          "quote_translation_excerpt": "RA / AS / PsA / JIA 患者で THA/TKA を受ける場合、 トファシチニブ / バリシチニブ / ウパダシチニブ を手術の少なくとも 3 日前から中止することを条件付きで推奨",
           "location_in_source": "p.4 Table 2 (JAK inhibitors: Daily → Day 4) + p.5 Recommendations + p.6 本文"
         },
         {
@@ -7888,8 +7887,8 @@
           "url": "https://doi.org/10.1002/acr.24893",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing elective THA or TKA, withholding tofacitinib, baricitinib, and upadacitinib for at least 3 days prior to surgery is conditionally recommended.",
-          "quote_translation_excerpt": "RA / AS / PsA / JIA 患者で elective THA/TKA を受ける場合、 トファシチニブ / バリシチニブ / ウパダシチニブ を手術の少なくとも 3 日前から中止することを条件付きで推奨",
+          "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding tofacitinib, baricitinib, and upadacitinib for at least 3 days prior to surgery is conditionally recommended.",
+          "quote_translation_excerpt": "RA / AS / PsA / JIA 患者で THA/TKA を受ける場合、 トファシチニブ / バリシチニブ / ウパダシチニブ を手術の少なくとも 3 日前から中止することを条件付きで推奨",
           "location_in_source": "p.4 Table 2 (JAK inhibitors: Daily → Day 4) + p.5 Recommendations + p.6 本文"
         },
         {
@@ -8070,7 +8069,7 @@
           "url": "https://doi.org/10.1002/acr.24893",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "For patients with RA, AS, PsA, JIA, or all SLE undergoing elective THA or TKA, continuing the usual dosing of the following disease-modifying antirheumatic drugs (DMARDs) through surgery is conditionally recommended: methotrexate, leflunomide, hydroxychloroquine, sulfasalazine, and/or apremilast.",
+          "quote_excerpt": "For patients with RA, AS, PsA, JIA, or all SLE undergoing THA or TKA, continuing the usual dosing of the following disease-modifying antirheumatic drugs (DMARDs) through surgery is conditionally recommended: methotrexate, leflunomide, hydroxychloroquine, sulfasalazine, and/or apremilast.",
           "quote_translation_excerpt": "RA / AS / PsA / JIA / SLE 全患者で 待機的 人工膝/股関節全置換術を受ける場合、 メトトレキサート / レフルノミド / ヒドロキシクロロキン / スルファサラジン / アプレミラスト の 通常用量継続を条件付きで推奨 (Table 2 上段、 Recommended timing = Anytime)",
           "location_in_source": "p.4 Table 2 上段 (DMARDs: continue through surgery, all patients) + p.5 Recommendations"
         }
@@ -8156,7 +8155,7 @@
           "url": "https://doi.org/10.1002/acr.24893",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "For patients with RA, AS, PsA, JIA, or all SLE undergoing elective THA or TKA, continuing the usual dosing of the following disease-modifying antirheumatic drugs (DMARDs) through surgery is conditionally recommended: methotrexate, leflunomide, hydroxychloroquine, sulfasalazine, and/or apremilast.",
+          "quote_excerpt": "For patients with RA, AS, PsA, JIA, or all SLE undergoing THA or TKA, continuing the usual dosing of the following disease-modifying antirheumatic drugs (DMARDs) through surgery is conditionally recommended: methotrexate, leflunomide, hydroxychloroquine, sulfasalazine, and/or apremilast.",
           "quote_translation_excerpt": "RA / AS / PsA / JIA / SLE 全患者で 待機的 人工膝/股関節全置換術を受ける場合、 メトトレキサート / レフルノミド / ヒドロキシクロロキン / スルファサラジン / アプレミラスト の 通常用量継続を条件付きで推奨 (Table 2 上段、 Recommended timing = Anytime)",
           "location_in_source": "p.4 Table 2 上段 (DMARDs: continue through surgery, all patients) + p.5 Recommendations"
         }
@@ -8232,7 +8231,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "not severe SLE 7日, severe SLE 継続可",
             "quote_excerpt": "[Table 2 severe SLE: Tacrolimus — Twice daily (IV and PO) — Anytime] / [Table 2 not severe SLE: Tacrolimus — Twice daily (IV and PO) — 1 week after last dose]",
-            "source_location": "p.4 Table 2 (both severe/not-severe SLE rows); p.5 Table 3 rows 4 and 5",
+            "source_location": "p.4 Table 2 (both severe/not-severe SLE rows); p.5 Table 3 rows 4 and 6",
             "source_url": "https://doi.org/10.1002/acr.24893"
           }
         ],
@@ -8333,7 +8332,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "not severe SLE 7日, severe SLE 継続可",
             "quote_excerpt": "[Table 2 severe SLE: Cyclosporine — Twice daily — Anytime] / [Table 2 not severe SLE: Cyclosporine — Twice daily — 1 week after last dose]",
-            "source_location": "p.4 Table 2 (both severe/not-severe SLE rows); p.5 Table 3 rows 4 and 5",
+            "source_location": "p.4 Table 2 (both severe/not-severe SLE rows); p.5 Table 3 rows 4 and 6",
             "source_url": "https://doi.org/10.1002/acr.24893"
           }
         ],
@@ -8421,7 +8420,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "not severe SLE 7日, severe SLE 継続可",
             "quote_excerpt": "For patients with SLE (not severe) undergoing THA or TKA, withholding the current dose of mycophenolate mofetil, mycophenolic acid, azathioprine, cyclosporine, mizoribine, or tacrolimus 1 week prior to surgery is conditionally recommended. / For patients with severe SLE who have been deemed appropriate to undergo THA or TKA, continuing the usual dose of mycophenolate mofetil, mycophenolic acid (My …",
-            "source_location": "p.4 Table 2 (Severe SLE continue と Not severe SLE withhold の両方に収載); p.5 Table 3 rows 4 and 5",
+            "source_location": "p.4 Table 2 (Severe SLE continue と Not severe SLE withhold の両方に収載); p.5 Table 3 rows 4 and 6",
             "source_url": "https://doi.org/10.1002/acr.24893"
           },
           {
@@ -8557,7 +8556,6 @@
         "rapamycin"
       ],
       "brand_names": [
-        "トーリセル点滴静注液25mg",
         "ラパリムス錠1mg",
         "ラパリムス顆粒0.2％",
         "ラパリムスゲル0.2％"
@@ -9438,7 +9436,7 @@
           "title": "フォサマック錠35mg 添付文書 (2023/1 改訂、 第 4 版)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/181615_3999018F2028_3_02",
           "verification_status": "verified",
-          "quote_excerpt": "本剤投与中に侵襲的な歯科処置が必要になった場合には本剤の休薬等を考慮すること。本剤の投与開始前は口腔内の管理状態を確認し、必要に応じて、患者に対し適切な歯科検査を受け、侵襲的な歯科処置をできる限り済ませておくよう指導すること。",
+          "quote_excerpt": "本剤の投与開始前は口腔内の管理状態を確認し、必要に応じて、患者に対し適切な歯科検査を受け、侵襲的な歯科処置をできる限り済ませておくよう指導すること。本剤投与中に侵襲的な歯科処置が必要になった場合には本剤の休薬等を考慮すること。",
           "location_in_source": "8. 重要な基本的注意"
         },
         {
@@ -9712,7 +9710,7 @@
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/400059_3999040F1026_3_02",
           "verification_status": "verified",
           "quote_excerpt": "本剤投与中に侵襲的な歯科処置が必要になった場合には本剤の休薬等を考慮すること。",
-          "location_in_source": "8.5 重要な基本的注意 / 9.1.1"
+          "location_in_source": "8.5 重要な基本的注意"
         },
         {
           "source": "JSOMS 顎骨壊死検討委員会 (6学会合同)",
@@ -9877,9 +9875,9 @@
             "source": "jsoms_2023_mronj",
             "value_derivation": "direct",
             "dose_dependent_summary": "低用量 継続可, 高用量 記載なし",
-            "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、 慎重に抜歯の適否を判断し、 まずは他に回避できる治療法があるかを検討する必要がある。... 歯科インプラント埋入手術については、 他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
+            "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、 慎重に抜歯の適否を判断し、 まずは他に回避できる治療法があるか検討する必要がある。... 歯科インプラント埋入手術については、 他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
             "source_location": "p.15 章 V.1 (低用量) + p.16 章 V.3.2 高用量 ARA + p.27 付表 (1)",
-            "source_url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf#page=16"
+            "source_url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf"
           }
         ],
         "contrast_ct": []
@@ -9896,10 +9894,10 @@
         {
           "source": "JSOMS 顎骨壊死検討委員会 (6学会合同)",
           "title": "薬剤関連顎骨壊死の病態と管理: 顎骨壊死検討委員会ポジションペーパー2023",
-          "url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf#page=16",
+          "url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf",
           "verification_status": "verified",
           "year": 2023,
-          "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、慎重に抜歯の適否を判断し、まずは他に回避できる治療法があるかを検討する必要がある。... 歯科インプラント埋入手術については、他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
+          "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、慎重に抜歯の適否を判断し、まずは他に回避できる治療法があるか検討する必要がある。... 歯科インプラント埋入手術については、他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
           "location_in_source": "p.15 章 V.1 予防的休薬の是非 + p.16 章 V.3.2 高用量 ARA + p.27 付表 ①骨吸収抑制薬 (ARA)"
         },
         {
@@ -9967,9 +9965,9 @@
             "source": "jsoms_2023_mronj",
             "value_derivation": "direct",
             "dose_dependent_summary": "高用量 記載なし",
-            "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、 慎重に抜歯の適否を判断し、 まずは他に回避できる治療法があるかを検討する必要がある。... 歯科インプラント埋入手術については、 他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
+            "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、 慎重に抜歯の適否を判断し、 まずは他に回避できる治療法があるか検討する必要がある。... 歯科インプラント埋入手術については、 他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
             "source_location": "p.15 章 V.1 + p.16 章 V.3.2 高用量 ARA + p.27 付表 (1)",
-            "source_url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf#page=16"
+            "source_url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf"
           }
         ],
         "contrast_ct": []
@@ -9986,10 +9984,10 @@
         {
           "source": "JSOMS 顎骨壊死検討委員会 (6学会合同)",
           "title": "薬剤関連顎骨壊死の病態と管理: 顎骨壊死検討委員会ポジションペーパー2023",
-          "url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf#page=16",
+          "url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf",
           "verification_status": "verified",
           "year": 2023,
-          "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、慎重に抜歯の適否を判断し、まずは他に回避できる治療法があるかを検討する必要がある。... 歯科インプラント埋入手術については、他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
+          "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、慎重に抜歯の適否を判断し、まずは他に回避できる治療法があるか検討する必要がある。... 歯科インプラント埋入手術については、他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
           "location_in_source": "p.15 章 V.1 予防的休薬の是非 + p.16 章 V.3.2 高用量 ARA + p.27 付表 ①骨吸収抑制薬 (ARA)"
         },
         {
@@ -10050,9 +10048,9 @@
             "source": "jsoms_2023_mronj",
             "value_derivation": "direct",
             "dose_dependent_summary": "低用量 記載なし",
-            "quote_excerpt": "臨床試験のデータでは、 Dmab 製剤投与中止後に骨密度 (BMD) が急速に減少し、 骨代謝マーカーが急激に上昇することが示されており、 Dmab 製剤中止または長期延期後に椎体骨折が増加する可能性が示されている。 これらから Dmab 製剤は中止しないことが望ましいと考えられている。 Dmab 製剤投与後の血中濃度の推移、 および抜歯後の骨の治癒過程を考えると、 最終投与 4 か月頃に抜歯を行うことが骨の治療の面で良い結果が得られる可能性がある。 歯科インプラントなどの予定手術では参考にされたい。",
+            "quote_excerpt": "臨床試験のデータでは、 Dmab 製剤投与中止後に骨密度 (BMD) が急速に減少し、 骨代謝マーカーが急激に上昇することが示されており、 Dmab 製剤中止または長期延期後に椎骨骨折が増加する可能性が示されている。 これらから Dmab 製剤は中止しないことが望ましいと考えられている。 Dmab 製剤投与後の血中濃度の推移、 および抜歯後の骨の治癒過程を考えると、 最終投与 4 か月頃に抜歯を行うことが骨の治療の面で良い結果が得られる可能性がある。 歯科インプラントなどの予定手術では参考にされたい。",
             "source_location": "p.15 章 V.1 予防的休薬の是非 (低用量 Dmab 製剤) + p.16 抜歯タイミング + p.27 付表 (1)",
-            "source_url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf#page=15"
+            "source_url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf"
           }
         ],
         "contrast_ct": []
@@ -10063,16 +10061,16 @@
           "title": "プラリア皮下注60mgシリンジ 添付文書 (第 6 版, 2023/11)",
           "url": "https://www.info.pmda.go.jp/go/pack/3999435G1023_1_15/",
           "verification_status": "verified",
-          "quote_excerpt": "報告された症例の多くが抜歯等の顎骨に対する侵襲的な歯科処置や局所感染に関連して発現している。本剤投与中に侵襲的な歯科処置が必要になった場合には、本剤の休薬等を考慮すること。顎骨壊死・顎骨骨髄炎（0.1%）",
+          "quote_excerpt": "報告された症例の多くが抜歯等の顎骨に対する侵襲的な歯科処置や局所感染に関連して発現している。 … 本剤投与中に侵襲的な歯科処置が必要になった場合には、本剤の休薬等を考慮すること。 … 顎骨壊死・顎骨骨髄炎（0.1%）",
           "location_in_source": "8.4 重要な基本的注意 (顎骨壊死) / 11.1.2"
         },
         {
           "source": "JSOMS 顎骨壊死検討委員会 (6学会合同)",
           "title": "薬剤関連顎骨壊死の病態と管理: 顎骨壊死検討委員会ポジションペーパー2023",
-          "url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf#page=15",
+          "url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf",
           "verification_status": "verified",
           "year": 2023,
-          "quote_excerpt": "臨床試験のデータでは、Dmab 製剤投与中止後に骨密度 (BMD) が急速に減少し、骨代謝マーカーが急激に上昇することが示されており、Dmab 製剤中止または長期延期後に椎体骨折が増加する可能性が示されている。これらから Dmab 製剤は 中止しないことが望ましいと考えられている。Dmab 製剤投与後の血中濃度の推移、および抜歯後の骨の治癒過程を考えると、最終投与 4 か月頃に抜歯を行うことが骨の治療の面で良い結果が得られる可能性がある。",
+          "quote_excerpt": "臨床試験のデータでは、Dmab 製剤投与中止後に骨密度 (BMD) が急速に減少し、骨代謝マーカーが急激に上昇することが示されており、Dmab 製剤中止または長期延期後に椎骨骨折が増加する可能性が示されている。これらから Dmab 製剤は中止しないことが望ましいと考えられている。Dmab 製剤投与後の血中濃度の推移、および抜歯後の骨の治癒過程を考えると、最終投与 4 か月頃に抜歯を行うことが骨の治療の面で良い結果が得られる可能性がある。",
           "location_in_source": "p.15 章 V.1 予防的休薬の是非 (低用量 Dmab 製剤) + p.16 抜歯タイミング + p.27 付表 ①骨吸収抑制薬 (ARA)"
         },
         {
@@ -10136,9 +10134,9 @@
             "source": "jsoms_2023_mronj",
             "value_derivation": "direct",
             "dose_dependent_summary": "高用量 記載なし",
-            "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、 慎重に抜歯の適否を判断し、 まずは他に回避できる治療法があるかを検討する必要がある。... 歯科インプラント埋入手術については、 他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
+            "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、 慎重に抜歯の適否を判断し、 まずは他に回避できる治療法があるか検討する必要がある。... 歯科インプラント埋入手術については、 他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
             "source_location": "p.15 章 V.1 + p.16 章 V.3.2 高用量 ARA + p.27 付表 (1)",
-            "source_url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf#page=16"
+            "source_url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf"
           }
         ],
         "contrast_ct": []
@@ -10155,10 +10153,10 @@
         {
           "source": "JSOMS 顎骨壊死検討委員会 (6学会合同)",
           "title": "薬剤関連顎骨壊死の病態と管理: 顎骨壊死検討委員会ポジションペーパー2023",
-          "url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf#page=16",
+          "url": "https://www.jsoms.or.jp/medical/pdf/2023/0217_1.pdf",
           "verification_status": "verified",
           "year": 2023,
-          "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、慎重に抜歯の適否を判断し、まずは他に回避できる治療法があるかを検討する必要がある。... 歯科インプラント埋入手術については、他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
+          "quote_excerpt": "がんの骨転移などで高用量 ARA を投与中の患者は、慎重に抜歯の適否を判断し、まずは他に回避できる治療法があるか検討する必要がある。... 歯科インプラント埋入手術については、他の代替治療が存在することから ARA 投与中の患者には行うべきではない。",
           "location_in_source": "p.15 章 V.1 予防的休薬の是非 + p.16 章 V.3.2 高用量 ARA + p.27 付表 ①骨吸収抑制薬 (ARA)"
         },
         {
@@ -10552,7 +10550,7 @@
             "high_risk_days": 14,
             "value_derivation": "direct",
             "quote_excerpt": "\"Potential risks: ginkgo ... increased risk of bleeding\". General recommendation: 2 weeks pre-op case-by-case.",
-            "source_location": "p.1-2 リスクボックス",
+            "source_location": "p.2 Potential risks of common herbs and supplements コラム",
             "source_url": "https://www.asahq.org/madeforthismoment/wp-content/uploads/2020/10/ASA_Supplements-Anesthesia_Updated.pdf"
           },
           {
@@ -10561,7 +10559,7 @@
             "high_risk_hours": 0,
             "value_derivation": "direct",
             "quote_excerpt": "Table 15: \"Ginkgo — Time to normal hemostasis after discontinuation: 36 h\"",
-            "source_location": "p.286 §14.0 + Table 15 (p.287)",
+            "source_location": "p.287 §14.0 Rec 14.1 + Table 15",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
           {
@@ -10603,7 +10601,7 @@
         },
         {
           "source": "ASA",
-          "title": "What You Should Know About Your Patients' Use of Herbal Medicines and Other Dietary Supplements",
+          "title": "Herbal and Dietary Supplements and Anesthesia",
           "url": "https://www.asahq.org/madeforthismoment/wp-content/uploads/2020/10/ASA_Supplements-Anesthesia_Updated.pdf#page=2",
           "verification_status": "verified",
           "year": 2020,
@@ -10684,7 +10682,7 @@
             "high_risk_days": 14,
             "value_derivation": "direct",
             "quote_excerpt": "\"Potential risks of common herbs and supplements: garlic ... increased risk of bleeding\". General recommendation: \"In some cases, your physician anesthesiologist may recommend you stop taking supplements at least two weeks before your procedure.\"",
-            "source_location": "p.1-2 リスクボックス",
+            "source_location": "p.2 Potential risks of common herbs and supplements コラム",
             "source_url": "https://www.asahq.org/madeforthismoment/wp-content/uploads/2020/10/ASA_Supplements-Anesthesia_Updated.pdf#page=2"
           },
           {
@@ -10693,7 +10691,7 @@
             "low_risk_days": 0,
             "value_derivation": "direct",
             "quote_excerpt": "Rec 14.1 (grade 1C): \"The use of herbal medications does not create a level of risk that will interfere with the performance of neuraxial block. We recommend against the mandatory discontinuation of these medications or avoidance of regional anesthetic techniques\"\nTable 15: \"Garlic — Time to normal hemostasis after discontinuation: 7 d\"\n",
-            "source_location": "p.286 §14.0 Rec 14.1 + Table 15 (p.287)",
+            "source_location": "p.287 §14.0 Rec 14.1 + Table 15",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
           {
@@ -10702,9 +10700,9 @@
             "value_derivation": "direct",
             "version_label": "初版",
             "version_year": 2016,
-            "quote_excerpt": "p.22 推奨: 「術前に、 にんにく、 イチョウ葉、 チョウセンニンジンのハーブ類を摂取している患者で高リスク群の手技を施行する場合には、 血小板凝集障害が生じることがあることから、 それぞれ、 7 日、 2 日、 1 日の服用中止を設けることが望ましい」\n",
+            "quote_excerpt": "p.22 推奨: 「術前に、 にんにく、 イチョウ葉、 チョウセンニンジンのハーブ類を摂取している患者で高リスク群の手技を施行する場合には、 血小板凝集阻害が生じることがあることから、 それぞれ、 7 日、 2 日、 1 日の服用中止を設けることが望ましい」\n",
             "source_location": "p.22 推奨",
-            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=34"
+            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf"
           },
           {
             "source": "JSA・JSRA・JSPC 2026 改訂第 2 版",
@@ -10735,7 +10733,7 @@
         },
         {
           "source": "ASA",
-          "title": "What You Should Know About Your Patients' Use of Herbal Medicines and Other Dietary Supplements",
+          "title": "Herbal and Dietary Supplements and Anesthesia",
           "url": "https://www.asahq.org/madeforthismoment/wp-content/uploads/2020/10/ASA_Supplements-Anesthesia_Updated.pdf#page=2",
           "verification_status": "verified",
           "year": 2020,
@@ -10824,7 +10822,7 @@
             "high_risk_days": 14,
             "value_derivation": "direct",
             "quote_excerpt": "\"Potential risks: vitamin E ... increased risk of bleeding\"",
-            "source_location": "p.1-2 リスクボックス",
+            "source_location": "p.2 Potential risks of common herbs and supplements コラム",
             "source_url": "https://www.asahq.org/madeforthismoment/wp-content/uploads/2020/10/ASA_Supplements-Anesthesia_Updated.pdf"
           }
         ],
@@ -10841,7 +10839,7 @@
         },
         {
           "source": "ASA",
-          "title": "What You Should Know About Your Patients' Use of Herbal Medicines and Other Dietary Supplements",
+          "title": "Herbal and Dietary Supplements and Anesthesia",
           "url": "https://www.asahq.org/madeforthismoment/wp-content/uploads/2020/10/ASA_Supplements-Anesthesia_Updated.pdf#page=2",
           "verification_status": "verified",
           "year": 2020,
@@ -10970,7 +10968,7 @@
             "high_risk_days": 14,
             "value_derivation": "direct",
             "quote_excerpt": "\"St. John's Wort - Used to ease anxiety and help with sleep problems, but it may prolong the effects of anesthesia.\"",
-            "source_location": "p.1-2 リスクボックス",
+            "source_location": "p.2 Potential risks of common herbs and supplements コラム",
             "source_url": "https://www.asahq.org/madeforthismoment/wp-content/uploads/2020/10/ASA_Supplements-Anesthesia_Updated.pdf#page=2"
           }
         ],
@@ -10989,7 +10987,7 @@
         },
         {
           "source": "ASA",
-          "title": "What You Should Know About Your Patients' Use of Herbal Medicines and Other Dietary Supplements",
+          "title": "Herbal and Dietary Supplements and Anesthesia",
           "url": "https://www.asahq.org/madeforthismoment/wp-content/uploads/2020/10/ASA_Supplements-Anesthesia_Updated.pdf#page=2",
           "verification_status": "verified",
           "year": 2020,
@@ -12003,7 +12001,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12024,7 +12022,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         }
       ]
     },
@@ -12096,7 +12094,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -12116,7 +12114,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12199,7 +12197,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -12219,7 +12217,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12299,7 +12297,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -12319,7 +12317,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12402,7 +12400,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -12422,7 +12420,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12496,7 +12494,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -12516,7 +12514,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12579,7 +12577,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -12593,7 +12591,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         }
@@ -12651,7 +12649,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -12665,7 +12663,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12733,7 +12731,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -12749,7 +12747,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12820,7 +12818,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -12840,7 +12838,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -12912,7 +12910,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -12932,7 +12930,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13002,7 +13000,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -13022,7 +13020,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13094,7 +13092,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -13114,7 +13112,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13200,7 +13198,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -13220,7 +13218,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13309,7 +13307,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -13329,7 +13327,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13427,7 +13425,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -13447,7 +13445,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13532,7 +13530,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -13552,7 +13550,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13641,7 +13639,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -13661,7 +13659,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13748,7 +13746,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         },
         {
           "source": "PMDA",
@@ -13768,7 +13766,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac270",
           "verification_status": "verified",
           "year": 2022,
-          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower rate of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
+          "quote_excerpt": "In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent peri-operative hypotension. (Class IIa, Level of Evidence B) ... discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative hypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point consisting of all-cause mortality, stroke, and MI. If an ACEI/ARB is withheld prior to NCS, it should be restarted as soon as possible in order to prevent unintended long-term omission.",
           "quote_translation_excerpt": "心不全のない患者では、 非心臓手術の当日 (day of NCS) に RAAS 阻害薬 (ACE 阻害薬 / ARB) の中止を考慮すべき (術中低血圧予防、 Class IIa エビデンス B)。 手術 24 時間前中止で 術中低血圧率が有意に低下し、 全死亡・脳卒中・心筋梗塞複合エンドポイントも減少。 中止した場合はできるだけ速やかに再開",
           "location_in_source": "p.3855 Section 5.2.4 + p.3857 Recommendation Table 12 (Interruption)"
         },
@@ -13871,7 +13869,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         }
       ]
     },
@@ -13968,7 +13966,7 @@
           "year": 2022,
           "quote_excerpt": "In HF, the dosage of diuretics should be adjusted well in advance for an optimal fluid balance before surgery, and to avoid fluid retention or dehydration. In the peri-operative period, volume status in patients with HF should be carefully monitored and optimized by loop diuretics or fluids. However, retrospective data suggest that intra-operative prescription of diuretics may increase the risk of acute kidney injury (AKI) after NCS.",
           "quote_translation_excerpt": "心不全患者では、 手術前に十分先立って利尿薬の用量を至適 fluid balance に調整し、 溢水・脱水を避ける。 周術期は volume status を ループ利尿薬または輸液で慎重に modulation。 ただし術中利尿薬投与は術後 AKI リスクを増加させうる (後方視データ)",
-          "location_in_source": "p.3856 Section 5.2.7 Diuretics (ループ利尿薬パラグラフ) + p.3874 Table 20 (HF 患者一般)"
+          "location_in_source": "p.3856 Section 5.2.7 Diuretics (ループ利尿薬パラグラフ) + p.3875 Recommendation Table 20 (HF 患者一般)"
         },
         {
           "source": "JSH",
@@ -13977,7 +13975,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         }
       ]
     },
@@ -14061,7 +14059,7 @@
           "year": 2022,
           "quote_excerpt": "In HF, the dosage of diuretics should be adjusted well in advance for an optimal fluid balance before surgery, and to avoid fluid retention or dehydration. In the peri-operative period, volume status in patients with HF should be carefully monitored and optimized by loop diuretics or fluids. However, retrospective data suggest that intra-operative prescription of diuretics may increase the risk of acute kidney injury (AKI) after NCS.",
           "quote_translation_excerpt": "心不全患者では、 手術前に十分先立って利尿薬の用量を至適 fluid balance に調整し、 溢水・脱水を避ける。 周術期は volume status を ループ利尿薬または輸液で慎重に modulation。 ただし術中利尿薬投与は術後 AKI リスクを増加させうる (後方視データ)",
-          "location_in_source": "p.3856 Section 5.2.7 Diuretics (ループ利尿薬パラグラフ) + p.3874 Table 20 (HF 患者一般)"
+          "location_in_source": "p.3856 Section 5.2.7 Diuretics (ループ利尿薬パラグラフ) + p.3875 Recommendation Table 20 (HF 患者一般)"
         },
         {
           "source": "JSH",
@@ -14070,7 +14068,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         }
       ]
     },
@@ -14151,7 +14149,7 @@
           "year": 2022,
           "quote_excerpt": "In HF, the dosage of diuretics should be adjusted well in advance for an optimal fluid balance before surgery, and to avoid fluid retention or dehydration. In the peri-operative period, volume status in patients with HF should be carefully monitored and optimized by loop diuretics or fluids. However, retrospective data suggest that intra-operative prescription of diuretics may increase the risk of acute kidney injury (AKI) after NCS.",
           "quote_translation_excerpt": "心不全患者では、 手術前に十分先立って利尿薬の用量を至適 fluid balance に調整し、 溢水・脱水を避ける。 周術期は volume status を ループ利尿薬または輸液で慎重に modulation。 ただし術中利尿薬投与は術後 AKI リスクを増加させうる (後方視データ)",
-          "location_in_source": "p.3856 Section 5.2.7 Diuretics (ループ利尿薬パラグラフ) + p.3874 Table 20 (HF 患者一般)"
+          "location_in_source": "p.3856 Section 5.2.7 Diuretics (ループ利尿薬パラグラフ) + p.3875 Recommendation Table 20 (HF 患者一般)"
         },
         {
           "source": "JSH",
@@ -14160,7 +14158,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         }
       ]
     },
@@ -14261,7 +14259,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         }
       ]
     },
@@ -14344,7 +14342,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         }
       ]
     },
@@ -14431,7 +14429,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         }
       ]
     },
@@ -14510,7 +14508,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         }
       ]
     },
@@ -14590,7 +14588,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         }
       ]
     },
@@ -14658,7 +14656,7 @@
           "verification_status": "verified",
           "year": 2019,
           "quote_excerpt": "長期的に降圧治療を受けている患者では、 降圧薬は手術当日まで服用させるのが原則で、 術後もできるだけ早期に再開する。",
-          "location_in_source": "p.196 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 3-2 周術期の降圧薬の使用"
+          "location_in_source": "p.174 第12 章 特殊条件下高血圧 / 3. 外科手術前後の血圧管理 / 2) 周術期の降圧薬の使用"
         }
       ]
     },
@@ -14704,9 +14702,9 @@
             "value_derivation": "direct",
             "version_label": "初版",
             "version_year": 2016,
-            "quote_excerpt": "表 6 - クロミプラミン (アナフラニール®): セロトニン抑制 (TCA)、 半減期 24 時間、 高リスク群 5 日、 中リスク群 5 日、 低リスク群 なし、 抜去後より",
+            "quote_excerpt": "表 6 - クロミプラミン (アナフラニール®): セロトニン抑制 (TCA)、 半減期 24 時間、 高リスク群 5 日、 中リスク群 なし、 低リスク群 なし、 抜去後より",
             "source_location": "p.21 表 6",
-            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33"
+            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf"
           },
           {
             "source": "JSA・JSRA・JSPC 2026 改訂第 2 版",
@@ -14794,9 +14792,9 @@
             "value_derivation": "direct",
             "version_label": "初版",
             "version_year": 2016,
-            "quote_excerpt": "表 6 - セルトラリン (ジェイゾロフト®): セロトニン抑制 (SSRI)、 半減期 24 時間、 高リスク群 5 日、 中 5 日、 低 なし、 抜去後より",
+            "quote_excerpt": "表 6 - セルトラリン (ジェイゾロフト®): セロトニン抑制 (SSRI)、 半減期 24 時間、 高リスク群 5 日、 中 なし、 低 なし、 抜去後より",
             "source_location": "p.21 表 6",
-            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33"
+            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf"
           },
           {
             "source": "JSA・JSRA・JSPC 2026 改訂第 2 版",
@@ -14884,9 +14882,9 @@
             "value_derivation": "direct",
             "version_label": "初版",
             "version_year": 2016,
-            "quote_excerpt": "表 6 - パロキセチン (パキシル®): SSRI、 半減期 21 時間、 高リスク群 5 日、 中 5 日、 低 なし、 抜去後より",
+            "quote_excerpt": "表 6 - パロキセチン (パキシル®): SSRI、 半減期 21 時間、 高リスク群 5 日、 中 なし、 低 なし、 抜去後より",
             "source_location": "p.21 表 6",
-            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33"
+            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf"
           },
           {
             "source": "JSA・JSRA・JSPC 2026 改訂第 2 版",
@@ -14971,9 +14969,9 @@
             "value_derivation": "direct",
             "version_label": "初版",
             "version_year": 2016,
-            "quote_excerpt": "表 6 - フルボキサミン (ルボックス®、デプロメール®): SSRI、 半減期 16-26 時間、 高リスク群 5 日、 中 5 日、 低 なし、 抜去後より",
+            "quote_excerpt": "表 6 - フルボキサミン (ルボックス®、デプロメール®): SSRI、 半減期 16-26 時間、 高リスク群 5 日、 中 なし、 低 なし、 抜去後より",
             "source_location": "p.21 表 6",
-            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf#page=33"
+            "source_url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen.pdf"
           },
           {
             "source": "JSA・JSRA・JSPC 2026 改訂第 2 版",
@@ -15077,7 +15075,7 @@
             "high_risk_days": 14,
             "value_derivation": "direct",
             "quote_excerpt": "\"Ginseng - Taken to improve concentration, ginseng can increase your heart rate and the risk of bleeding.\"",
-            "source_location": "p.1-2 リスクボックス",
+            "source_location": "p.2 Potential risks of common herbs and supplements コラム",
             "source_url": "https://www.asahq.org/madeforthismoment/wp-content/uploads/2020/10/ASA_Supplements-Anesthesia_Updated.pdf#page=2"
           },
           {
@@ -15086,7 +15084,7 @@
             "high_risk_hours": 0,
             "value_derivation": "direct",
             "quote_excerpt": "Table 15: \"Ginseng — Time to normal hemostasis after discontinuation: 24 h\"",
-            "source_location": "p.286 §14.0 + Table 15 (p.287)",
+            "source_location": "p.287 §14.0 Rec 14.1 + Table 15",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
           {
@@ -15128,7 +15126,7 @@
         },
         {
           "source": "ASA",
-          "title": "What You Should Know About Your Patients' Use of Herbal Medicines and Other Dietary Supplements",
+          "title": "Herbal and Dietary Supplements and Anesthesia",
           "url": "https://www.asahq.org/madeforthismoment/wp-content/uploads/2020/10/ASA_Supplements-Anesthesia_Updated.pdf#page=2",
           "verification_status": "verified",
           "year": 2020,
