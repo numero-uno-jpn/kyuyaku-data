@@ -35,6 +35,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DL = os.path.join(ROOT, "frontend", "data", "drug_list.json")
 GV = os.path.join(ROOT, "frontend", "data", "guideline_variations.json")
 OUT = os.path.join(ROOT, "frontend", "data", "washout_public_v1.json")
+GL_DIR = os.path.join(ROOT, "backend", "data", "references", "guidelines", "extracted")
 
 # --- 公開して よい variation field (値 + 出典ラベル + 派生サマリ のみ。 短い引用・所在・URL は _public_variations で 付加) ---
 # 除外: note / purpose / quote / quote_verbatim / _manual / _note_* / dose_dependent_is_complex 等
@@ -45,13 +46,41 @@ VAR_SURGERY_KEEP = ["source", "high_risk_days", "low_risk_days", "high_risk_hour
 VAR_CONTRAST_KEEP = ["source", "days", "hours", "day_of", "value_derivation", "dose_dependent_summary",
                      "version_label", "version_year"]
 # 参照の citation field (quote / quote_translation は そのまま 出さず、 _public_reference で 短い引用に 置換)
-REF_KEEP = ["source", "title", "url", "verification_status", "year"]
+REF_KEEP = ["source", "title", "url", "verification_status", "year", "author_interpretation"]
 # _build_guideline_variations.py が variation の quote を 切り詰める 長さ
 GV_QUOTE_MAX = 400
 
 
 def _pick(d, keys):
     return {k: d[k] for k in keys if d.get(k) is not None}
+
+
+def load_gl_titles():
+    """GL id → 正式名 (抽出 YAML 先頭の title:)。 略称の source だけでは 何の文書か 分からないため 併記用。
+    kegg-sync CI に PyYAML が 無いので、 トップレベルの 1 行 スカラーだけを 読む。"""
+    titles = {}
+    for f in sorted(os.listdir(GL_DIR)):
+        if not f.endswith(".yaml") or f.startswith("_") or ".independent." in f or ".primary." in f:
+            continue
+        gid = title = None
+        for line in open(os.path.join(GL_DIR, f), encoding="utf-8"):
+            key, sep, val = line.rstrip("\r\n").partition(":")
+            if not sep or key not in ("guideline_id", "title"):
+                continue
+            val = val.strip()
+            if len(val) >= 2 and val[0] == val[-1] == "'":
+                val = val[1:-1].replace("''", "'")
+            elif len(val) >= 2 and val[0] == val[-1] == '"':
+                val = val[1:-1]
+            if key == "guideline_id":
+                gid = gid or val
+            else:
+                title = title or val
+            if gid and title:
+                break
+        if gid and title:
+            titles[gid] = title
+    return titles
 
 
 # --- アプリの daysBadge.js と 同じ 「表示推奨値」 を 算出 ---
@@ -111,11 +140,13 @@ def effective_days(variations, master, slot, master_day_of=False):
     return (int(best) if float(best).is_integer() else best), False
 
 
-def _public_variations(gv_entry, keep, entries, warnings):
+def _public_variations(gv_entry, keep, entries, warnings, gl_titles):
     out = []
     for v in (gv_entry or []):
         rec = _pick(v, keep)
         if rec.get("source"):
+            if gl_titles.get(v.get("_gl_id")):
+                rec["source_title"] = gl_titles[v["_gl_id"]]
             q, page = public_quote_fields(v.get("source"), v.get("quote"), None, entries, warnings)
             # guideline_variations の quote は 生成時に 400 字で 切り詰められている → 続きが あることを 示す
             if len(v.get("quote") or "") >= GV_QUOTE_MAX and q.get("quote_excerpt") \
@@ -150,6 +181,7 @@ def build(warnings=None):
     dl = json.load(open(DL, encoding="utf-8"))
     gv = json.load(open(GV, encoding="utf-8"))
     gv_drugs = gv.get("drugs", {})
+    gl_titles = load_gl_titles()
     entries = load_excerpts().get("entries", {})
 
     drugs_out = []
@@ -187,6 +219,8 @@ def build(warnings=None):
                 "high_risk_surgery_examples": surg.get("high_risk_surgery_examples") or [],
                 "low_risk_surgery_examples": surg.get("low_risk_surgery_examples") or [],
                 "note": surg.get("note"),
+                # 作者による根拠の解釈 (原典の記述ではない。 見直した剤のみ、 他は null)
+                "author_interpretation": surg.get("author_interpretation"),
             },
             "contrast_ct": {
                 "required": cont.get("required"),
@@ -198,8 +232,8 @@ def build(warnings=None):
             },
             # ガイドライン別 washout (値 + 出典ラベル + 短い引用 + 所在。 全文 quote / note は 含めない)
             "guideline_variations": {
-                "surgery": _public_variations(gentry.get("surgery"), VAR_SURGERY_KEEP, entries, warnings),
-                "contrast_ct": _public_variations(gentry.get("contrast_ct"), VAR_CONTRAST_KEEP, entries, warnings),
+                "surgery": _public_variations(gentry.get("surgery"), VAR_SURGERY_KEEP, entries, warnings, gl_titles),
+                "contrast_ct": _public_variations(gentry.get("contrast_ct"), VAR_CONTRAST_KEEP, entries, warnings, gl_titles),
             },
             # 出典 (source/title/url/検証status + 短い引用 + 所在。 全文 quote は 無し)
             "references": [_public_reference(r, entries, warnings) for r in (d.get("references") or [])],

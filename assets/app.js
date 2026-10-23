@@ -52,8 +52,8 @@ function badgesOf(s = {}, c = {}) {
   const out = [];
   const hi = days(s.display_high_risk_days_before ?? s.surgery_high_risk_days_before, s.display_high_risk_day_of ?? s.surgery_high_risk_day_of);
   const lo = days(s.display_low_risk_days_before ?? s.surgery_low_risk_days_before, s.display_low_risk_day_of ?? s.surgery_low_risk_day_of);
-  if (hi) out.push(['high', '周術期 (出血リスク高)', hi]);
-  if (lo) out.push(['low', '周術期 (出血リスク低)', lo]);
+  if (hi) out.push(['high', '周術期 (高リスク手術)', hi]);
+  if (lo) out.push(['low', '周術期 (低リスク手術)', lo]);
   if (c.required) out.push(['ct', '造影CT', days(c.display_days_before ?? c.contrast_days_before, c.display_day_of ?? c.contrast_day_of) ?? '要休薬']);
   if (!out.length) out.push(['ok', '休薬', '記載なし']);
   return out;
@@ -149,6 +149,17 @@ function quoteBlock(q, tr, loc) {
   </details>`;
 }
 
+// 出典ごとの 作者の解釈 (区分ラベル + 文)。 休薬の推奨が ない 出典は 根拠に 見えないよう 強調する
+const MENTION = { 薬剤名: '薬剤名あり', なし: '薬剤名なし' };
+const RECOMMEND = { 薬剤名: '薬剤名での推奨', クラス: 'クラス単位の推奨', なし: '休薬の推奨なし' };
+function interpBlock(ai) {
+  if (!ai) return '';
+  const rec = RECOMMEND[ai.recommendation] ?? ai.recommendation;
+  const tags = [ai.context, MENTION[ai.mention] ?? ai.mention].filter(Boolean).map(esc);
+  if (rec) tags.push(ai.recommendation === 'なし' ? `<strong>${esc(rec)}</strong>` : esc(rec));
+  return `<div class="tags">${tags.join(' ・ ')}</div>${ai.text ? `<p class="interp-ref">作者の解釈: ${esc(ai.text)}</p>` : ''}`;
+}
+
 function variationsTable(vs, kind) {
   if (!vs?.length) return '';
   const head = kind === 'surgery'
@@ -158,10 +169,11 @@ function variationsTable(vs, kind) {
     const [dl, dt] = DERIV[v.value_derivation] ?? [];
     const src = v.source_url ? extLink(v.source_url, esc(v.source)) : esc(v.source);
     const ver = v.version_label ? ` <span class="loc">(${esc(v.version_label)})</span>` : '';
+    const title = v.source_title ? `<div class="loc">${esc(v.source_title)}</div>` : '';
     const nums = kind === 'surgery'
       ? `<td class="num">${esc(days(v.high_risk_days, v.high_risk_day_of, v.high_risk_hours) ?? '—')}</td><td class="num">${esc(days(v.low_risk_days, v.low_risk_day_of, v.low_risk_hours) ?? '—')}</td>`
       : `<td class="num">${esc(days(v.days, v.day_of, v.hours) ?? '—')}</td>`;
-    return `<tr><td>${src}${ver}${quoteBlock(v.quote_excerpt, null, v.source_location)}</td>${nums}
+    return `<tr><td>${src}${ver}${title}${quoteBlock(v.quote_excerpt, null, v.source_location)}</td>${nums}
       <td>${dl ? `<span class="deriv" title="${esc(dt)}">${esc(dl)}</span> ` : ''}${esc(v.dose_dependent_summary ?? '')}</td></tr>`;
   }).join('');
   return `<div class="table-scroll"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
@@ -174,11 +186,12 @@ function infoText(d) {
   if (hi || lo) L.push(`周術期休薬: 高リスク ${hi ?? '—'} / 低リスク ${lo ?? '—'}`);
   if (c.required) L.push(`造影CT: ${days(c.display_days_before, c.display_day_of) ?? '要休薬'}`);
   if (s.note) L.push(`補足: ${plain(s.note)}`);
+  if (s.author_interpretation) L.push(`根拠についての作者の解釈: ${s.author_interpretation}`);
   const gv = d.guideline_variations?.surgery ?? [];
   if (gv.length) {
     L.push('ガイドライン別(周術期):');
     for (const v of gv) {
-      let t = `  - ${v.source}`;
+      let t = `  - ${v.source}${v.source_title ? ` (${v.source_title})` : ''}`;
       const vh = days(v.high_risk_days, v.high_risk_day_of, v.high_risk_hours), vl = days(v.low_risk_days, v.low_risk_day_of, v.low_risk_hours);
       if (vh || vl) t += `: 高 ${vh ?? '—'} / 低 ${vl ?? '—'}`;
       if (v.dose_dependent_summary) t += ` (${v.dose_dependent_summary})`;
@@ -219,7 +232,8 @@ async function renderDetail(name) {
     const title = esc(`${r.source ? `[${r.source}] ` : ''}${r.title ?? r.url ?? ''}`);
     return `<li>${r.url ? extLink(r.url, title) : title}
       ${r.year ? `<span class="loc"> (${esc(r.year)})</span>` : ''}
-      ${quoteBlock(r.quote_excerpt, r.quote_translation_excerpt, r.location_in_source)}</li>`;
+      ${quoteBlock(r.quote_excerpt, r.quote_translation_excerpt, r.location_in_source)}
+      ${interpBlock(r.author_interpretation)}</li>`;
   }).join('');
   view.innerHTML = `<article class="detail">
     <a class="back" href="#/">← 一覧へ戻る</a>
@@ -229,6 +243,7 @@ async function renderDetail(name) {
     <div class="big">${boxes}</div>
     <p class="hint">表示の日数は 現行ガイドラインの 最長値 (安全側) です。 ガイドラインごとの値は 下の表を 参照してください。</p>
     ${s.note ? `<div class="note"><strong>周術期:</strong> ${md(s.note)}</div>` : ''}
+    ${s.author_interpretation ? `<div class="interp"><strong>根拠についての作者の解釈:</strong> ${esc(s.author_interpretation)}</div>` : ''}
     ${c.note ? `<div class="note"><strong>造影CT:</strong> ${md(c.note)}</div>` : ''}
     ${ex(s.high_risk_surgery_examples, '高リスク手術の例')}
     ${ex(s.low_risk_surgery_examples, '低リスク手術の例')}

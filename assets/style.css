@@ -120,6 +120,11 @@ main:focus, main:focus-visible { outline: none; box-shadow: none; }  /* 画面�
 .big .box.high { color: var(--high); } .big .box.low { color: var(--low); }
 .big .box.ct { color: var(--ct); } .big .box.ok { color: var(--ok); }
 .note { background: var(--note-bg); border-left: 4px solid var(--note-border); padding: 10px 14px; margin: 10px 0; border-radius: 4px; }
+/* 作者の解釈 (原典の記述ではない) — 補足 (黄) と 色を 分ける */
+.interp { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--muted); padding: 10px 14px; margin: 10px 0; border-radius: 4px; }
+.tags { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+.tags strong { color: var(--text); }
+.interp-ref { font-size: .9rem; margin: 2px 0 0; }
 .detail h2 { font-size: 1.2rem; margin: 26px 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
 .hint { color: var(--muted); font-size: .9rem; margin: 4px 0 8px; }
 .table-scroll { overflow-x: auto; }

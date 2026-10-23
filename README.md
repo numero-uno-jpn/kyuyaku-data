@@ -6,7 +6,7 @@
 |---|---|
 | **参照アプリ** | **https://numero-uno-jpn.github.io/kyuyaku-data/** (ブラウザで そのまま使えます。 登録不要) |
 | **使い方** | [参照アプリの 使い方 (画面付き)](https://numero-uno-jpn.github.io/kyuyaku-data/guide.html) |
-| **紹介スライド** | [学会・研究会向け](https://drive.google.com/file/d/1jELm31CoAxMsWOySwyynz3S43J6RAYB4/view) / [病院 (薬剤部・医療安全) 向け](https://drive.google.com/file/d/1TRripgsM6t6_ewGEaO80LyIclhFur-zz/view) (Google ドライブ、 閲覧のみ) |
+| **紹介スライド** | [学会・研究会向け](https://drive.google.com/file/d/18v1WVZLxj3E0V0g72Uh_y7EdMJaCMi1g/view) / [病院 (薬剤部・医療安全) 向け](https://drive.google.com/file/d/1kXMdiJ_IT71MPmYnC65Hfl3uflvJpFf7/view) (Google ドライブ、 閲覧のみ) |
 | **API** | `https://numero-uno-jpn.github.io/kyuyaku-data/v1/` (静的 JSON、 [仕様](docs/api.md)) |
 | **検索 API** | `https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン` (一致した薬を 配列で 返す、 [仕様ページ](https://numero-uno-jpn.github.io/kyuyaku-data/search-api.html)) |
 | **全件データ** | [`data/washout_public_v1.json`](data/washout_public_v1.json) |
@@ -21,7 +21,7 @@
 1. [参照アプリ](https://numero-uno-jpn.github.io/kyuyaku-data/) を 開き、 検索欄に 薬の名前を 入れます。 一般名・商品名・後発品名の どれでも、 一部だけでも、 ひらがなでも、 多少の 打ち間違いや 表記ゆれ (「アスピリソ」「リバロキサバン」) でも 検索できます。 何も 当たらない 時は 「もしかして」 の 候補を 出します。
    `https://numero-uno-jpn.github.io/kyuyaku-data/?q=アスピリン` のように URL でも 検索できます。
 2. 薬効分類の ボタン (抗血栓薬・糖尿病薬 など) で 絞り込むこともできます。
-3. カードを 押すと、 休薬日数 (安全側の値)、 ガイドライン別の値と 値の出どころ、 根拠の 引用または抜粋、 出典 (一次資料へのリンク) が 表示されます。
+3. カードを 押すと、 休薬日数 (安全側の値)、 ガイドライン別の値と 値の出どころ、 根拠の 引用または抜粋、 出典 (一次資料へのリンク) が 表示されます。 根拠を 見直した 薬には、 根拠についての 作者の 解釈も 表示されます。
 4. 「内容をコピー」 で 要点を テキストで、 「リンクをコピー」 で その薬の ページの URL を 取り出せます。
 
 詳しくは [使い方ページ](https://numero-uno-jpn.github.io/kyuyaku-data/guide.html) を ご覧ください。
@@ -95,7 +95,7 @@ AI を 使う 部分を 公開できないのは、 **AI サービスの 呼び�
 
 ## データの作り方
 
-1. **一次資料からの 抽出**: ガイドライン・添付文書から、 薬ごとの 休薬日数 (出血リスク別)・条件 (用量・腎機能等)・根拠の記載箇所を 抽出します。 ガイドラインの 版ごと (初版・改訂版) に 分けて 記録しています。
+1. **一次資料からの 抽出**: ガイドライン・添付文書から、 薬ごとの 休薬日数 (手術の リスク別)・条件 (用量・腎機能等)・根拠の記載箇所を 抽出します。 ガイドラインの 版ごと (初版・改訂版) に 分けて 記録しています。
 2. **原文との 照合**: 原文と 照合できた 出典 (AI が 原文を 読んで 照合し、 作者が 確認する 方針) は、 確認状況 (`verification_status`) を `verified` とし、 所在 (頁・表) と 引用または抜粋を 記録しています。
 3. **表示用の値 (安全側) の 決定**: 一覧や 参照アプリで 大きく 表示する `display_*` は、 次の 順で 決めた **安全側 (長い方) の値** です。
    1. 現行版の ガイドラインの 値の 最大値 (旧版は 除外)
@@ -120,6 +120,10 @@ AI を 使う 部分を 公開できないのは、 **AI サービスの 呼び�
    | `landing_only` | 資料の 入口ページへの リンク (該当箇所までは 特定していない) |
    | `unverified` | 未確認 |
 6. **引用または抜粋**: 根拠の 透明性のため、 一次資料からの 引用または抜粋を 載せています (和文 300 字 / 英文 600 字を 超えるものは 抜粋、 ` … ` は 中略)。 一部、 参考資料・作者による 注記を 含みます。 正確な 記載は 必ず 原典で 確認してください。
+7. **作者の 解釈** (`author_interpretation`): 日数の 根拠が あいまいな 薬 (手術の 資料が なく 内視鏡の クラス推奨だけ、 など) は、 原典と 添付文書を 読み直し、 出典ごとの 区分 (場面・薬剤名の 有無・推奨の 単位) と、 薬全体の 解釈を 記録しています。 このとき、 次の 原則で 値を 決めています。
+   - 手術・区域麻酔の 資料が 何も ない 薬は、 日数を 空 (記載なし) に する
+   - 資料が 「原則継続、 条件付きで 休薬」 と する 薬は、 高リスクに 条件付きの 目安、 低リスクに 継続 (0) を 入れる
+   - 添付文書が 日数なしで 休薬を 求める 薬は 1 日。 別の 薬・別の 場面の 値は 使わず、 補足に 参考として 残す
 
 詳しくは [データの作り方 (詳細)](docs/methodology.md) を ご覧ください。 抽出・照合の 手順、 値の 決め方、 確認状況の 判定基準、 自動の 検査、 限界を 説明しています。
 
@@ -226,6 +230,7 @@ AI は、 原文に ない 数値や 引用を もっともらしく 作り出�
     "surgery": [
       {
         "source": "JSA・JSRA・JSPC 2026 改訂第 2 版",
+        "source_title": "抗血栓療法中の区域麻酔・神経ブロック ガイドライン 改訂第 2 版",
         "high_risk_days": 3,
         "low_risk_days": 0,
         "value_derivation": "direct",
@@ -251,17 +256,48 @@ AI は、 原文に ない 数値や 引用を もっともらしく 作り出�
 }
 ```
 
+根拠を 見直した 薬には、 作者による 根拠の 解釈が 付きます (例: リマプロスト、 一部 省略)。 `surgery.author_interpretation` は 薬全体の 解釈、 `references[].author_interpretation` は その出典の 解釈です。 どちらも 原典の 記述ではありません。
+
+```json
+{
+  "name": "リマプロスト",
+  "surgery": {
+    "required": true,
+    "display_high_risk_days_before": null,
+    "display_low_risk_days_before": null,
+    "note": "…",
+    "author_interpretation": "手術・ 区域麻酔の ガイドラインに リマプロストの 休薬の 記載は ない。 唯一の 記述は 消化器内視鏡ガイドライン (2012) の クラス単位の 推奨 … (以下略)"
+  },
+  "references": [
+    {
+      "source": "JSA・JSRA・JSPC (日本麻酔科学会・日本区域麻酔学会・日本ペインクリニック学会 合同)",
+      "title": "抗血栓療法中の区域麻酔・神経ブロック ガイドライン 改訂第 2 版 (2026)",
+      "year": 2026,
+      "url": "https://www.regional-anesth.jp/docs/education/antithrombotic-guideline/guideline-kaitei02.pdf",
+      "verification_status": "helper_link",
+      "author_interpretation": {
+        "context": "区域麻酔",
+        "mention": "なし",
+        "recommendation": "なし",
+        "text": "リマプロストも PGE1 誘導体も 記載なし。 旧版 (2016 初版・ 2018 追補) も 同じ。"
+      }
+    }
+  ]
+}
+```
+
 主な項目:
 
 | 項目 | 意味 |
 |---|---|
-| `surgery.display_high_risk_days_before` / `display_low_risk_days_before` | 出血リスクの 高い / 低い 手術の 前の 休薬日数 (**安全側の値。 利用時は こちらを 推奨**)。 `0` は 休薬不要、 `null` は 記載なし (ただし 次の `*_day_of` が `true` なら 当日休薬) |
+| `surgery.display_high_risk_days_before` / `display_low_risk_days_before` | リスクの 高い / 低い 手術の 前の 休薬日数 (**安全側の値。 利用時は こちらを 推奨**)。 `0` は 休薬不要、 `null` は 記載なし (ただし 次の `*_day_of` が `true` なら 当日休薬) |
 | `surgery.display_high_risk_day_of` / `display_low_risk_day_of` | `true` は 安全側の値が **手術当日の休薬** (前日まで服用可) であること。 このとき 日数は `null` |
 | `surgery.high_risk_days_before` / `low_risk_days_before` | 作者の 採用値 (表示用の値の 決定に 使う 第 3 候補) |
 | `surgery.high_risk_day_of` / `low_risk_day_of` | `true` は 作者の 採用値が **手術当日の休薬** (日数は `null`) |
+| `surgery.author_interpretation` | **作者による 根拠の 解釈** (原典の 記述ではない)。 休薬日数が どの資料の どの記述から 来たか、 根拠の 弱さ 等。 根拠を 見直した 剤のみ、 他は `null` |
 | `contrast_ct.required` / `display_days_before` | 造影 CT 前の 休薬の 要否 / 日数 |
-| `guideline_variations.surgery[]` / `contrast_ct[]` | ガイドライン別の値。 `high_risk_days` / `low_risk_days` / `days`、 原文が 時間の値は `*_hours` / `hours`、 手術当日の休薬は `*_day_of` / `day_of` (いずれも 日数は `null`)、 `value_derivation`、 `dose_dependent_summary` (用量・腎機能別の要約)、 `version_label` / `version_year`、 `source_location`、 `source_url`、 `quote_excerpt` |
-| `references[]` | 出典。 `source` / `title` / `year` / `url` / `verification_status` / `location_in_source` / `quote_excerpt` / `quote_translation_excerpt` (英文の和訳) |
+| `guideline_variations.surgery[]` / `contrast_ct[]` | ガイドライン別の値。 `source` (略称) と `source_title` (正式名。 ガイドラインのみ、 添付文書等には 無し)、 `high_risk_days` / `low_risk_days` / `days`、 原文が 時間の値は `*_hours` / `hours`、 手術当日の休薬は `*_day_of` / `day_of` (いずれも 日数は `null`)、 `value_derivation`、 `dose_dependent_summary` (用量・腎機能別の要約)、 `version_label` / `version_year`、 `source_location`、 `source_url`、 `quote_excerpt` |
+| `references[]` | 出典。 `source` / `title` / `year` / `url` / `verification_status` / `location_in_source` / `quote_excerpt` / `quote_translation_excerpt` (英文の和訳) / `author_interpretation` (作者による その出典の 解釈: `context` 場面 (手術・区域麻酔・内視鏡・添付文書・その他)、 `mention` 薬剤名の 有無 (薬剤名 / なし)、 `recommendation` 休薬の 推奨の 単位 (薬剤名 / クラス / なし)、 `text`) |
 | URL の `#page=N` | PDF の 該当頁 (PDF の 頁番号で、 印刷頁とは 異なることがある) |
 
 すべての項目の 説明は [docs/api.md](docs/api.md) に あります。
@@ -328,6 +364,7 @@ search(index, 'アスピリソ');   // → [{ name: 'アスピリン', score: 63
 
 - **一般的な目安です。** 個々の患者 (腎機能、 血栓リスク、 ステント留置後の期間、 用量など) に 応じた 判断が 必要です。 ガイドラインの 条件 (用量別・腎機能別) は `dose_dependent_summary` や 引用を 確認してください。
 - **出血リスクの 分類は ガイドラインごとに 異なります。** 区域麻酔・神経ブロックの ガイドラインと 一般手術・内視鏡の ガイドラインでは 想定する 手技が 違います。 表示用の値は それらの 最長値 (安全側) です。
+- **日数が 空 (記載なし) の 薬が あります。** 手術・区域麻酔の 資料に 記載が ない 薬は、 別の 場面の 値を 当てはめず 空に しています。 事情は 根拠についての 作者の 解釈を ご覧ください。
 - **休薬しないことが 推奨される 場合が あります** (例: 冠動脈ステント留置後の アスピリン継続)。 日数だけで 判断せず、 補足と ガイドラインの 推奨文を 確認してください。
 - **更新の 遅れが ありえます。** ガイドラインや 添付文書の 改訂から 反映まで 最大 3 か月程度 かかることが あります (月 1 回、 作者が 確認・承認して 反映するため)。 データの版と 更新日は `meta.json` で 確認できます。
 - **医療機器 (プログラム医療機器) では ありません。**
