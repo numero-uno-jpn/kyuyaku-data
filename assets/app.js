@@ -157,7 +157,7 @@ function interpBlock(ai) {
   const rec = RECOMMEND[ai.recommendation] ?? ai.recommendation;
   const tags = [ai.context, MENTION[ai.mention] ?? ai.mention].filter(Boolean).map(esc);
   if (rec) tags.push(ai.recommendation === 'なし' ? `<strong>${esc(rec)}</strong>` : esc(rec));
-  return `<div class="tags">${tags.join(' ・ ')}</div>${ai.text ? `<p class="interp-ref">作者の解釈: ${esc(ai.text)}</p>` : ''}`;
+  return `<div class="tags">${tags.join(' ・ ')}</div>${ai.text ? `<p class="interp-ref">作者解釈: ${esc(ai.text)}</p>` : ''}`;
 }
 
 function variationsTable(vs, kind) {
@@ -186,7 +186,7 @@ function infoText(d) {
   if (hi || lo) L.push(`周術期休薬: 高リスク ${hi ?? '—'} / 低リスク ${lo ?? '—'}`);
   if (c.required) L.push(`造影CT: ${days(c.display_days_before, c.display_day_of) ?? '要休薬'}`);
   if (s.note) L.push(`補足: ${plain(s.note)}`);
-  if (s.author_interpretation) L.push(`根拠についての作者の解釈: ${s.author_interpretation}`);
+  if (s.author_interpretation) L.push(`作者解釈: ${s.author_interpretation}`);
   const gv = d.guideline_variations?.surgery ?? [];
   if (gv.length) {
     L.push('ガイドライン別(周術期):');
@@ -243,7 +243,7 @@ async function renderDetail(name) {
     <div class="big">${boxes}</div>
     <p class="hint">表示の日数は 現行ガイドラインの 最長値 (安全側) です。 ガイドラインごとの値は 下の表を 参照してください。</p>
     ${s.note ? `<div class="note"><strong>周術期:</strong> ${md(s.note)}</div>` : ''}
-    ${s.author_interpretation ? `<div class="interp"><strong>根拠についての作者の解釈:</strong> ${esc(s.author_interpretation)}</div>` : ''}
+    ${s.author_interpretation ? `<div class="interp"><strong>作者解釈:</strong> ${esc(s.author_interpretation)}</div>` : ''}
     ${c.note ? `<div class="note"><strong>造影CT:</strong> ${md(c.note)}</div>` : ''}
     ${ex(s.high_risk_surgery_examples, '高リスク手術の例')}
     ${ex(s.low_risk_surgery_examples, '低リスク手術の例')}
