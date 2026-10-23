@@ -3,11 +3,11 @@
     "name": "休薬情報データベース (Kyuyaku Data)",
     "author": "梅谷 直亨 (Naoyuki Umetani)",
     "api_version": "1.1",
-    "data_version": "0.8.0",
-    "data_updated_at": "2026-10-18",
+    "data_version": "0.8.1",
+    "data_updated_at": "2026-10-23",
     "generated_at": "2026-10-23",
     "scope": "周術期・造影CT の 休薬情報のみ",
-    "drug_count": 152,
+    "drug_count": 155,
     "license": "CC BY 4.0",
     "license_url": "https://creativecommons.org/licenses/by/4.0/",
     "license_exceptions": "quote_excerpt / quote_translation_excerpt は CC BY 4.0 の 対象外です。 各出典 (学会ガイドライン / PMDA 添付文書 等) の 著作物を 著作権法 32 条に 基づき 引用したもので、 著作権は 各権利者に 帰属します。 再利用する 場合は 出典を 明示し、 各権利者の 条件に 従ってください。",
@@ -4658,7 +4658,12 @@
         "ジャヌビア錠50mg",
         "ジャヌビア錠100mg"
       ],
-      "generic_brands": [],
+      "generic_brands": [
+        "シタグリプチン錠12.5mg「メーカー名」",
+        "シタグリプチン錠25mg「メーカー名」",
+        "シタグリプチン錠50mg「メーカー名」",
+        "シタグリプチン錠100mg「メーカー名」"
+      ],
       "surgery": {
         "required": true,
         "high_risk_days_before": null,
@@ -4872,7 +4877,10 @@
       "brand_names": [
         "トラゼンタ錠5mg"
       ],
-      "generic_brands": [],
+      "generic_brands": [
+        "リナグリプチン錠5mg「メーカー名」",
+        "リナグリプチンOD錠5mg「メーカー名」"
+      ],
       "surgery": {
         "required": true,
         "high_risk_days_before": null,
@@ -4945,7 +4953,10 @@
         "テネリア錠20mg",
         "テネリア錠40mg"
       ],
-      "generic_brands": [],
+      "generic_brands": [
+        "テネリグリプチン錠20mg「メーカー名」",
+        "テネリグリプチン錠40mg「メーカー名」"
+      ],
       "surgery": {
         "required": true,
         "high_risk_days_before": null,
@@ -5941,7 +5952,9 @@
         "メトジェクト皮下注10mgペン0.20mL",
         "メトジェクト皮下注12.5mgペン0.25mL",
         "メトジェクト皮下注15mgペン0.30mL",
-        "リウマトレックスカプセル2mg"
+        "リウマトレックスカプセル2mg",
+        "メソトレキセート注射液50mg／2mL",
+        "メソトレキセート注射液5mg／2mL"
       ],
       "generic_brands": [
         "メトトレキサートカプセル2mg「メーカー名」",
@@ -7234,7 +7247,8 @@
       ],
       "brand_names": [
         "ステラーラ点滴静注130mg",
-        "ステラーラ皮下注45mgシリンジ"
+        "ステラーラ皮下注45mgシリンジ",
+        "ステラーラ皮下注45mgバイアル"
       ],
       "generic_brands": [
         "ウステキヌマブBS点滴静注130mg「メーカー名」",
@@ -7421,7 +7435,7 @@
         {
           "source": "PMDA",
           "title": "スキリージ皮下注75/150/360mg 添付文書 (PMDA)",
-          "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/112130_3999450G1028_1_08",
+          "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/112130_3999450G1028_1_09",
           "verification_status": "landing_only"
         },
         {
@@ -7519,7 +7533,7 @@
         {
           "source": "PMDA",
           "title": "トレムフィア皮下注100/200mg / 点滴静注200mg 添付文書 (PMDA)",
-          "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/800155_3999446G1021_1_13",
+          "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/800155_3999446G1021_1_15",
           "verification_status": "landing_only"
         },
         {
@@ -7818,7 +7832,8 @@
         "リンヴォック錠45mg",
         "リンヴォック錠30mg",
         "リンヴォック錠15mg",
-        "リンヴォック錠7.5mg"
+        "リンヴォック錠7.5mg",
+        "リンヴォック内用液0.1％（1mg／mL）"
       ],
       "generic_brands": [],
       "surgery": {
@@ -7896,7 +7911,7 @@
         {
           "source": "PMDA",
           "title": "リンヴォック錠7.5/15/30/45mg 添付文書 (PMDA)",
-          "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/112130_3999048G2024_1_17",
+          "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/112130_3999048G2024_1_21",
           "verification_status": "landing_only"
         },
         {
@@ -8142,7 +8157,7 @@
         {
           "source": "PMDA",
           "title": "アラバ錠10/20/100mg 添付文書 (PMDA)",
-          "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/780069_3999020F1029_1_21",
+          "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/780069_3999020F1029_1_22",
           "verification_status": "landing_only"
         },
         {
@@ -15142,6 +15157,194 @@
           "source": "KEGG MEDICUS",
           "title": "チョウセンニンジン 医療用医薬品 検索結果 (KEGG MEDICUS)",
           "url": "https://www.kegg.jp/medicus-bin/search_drug?display=med&search_keyword=チョウセンニンジン",
+          "verification_status": "helper_link"
+        }
+      ]
+    },
+    {
+      "name": "マルスタシマブ",
+      "category": "血友病治療薬 (抗 TFPI 抗体)",
+      "aliases": [
+        "marstacimab"
+      ],
+      "brand_names": [
+        "ヒムペブジ皮下注150mgペン"
+      ],
+      "generic_brands": [],
+      "surgery": {
+        "required": true,
+        "high_risk_days_before": null,
+        "low_risk_days_before": 0,
+        "high_risk_day_of": false,
+        "low_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": false,
+        "display_low_risk_days_before": 0,
+        "display_low_risk_day_of": false,
+        "high_risk_surgery_examples": [
+          "大手術全般"
+        ],
+        "low_risk_surgery_examples": [
+          "歯科抜歯"
+        ],
+        "note": "添付文書 8.5: 大手術を行う場合は本剤の投与を中止し、バイパス止血製剤又は血液凝固因子製剤による標準治療を行う (中止の日数の記載はない)。週 1 回の皮下注のため、手術日程は血液内科と調整する。抜歯等の小手術では用量変更・投与中止は不要。警告 1.1 に重篤な血栓塞栓性事象の報告あり。"
+      },
+      "contrast_ct": {
+        "required": false,
+        "days_before": null,
+        "day_of": false,
+        "display_days_before": null,
+        "display_day_of": false,
+        "note": null
+      },
+      "guideline_variations": {
+        "surgery": [
+          {
+            "source": "PMDA 添付文書",
+            "low_risk_days": 0
+          }
+        ],
+        "contrast_ct": []
+      },
+      "references": [
+        {
+          "source": "PMDA",
+          "title": "ヒムペブジ皮下注150mgペン (マルスタシマブ) 添付文書 (JAPIC 掲載、2026年8月改訂 第2版)",
+          "url": "https://pins.japic.or.jp/pdf/newPINS/00071599.pdf",
+          "verification_status": "verified",
+          "quote_excerpt": "大手術時における本剤の有効性及び安全性は確立されていないため、大手術を行う場合は、本剤の投与を中止し、バイパス止血製剤又は血液凝固因子製剤を用いた標準治療を行い、周術期における静脈血栓症発現のリスクを管理すること。本剤の投与を再開する場合は、術後の血栓塞栓症リスク因子の有無や、その他の止血製剤及び併用薬の使用等、患者の全身状態を考慮すること。なお、抜歯等の小手術では本剤の用量変更又は投与中止の必要はない。",
+          "location_in_source": "8.5 重要な基本的注意 (p.1)"
+        },
+        {
+          "source": "KEGG MEDICUS",
+          "title": "マルスタシマブ 医療用医薬品 検索結果 (KEGG MEDICUS)",
+          "url": "https://www.kegg.jp/medicus-bin/search_drug?display=med&search_keyword=%E3%83%9E%E3%83%AB%E3%82%B9%E3%82%BF%E3%82%B7%E3%83%9E%E3%83%96",
+          "verification_status": "helper_link"
+        }
+      ]
+    },
+    {
+      "name": "レミブルチニブ",
+      "category": "免疫抑制薬 (BTK 阻害薬)",
+      "aliases": [
+        "remibrutinib"
+      ],
+      "brand_names": [
+        "ラプシド錠25mg"
+      ],
+      "generic_brands": [],
+      "surgery": {
+        "required": true,
+        "high_risk_days_before": 7,
+        "low_risk_days_before": 3,
+        "high_risk_day_of": false,
+        "low_risk_day_of": false,
+        "display_high_risk_days_before": 7,
+        "display_high_risk_day_of": false,
+        "display_low_risk_days_before": 3,
+        "display_low_risk_day_of": false,
+        "high_risk_surgery_examples": [
+          "脊髄外科",
+          "脳神経外科",
+          "心臓外科"
+        ],
+        "low_risk_surgery_examples": [
+          "皮膚生検",
+          "歯科抜歯"
+        ],
+        "note": "出血リスク増加。添付文書 8.2「手術の種類及び出血リスクに応じて、手術前後3~7日間の本剤投与中断を考慮」に基づき、高リスク手術 7 日・低リスク手術 3 日とした (原文は考慮の範囲で、出血リスク別の区分は KyuyakuLens の割り当て)。"
+      },
+      "contrast_ct": {
+        "required": false,
+        "days_before": null,
+        "day_of": false,
+        "display_days_before": null,
+        "display_day_of": false,
+        "note": null
+      },
+      "guideline_variations": {
+        "surgery": [
+          {
+            "source": "PMDA 添付文書",
+            "high_risk_days": 7,
+            "low_risk_days": 3
+          }
+        ],
+        "contrast_ct": []
+      },
+      "references": [
+        {
+          "source": "PMDA",
+          "title": "ラプシド錠25mg (レミブルチニブ) 添付文書 (JAPIC 掲載、2026年10月改訂 第2版)",
+          "url": "https://pins.japic.or.jp/pdf/newPINS/00072117.pdf",
+          "verification_status": "verified",
+          "quote_excerpt": "本剤による出血のリスクが増加するため、本剤投与中に手術を受ける患者に対しては、手術の種類及び出血リスクに応じて、手術前後3~7日間の本剤投与中断を考慮すること。",
+          "location_in_source": "8.2 重要な基本的注意 (p.1)"
+        },
+        {
+          "source": "KEGG MEDICUS",
+          "title": "レミブルチニブ 医療用医薬品 検索結果 (KEGG MEDICUS)",
+          "url": "https://www.kegg.jp/medicus-bin/search_drug?display=med&search_keyword=%E3%83%AC%E3%83%9F%E3%83%96%E3%83%AB%E3%83%81%E3%83%8B%E3%83%96",
+          "verification_status": "helper_link"
+        }
+      ]
+    },
+    {
+      "name": "イコトロキンラ",
+      "category": "免疫抑制薬 (経口 IL-23 受容体拮抗薬)",
+      "aliases": [
+        "icotrokinra"
+      ],
+      "brand_names": [
+        "イコタイド錠200mg"
+      ],
+      "generic_brands": [],
+      "surgery": {
+        "required": true,
+        "high_risk_days_before": null,
+        "low_risk_days_before": null,
+        "high_risk_day_of": false,
+        "low_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": false,
+        "display_low_risk_days_before": null,
+        "display_low_risk_day_of": false,
+        "high_risk_surgery_examples": [
+          "人工関節置換術",
+          "脊椎手術",
+          "腹部外科"
+        ],
+        "low_risk_surgery_examples": [
+          "皮膚生検",
+          "歯科抜歯"
+        ],
+        "note": "添付文書に手術・周術期の記載はなく、休薬日数を示す資料もない (2026-10 時点)。警告 1.1 に感染症のリスク増大・結核の活動化の記載があるため、手術の予定は処方医と相談する。"
+      },
+      "contrast_ct": {
+        "required": false,
+        "days_before": null,
+        "day_of": false,
+        "display_days_before": null,
+        "display_day_of": false,
+        "note": null
+      },
+      "guideline_variations": {
+        "surgery": [],
+        "contrast_ct": []
+      },
+      "references": [
+        {
+          "source": "PMDA",
+          "title": "イコタイド錠200mg (イコトロキンラ) 添付文書 (JAPIC 掲載、2026年9月作成 第1版)",
+          "url": "https://pins.japic.or.jp/pdf/newPINS/00072226.pdf",
+          "verification_status": "verified",
+          "quote_excerpt": "本剤は感染症のリスクを増大させる可能性があり、また結核の既往歴を有する患者では結核を活動化させる可能性がある。",
+          "location_in_source": "1.1 警告 (p.1)"
+        },
+        {
+          "source": "KEGG MEDICUS",
+          "title": "イコトロキンラ 医療用医薬品 検索結果 (KEGG MEDICUS)",
+          "url": "https://www.kegg.jp/medicus-bin/search_drug?display=med&search_keyword=%E3%82%A4%E3%82%B3%E3%83%88%E3%83%AD%E3%82%AD%E3%83%B3%E3%83%A9",
           "verification_status": "helper_link"
         }
       ]
