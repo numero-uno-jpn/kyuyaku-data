@@ -3,7 +3,7 @@
     "name": "休薬情報データベース (Kyuyaku Data)",
     "author": "梅谷 直亨 (Naoyuki Umetani)",
     "api_version": "1.1",
-    "data_version": "0.8.5",
+    "data_version": "0.8.6",
     "data_updated_at": "2026-10-25",
     "generated_at": "2026-10-25",
     "scope": "周術期・造影CT の 休薬情報のみ",
@@ -1027,7 +1027,7 @@
             "text": "薬理の 解説で 名前を 挙げるのみ。 休薬期間の 表 (表 9) には ない。"
           },
           "quote_excerpt": "チクロピジンは第一世代薬で，顆粒球減少症や肝障害といった重篤な副作用の頻度が高く，現在では使用頻度は大きく低下している．",
-          "location_in_source": "p.5 総論 2 薬理学 (第一世代 チエノピリジン系、 使用頻度低下)。 表 9 は 未収載 (2024 版で 削除)"
+          "location_in_source": "p.5 総論 2 薬理学 (第一世代 チエノピリジン系、 使用頻度低下)。 表 9 は 未収載 (改訂第 2 版で 削除)"
         },
         {
           "source": "PMDA",
@@ -1287,7 +1287,7 @@
             "text": "薬理の 解説 (可逆的・ 短時間で 効果が 消失) のみ。 休薬期間の 表 (表 9) には なく、 休薬不要とも 書いていない。"
           },
           "quote_excerpt": "プロスタサイクリン類似物質であり，血小板のIP 受容体を刺激し，cAMP 上昇を介して血小板凝集抑制作用と血管拡張作用を発揮する．抗血小板作用は可逆的であり，比較的短時間で効果が消失し，末梢循環障害や肺高血圧症などの適応がある．",
-          "location_in_source": "p.6 総論 2 薬理学 (可逆・短時間作用)。 表 9 は 未収載 (2024 版で 削除)"
+          "location_in_source": "p.6 総論 2 薬理学 (可逆・短時間作用)。 表 9 は 未収載 (改訂第 2 版で 削除)"
         },
         {
           "source": "JGES (日本消化器内視鏡学会) ほか",
@@ -7867,7 +7867,7 @@
           "歯科抜歯"
         ],
         "note": "手術部位感染・ 創傷治癒遅延の リスク。 術後は 創傷が ほぼ 治癒し、 感染が ないことを 確認してから 再開する。 半減期の 5 倍が 2 か月を 超える 薬で、 長い 休薬は 病勢の 大きな 悪化・ 再燃を 招きうる (BSR が 同じ 理由で アダリムマブ・ アバタセプトに 警告して いる)。 休薬の 長さは 処方医と 相談する。",
-        "author_interpretation": null
+        "author_interpretation": "BSR (英国) は 標準リスクの 手術で 少なくとも 1 投与間隔 (12 週)、 感染の ハイリスク手術で 半減期の 3〜5 倍を 推奨する (表 7: 半減期の 5 倍で 105 日)。 ACR/AAHKS 2022 (人工関節置換術) も 1 投与間隔の 後 (第 13 週)。 JDA 2022 (乾癬) は 低リスク手術を 継続可と する。 よって 高リスク 105 日、 低リスクは BSR の 標準リスクの 1 投与間隔 84 日と した (アダリムマブなど BSR の 対象薬と 同じ 決め方)。"
       },
       "contrast_ct": {
         "required": false,
@@ -11078,8 +11078,8 @@
           "歯科抜歯",
           "白内障手術"
         ],
-        "note": "🚨 肺動脈性肺高血圧症 (PAH) の 用途 (アドシルカ) では、 中止すると 肺高血圧クリーゼ・ 右心不全の おそれが あるため 継続し、 循環器内科と 相談する。 前立腺肥大症 (ザルティア) は 継続する。 ⚠️ 硝酸薬 (ニトログリセリン など) との 併用は 禁忌 (致命的な 低血圧)。 麻酔中に 硝酸薬を 使う 可能性が あるため、 勃起不全 (ED) の 用途 (シアリス) は 手術の 前日と 当日に 服用しない。",
-        "author_interpretation": "添付文書と ガイドラインに 周術期の 記載は ない。 英国 UKCPA の 実務資料は 原則 継続とし、 勃起不全の 用途に 限り 手術の 前日と 当日は 服用しない と する (麻酔中に 使いうる 硝酸薬との 併用禁忌のため)。 よって 高リスク 1 日 (前日と 当日)、 低リスクは 継続 (0) と した。 前立腺肥大症・ 肺動脈性肺高血圧症の 用途では 継続が 前提。"
+        "note": "🚨 肺動脈性肺高血圧症 (PAH) の 用途 (アドシルカ) では、 中止すると 肺高血圧クリーゼ・ 右心不全の おそれが あるため 継続し、 循環器内科と 相談する。 前立腺肥大症 (ザルティア) は 継続する。 ⚠️ 硝酸薬 (ニトログリセリン など) との 併用は 禁忌 (致命的な 低血圧)。 麻酔中に 硝酸薬を 使う 可能性が あるため、 勃起不全 (ED) の 用途 (シアリス) は 手術の 前日と 当日に 服用しない。 米国の 添付文書 (7.1) は、 命に かかわる 状況で 硝酸薬が 必要な ときは 最後の 服用から 少なくとも 48 時間 空ける と する (緊急時の 硝酸薬の 使い方で、 手術前の 休薬の 指示では ない)。",
+        "author_interpretation": "添付文書と ガイドラインに 周術期の 記載は ない (米国の 添付文書の 「48 時間」 は 緊急時に 硝酸薬を 使う ときの 間隔で、 補足に 参考として 示す)。 英国 UKCPA の 実務資料は 原則 継続とし、 勃起不全の 用途に 限り 手術の 前日と 当日は 服用しない と する (麻酔中に 使いうる 硝酸薬との 併用禁忌のため)。 よって 高リスク 1 日 (前日と 当日)、 低リスクは 継続 (0) と した。 前立腺肥大症・ 肺動脈性肺高血圧症の 用途では 継続が 前提。"
       },
       "contrast_ct": {
         "required": false,
@@ -11131,6 +11131,15 @@
           },
           "quote_excerpt": "Continue. Except: For erectile dysfunction (ED) – advise patient not to take the day prior to and the day of procedure.",
           "location_in_source": "Elective surgery"
+        },
+        {
+          "source": "FDA (DailyMed)",
+          "title": "CIALIS (tadalafil) 米国添付文書 (FDA 承認ラベル、DailyMed 2026-06 版)",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895",
+          "verification_status": "helper_link",
+          "year": 2026,
+          "quote_excerpt": "In a patient who has taken CIALIS, where nitrate administration is deemed medically necessary in a life-threatening situation, at least 48 hours should elapse after the last dose of CIALIS before nitrate administration is considered.",
+          "location_in_source": "7.1 Potential for Pharmacodynamic Interactions with CIALIS (Drug Interactions)"
         }
       ]
     },
