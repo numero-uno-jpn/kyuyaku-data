@@ -3,11 +3,11 @@
     "name": "休薬情報データベース (Kyuyaku Data)",
     "author": "梅谷 直亨 (Naoyuki Umetani)",
     "api_version": "1.1",
-    "data_version": "0.8.3",
+    "data_version": "0.8.4",
     "data_updated_at": "2026-10-24",
     "generated_at": "2026-10-24",
     "scope": "周術期・造影CT の 休薬情報のみ",
-    "drug_count": 155,
+    "drug_count": 157,
     "license": "CC BY 4.0",
     "license_url": "https://creativecommons.org/licenses/by/4.0/",
     "license_exceptions": "quote_excerpt / quote_translation_excerpt は CC BY 4.0 の 対象外です。 各出典 (学会ガイドライン / PMDA 添付文書 等) の 著作物を 著作権法 32 条に 基づき 引用したもので、 著作権は 各権利者に 帰属します。 再利用する 場合は 出典を 明示し、 各権利者の 条件に 従ってください。",
@@ -4591,7 +4591,9 @@
       ],
       "brand_names": [
         "ファスティック錠30",
-        "ファスティック錠90"
+        "ファスティック錠90",
+        "スターシス錠30mg",
+        "スターシス錠90mg"
       ],
       "generic_brands": [
         "ナテグリニド錠30mg「メーカー名」",
@@ -5704,6 +5706,140 @@
           "source": "KEGG MEDICUS",
           "title": "オマリグリプチン 医療用医薬品 検索結果 (KEGG MEDICUS)",
           "url": "https://www.kegg.jp/medicus-bin/search_drug?display=med&search_keyword=%E3%82%AA%E3%83%9E%E3%83%AA%E3%82%B0%E3%83%AA%E3%83%97%E3%83%81%E3%83%B3",
+          "verification_status": "helper_link"
+        }
+      ]
+    },
+    {
+      "name": "ピオグリタゾン",
+      "category": "チアゾリジン系 (インスリン抵抗性改善薬)",
+      "aliases": [
+        "pioglitazone"
+      ],
+      "brand_names": [
+        "アクトス錠15",
+        "アクトス錠30",
+        "アクトスOD錠15",
+        "アクトスOD錠30"
+      ],
+      "generic_brands": [
+        "ピオグリタゾン錠15mg「メーカー名」",
+        "ピオグリタゾン錠30mg「メーカー名」",
+        "ピオグリタゾンOD錠15mg「メーカー名」",
+        "ピオグリタゾンOD錠30mg「メーカー名」"
+      ],
+      "surgery": {
+        "required": true,
+        "high_risk_days_before": null,
+        "low_risk_days_before": null,
+        "high_risk_day_of": true,
+        "low_risk_day_of": true,
+        "display_high_risk_days_before": 1,
+        "display_high_risk_day_of": false,
+        "display_low_risk_days_before": null,
+        "display_low_risk_day_of": true,
+        "high_risk_surgery_examples": [
+          "大手術全般"
+        ],
+        "low_risk_surgery_examples": [
+          "小手術 (絶食を 伴うもの)"
+        ],
+        "note": "絶食の 日は 内服しない。 術後の 血糖は インスリンで 管理し、 食事が とれるように なってから 再開する。 配合錠 ソニアス (グリメピリド)・ リオベル (アログリプチン) も 同じ 扱い。 メタクト (メトホルミン) は メトホルミンの 欄 (造影 CT を 含む) も 参照。",
+        "author_interpretation": "添付文書は 重症感染症・ 手術前後・ 重篤な 外傷の ある 患者を 禁忌と する (インスリン注射に よる 血糖管理が 望まれるため) が、 日数は ない。 日数の ない 休薬指示として 高リスク 1 日 と した。 小手術を 分ける 記載は ないため、 低リスクは ほかの 経口血糖降下薬と 同じく 絶食日の 当日休薬 と した。"
+      },
+      "contrast_ct": {
+        "required": false,
+        "days_before": null,
+        "day_of": false,
+        "display_days_before": null,
+        "display_day_of": false,
+        "note": null
+      },
+      "guideline_variations": {
+        "surgery": [
+          {
+            "source": "PMDA 添付文書",
+            "high_risk_days": 1
+          }
+        ],
+        "contrast_ct": []
+      },
+      "references": [
+        {
+          "source": "PMDA",
+          "title": "アクトス錠15／アクトス錠30 (ピオグリタゾン) 添付文書 (JAPIC 掲載、2026年3月改訂 第4版)",
+          "url": "https://pins.japic.or.jp/pdf/newPINS/00045812.pdf",
+          "verification_status": "verified",
+          "quote_excerpt": "重症感染症、手術前後、重篤な外傷のある患者［インスリン注射による血糖管理が望まれるので本剤の投与は適さない。］",
+          "location_in_source": "p.1 2. 禁忌（次の患者には投与しないこと） 2.5"
+        },
+        {
+          "source": "KEGG MEDICUS",
+          "title": "ピオグリタゾン 医療用医薬品 検索結果 (KEGG MEDICUS)",
+          "url": "https://www.kegg.jp/medicus-bin/search_drug?display=med&search_keyword=%E3%83%94%E3%82%AA%E3%82%B0%E3%83%AA%E3%82%BF%E3%82%BE%E3%83%B3",
+          "verification_status": "helper_link"
+        }
+      ]
+    },
+    {
+      "name": "イメグリミン",
+      "category": "イメグリミン (糖尿病用剤)",
+      "aliases": [
+        "imeglimin"
+      ],
+      "brand_names": [
+        "ツイミーグ錠500mg"
+      ],
+      "generic_brands": [],
+      "surgery": {
+        "required": true,
+        "high_risk_days_before": null,
+        "low_risk_days_before": null,
+        "high_risk_day_of": true,
+        "low_risk_day_of": true,
+        "display_high_risk_days_before": 1,
+        "display_high_risk_day_of": false,
+        "display_low_risk_days_before": null,
+        "display_low_risk_day_of": true,
+        "high_risk_surgery_examples": [
+          "大手術全般"
+        ],
+        "low_risk_surgery_examples": [
+          "小手術 (絶食を 伴うもの)"
+        ],
+        "note": "絶食の 日は 内服しない。 術後の 血糖は インスリンで 管理し、 食事が とれるように なってから 再開する。",
+        "author_interpretation": "添付文書は 重症感染症・ 手術前後・ 重篤な 外傷の ある 患者を 禁忌と する (インスリン注射に よる 血糖管理が 望まれるため) が、 日数は ない。 日数の ない 休薬指示として 高リスク 1 日 と した。 小手術を 分ける 記載は ないため、 低リスクは ほかの 経口血糖降下薬と 同じく 絶食日の 当日休薬 と した。"
+      },
+      "contrast_ct": {
+        "required": false,
+        "days_before": null,
+        "day_of": false,
+        "display_days_before": null,
+        "display_day_of": false,
+        "note": null
+      },
+      "guideline_variations": {
+        "surgery": [
+          {
+            "source": "PMDA 添付文書",
+            "high_risk_days": 1
+          }
+        ],
+        "contrast_ct": []
+      },
+      "references": [
+        {
+          "source": "PMDA",
+          "title": "ツイミーグ錠500mg (イメグリミン) 添付文書 (JAPIC 掲載、2026年1月改訂 第6版)",
+          "url": "https://pins.japic.or.jp/pdf/newPINS/00069680.pdf",
+          "verification_status": "verified",
+          "quote_excerpt": "重症感染症、手術前後、重篤な外傷のある患者［インスリン注射による血糖管理が望まれるので本剤の投与は適さない。］",
+          "location_in_source": "p.1 2. 禁忌(次の患者には投与しないこと) 2.3"
+        },
+        {
+          "source": "KEGG MEDICUS",
+          "title": "イメグリミン 医療用医薬品 検索結果 (KEGG MEDICUS)",
+          "url": "https://www.kegg.jp/medicus-bin/search_drug?display=med&search_keyword=%E3%82%A4%E3%83%A1%E3%82%B0%E3%83%AA%E3%83%9F%E3%83%B3",
           "verification_status": "helper_link"
         }
       ]
