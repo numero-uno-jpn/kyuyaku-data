@@ -300,7 +300,7 @@ AI は、 原文に ない 数値や 引用を もっともらしく 作り出�
 | `surgery.author_interpretation` | **作者による 根拠の 解釈** (原典の 記述ではない)。 休薬日数が どの資料の どの記述から 来たか、 根拠の 弱さ 等。 根拠を 見直した 剤のみ、 他は `null` |
 | `contrast_ct.required` / `display_days_before` | 造影 CT 前の 休薬の 要否 / 日数 |
 | `guideline_variations.surgery[]` / `contrast_ct[]` | ガイドライン別の値。 `source` (略称) と `source_title` (正式名。 ガイドラインのみ、 添付文書等には 無し)、 `high_risk_days` / `low_risk_days` / `days`、 原文が 時間の値は `*_hours` / `hours`、 手術当日の休薬は `*_day_of` / `day_of` (いずれも 日数は `null`)、 `value_derivation`、 `dose_dependent_summary` (用量・腎機能別の要約)、 `version_label` / `version_year`、 `source_location`、 `source_url`、 `quote_excerpt` |
-| `references[]` | 出典。 `source` / `title` / `year` / `url` / `verification_status` / `location_in_source` / `quote_excerpt` / `quote_translation_excerpt` (英文の和訳) / `author_interpretation` (作者による その出典の 解釈: `context` 場面 (手術・区域麻酔・内視鏡・添付文書・その他)、 `mention` 薬剤名の 有無 (薬剤名 / なし)、 `recommendation` 休薬の 推奨の 単位 (薬剤名 / クラス / なし)、 `text`) |
+| `references[]` | 出典。 `source` / `title` / `year` / `url` / `verification_status` / `location_in_source` / `quote_excerpt` / `quote_translation_excerpt` (英文の和訳) / `author_interpretation` (作者による その出典の 解釈: `context` 場面 (手術・区域麻酔・内視鏡・添付文書・その他)、 `mention` 薬剤名の 有無 (薬剤名 / なし)、 `recommendation` 休薬の 推奨の 単位 (薬剤名 / クラス / なし)、 `text`)。 ガイドライン別の値を 持つ ガイドラインは `guideline_variations` に あり、 `references[]` に あるとは 限らない |
 | URL の `#page=N` | PDF の 該当頁 (PDF の 頁番号で、 印刷頁とは 異なることがある) |
 
 すべての項目の 説明は [docs/api.md](docs/api.md) に あります。

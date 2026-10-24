@@ -3,7 +3,7 @@
     "name": "休薬情報データベース (Kyuyaku Data)",
     "author": "梅谷 直亨 (Naoyuki Umetani)",
     "api_version": "1.1",
-    "data_version": "0.8.6",
+    "data_version": "0.8.7",
     "data_updated_at": "2026-10-25",
     "generated_at": "2026-10-25",
     "scope": "周術期・造影CT の 休薬情報のみ",
@@ -750,7 +750,7 @@
           "歯科抜歯"
         ],
         "note": "通常は 継続できる。 出血の リスクが 高い 手技では 休薬を 検討する。 可逆的な 阻害で、 休薬後の 回復は 早い。",
-        "author_interpretation": "手術の ガイドラインに 記載は なく、 薬剤名で 休薬に 触れるのは 区域麻酔 (JSA・ ASRA 2018) と 内視鏡の ガイドライン。 JSA 改訂第 2 版は 「休薬は必須でない」 とし、 出血リスクが 高い 症例で 休薬するなら 2 日を 目安と する。 ASRA 2018 は 脊髄幹麻酔を 中止後 2 日 避けることを 提案。 内視鏡では 他の 抗血小板薬から 置き換えて 継続する 薬。 よって 高リスクは 区域麻酔の 目安の 2 日、 低リスクは 継続 (0) と した。"
+        "author_interpretation": "手術の ガイドラインに 記載は なく、 薬剤名で 休薬に 触れるのは 区域麻酔 (JSA・ ASRA 2018) と 内視鏡の ガイドライン。 JSA 改訂第 2 版は 「休薬は必須でない」 とし、 出血リスクが 高い 症例で 休薬するなら 2 日を 目安と する。 ASRA 2018 は 脊髄幹麻酔を 中止後 2 日 避けることを 提案。 添付文書では、 中止後 48 時間で 血小板凝集能が 投与前の 値に 戻る。 内視鏡では 他の 抗血小板薬から 置き換えて 継続する 薬。 よって 高リスクは 区域麻酔の 目安の 2 日、 低リスクは 継続 (0) と した。"
       },
       "contrast_ct": {
         "required": false,
@@ -832,13 +832,15 @@
           "source": "PMDA",
           "title": "プレタールOD錠50mg／プレタールOD錠100mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/180078_3399002F3020_1_11",
-          "verification_status": "unverified",
+          "verification_status": "verified",
           "author_interpretation": {
             "context": "添付文書",
             "mention": "薬剤名",
             "recommendation": "なし",
-            "text": "添付文書 (プレタール OD 錠、 2023 年 2 月改訂) に 手術・ 休薬の 記載は ない。"
-          }
+            "text": "手術・ 休薬の 記載は ない。 18.2.9 で、 中止後 48 時間で 血小板凝集能が 投与前の 値に 戻り、 リバウンドも ない と する。"
+          },
+          "quote_excerpt": "シロスタゾールの投与中止により、抑制された血小板凝集能はシロスタゾールの血漿中濃度の減衰とともに48時間後には投与前値に復し、リバウンド現象（凝集亢進）も認められなかった。",
+          "location_in_source": "18.2.9 (薬効薬理)"
         },
         {
           "source": "JSA・JSRA・JSPC",
@@ -850,10 +852,54 @@
             "context": "区域麻酔",
             "mention": "薬剤名",
             "recommendation": "薬剤名",
-            "text": "旧版。 表 6 で 高リスク (脊髄幹麻酔・深部の 神経ブロック) 2 日。 改訂第 2 版で 提案は 撤回された (休薬を 支持する エビデンスを 認めないため)。"
+            "text": "旧版。 総論の 表 6 は 高リスク (脊髄幹麻酔・深部の 神経ブロック) 2 日、 中・ 低リスクは 休薬なし。 各論の 表 8 (脊髄くも膜下麻酔) は 「3 日前に中止」 で、 表 6 と 食い違う。 改訂第 2 版で 休薬の 提案は 撤回された (休薬を 支持する エビデンスを 認めないため)。"
           },
-          "quote_excerpt": "商品名: プレタール®。 半減期 11-13 時間。 休薬期間: 高リスク群 2 日、 中リスク群 なし、 低リスク群 なし",
-          "location_in_source": "表 6 (p.21)"
+          "quote_excerpt": "表 6: 商品名: プレタール®。 半減期 11-13 時間。 休薬期間: 高リスク群 2 日、 中リスク群 なし、 低リスク群 なし / 表 8 (脊髄くも膜下麻酔の指針): シロスタゾール 3 日前に中止",
+          "location_in_source": "表 6 (p.21) + 表 8 (p.29)"
+        },
+        {
+          "source": "JSA・JSRA・JSPC",
+          "title": "抗血栓療法中の区域麻酔・神経ブロックガイドライン 追補版",
+          "url": "https://anesth.or.jp/files/pdf/guideline_kouketsusen_tsuiho.pdf#page=6",
+          "verification_status": "verified",
+          "year": 2018,
+          "author_interpretation": {
+            "context": "区域麻酔",
+            "mention": "薬剤名",
+            "recommendation": "なし",
+            "text": "旧版の 表 6 (2 日) と 表 8 (3 日) の 食い違いへの 回答。 引用元の 違いに よるもので、 根拠に なる RCT は なく、 海外の ガイドラインも 休薬不要〜42 時間と さまざまと して、 日数は 示さない。"
+          },
+          "quote_excerpt": "各国から様々なガイドラインが出されており，執筆者の引用元の差異により「総論」と「各論」の表で一部不一致が生じています．質問者の指摘されたシロスタゾールについては，休薬期間を定めるにあたって根拠にするようなRCT はありません．そのため，欧米のガイドラインでも，neuraxial block では休薬不要とするものから，42 時間の休薬期間を推奨するものなど様々です．",
+          "location_in_source": "質問 3 回答 (p.3)"
+        },
+        {
+          "source": "JGES (日本消化器内視鏡学会) ほか",
+          "title": "抗血栓薬服用者に対する消化器内視鏡診療ガイドライン (2012)",
+          "url": "https://www.jstage.jst.go.jp/article/gee/54/7/54_2075/_pdf/-char/ja",
+          "verification_status": "helper_link",
+          "author_interpretation": {
+            "context": "内視鏡",
+            "mention": "薬剤名",
+            "recommendation": "クラス",
+            "text": "単剤の 休薬は 「チエノピリジン誘導体以外の 抗血小板薬」 として クラス単位で 1 日。 薬剤名では、 血栓リスクが 高い 例で 他の 抗血小板薬から 置き換える 先として 挙げる。 本体は 2012 年版が 最新。"
+          },
+          "quote_excerpt": "出血高危険度の消化器内視鏡において，アスピリン以外の抗血小板薬単独内服の場合には休薬を原則とする．休薬期間はチエノピリジン誘導体が5～7 日間とし，チエノピリジン誘導体以外の抗血小板薬は1 日間の休薬とする．血栓塞栓症の発症リスクが高い症例ではアスピリンまたはシロスタゾールへの置換を考慮する．",
+          "location_in_source": "ステートメント 6 (p.2089)"
+        },
+        {
+          "source": "JGES",
+          "title": "抗血栓薬服用者に対する消化器内視鏡診療ガイドライン DOAC を含めた抗凝固薬に関する追補2017",
+          "url": "https://www.jstage.jst.go.jp/article/gee/59/7/59_1547/_pdf/-char/ja#page=7",
+          "verification_status": "verified",
+          "year": 2017,
+          "author_interpretation": {
+            "context": "内視鏡",
+            "mention": "薬剤名",
+            "recommendation": "なし",
+            "text": "抗凝固薬と 併用中の 出血高危険度の 内視鏡で、 抗血小板薬を アスピリンか シロスタゾールの 単剤に して 継続する。 休薬の 日数は 示さない。"
+          },
+          "quote_excerpt": "アスピリンやチエノピリジンの抗血小板薬を単独で服用あるいは併用している場合にはアスピリンを継続するか，またはアスピリンならば3-5 日前より，チエノピリジンならば5-7 日前より，シロスタゾールに置換をして，アスピリンかシロスタゾールの単剤内服とする … 内視鏡の延期が困難な場合には，抗血小板薬はアスピリンかシロスタゾール単独投与にして継続する．",
+          "location_in_source": "ステートメント 3 解説 (p.1553) + ステートメント 7 (p.1555)"
         },
         {
           "source": "KEGG MEDICUS",
@@ -877,10 +923,10 @@
             "context": "区域麻酔",
             "mention": "薬剤名",
             "recommendation": "薬剤名",
-            "text": "休薬は 必須でない。 出血リスクが 高く 休薬が 適当と 判断される 症例でのみ 2 日が 目安。"
+            "text": "休薬は 必須でない。 出血リスクが 高く 休薬が 適当と 判断される 症例でのみ 2 日が 目安。 総論 (p.6) は 休薬後 3〜4 日で 血小板機能が 回復すると するが、 薬理の 説明で 推奨の 日数ではない。"
           },
           "quote_excerpt": "抗血小板作用を有するイコサペント酸エチル，シロスタゾール，ジピリダモール，ハーブ類（にんにく，イチョウ葉，チョウセンニンジン），抗うつ薬については，神経ブロックの実施前の休薬は必須でない． … イコサペント酸エチル，シロスタゾールやジピリダモールについては，初版において休薬期間の提案を行った．しかしながら，休薬を支持するエビデンスを認めていないことから，今回の改訂では休薬日数の提案は行わなかった．一方，出血のリスクが高いと判断される事例において休薬が適当と判断される症例では，シロスタゾールやジピリダモールで2 日間，イコサペント酸エチルで7 日間の休薬期間を目安とする．",
-          "location_in_source": "p.24 総論 5 (Summary Statement + 解説) + p.25 表 9 未収載"
+          "location_in_source": "p.6 総論 2 薬理 (④ PDE 阻害薬) + p.24 総論 5 (Summary Statement + 解説) + p.25 表 9 未収載"
         }
       ]
     },
@@ -7824,6 +7870,22 @@
           "verification_status": "landing_only"
         },
         {
+          "source": "BSR (英国リウマチ学会)",
+          "title": "The British Society for Rheumatology biologic DMARD safety guidelines in inflammatory arthritis (2019)",
+          "url": "https://doi.org/10.1093/rheumatology/key208",
+          "verification_status": "helper_link",
+          "year": 2019,
+          "author_interpretation": {
+            "context": "手術",
+            "mention": "なし",
+            "recommendation": "なし",
+            "text": "本剤の 記載は ない。 半減期の 5 倍が 2 か月を 超える 薬の 長い 休薬に よる 再燃の 警告で、 同じ 性質の 本剤の 補足に 引いた。"
+          },
+          "quote_excerpt": "This may be manageable for those biologic agents with reasonably short half-lives, but with agents such as ADA and ABA, where five times the half-life equates to >2 months, cessation for this prolonged period of time is likely to lead to potentially significant (and possibly irreversible) declines in the disease control and major flare, often requiring steroid therapy (and the associated risks, which may be higher than biologic therapy).",
+          "quote_translation_excerpt": "半減期の 短い 生物学的製剤なら 対応できるが、 アダリムマブ・ アバタセプトのように 半減期の 5 倍が 2 か月を 超える 薬では、 その 長さの 休薬で 病勢の 大きな (時に 不可逆な) 悪化と 大きな 再燃を 招きやすく、 しばしば ステロイドが 必要に なる (その リスクは 生物学的製剤より 高い ことも ある)",
+          "location_in_source": "p.e30 Peri-operative care (解説)"
+        },
+        {
           "source": "KEGG MEDICUS",
           "title": "イキセキズマブ 医療用医薬品 検索結果 (KEGG MEDICUS)",
           "url": "https://www.kegg.jp/medicus-bin/search_drug?display=med&search_keyword=%E3%82%A4%E3%82%AD%E3%82%BB%E3%82%AD%E3%82%BA%E3%83%9E%E3%83%96",
@@ -8035,6 +8097,22 @@
           "title": "スキリージ皮下注75/150/360mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/112130_3999450G1028_1_09",
           "verification_status": "landing_only"
+        },
+        {
+          "source": "BSR (英国リウマチ学会)",
+          "title": "The British Society for Rheumatology biologic DMARD safety guidelines in inflammatory arthritis (2019)",
+          "url": "https://doi.org/10.1093/rheumatology/key208",
+          "verification_status": "helper_link",
+          "year": 2019,
+          "author_interpretation": {
+            "context": "手術",
+            "mention": "なし",
+            "recommendation": "なし",
+            "text": "本剤の 記載は ない。 半減期の 5 倍が 2 か月を 超える 薬の 長い 休薬に よる 再燃の 警告で、 同じ 性質の 本剤の 補足に 引いた。"
+          },
+          "quote_excerpt": "This may be manageable for those biologic agents with reasonably short half-lives, but with agents such as ADA and ABA, where five times the half-life equates to >2 months, cessation for this prolonged period of time is likely to lead to potentially significant (and possibly irreversible) declines in the disease control and major flare, often requiring steroid therapy (and the associated risks, which may be higher than biologic therapy).",
+          "quote_translation_excerpt": "半減期の 短い 生物学的製剤なら 対応できるが、 アダリムマブ・ アバタセプトのように 半減期の 5 倍が 2 か月を 超える 薬では、 その 長さの 休薬で 病勢の 大きな (時に 不可逆な) 悪化と 大きな 再燃を 招きやすく、 しばしば ステロイドが 必要に なる (その リスクは 生物学的製剤より 高い ことも ある)",
+          "location_in_source": "p.e30 Peri-operative care (解説)"
         },
         {
           "source": "KEGG MEDICUS",
@@ -15515,6 +15593,22 @@
             "recommendation": "なし",
             "text": "添付文書 (ケレンディア、 2026 年 3 月改訂) に 手術前の 休薬の 記載は ない。"
           }
+        },
+        {
+          "source": "ACC/AHA",
+          "title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
+          "url": "https://doi.org/10.1161/CIR.0000000000001285",
+          "verification_status": "verified",
+          "year": 2024,
+          "author_interpretation": {
+            "context": "手術",
+            "mention": "なし",
+            "recommendation": "クラス",
+            "text": "降圧治療と 心不全の 標準治療 (GDMT) として 周術期も 継続が 妥当と する。 本剤の 薬剤名は ない。"
+          },
+          "quote_excerpt": "In most* patients with HTN planned for elective NCS, it is reasonable to continue medical therapy for HTN throughout the perioperative period.† … In patients with compensated HF undergoing NCS, it is reasonable to continue GDMT (excluding SGLT2i) in the perioperative period, unless contraindicated, to reduce the risk of worsening HF.",
+          "quote_translation_excerpt": "待機的非心臓手術を 予定する 高血圧患者の 多くでは、 周術期を 通じて 降圧治療を 継続するのが 妥当。 … 代償された 心不全の 患者では、 禁忌でなければ 周術期も GDMT (SGLT2 阻害薬を 除く) を 継続するのが 妥当",
+          "location_in_source": "p.40 Preoperative Blood Pressure Management Rec 1 + p.42 HF Rec 2"
         },
         {
           "source": "KEGG MEDICUS",
