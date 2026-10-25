@@ -3,7 +3,7 @@
     "name": "休薬情報データベース (Kyuyaku Data)",
     "author": "梅谷 直亨 (Naoyuki Umetani)",
     "api_version": "1.1",
-    "data_version": "0.8.8",
+    "data_version": "0.8.9",
     "data_updated_at": "2026-10-25",
     "generated_at": "2026-10-25",
     "scope": "周術期・造影CT の 休薬情報のみ",
@@ -6755,10 +6755,9 @@
           },
           {
             "source": "JCR RA 診療 GL 2024 CQ46 (書籍)",
-            "high_risk_days": 0,
             "low_risk_days": 0,
             "value_derivation": "direct",
-            "dose_dependent_summary": "出血量多い手術 7日, 通常用量 継続可, 高用量 個別判断, 整形外科予定手術以外の手術 個別判断",
+            "dose_dependent_summary": "通常用量 継続可, 出血量多い手術 手術当週 (日数なし), 高用量 個別判断, 整形外科予定手術以外の手術 個別判断",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 改訂 (書籍 第 3 章 CQ 46 MTX)",
             "quote_excerpt": "整形外科手術の周術期における MTX (12.5mg/週以下) の継続は RA の再燃のリスクを抑制し、 術後感染症、 創傷治癒遅延に影響しないため、 周術期における MTX の 休薬は原則的に不要である … 出血量が比較的多い手術 (股・膝の人工関節置換術など) では、 一時的に急激な体液量の変動をきたして 通常より MTX の血中濃度が高くなる可能性があり、 手術前後 (手術当週) は 休薬を考慮する",
             "source_location": "書籍 p.144-146 CQ46",
@@ -6884,10 +6883,8 @@
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 15,
-            "low_risk_days": 7,
             "value_derivation": "direct",
-            "dose_dependent_summary": "CRI 15日, BSR 7日, JCR 用法・用量 日数なし",
+            "dose_dependent_summary": "JCR 用法・用量 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
             "quote_excerpt": "「フランス (CRI) では、 エタネルセプトで 15 日、 インフリキシマブ、 アダリムマブ、 セルトリズマブ ペゴル、 ゴリムマブはすべて、 4 週の休薬を提案している」 「英国 (BSR) でも同様に、 少なくとも 1 投与間隔は休薬することを推奨している。 感染のハイリスクの手術においては、 半減期の 3〜5 倍の休薬を推奨している」",
             "source_location": "tebiki_tnf_240710.pdf p.7 「4. 周術期管理」",
@@ -7011,10 +7008,8 @@
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 28,
-            "low_risk_days": 14,
             "value_derivation": "direct",
-            "dose_dependent_summary": "CRI 28日, BSR 14日, JCR 用法・用量 日数なし",
+            "dose_dependent_summary": "JCR 用法・用量 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
             "quote_excerpt": "「フランス (CRI) では、 エタネルセプトで 15 日、 インフリキシマブ、 アダリムマブ、 セルトリズマブ ペゴル、 ゴリムマブはすべて、 4 週の休薬を提案している」",
             "source_location": "tebiki_tnf_240710.pdf p.7 「4. 周術期管理」",
@@ -7078,13 +7073,13 @@
       ],
       "surgery": {
         "required": true,
-        "high_risk_days_before": 50,
-        "low_risk_days_before": 28,
+        "high_risk_days_before": 56,
+        "low_risk_days_before": 56,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 50,
+        "display_high_risk_days_before": 56,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 28,
+        "display_low_risk_days_before": 56,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "人工関節置換術",
@@ -7097,7 +7092,7 @@
           "歯科抜歯"
         ],
         "note": "手術部位感染・ 創傷治癒遅延の リスク。 術後は 創傷が ほぼ 治癒し、 感染が ないことを 確認してから 再開する。 8 週ごとの 投与では、 ACR/AAHKS・ BSR は 次の 投与予定日の 後に 手術する ことを 勧める。",
-        "author_interpretation": "CRI (フランス) は 4 週。 BSR (英国) は 少なくとも 1 投与間隔、 感染の ハイリスク手術では 半減期の 3〜5 倍 (5 倍で 45 日)。 JDA 2022 (乾癬) は 半減期 約 10 日 の 3〜5 倍を 示す。 よって 高リスクは 安全側の 50 日 (半減期の 5 倍)、 低リスクは 4 週の 28 日と した。"
+        "author_interpretation": "ACR/AAHKS (米国) は 次の 投与予定日の 後に 手術する (8 週ごとの 投与で 9 週目)。 BSR (英国) は 少なくとも 1 投与間隔、 感染の ハイリスク手術では 半減期の 3〜5 倍 (5 倍で 45 日)。 CRI (フランス) は 4 週、 JDA 2022 (乾癬) は 半減期 約 10 日 の 3〜5 倍を 示す。 投与間隔で 変わる 値は 安全側を とり、 高リスク・ 低リスクとも 8 週ごとの 1 投与間隔の 56 日と した。 4 週ごとに 短縮していれば 28〜45 日。"
       },
       "contrast_ct": {
         "required": false,
@@ -7111,7 +7106,7 @@
         "surgery": [
           {
             "source": "ACR/AAHKS 2022",
-            "high_risk_days": 28,
+            "high_risk_days": 56,
             "value_derivation": "direct",
             "dose_dependent_summary": "q8 weeks 56日, q6 weeks 42日, q4 weeks 28日",
             "source_title": "2022 ACR/AAHKS Guideline for the Perioperative Management of Antirheumatic Medication in Patients With Rheumatic Diseases Undergoing Elective Total Hip or Total Knee Arthroplasty",
@@ -7121,8 +7116,8 @@
           },
           {
             "source": "BSR 2019",
-            "high_risk_days": 45,
-            "low_risk_days": 28,
+            "high_risk_days": 56,
+            "low_risk_days": 56,
             "value_derivation": "direct",
             "dose_dependent_summary": "Every 8 weeks dosing… 56日, Higher infection-risk… 45日, Every 6 weeks dosing… 42日, Every 4 weeks dosing… 28日",
             "source_title": "BSR biologic DMARD safety guidelines in inflammatory arthritis",
@@ -7141,9 +7136,8 @@
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 28,
             "value_derivation": "direct",
-            "dose_dependent_summary": "BSR 56日, CRI 28日, JCR 用法・用量 日数なし, ACR/AAHKS 参照 日数なし",
+            "dose_dependent_summary": "JCR 用法・用量 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
             "quote_excerpt": "「フランス (CRI) では、 エタネルセプトで 15 日、 インフリキシマブ、 アダリムマブ、 セルトリズマブ ペゴル、 ゴリムマブはすべて、 4 週の休薬を提案している」 「(ACR/AAHKS では) それぞれの bDMARD の 予定投与日以降を推奨している (推奨の強さ:弱い)。 これは 半減期を超える期間の休薬で、 薬物の血中濃度は 安全域に低下していると 考えられることや、 インフリキシマブ、 アバタセプトの休薬期間に関する エビデンスをもとにしている」",
             "source_location": "tebiki_tnf_240710.pdf p.7 「4. 周術期管理」",
@@ -7269,10 +7263,8 @@
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 28,
-            "low_risk_days": 28,
             "value_derivation": "direct",
-            "dose_dependent_summary": "CRI 28日, BSR 28日, JCR 用法・用量 日数なし",
+            "dose_dependent_summary": "JCR 用法・用量 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
             "quote_excerpt": "「フランス (CRI) では、 エタネルセプトで 15 日、 インフリキシマブ、 アダリムマブ、 セルトリズマブ ペゴル、 ゴリムマブはすべて、 4 週の休薬を提案している」",
             "source_location": "tebiki_tnf_240710.pdf p.7 「4. 周術期管理」",
@@ -7323,12 +7315,12 @@
       "surgery": {
         "required": true,
         "high_risk_days_before": 70,
-        "low_risk_days_before": 14,
+        "low_risk_days_before": 28,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
         "display_high_risk_days_before": 70,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 14,
+        "display_low_risk_days_before": 28,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
           "人工関節置換術",
@@ -7341,7 +7333,7 @@
           "歯科抜歯"
         ],
         "note": "手術部位感染・ 創傷治癒遅延の リスク。 術後は 創傷が ほぼ 治癒し、 感染が ないことを 確認してから 再開する。 半減期の 5 倍が 2 か月を 超える 薬で、 長い 休薬は 病勢の 大きな 悪化・ 再燃を 招きうる (BSR が 同じ 理由で アダリムマブ・ アバタセプトに 警告して いる)。 休薬の 長さは 処方医と 相談する。",
-        "author_interpretation": "CRI (フランス) は 4 週、 BSR (英国) は 少なくとも 1 投与間隔 (2 週 または 4 週)、 感染の ハイリスク手術では 半減期の 3〜5 倍 (5 倍で 70 日) を 推奨する。 よって 高リスクは 安全側の 70 日、 低リスクは 2 週ごとの 投与の 1 投与間隔 14 日と した。"
+        "author_interpretation": "BSR (英国) は 少なくとも 1 投与間隔 (2 週 または 4 週)、 感染の ハイリスク手術では 半減期の 3〜5 倍 (5 倍で 70 日) を 推奨する。 ACR/AAHKS (米国) は 次の 投与予定日の 後に 手術する (4 週ごとの 投与で 5 週目)。 CRI (フランス) は 4 週。 よって 高リスクは 安全側の 70 日、 低リスクは 投与間隔で 変わる 値の 安全側 (4 週ごとの 1 投与間隔) の 28 日と した。 2 週ごとなら 14 日。"
       },
       "contrast_ct": {
         "required": false,
@@ -7355,7 +7347,7 @@
         "surgery": [
           {
             "source": "ACR/AAHKS 2022",
-            "high_risk_days": 14,
+            "high_risk_days": 28,
             "value_derivation": "direct",
             "dose_dependent_summary": "q4 weeks 28日, q2 weeks 14日",
             "source_title": "2022 ACR/AAHKS Guideline for the Perioperative Management of Antirheumatic Medication in Patients With Rheumatic Diseases Undergoing Elective Total Hip or Total Knee Arthroplasty",
@@ -7366,7 +7358,7 @@
           {
             "source": "BSR 2019",
             "high_risk_days": 70,
-            "low_risk_days": 14,
+            "low_risk_days": 28,
             "value_derivation": "direct",
             "dose_dependent_summary": "Higher infection-risk… 70日, Every 4 weeks dosing… 28日, Every 2 weeks dosing… 14日",
             "source_title": "BSR biologic DMARD safety guidelines in inflammatory arthritis",
@@ -7385,10 +7377,8 @@
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 28,
-            "low_risk_days": 14,
             "value_derivation": "direct",
-            "dose_dependent_summary": "CRI 28日, BSR 14日, JCR 用法・用量 日数なし",
+            "dose_dependent_summary": "JCR 用法・用量 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
             "quote_excerpt": "「フランス (CRI) では、 エタネルセプトで 15 日、 インフリキシマブ、 アダリムマブ、 セルトリズマブ ペゴル、 ゴリムマブはすべて、 4 週の休薬を提案している」",
             "source_location": "tebiki_tnf_240710.pdf p.7 「4. 周術期管理」",
@@ -7479,7 +7469,7 @@
           "歯科抜歯"
         ],
         "note": "手術部位感染・ 創傷治癒遅延の リスク。 IL-6 の 抑制で 術後の 感染の 徴候 (発熱・ CRP の 上昇) が 出にくいため、 創部を よく 観察する。 術後は 創傷が ほぼ 治癒し、 感染が ないことを 確認してから 再開する。",
-        "author_interpretation": "BSR (英国) は 静注を 少なくとも 4 週前、 皮下注を 少なくとも 2 週前に 中止する ことを 推奨する (推奨度 1C、 JCR の 手引きが 紹介)。 よって 高リスクは 静注の 28 日と した。 皮下注の 14 日は 注射の 方法の 違いで 出血リスクの 区分では ないため、 低リスクは 空 (記載なし) と した。"
+        "author_interpretation": "BSR (英国) は 静注を 少なくとも 4 週前、 皮下注を 少なくとも 2 週前に 中止する ことを 推奨する (推奨度 1C)。 ACR/AAHKS (米国) は 次の 投与予定日の 後に 手術する (4 週ごとの 静注で 5 週目)。 よって 高リスクは 静注の 28 日と した。 皮下注の 14 日は 注射の 方法の 違いで 出血リスクの 区分では ないため、 低リスクは 空 (記載なし) と した。 JCR の 手引きは 休薬を 推奨するが 日数は 示さない。"
       },
       "contrast_ct": {
         "required": false,
@@ -7493,7 +7483,7 @@
         "surgery": [
           {
             "source": "ACR/AAHKS 2022",
-            "high_risk_days": 7,
+            "high_risk_days": 28,
             "value_derivation": "direct",
             "dose_dependent_summary": "IV q4 weeks 28日, SC weekly 7日",
             "source_title": "2022 ACR/AAHKS Guideline for the Perioperative Management of Antirheumatic Medication in Patients With Rheumatic Diseases Undergoing Elective Total Hip or Total Knee Arthroplasty",
@@ -7505,7 +7495,7 @@
             "source": "BSR 2019",
             "high_risk_days": 28,
             "value_derivation": "derived",
-            "dose_dependent_summary": "i.v. 8 65日, s.c. 65日, i.v. 4 55日, i.v. tocilizumab 28日, s.c. tocilizumab 14日",
+            "dose_dependent_summary": "i.v. tocilizumab 28日, s.c. tocilizumab 14日",
             "source_title": "BSR biologic DMARD safety guidelines in inflammatory arthritis",
             "quote_excerpt": "For patients receiving TCZ, i.v. TCZ should be stopped at least 4 weeks before surgery; s.c. TCZ should be stopped at least 2 weeks before surgery (grade 1C, SOA 96%). Table 7: Tocilizumab i.v. 4mg/kg - Every 4 weeks - Week 5 - 11d / 55d; Tocilizumab i.v. 8mg/kg - 13d / 65d; Tocilizumab s.c. - Every week - Week 3 - 13d / 65d.",
             "source_location": "p.e29 Peri-operative care (v); p.e30 Table 7",
@@ -7513,11 +7503,10 @@
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 28,
             "value_derivation": "direct",
-            "dose_dependent_summary": "点滴静注製剤 28日, 皮下注製剤 14日, 感染ハイリスク手術 日数なし",
+            "dose_dependent_summary": "点滴静注製剤 日数なし, 皮下注製剤 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
-            "quote_excerpt": "「英国 (BSR) でも同様に、 静注 1 か月毎の場合は 少なくとも 4 週皮下注毎週投与の場合は 少なくとも 2 週の休薬を推奨している。 感染のハイリスクの手術においては、 半減期の 3〜5 倍の休薬を推奨している」 「※米英ではトシリズマブ皮下注は毎週投与が標準治療である点に注意。」",
+            "quote_excerpt": "「整形外科手術の周術期には生物学的製剤（bDMARD）の休薬を推奨する（推奨の強さ：弱い）」 (関節リウマチ診療ガイドライン 2024 の 引用) 「本剤の休薬期間のエビデンスは限られるが、投与間隔、投与量、半減期などを考慮して決定することが望ましい。術前休薬期間について定まったものはないが、目安として、海外のガイドラインにおけるbDMARD の術前休薬期間をあげる。」",
             "source_location": "tebiki_il-6_240710.pdf p.6 「8. 周術期管理」",
             "source_url": "https://www.ryumachi-jp.com/guide/ra/"
           }
@@ -7567,11 +7556,11 @@
       "generic_brands": [],
       "surgery": {
         "required": true,
-        "high_risk_days_before": 14,
+        "high_risk_days_before": null,
         "low_risk_days_before": null,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 14,
+        "display_high_risk_days_before": null,
         "display_high_risk_day_of": false,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
@@ -7586,7 +7575,7 @@
           "歯科抜歯"
         ],
         "note": "手術部位感染・ 創傷治癒遅延の リスク。 IL-6 の 抑制で 術後の 感染の 徴候 (発熱・ CRP の 上昇) が 出にくいため、 創部を よく 観察する。 術後は 創傷が ほぼ 治癒し、 感染が ないことを 確認してから 再開する。",
-        "author_interpretation": "JCR の 手引きは 「本剤の休薬期間のエビデンスは限られる」 とし、 投与間隔・ 半減期などを 考えて 決める ことを 勧める。 BSR (英国) は 本剤を 対象に していないが、 生物学的製剤の 一般則は 少なくとも 1 投与間隔の 休薬。 よって 1 投与間隔 (2 週) の 14 日を 高リスクに 当て、 低リスクは 出血リスクの 区分が ないため 空 (記載なし) と した。"
+        "author_interpretation": "JCR の 手引きは 生物学的製剤の 周術期の 休薬を 推奨する (弱い推奨) が、 本剤の 日数は 示さず、 「本剤の休薬期間のエビデンスは限られる」 とする。 BSR (英国)・ ACR/AAHKS (米国) に 本剤の 記載は ない。 2 週ごとの 皮下注で、 投与間隔が 1 週以上の 製剤の 原則に より、 高リスクは 日数を 当てず (日数なし)、 低リスクは 出血リスクの 区分が ないため 空 (記載なし) と した。 手術の 日程は 投与の スケジュールに 合わせて 処方医と 決める。"
       },
       "contrast_ct": {
         "required": false,
@@ -7608,11 +7597,10 @@
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 14,
-            "value_derivation": "derived",
-            "dose_dependent_summary": "JCR 用法・用量 14日, 感染ハイリスク手術 日数なし",
+            "value_derivation": "direct",
+            "dose_dependent_summary": "JCR 用法・用量 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
-            "quote_excerpt": "「本剤の休薬期間のエビデンスは限られるが、 投与間隔、 投与量、 半減期などを考慮して決定することが望ましい。」 「英国 (BSR) でも同様に、 静注 1 か月毎の場合は 少なくとも 4 週皮下注毎週投与の場合は 少なくとも 2 週の休薬を推奨している。 感染のハイリスクの手術においては、 半減期の 3〜5 倍の休薬を推奨している」",
+            "quote_excerpt": "「整形外科手術の周術期には生物学的製剤（bDMARD）の休薬を推奨する（推奨の強さ：弱い）」 (関節リウマチ診療ガイドライン 2024 の 引用) 「本剤の休薬期間のエビデンスは限られるが、投与間隔、投与量、半減期などを考慮して決定することが望ましい。術前休薬期間について定まったものはないが、目安として、海外のガイドラインにおけるbDMARD の術前休薬期間をあげる。」",
             "source_location": "tebiki_il-6_240710.pdf p.6 「8. 周術期管理」",
             "source_url": "https://www.ryumachi-jp.com/guide/ra/"
           }
@@ -7705,11 +7693,10 @@
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 28,
-            "value_derivation": "derived",
-            "dose_dependent_summary": "点滴静注製剤 28日, 皮下注製剤 7日, 感染ハイリスク手術 日数なし, ACR/AAHKS 参照 日数なし",
+            "value_derivation": "direct",
+            "dose_dependent_summary": "点滴静注製剤 日数なし, 皮下注製剤 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
-            "quote_excerpt": "「米国リウマチ学会と 米国股・膝関節学会 との共同ガイドラインにおいては、 人工膝および股関節全置換術の周術期の場合、 それぞれの bDMARD の予定投与日以降を推奨している (推奨の強さ:弱い)。 これは 半減期を超える期間の休薬で、 薬物の血中濃度は安全域に低下していると考えられることや、 インフリキシマブ、 アバタセプトの休薬期間に関するエビデンスをもとにしている」 「英国 (BSR) でも同様に、 少なくとも 1 投与間隔は休薬することを推奨している。 感染のハイリスクの手術においては、 半減期の 3〜5 倍の休薬を推奨している」",
+            "quote_excerpt": "「整形外科手術の周術期には生物学的製剤（bDMARD）の休薬を推奨する（推奨の強さ：弱い）」 (関節リウマチ診療ガイドライン 2024 の 引用) 「本剤の休薬期間のエビデンスは限られるが、投与間隔、投与量、半減期などを考慮して決定することが望ましい。術前休薬期間について定まったものはないが、目安として、海外のガイドラインにおけるbDMARD の術前休薬期間をあげる。」",
             "source_location": "tebiki_abt_240710.pdf p.4-5 「4. 周術期管理」",
             "source_url": "https://www.ryumachi-jp.com/guide/ra/"
           }
@@ -8415,7 +8402,7 @@
           "歯科抜歯"
         ],
         "note": "手術部位感染・ 創傷治癒遅延の リスク。 術後は CRP・ 白血球数に 加えて 創部を よく 観察する (休薬に よる 関節リウマチの 再燃との 区別が 必要)。 術後は 創傷が ほぼ 治癒し、 感染が ないことを 確認してから 再開する。",
-        "author_interpretation": "JCR の 手引きは 「術前休薬期間について定まったものはない」 とし、 参考として ACR/AAHKS (人工膝・ 股関節置換術) の 3 日を 挙げる。 ACR/AAHKS 2022 も 少なくとも 3 日前の 休薬を 条件付きで 推奨する。 よって 高リスク 3 日と した。 人工関節以外の 手術に ついては 資料が ないため、 低リスクは 空 (記載なし) と した。"
+        "author_interpretation": "ACR/AAHKS 2022 は 人工膝・ 股関節置換術の 少なくとも 3 日前の 休薬を 条件付きで 推奨する。 よって 高リスク 3 日と した。 JCR の 手引きは 「休薬を含む慎重な対応」 と し 日数は 示さない (ACR/AAHKS の 3 日を 参考例として 紹介)。 人工関節以外の 手術に ついては 資料が ないため、 低リスクは 空 (記載なし) と した。"
       },
       "contrast_ct": {
         "required": false,
@@ -8446,9 +8433,8 @@
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 3,
             "value_derivation": "direct",
-            "dose_dependent_summary": "JCR 用法・用量 3日",
+            "dose_dependent_summary": "JCR 用法・用量 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
             "quote_excerpt": "JAK 阻害薬投与中の 周術期リスク、 また、 手術後の創傷治癒に関するエビデンスは十分でない。 現段階では、 周術期には JAK 阻害薬の 休薬を含む 慎重な対応を行い、 局所症状に注意して 手術部位感染の早期発見に努める。 … 術前休薬期間について定まったものはないが、 参考例として、 米国リウマチ学会/米国股・膝関節学会の周術期ガイドライン (18) では 人工膝および股関節全置換術の場合は 3 日を目安としている。 手術後は 創がほぼ完全に治癒し、 感染の合併がないことを確認した後の 再投与が望ましい。",
             "source_location": "tebiki_jak_250430.pdf p.6 「11. 周術期の管理」",
@@ -8519,7 +8505,7 @@
           "歯科抜歯"
         ],
         "note": "手術部位感染・ 創傷治癒遅延の リスク。 術後は CRP・ 白血球数に 加えて 創部を よく 観察する (休薬に よる 関節リウマチの 再燃との 区別が 必要)。 術後は 創傷が ほぼ 治癒し、 感染が ないことを 確認してから 再開する。",
-        "author_interpretation": "JCR の 手引きは 「術前休薬期間について定まったものはない」 とし、 参考として ACR/AAHKS (人工膝・ 股関節置換術) の 3 日を 挙げる。 ACR/AAHKS 2022 も 少なくとも 3 日前の 休薬を 条件付きで 推奨する。 よって 高リスク 3 日と した。 人工関節以外の 手術に ついては 資料が ないため、 低リスクは 空 (記載なし) と した。"
+        "author_interpretation": "ACR/AAHKS 2022 は 人工膝・ 股関節置換術の 少なくとも 3 日前の 休薬を 条件付きで 推奨する。 よって 高リスク 3 日と した。 JCR の 手引きは 「休薬を含む慎重な対応」 と し 日数は 示さない (ACR/AAHKS の 3 日を 参考例として 紹介)。 人工関節以外の 手術に ついては 資料が ないため、 低リスクは 空 (記載なし) と した。"
       },
       "contrast_ct": {
         "required": false,
@@ -8550,9 +8536,8 @@
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 3,
             "value_derivation": "direct",
-            "dose_dependent_summary": "JCR 用法・用量 3日",
+            "dose_dependent_summary": "JCR 用法・用量 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
             "quote_excerpt": "「(JAK 阻害薬について) 参考例として、 米国リウマチ学会/米国股・膝関節学会の周術期ガイドライン (18) では 人工膝および股関節全置換術の場合は 3 日を目安としている。 手術後は 創がほぼ完全に治癒し、 感染の合併がないことを確認した後の 再投与が望ましい。」",
             "source_location": "tebiki_jak_250430.pdf p.6 「11. 周術期の管理」",
@@ -8602,11 +8587,11 @@
       "generic_brands": [],
       "surgery": {
         "required": true,
-        "high_risk_days_before": 3,
+        "high_risk_days_before": null,
         "low_risk_days_before": null,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 3,
+        "display_high_risk_days_before": null,
         "display_high_risk_day_of": false,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
@@ -8620,7 +8605,7 @@
           "歯科抜歯"
         ],
         "note": "手術部位感染・ 創傷治癒遅延の リスク。 術後は CRP・ 白血球数に 加えて 創部を よく 観察する (休薬に よる 関節リウマチの 再燃との 区別が 必要)。 術後は 創傷が ほぼ 治癒し、 感染が ないことを 確認してから 再開する。",
-        "author_interpretation": "JCR の 手引きは 「術前休薬期間について定まったものはない」 とし、 参考として ACR/AAHKS (人工膝・ 股関節置換術) の 3 日を 挙げる。 よって 高リスク 3 日と した。 人工関節以外の 手術に ついては 資料が ないため、 低リスクは 空 (記載なし) と した。"
+        "author_interpretation": "JCR の 手引きは 周術期に 「本剤の休薬を含む慎重な対応が必要」 とし、 「術前休薬期間について定まったものはない」 と する。 参考例の ACR/AAHKS (人工膝・ 股関節置換術) の 3 日は トファシチニブ・ バリシチニブ・ ウパダシチニブの 値で、 本剤は 含まれない。 添付文書に 手術の 記載は ない。 よって 高リスクは 日数を 当てず (日数なし)、 低リスクは 空 (記載なし) と した。"
       },
       "contrast_ct": {
         "required": false,
@@ -8634,9 +8619,8 @@
         "surgery": [
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 3,
             "value_derivation": "direct",
-            "dose_dependent_summary": "JCR 用法・用量 3日",
+            "dose_dependent_summary": "JCR 用法・用量 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
             "quote_excerpt": "本剤投与中の 周術期リスク、 手術後の創傷治癒、 周術期の休薬に関するエビデンスは十分でない。 現段階では、 周術期には 本剤の休薬を含む 慎重な対応が必要である。 また、 CRP、 白血球数も参考とするが、 局所症状の観察を十分に行い 手術部位感染 (SSI) の早期発見に努める。 … 術前休薬期間について定まったものはないが、 参考例として、 米国リウマチ学会/米国股・膝関節学会の 周術期ガイドラインでは 人工膝および股関節全置換術の場合は 3 日を目安としている。 手術後は 創がほぼ完全に治癒し、 SSI の合併がないことを確認した後の 再投与が望ましい。",
             "source_location": "guide_peficitinib_240710.pdf p.6 「11. 周術期の管理」",
@@ -8703,7 +8687,7 @@
           "歯科抜歯"
         ],
         "note": "手術部位感染・ 創傷治癒遅延の リスク。 術後は CRP・ 白血球数に 加えて 創部を よく 観察する (休薬に よる 関節リウマチの 再燃との 区別が 必要)。 術後は 創傷が ほぼ 治癒し、 感染が ないことを 確認してから 再開する。",
-        "author_interpretation": "JCR の 手引きは 「術前休薬期間について定まったものはない」 とし、 参考として ACR/AAHKS (人工膝・ 股関節置換術) の 3 日を 挙げる。 ACR/AAHKS 2022 も 少なくとも 3 日前の 休薬を 条件付きで 推奨する。 よって 高リスク 3 日と した。 人工関節以外の 手術に ついては 資料が ないため、 低リスクは 空 (記載なし) と した。"
+        "author_interpretation": "ACR/AAHKS 2022 は 人工膝・ 股関節置換術の 少なくとも 3 日前の 休薬を 条件付きで 推奨する。 よって 高リスク 3 日と した。 JCR の 手引きは 「休薬を含む慎重な対応」 と し 日数は 示さない (ACR/AAHKS の 3 日を 参考例として 紹介)。 人工関節以外の 手術に ついては 資料が ないため、 低リスクは 空 (記載なし) と した。"
       },
       "contrast_ct": {
         "required": false,
@@ -8726,9 +8710,8 @@
           },
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 3,
             "value_derivation": "direct",
-            "dose_dependent_summary": "JCR 用法・用量 3日",
+            "dose_dependent_summary": "JCR 用法・用量 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
             "quote_excerpt": "本剤投与中の 周術期リスク、 手術後の創傷治癒、 周術期の休薬に関するエビデンスは十分でない。 現段階では、 周術期には 本剤の休薬を含む 慎重な対応が必要である。 また、 CRP、 白血球数も参考とするが、 局所症状の観察を十分に行い 手術部位感染 (SSI) の早期発見に努める。 … 術前休薬期間について定まったものはないが、 参考例として、 米国リウマチ学会/米国股・膝関節学会の 周術期ガイドラインでは 人工膝および股関節全置換術の場合は 3 日を目安としている。 手術後は 創がほぼ完全に治癒し、 SSI の合併がないことを確認した後の 再投与が望ましい。",
             "source_location": "guide_upadacitinib_240710.pdf p.6 「11. 周術期の管理」",
@@ -8784,11 +8767,11 @@
       "generic_brands": [],
       "surgery": {
         "required": true,
-        "high_risk_days_before": 3,
+        "high_risk_days_before": null,
         "low_risk_days_before": null,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 3,
+        "display_high_risk_days_before": null,
         "display_high_risk_day_of": false,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
@@ -8802,7 +8785,7 @@
           "歯科抜歯"
         ],
         "note": "手術部位感染・ 創傷治癒遅延の リスク。 術後は CRP・ 白血球数に 加えて 創部を よく 観察する (休薬に よる 関節リウマチの 再燃との 区別が 必要)。 術後は 創傷が ほぼ 治癒し、 感染が ないことを 確認してから 再開する。",
-        "author_interpretation": "JCR の 手引きは 「術前休薬期間について定まったものはない」 とし、 参考として ACR/AAHKS (人工膝・ 股関節置換術) の 3 日を 挙げる。 よって 高リスク 3 日と した。 人工関節以外の 手術に ついては 資料が ないため、 低リスクは 空 (記載なし) と した。"
+        "author_interpretation": "JCR の 手引きは 周術期に 「本剤の休薬を含む慎重な対応が必要」 とし、 「術前休薬期間について定まったものはない」 と する。 参考例の ACR/AAHKS (人工膝・ 股関節置換術) の 3 日は トファシチニブ・ バリシチニブ・ ウパダシチニブの 値で、 本剤は 含まれない。 添付文書に 手術の 記載は ない。 よって 高リスクは 日数を 当てず (日数なし)、 低リスクは 空 (記載なし) と した。"
       },
       "contrast_ct": {
         "required": false,
@@ -8816,9 +8799,8 @@
         "surgery": [
           {
             "source": "JCR RA 手引き 2024 + 書籍 CQ47",
-            "high_risk_days": 3,
             "value_derivation": "direct",
-            "dose_dependent_summary": "JCR 用法・用量 3日",
+            "dose_dependent_summary": "JCR 用法・用量 日数なし",
             "source_title": "JCR 関節リウマチ 診療 GL 2024 (書籍 CQ47 bDMARD) + 7 手引き 統合",
             "quote_excerpt": "本剤投与中の 周術期リスク、 手術後の創傷治癒、 周術期の休薬に関するエビデンスは十分でない。 現段階では、 周術期には 本剤の休薬を含む 慎重な対応が必要である。 また、 CRP、 白血球数も参考とするが、 局所症状の観察を十分に行い 手術部位感染 (SSI) の早期発見に努める。 術前休薬期間について定まったものはないが、 参考例として、 米国リウマチ学会/米国股・膝関節学会の 周術期ガイドラインでは 人工膝および股関節全置換術の場合は 3 日を目安としている。 … 手術後は 創がほぼ完全に治癒し、 SSI の合併がないことを確認した後の 再投与が望ましい。",
             "source_location": "guide_filgotinib_240710.pdf p.6 「12. 周術期の管理」",
@@ -14887,8 +14869,9 @@
           },
           {
             "source": "ACC/AHA 2024",
+            "high_risk_hours": 24,
             "value_derivation": "class",
-            "dose_dependent_summary": "HTN 単独適応 1日 (24時間), HFrEF 継続可",
+            "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors (subsumed under RAASi)",
