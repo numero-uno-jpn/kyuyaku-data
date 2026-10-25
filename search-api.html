@@ -40,7 +40,7 @@
 
 <main id="main" class="wrap doc" tabindex="-1">
   <h1>検索 API 仕様</h1>
-  <p>薬の名前で 検索し、 一致した薬を <strong>一致度の 高い順の 配列 (JSON)</strong> で 返す API です。 一般名・別名・商品名・後発品名・薬効分類名で 検索でき、 打ち間違いや 表記ゆれも 吸収します。 検索の 仕組みは <a href="./">参照アプリ</a> と 同じです。 <strong>認証・登録は 不要</strong>で、 無料で 使えます。</p>
+  <p>薬の名前で検索し、一致した薬を <strong>一致度の高い順の配列 (JSON)</strong> で返す API です。一般名・別名・商品名・後発品名・薬効分類名で検索でき、打ち間違いや表記ゆれも吸収します。検索の仕組みは <a href="./">参照アプリ</a> と同じです。<strong>認証・登録は不要</strong>で、無料で使えます。</p>
 
   <div class="endpoint"><span class="m">GET</span>https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=<em>薬の名前</em></div>
 
@@ -50,11 +50,11 @@
       <li><a href="#try">試してみる</a></li>
       <li><a href="#request">リクエスト</a></li>
       <li><a href="#response">レスポンス</a></li>
-      <li><a href="#match">一致の 種類と 得点</a></li>
+      <li><a href="#match">一致の種類と得点</a></li>
       <li><a href="#errors">エラー</a></li>
       <li><a href="#examples">コード例</a></li>
-      <li><a href="#notes">データの 鮮度・キャッシュ・利用上の 注意</a></li>
-      <li><a href="#license">ライセンスと 帰属表示</a></li>
+      <li><a href="#notes">データの鮮度・キャッシュ・利用上の注意</a></li>
+      <li><a href="#license">ライセンスと帰属表示</a></li>
       <li><a href="#related">関連する API</a></li>
     </ol>
   </nav>
@@ -67,24 +67,24 @@
       <button type="submit" class="btn">検索する</button>
     </div>
     <p class="url" id="try-url" aria-live="polite"></p>
-    <pre id="try-out" aria-live="polite">「検索する」を 押すと、 実際の API の 応答が ここに 表示されます。</pre>
+    <pre id="try-out" aria-live="polite">「検索する」を押すと、実際の API の応答がここに表示されます。</pre>
   </form>
 
   <h2 id="request">2. リクエスト</h2>
   <table>
     <thead><tr><th scope="col">パラメータ</th><th scope="col">必須</th><th scope="col">説明</th></tr></thead>
     <tbody>
-      <tr><td><code>q</code></td><td>必須</td><td>検索語 (100 文字以内)。 URL エンコードして 渡す。 一般名・別名・商品名・後発品名・薬効分類名 (例: <code>DOAC</code>) のどれでも、 一部だけでも可。 ひらがな・半角カナ・英字も 可</td></tr>
-      <tr><td><code>limit</code></td><td>任意</td><td>返す 最大件数。 1〜100、 既定 20</td></tr>
+      <tr><td><code>q</code></td><td>必須</td><td>検索語 (100 文字以内)。URL エンコードして渡す。一般名・別名・商品名・後発品名・薬効分類名 (例: <code>DOAC</code>) のどれでも、一部だけでも可。ひらがな・半角カナ・英字も可</td></tr>
+      <tr><td><code>limit</code></td><td>任意</td><td>返す最大件数。1〜100、既定 20</td></tr>
     </tbody>
   </table>
   <ul>
-    <li>メソッドは <code>GET</code> のみ (<code>OPTIONS</code> は CORS の 事前確認用)。</li>
-    <li>CORS は 全開放 (<code>Access-Control-Allow-Origin: *</code>)。 ブラウザの JavaScript から 直接 呼べます。</li>
+    <li>メソッドは <code>GET</code> のみ (<code>OPTIONS</code> は CORS の事前確認用)。</li>
+    <li>CORS は全開放 (<code>Access-Control-Allow-Origin: *</code>)。ブラウザの JavaScript から直接呼べます。</li>
   </ul>
 
   <h2 id="response">3. レスポンス</h2>
-  <p><code>Content-Type: application/json; charset=utf-8</code>。 例 (<code>q=エンレスト</code>、 一部省略):</p>
+  <p><code>Content-Type: application/json; charset=utf-8</code>。例 (<code>q=エンレスト</code>、一部省略):</p>
 <pre>{
   "query": "エンレスト",
   "count": 2,
@@ -111,70 +111,70 @@
   "_notice": {
     "license": "CC BY 4.0",
     "license_url": "https://creativecommons.org/licenses/by/4.0/",
-    "license_exceptions": "quote_excerpt / quote_translation_excerpt は CC BY 4.0 の 対象外 …",
+    "license_exceptions": "quote_excerpt / quote_translation_excerpt は CC BY 4.0 の対象外 …",
     "attribution": "梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data",
-    "disclaimer": "本データは 意思決定支援のための 参考情報です。 …"
+    "disclaimer": "本データは意思決定支援のための参考情報です。 …"
   }
 }</pre>
   <h3>トップレベル</h3>
   <table>
     <thead><tr><th scope="col">項目</th><th scope="col">型</th><th scope="col">説明</th></tr></thead>
     <tbody>
-      <tr><td><code>query</code></td><td>文字列</td><td>受け付けた 検索語 (前後の 空白は 除去)</td></tr>
-      <tr><td><code>count</code></td><td>数値</td><td><code>results</code> の 件数</td></tr>
-      <tr><td><code>results</code></td><td>配列</td><td>一致した薬。 <strong>一致度 (<code>score</code>) の 高い順</strong>。 一致なしなら 空配列</td></tr>
-      <tr><td><code>suggestions</code></td><td>配列</td><td>一致なしの 時のみ、 「もしかして」 の 候補 (最大 3 件)。 各要素は <code>name</code> (一般名)・<code>term</code> (近い名前)・<code>distance</code> (違う文字数)</td></tr>
+      <tr><td><code>query</code></td><td>文字列</td><td>受け付けた検索語 (前後の空白は除去)</td></tr>
+      <tr><td><code>count</code></td><td>数値</td><td><code>results</code> の件数</td></tr>
+      <tr><td><code>results</code></td><td>配列</td><td>一致した薬。<strong>一致度 (<code>score</code>) の高い順</strong>。一致なしなら空配列</td></tr>
+      <tr><td><code>suggestions</code></td><td>配列</td><td>一致なしの時のみ、「もしかして」の候補 (最大 3 件)。各要素は <code>name</code> (一般名)・<code>term</code> (近い名前)・<code>distance</code> (違う文字数)</td></tr>
       <tr><td><code>_notice</code></td><td>オブジェクト</td><td>ライセンス・帰属表示・免責</td></tr>
     </tbody>
   </table>
-  <h3><code>results[]</code> の 各要素</h3>
+  <h3><code>results[]</code> の各要素</h3>
   <table>
     <thead><tr><th scope="col">項目</th><th scope="col">型</th><th scope="col">説明</th></tr></thead>
     <tbody>
-      <tr><td><code>name</code></td><td>文字列</td><td>一般名 (この データベースでの 薬の 名前)</td></tr>
+      <tr><td><code>name</code></td><td>文字列</td><td>一般名 (このデータベースでの薬の名前)</td></tr>
       <tr><td><code>category</code></td><td>文字列</td><td>薬効分類</td></tr>
-      <tr><td><code>score</code></td><td>数値</td><td>一致度 (40〜100)。 <a href="#match">下表</a> 参照</td></tr>
-      <tr><td><code>kind</code></td><td>文字列</td><td>一致の 種類。 <a href="#match">下表</a> 参照</td></tr>
-      <tr><td><code>matched</code></td><td>文字列 / null</td><td>一致した 名前 (商品名など)。 薬効分類で 一致した 場合は null</td></tr>
-      <tr><td><code>surgery_high_risk_days_before</code></td><td>数値 / null</td><td>リスクの 高い 手術・処置の 前の 休薬日数 (安全側の値)。 <code>0</code> は 休薬不要、 null は 記載なし</td></tr>
-      <tr><td><code>surgery_high_risk_day_of</code></td><td>真偽</td><td><code>true</code> は リスクの 高い 手術・処置で <strong>手術当日の休薬</strong> (前日まで服用可)。 このとき 日数は null</td></tr>
-      <tr><td><code>surgery_low_risk_days_before</code></td><td>数値 / null</td><td>リスクの 低い 手術・処置の 前の 休薬日数 (同上)</td></tr>
-      <tr><td><code>surgery_low_risk_day_of</code></td><td>真偽</td><td>同上 (リスクの 低い 手術・処置)</td></tr>
-      <tr><td><code>contrast_required</code></td><td>真偽 / null</td><td>造影 CT 前の 休薬が 必要か</td></tr>
-      <tr><td><code>contrast_days_before</code></td><td>数値 / null</td><td>造影 CT 前の 休薬日数</td></tr>
-      <tr><td><code>contrast_day_of</code></td><td>真偽</td><td>造影 CT 当日の 休薬</td></tr>
-      <tr><td><code>detail</code></td><td>文字列</td><td>その薬の 詳細 JSON (ガイドライン別の値・根拠・出典) の URL</td></tr>
-      <tr><td><code>page</code></td><td>文字列</td><td>参照アプリの その薬の ページの URL</td></tr>
+      <tr><td><code>score</code></td><td>数値</td><td>一致度 (40〜100)。<a href="#match">下表</a> 参照</td></tr>
+      <tr><td><code>kind</code></td><td>文字列</td><td>一致の種類。<a href="#match">下表</a> 参照</td></tr>
+      <tr><td><code>matched</code></td><td>文字列 / null</td><td>一致した名前 (商品名など)。薬効分類で一致した場合は null</td></tr>
+      <tr><td><code>surgery_high_risk_days_before</code></td><td>数値 / null</td><td>リスクの高い手術・処置の前の休薬日数 (安全側の値)。<code>0</code> は休薬不要、null は記載なし</td></tr>
+      <tr><td><code>surgery_high_risk_day_of</code></td><td>真偽</td><td><code>true</code> はリスクの高い手術・処置で <strong>手術当日の休薬</strong> (前日まで服用可)。このとき日数は null</td></tr>
+      <tr><td><code>surgery_low_risk_days_before</code></td><td>数値 / null</td><td>リスクの低い手術・処置の前の休薬日数 (同上)</td></tr>
+      <tr><td><code>surgery_low_risk_day_of</code></td><td>真偽</td><td>同上 (リスクの低い手術・処置)</td></tr>
+      <tr><td><code>contrast_required</code></td><td>真偽 / null</td><td>造影 CT 前の休薬が必要か</td></tr>
+      <tr><td><code>contrast_days_before</code></td><td>数値 / null</td><td>造影 CT 前の休薬日数</td></tr>
+      <tr><td><code>contrast_day_of</code></td><td>真偽</td><td>造影 CT 当日の休薬</td></tr>
+      <tr><td><code>detail</code></td><td>文字列</td><td>その薬の詳細 JSON (ガイドライン別の値・根拠・出典) の URL</td></tr>
+      <tr><td><code>page</code></td><td>文字列</td><td>参照アプリのその薬のページの URL</td></tr>
     </tbody>
   </table>
-  <p>休薬日数は、 現行版の ガイドラインの 最長値 (安全側)、 記載が なければ PMDA 添付文書の 値です。 時間で 書かれた 値は 日数に 切り上げ (48 時間 → 2 日)、 手術当日の休薬は 0 日より 長く 1 日より 短い ものとして 比べます。 ガイドラインごとの 値・値の出どころ・根拠は <code>detail</code> の JSON で 確認してください。</p>
+  <p>休薬日数は、現行版のガイドラインの最長値 (安全側)、記載がなければ PMDA 添付文書の値です。時間で書かれた値は日数に切り上げ (48 時間 → 2 日)、手術当日の休薬は 0 日より長く 1 日より短いものとして比べます。ガイドラインごとの値・値の出どころ・根拠は <code>detail</code> の JSON で確認してください。</p>
 
-  <h2 id="match">4. 一致の 種類と 得点</h2>
+  <h2 id="match">4. 一致の種類と得点</h2>
   <table>
     <thead><tr><th scope="col"><code>kind</code></th><th scope="col"><code>score</code></th><th scope="col">意味</th><th scope="col">例 (検索語 → 一致)</th></tr></thead>
     <tbody>
-      <tr><td><code>exact</code></td><td>100</td><td>名前と 完全に 一致</td><td>アスピリン → アスピリン</td></tr>
-      <tr><td><code>prefix</code></td><td>90</td><td>名前の 先頭と 一致</td><td>ばいあすぴりん → バイアスピリン錠100mg</td></tr>
-      <tr><td><code>partial</code></td><td>80</td><td>名前の 一部と 一致</td><td>ピドグレル → クロピドグレル</td></tr>
-      <tr><td><code>variant</code></td><td>70</td><td>長音・濁点などの 表記ゆれを 吸収して 一致</td><td>リバロキサバン → リバーロキサバン</td></tr>
-      <tr><td><code>category</code></td><td>66</td><td>薬効分類名と 一致</td><td>DOAC → アピキサバン ほか</td></tr>
-      <tr><td><code>typo</code></td><td>40〜65</td><td>打ち間違いを 補って 一致 (4 文字以上で 1 文字、 8 文字以上で 2 文字まで)</td><td>アスピリソ → アスピリン</td></tr>
+      <tr><td><code>exact</code></td><td>100</td><td>名前と完全に一致</td><td>アスピリン → アスピリン</td></tr>
+      <tr><td><code>prefix</code></td><td>90</td><td>名前の先頭と一致</td><td>ばいあすぴりん → バイアスピリン錠100mg</td></tr>
+      <tr><td><code>partial</code></td><td>80</td><td>名前の一部と一致</td><td>ピドグレル → クロピドグレル</td></tr>
+      <tr><td><code>variant</code></td><td>70</td><td>長音・濁点などの表記ゆれを吸収して一致</td><td>リバロキサバン → リバーロキサバン</td></tr>
+      <tr><td><code>category</code></td><td>66</td><td>薬効分類名と一致</td><td>DOAC → アピキサバンほか</td></tr>
+      <tr><td><code>typo</code></td><td>40〜65</td><td>打ち間違いを補って一致 (4 文字以上で 1 文字、8 文字以上で 2 文字まで)</td><td>アスピリソ → アスピリン</td></tr>
     </tbody>
   </table>
-  <p>比較の 前に、 全角/半角・ひらがな/カタカナ・小書き文字 (ュ/ユ)・大文字/小文字・空白の 違いは すべて 吸収します。 同じ得点の 場合は 名前の 短い順です。</p>
+  <p>比較の前に、全角/半角・ひらがな/カタカナ・小書き文字 (ュ/ユ)・大文字/小文字・空白の違いはすべて吸収します。同じ得点の場合は名前の短い順です。</p>
 
   <h2 id="errors">5. エラー</h2>
   <table>
     <thead><tr><th scope="col">状態</th><th scope="col">HTTP</th><th scope="col">応答</th></tr></thead>
     <tbody>
-      <tr><td><code>q</code> が ない・空</td><td>400</td><td><code>{"error": "q is required", "usage": …}</code></td></tr>
+      <tr><td><code>q</code> がない・空</td><td>400</td><td><code>{"error": "q is required", "usage": …}</code></td></tr>
       <tr><td><code>q</code> が 100 文字超</td><td>400</td><td><code>{"error": "q is too long (max 100 chars)"}</code></td></tr>
-      <tr><td>GET 以外の メソッド</td><td>405</td><td><code>{"error": "Method not allowed (GET only)"}</code></td></tr>
-      <tr><td>存在しない パス</td><td>404</td><td><code>{"error": "unknown endpoint", …}</code></td></tr>
-      <tr><td>データの 取得に 一時的に 失敗</td><td>503</td><td><code>{"error": "data unavailable"}</code> (<code>Retry-After: 60</code>)</td></tr>
+      <tr><td>GET 以外のメソッド</td><td>405</td><td><code>{"error": "Method not allowed (GET only)"}</code></td></tr>
+      <tr><td>存在しないパス</td><td>404</td><td><code>{"error": "unknown endpoint", …}</code></td></tr>
+      <tr><td>データの取得に一時的に失敗</td><td>503</td><td><code>{"error": "data unavailable"}</code> (<code>Retry-After: 60</code>)</td></tr>
     </tbody>
   </table>
-  <p>一致が 0 件の 場合は エラーでは なく、 <code>200</code> で <code>count: 0</code>・空の <code>results</code>・<code>suggestions</code> を 返します。</p>
+  <p>一致が 0 件の場合はエラーではなく、<code>200</code> で <code>count: 0</code>・空の <code>results</code>・<code>suggestions</code> を返します。</p>
 
   <h2 id="examples">6. コード例</h2>
   <h3>curl</h3>
@@ -192,35 +192,35 @@ for (const r of results) {
 r = requests.get('https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search', params={'q': 'アスピリン'})
 print(r.json()['results'][0]['name'])   # アスピリン</pre>
   <h3>Python (標準ライブラリ urllib)</h3>
-  <p><strong>urllib では <code>User-Agent</code> を 必ず 指定してください。</strong> 既定の <code>Python-urllib/…</code> は 配信基盤 (Cloudflare) の 仕組みで 拒否されます (HTTP 403、 error code 1010)。</p>
+  <p><strong>urllib では <code>User-Agent</code> を必ず指定してください。</strong> 既定の <code>Python-urllib/…</code> は配信基盤 (Cloudflare) の仕組みで拒否されます (HTTP 403、error code 1010)。</p>
 <pre>import json, urllib.parse, urllib.request
 url = 'https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?' + urllib.parse.urlencode({'q': 'アスピリン'})
 req = urllib.request.Request(url, headers={'User-Agent': 'my-app/1.0'})
 print(json.load(urllib.request.urlopen(req))['results'][0]['name'])   # アスピリン</pre>
-  <h3>検索結果から 詳細を 取得する</h3>
+  <h3>検索結果から詳細を取得する</h3>
 <pre>const { results } = await (await fetch('https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=' + encodeURIComponent('プラビックス'))).json();
 const { drug } = await (await fetch(results[0].detail)).json();
 console.log(drug.guideline_variations.surgery);   // ガイドライン別の値・値の出どころ・根拠</pre>
 
-  <h2 id="notes">7. データの 鮮度・キャッシュ・利用上の 注意</h2>
+  <h2 id="notes">7. データの鮮度・キャッシュ・利用上の注意</h2>
   <ul>
-    <li>データは <a href="v1/">静的 API</a> (GitHub Pages) と 同じものを、 <strong>最大 10 分</strong>の 遅れで 反映します。 データの版は <a href="v1/meta.json"><code>v1/meta.json</code></a> の <code>data_version</code> で 確認できます。</li>
-    <li>検索結果の 応答は <code>Cache-Control: public, max-age=300</code> (5 分) です。</li>
-    <li>無料の 配信基盤 (Cloudflare Workers) で 運用しています。 全体で 1 日 10 万件程度が 目安です。 大量に 使う 場合は、 <a href="https://github.com/numero-uno-jpn/kyuyaku-data/blob/main/data/washout_public_v1.json">全件データ</a> を 取り込むか、 手元で 動く 同じ 検索 (<a href="assets/search.js"><code>assets/search.js</code></a> と <a href="v1/search-index.json"><code>v1/search-index.json</code></a>) を 使ってください。</li>
-    <li>予告なく 仕様を 変える ことは しない 方針ですが、 無保証です。 変更する 場合は <a href="https://github.com/numero-uno-jpn/kyuyaku-data">GitHub</a> で お知らせします。</li>
-    <li>本データは 意思決定支援のための <strong>参考情報</strong>です。 最終的な 休薬判断は 医療者の 責任で 行ってください (<a href="https://github.com/numero-uno-jpn/kyuyaku-data/blob/main/DISCLAIMER.md">免責事項</a>)。</li>
+    <li>データは <a href="v1/">静的 API</a> (GitHub Pages) と同じものを、<strong>最大 10 分</strong>の遅れで反映します。データの版は <a href="v1/meta.json"><code>v1/meta.json</code></a> の <code>data_version</code> で確認できます。</li>
+    <li>検索結果の応答は <code>Cache-Control: public, max-age=300</code> (5 分) です。</li>
+    <li>無料の配信基盤 (Cloudflare Workers) で運用しています。全体で 1 日 10 万件程度が目安です。大量に使う場合は、<a href="https://github.com/numero-uno-jpn/kyuyaku-data/blob/main/data/washout_public_v1.json">全件データ</a> を取り込むか、手元で動く同じ検索 (<a href="assets/search.js"><code>assets/search.js</code></a> と <a href="v1/search-index.json"><code>v1/search-index.json</code></a>) を使ってください。</li>
+    <li>予告なく仕様を変えることはしない方針ですが、無保証です。変更する場合は <a href="https://github.com/numero-uno-jpn/kyuyaku-data">GitHub</a> でお知らせします。</li>
+    <li>本データは意思決定支援のための <strong>参考情報</strong>です。最終的な休薬判断は医療者の責任で行ってください (<a href="https://github.com/numero-uno-jpn/kyuyaku-data/blob/main/DISCLAIMER.md">免責事項</a>)。</li>
   </ul>
 
-  <h2 id="license">8. ライセンスと 帰属表示</h2>
+  <h2 id="license">8. ライセンスと帰属表示</h2>
   <ul>
-    <li>データは <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC BY 4.0</a>。 次の 帰属表示を すれば、 商用を含め 自由に 利用できます: <br><code>梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data</code><br>あわせて ライセンス名 (CC BY 4.0) を 示し、 改変した 場合は その旨を 明記してください。</li>
-    <li>詳細 JSON の <code>quote_excerpt</code> / <code>quote_translation_excerpt</code> (一次資料からの 引用または抜粋) は 各出典の 著作物で、 CC BY 4.0 の 対象外です。</li>
+    <li>データは <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC BY 4.0</a>。次の帰属表示をすれば、商用を含め自由に利用できます: <br><code>梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data</code><br>あわせてライセンス名 (CC BY 4.0) を示し、改変した場合はその旨を明記してください。</li>
+    <li>詳細 JSON の <code>quote_excerpt</code> / <code>quote_translation_excerpt</code> (一次資料からの引用または抜粋) は各出典の著作物で、CC BY 4.0 の対象外です。</li>
   </ul>
 
   <h2 id="related">9. 関連する API</h2>
   <ul>
     <li><a href="v1/">静的 API</a> (GitHub Pages): <code>meta.json</code> / <code>drugs.json</code> / <code>drugs/{一般名}.json</code> / <code>lookup.json</code> / <code>search-index.json</code></li>
-    <li><a href="https://github.com/numero-uno-jpn/kyuyaku-data/blob/main/docs/api.md">API・データ項目の 仕様 (docs/api.md)</a></li>
+    <li><a href="https://github.com/numero-uno-jpn/kyuyaku-data/blob/main/docs/api.md">API・データ項目の仕様 (docs/api.md)</a></li>
     <li>参照アプリの URL 検索: <a href="./?q=アスピリン"><code>https://numero-uno-jpn.github.io/kyuyaku-data/?q=アスピリン</code></a></li>
   </ul>
   <p><a href="./">← 参照アプリへ</a></p>
@@ -235,7 +235,7 @@ console.log(drug.guideline_variations.surgery);   // ガイドライン別の値
   </div>
 </footer>
 <script>
-  // 「試してみる」: 実際の 検索 API を 呼んで 応答を 表示
+  // 「試してみる」: 実際の検索 API を呼んで応答を表示
   const API = 'https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search';
   const form = document.getElementById('try-form');
   form.addEventListener('submit', async (e) => {
@@ -251,7 +251,7 @@ console.log(drug.guideline_variations.surgery);   // ガイドライン別の値
       const j = await r.json();
       out.textContent = `HTTP ${r.status}\n` + JSON.stringify(j, null, 2);
     } catch (err) {
-      out.textContent = `取得に 失敗しました: ${err.message}`;
+      out.textContent = `取得に失敗しました: ${err.message}`;
     }
   });
 </script>

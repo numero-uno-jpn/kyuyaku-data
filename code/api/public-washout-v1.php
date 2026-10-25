@@ -4,8 +4,8 @@
  *
  * ルーティング (.htaccess で /<設置パス>/v1/... → 本ファイル?_path=... に rewrite):
  *   GET /v1/meta            … メタ情報 (version / license / disclaimer / 件数)
- *   GET /v1/drugs           … 全薬剤の 一覧 (name / category / washout サマリ)
- *   GET /v1/drugs/{name}    … 1 薬剤の 休薬詳細 (name / alias / 商品名 で lookup)
+ *   GET /v1/drugs           … 全薬剤の一覧 (name / category / washout サマリ)
+ *   GET /v1/drugs/{name}    … 1 薬剤の休薬詳細 (name / alias / 商品名で lookup)
  *
  * 方針: 休薬情報のみ・一次資料の verbatim 引用は含めない (出典 source/title/url のみ)。
  *       データは build_public_washout_db.py が生成する washout_public_v1.json。
@@ -15,7 +15,7 @@
 require_once __DIR__ . '/_config.php';
 require_once __DIR__ . '/lib/RateLimiter.php';
 
-// ---- エラー漏洩防止 (本ハンドラは _bootstrap を include しないため 明示設定) ----
+// ---- エラー漏洩防止 (本ハンドラは _bootstrap を include しないため明示設定) ----
 ini_set('display_errors', '0');
 ini_set('log_errors', '1');
 error_reporting(E_ALL);
@@ -41,7 +41,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'GET') {
 }
 
 // ---- レート制限: 2 段 (バースト 30/10s + 持続 120/60s) / IP ----
-// REMOTE_ADDR を 使用 (さくらは reverse proxy なし → X-Forwarded-For は 信頼しない = spoof 不可)。
+// REMOTE_ADDR を使用 (さくらは reverse proxy なし → X-Forwarded-For は信頼しない = spoof 不可)。
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $ipKey = preg_replace('/[^a-zA-Z0-9._:]/', '_', $ip);
 $burstOk = RateLimiter::checkAndRecord('pubapiB_' . $ipKey, 30, 10);   // 連打 (10秒で30回まで)
@@ -95,7 +95,7 @@ function findDrug($drugs, $query)
             return $d;
         }
     }
-    // 2) alias / 先発 / 後発 完全一致
+    // 2) alias / 先発 / 後発完全一致
     foreach ($drugs as $d) {
         $cands = array_merge(
             isset($d['aliases']) ? $d['aliases'] : [],
@@ -119,7 +119,7 @@ function respond($payload, $notice, $flags, $code = 200)
     exit;
 }
 
-// GET /v1/meta  (または ルート)
+// GET /v1/meta  (またはルート)
 if ($parts === [] || $parts[0] === 'meta') {
     respond([
         'meta' => $meta,
@@ -142,10 +142,10 @@ if ($parts[0] === 'drugs' && count($parts) === 1) {
             'category' => isset($d['category']) ? $d['category'] : null,
             'aliases' => isset($d['aliases']) ? $d['aliases'] : [],
             'brand_names' => isset($d['brand_names']) ? $d['brand_names'] : [],
-            // 表示推奨値 (安全側) を 一覧でも 提供
+            // 表示推奨値 (安全側) を一覧でも提供
             'surgery_high_risk_days_before' => isset($surg['display_high_risk_days_before']) ? $surg['display_high_risk_days_before'] : null,
             'surgery_low_risk_days_before' => isset($surg['display_low_risk_days_before']) ? $surg['display_low_risk_days_before'] : null,
-            // true は 手術当日 の 休薬 (前日 まで 服用可、 日数 は null)。 静的 drugs.json・検索 API と 同じ 名前
+            // true は手術当日の休薬 (前日まで服用可、日数は null)。静的 drugs.json・検索 API と同じ名前
             'surgery_high_risk_day_of' => !empty($surg['display_high_risk_day_of']),
             'surgery_low_risk_day_of' => !empty($surg['display_low_risk_day_of']),
             'surgery_required' => isset($surg['required']) ? $surg['required'] : null,

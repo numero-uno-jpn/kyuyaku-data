@@ -7,8 +7,8 @@
  *
  * 方式:
  *   - 1 バケットにつき 1 ファイル (<dir>/<bucket>.txt) に UNIX epoch 秒を 1 行 1 件で保存。
- *   - 呼ばれるたび cutoff = now - $windowSec より古い項目を捨て、 残件数で判定。
- *   - flock(LOCK_EX) で排他、 失敗時は fail-open (ディスクフル等で正規ユーザーを巻き込まない)。
+ *   - 呼ばれるたび cutoff = now - $windowSec より古い項目を捨て、残件数で判定。
+ *   - flock(LOCK_EX) で排他、失敗時は fail-open (ディスクフル等で正規ユーザーを巻き込まない)。
  *
  * 確率的 GC: 1% の確率で dir 内の 10 分以上 mtime が古いファイルを unlink (cron 不要)。
  *
@@ -19,12 +19,12 @@ class RateLimiter
 {
     /**
      * 同一バケットからのリクエストが直近 $windowSec 秒で $limit 回を超えていなければ
-     * 新しいタイムスタンプを記録して true を返す。 超えていれば記録せず false を返す。
+     * 新しいタイムスタンプを記録して true を返す。超えていれば記録せず false を返す。
      *
      * @param string $bucket   バケット識別子 (例: 'paste_' . sha1($ip))
      * @param int    $limit    ウィンドウ内の許容リクエスト数
      * @param int    $windowSec ウィンドウ秒数
-     * @return bool true = 通過可、 false = 上限超過 (429 を返すべき)
+     * @return bool true = 通過可、false = 上限超過 (429 を返すべき)
      */
     public static function checkAndRecord(string $bucket, int $limit, int $windowSec): bool
     {
@@ -74,7 +74,7 @@ class RateLimiter
             }
 
             if (count($stamps) >= $limit) {
-                // 上限超過: 記録せず false 。 (古い項目を捨てた状態で書き戻しは行う = clean up)
+                // 上限超過: 記録せず false 。(古い項目を捨てた状態で書き戻しは行う = clean up)
                 self::writeBack($fp, $stamps);
                 $ok = false;
             } else {

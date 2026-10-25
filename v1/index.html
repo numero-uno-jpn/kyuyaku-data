@@ -16,29 +16,29 @@ pre{background:#f2f2f2;padding:.6rem;overflow-x:auto;border-radius:4px}pre code{
 </head>
 <body>
 <h1>休薬情報データベース (Kyuyaku Data) API v1</h1>
-<p>周術期・造影 CT 検査前の 休薬情報 (静的 JSON、 read-only、 無料)。 データ版 0.8.10 (2026-10-25更新)、 157 剤。</p>
+<p>周術期・造影 CT 検査前の休薬情報 (静的 JSON、read-only、無料)。データ版 0.8.12 (2026-10-25更新)、157 剤。</p>
 <table>
 <tr><th>URL</th><th>内容</th></tr>
 <tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/meta.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/meta.json</code></a></td><td>データ版・ライセンス・免責</td></tr>
-<tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs.json</code></a></td><td>全薬剤の 一覧</td></tr>
-<tr><td><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/{一般名}.json</code><br>例: <a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/アピキサバン.json">アピキサバン.json</a></td><td>1 薬剤の 休薬詳細</td></tr>
+<tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs.json</code></a></td><td>全薬剤の一覧</td></tr>
+<tr><td><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/{一般名}.json</code><br>例: <a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/drugs/アピキサバン.json">アピキサバン.json</a></td><td>1 薬剤の休薬詳細</td></tr>
 <tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/lookup.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/lookup.json</code></a></td><td>一般名・別名・商品名 → 一般名</td></tr>
-<tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json</code></a></td><td>あいまい検索用の 索引</td></tr>
+<tr><td><a href="https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json"><code>https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json</code></a></td><td>あいまい検索用の索引</td></tr>
 </table>
 <h2>検索 (?q=)</h2>
 <p><strong>検索 API</strong>: <a href="https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン"><code>https://kyuyaku-data.numero-uno-jpn.workers.dev/v1/search?q=アスピリン</code></a> (<a href="../search-api.html">仕様ページ</a>)</p>
-<p>一致した薬を 一致度の 高い順の 配列 (JSON) で 返します (打ち間違い・表記ゆれも 吸収、 <code>limit</code> で 件数 1〜100)。 各結果に 休薬日数・詳細 JSON の URL・参照アプリの ページが 付き、 0 件の 時は 「もしかして」 候補を 返します。 認証不要・CORS 全開放。 Python 標準の urllib から 呼ぶ 場合は User-Agent を 指定してください。</p>
-<p>そのほかの 方法:</p>
+<p>一致した薬を一致度の高い順の配列 (JSON) で返します (打ち間違い・表記ゆれも吸収、<code>limit</code> で件数 1〜100)。各結果に休薬日数・詳細 JSON の URL・参照アプリのページが付き、0 件の時は「もしかして」候補を返します。認証不要・CORS 全開放。Python 標準の urllib から呼ぶ場合は User-Agent を指定してください。</p>
+<p>そのほかの方法:</p>
 <ul>
-<li><strong>参照アプリの URL 検索</strong>: <a href="../?q=アスピリン"><code>https://numero-uno-jpn.github.io/kyuyaku-data/?q=アスピリン</code></a> のように 開くと 検索済みの 状態で 表示されます (打ち間違い・表記ゆれも 吸収)。</li>
-<li><strong>手元で 検索</strong> (ネットワーク越しに 呼ばない): あいまい検索の 関数 <a href="../assets/search.js"><code>assets/search.js</code></a> と 索引 <code>search-index.json</code> を 使います。
+<li><strong>参照アプリの URL 検索</strong>: <a href="../?q=アスピリン"><code>https://numero-uno-jpn.github.io/kyuyaku-data/?q=アスピリン</code></a> のように開くと検索済みの状態で表示されます (打ち間違い・表記ゆれも吸収)。</li>
+<li><strong>手元で検索</strong> (ネットワーク越しに呼ばない): あいまい検索の関数 <a href="../assets/search.js"><code>assets/search.js</code></a> と索引 <code>search-index.json</code> を使います。
 <pre><code>import { buildIndex, search } from 'https://numero-uno-jpn.github.io/kyuyaku-data/assets/search.js';
 const index = buildIndex((await (await fetch('https://numero-uno-jpn.github.io/kyuyaku-data/v1/search-index.json')).json()).drugs);
 search(index, 'アスピリソ');   // → [{ name: 'アスピリン', score: 63, … }]</code></pre>
-(ブラウザ用。 Node.js では search.js を ダウンロードして import)</li>
+(ブラウザ用。Node.js では search.js をダウンロードして import)</li>
 </ul>
 <p>仕様・全件データ・ライセンス: <a href="https://github.com/numero-uno-jpn/kyuyaku-data">github.com/numero-uno-jpn/kyuyaku-data</a></p>
-<p>帰属表示: 梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data<br>ライセンス: データ CC BY 4.0 (quote_excerpt / quote_translation_excerpt は 対象外)</p>
-<p class="note">本データは 意思決定支援のための 参考情報です。 最終的な 休薬判断は 医療者の 責任で 行ってください。 内容は 無保証で、 継続的に 更新されます。</p>
+<p>帰属表示: 梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data<br>ライセンス: データ CC BY 4.0 (quote_excerpt / quote_translation_excerpt は対象外)</p>
+<p class="note">本データは意思決定支援のための参考情報です。最終的な休薬判断は医療者の責任で行ってください。内容は無保証で、継続的に更新されます。</p>
 </body>
 </html>

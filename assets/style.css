@@ -1,7 +1,7 @@
-/* 休薬情報データベース 検索サイト — デジタル庁デザインシステムの 基準 (コントラスト・フォーカス・タップ領域) に 準拠 */
+/* 休薬情報データベース検索サイト — デジタル庁デザインシステムの基準 (コントラスト・フォーカス・タップ領域) に準拠 */
 :root {
-  --bg: #f3f8f5;        /* ごく淡い ミントグリーン */
-  --surface: #ffffff;   /* カード・ボタン・入力欄 (背景より 一段 明るく) */
+  --bg: #f3f8f5;        /* ごく淡いミントグリーン */
+  --surface: #ffffff;   /* カード・ボタン・入力欄 (背景より一段明るく) */
   --subtle: #e8f1eb;    /* 表の見出し・引用・目次 */
   --text: #1a1a1c;
   --muted: #555a63;
@@ -11,8 +11,8 @@
   --focus-ring: #1a1a1c;
   --primary: #0031d8;
   --on-primary: #ffffff;
-  --high: #b3001b;      /* 周術期 高リスク */
-  --low: #8a4b00;       /* 周術期 低リスク */
+  --high: #b3001b;      /* 周術期高リスク */
+  --low: #8a4b00;       /* 周術期低リスク */
   --high-badge: #c4293f; --high-fill: #fdf0f2; --high-line: #eba8b2;   /* 一覧バッジ (淡め) */
   --low-badge: #99560a;  --low-fill: #fdf4e7;  --low-line: #e2bd8a;
   --ct: #00597a;        /* 造影CT */
@@ -70,7 +70,7 @@ a { color: var(--link); text-underline-offset: 2px; }
 .site-title .en { font-size: .95rem; font-weight: 500; color: var(--muted); margin-left: .4em; }
 .site-lead { margin: 4px 0 0; color: var(--muted); }
 main { padding: 20px 16px 40px; outline: none; }
-main:focus, main:focus-visible { outline: none; box-shadow: none; }  /* 画面遷移時の プログラム的 フォーカス用 */
+main:focus, main:focus-visible { outline: none; box-shadow: none; }  /* 画面遷移時のプログラム的フォーカス用 */
 
 .search label { display: block; font-weight: 700; margin-bottom: 6px; }
 .search input {
@@ -120,7 +120,7 @@ main:focus, main:focus-visible { outline: none; box-shadow: none; }  /* 画面�
 .big .box.high { color: var(--high); } .big .box.low { color: var(--low); }
 .big .box.ct { color: var(--ct); } .big .box.ok { color: var(--ok); }
 .note { background: var(--note-bg); border-left: 4px solid var(--note-border); padding: 10px 14px; margin: 10px 0; border-radius: 4px; }
-/* 作者の解釈 (原典の記述ではない) — 補足 (黄) と 色を 分ける */
+/* 作者の解釈 (原典の記述ではない) — 補足 (黄) と色を分ける */
 .interp { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--muted); padding: 10px 14px; margin: 10px 0; border-radius: 4px; }
 .tags { color: var(--muted); font-size: .85rem; margin-top: 4px; }
 .tags strong { color: var(--text); }

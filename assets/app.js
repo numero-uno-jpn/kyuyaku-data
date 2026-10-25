@@ -1,4 +1,4 @@
-// 休薬情報データベース 参照アプリ (ビルド不要・外部ライブラリなし)。 データは 同じサイトの v1/*.json。
+// 休薬情報データベース参照アプリ (ビルド不要・外部ライブラリなし)。データは同じサイトの v1/*.json。
 import { buildIndex, search as fuzzySearch, suggest } from './search.js';
 
 const API = 'v1';
@@ -9,13 +9,13 @@ const state = { drugs: [], byName: new Map(), index: [], meta: null, q: '', grou
 
 const esc = (s) => (s ?? '').toString()
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-// **強調** と 改行だけを 反映 (それ以外は エスケープ)
+// **強調** と改行だけを反映 (それ以外はエスケープ)
 const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
 const plain = (s) => (s ?? '').toString().replace(/\*\*/g, '');
-// 一次資料への リンク (別タブで 開く。 読み上げ用に その旨を 付記)
+// 一次資料へのリンク (別タブで開く。読み上げ用にその旨を付記)
 const extLink = (url, label) =>
   `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${label}<span class="ext" aria-hidden="true">↗</span><span class="sr">(新しいタブで開く)</span></a>`;
-// 休薬の 表示: 当日休薬 (原文が 手術当日の休薬) → 「当日休薬」、 0 → 休薬不要、 時間だけ → 日数に 切り上げて 原文の 時間を 併記
+// 休薬の表示: 当日休薬 (原文が手術当日の休薬) → 「当日休薬」、0 → 休薬不要、時間だけ → 日数に切り上げて原文の時間を併記
 const days = (v, dayOf, hours) => {
   if (dayOf) return '当日休薬';
   if (v === 0) return '休薬不要';
@@ -24,7 +24,7 @@ const days = (v, dayOf, hours) => {
   return null;
 };
 
-// ---- 薬効分類の グループ (DokuWiki 版 検索ページと 同じ 規則) ----
+// ---- 薬効分類のグループ (DokuWiki 版検索ページと同じ規則) ----
 function groupOf(c = '') {
   const has = (...ws) => ws.some((w) => c.includes(w));
   if (has('抗血小板', 'DOAC', '抗凝固')) return '抗血栓薬';
@@ -41,10 +41,10 @@ function groupOf(c = '') {
 }
 
 const DERIV = {
-  direct: ['直接記載', 'ガイドラインが この薬の 値を 直接記載'],
-  class: ['クラス推奨', 'ガイドラインは 薬効クラス単位で 推奨。 その値を この薬に 当てはめた'],
-  derived: ['計算値', 'ガイドラインの 半減期 × N 倍 等の ルールから 作者が 計算した値'],
-  external: ['他資料', 'この資料に 数値の 記載なし。 他の資料の 値'],
+  direct: ['直接記載', 'ガイドラインがこの薬の値を直接記載'],
+  class: ['クラス推奨', 'ガイドラインは薬効クラス単位で推奨。その値をこの薬に当てはめた'],
+  derived: ['計算値', 'ガイドラインの半減期 × N 倍等のルールから作者が計算した値'],
+  external: ['他資料', 'この資料に数値の記載なし。他の資料の値'],
 };
 
 // ---- 休薬バッジ ----
@@ -62,7 +62,7 @@ const SHORT = { high: '周術期(高)', low: '周術期(低)', ct: '造影CT', o
 const badgeHtml = (bs) => `<span class="badges">${bs.map(([k, , v]) => `<span class="badge ${k}">${esc(`${SHORT[k]} ${v}`)}</span>`).join('')}</span>`;
 
 // ---- 一覧 ----
-// 入力が あれば あいまい検索 (一致度順)、 無ければ 全件 (分類の 絞り込みは 併用)
+// 入力があればあいまい検索 (一致度順)、無ければ全件 (分類の絞り込みは併用)
 function search() {
   const inGroup = (d) => !state.group || d._g === state.group;
   if (!state.q.trim()) return state.drugs.filter(inGroup).map((d) => [d, null]);
@@ -71,7 +71,7 @@ function search() {
     .filter(([d]) => d && inGroup(d));
 }
 
-// 一致の 説明 (一般名そのものでの 一致なら 何も 出さない)
+// 一致の説明 (一般名そのものでの一致なら何も出さない)
 function hitNote(d, h) {
   if (!h || (h.term === d.name && h.kind !== 'typo' && h.kind !== 'variant')) return '';
   if (h.kind === 'category') return '<div class="hit">薬効分類に一致</div>';
@@ -79,7 +79,7 @@ function hitNote(d, h) {
   return `<div class="hit">「${esc(h.term)}」${label}</div>`;
 }
 
-// 入力に 合わせて URL の ?q= を 更新 (共有・ブックマーク用。 #/drugs/… は 保持)
+// 入力に合わせて URL の ?q= を更新 (共有・ブックマーク用。 #/drugs/… は保持)
 let urlTimer;
 function syncUrl() {
   clearTimeout(urlTimer);
@@ -109,12 +109,12 @@ function renderGroups() {
 function renderList() {
   const rows = search();
   $('status').textContent = state.q || state.group ? `${rows.length} 件` : `全 ${state.drugs.length} 剤`;
-  let empty = '<li class="status">該当する薬剤が ありません。 一般名・商品名の 一部でも 検索できます。</li>';
+  let empty = '<li class="status">該当する薬剤がありません。一般名・商品名の一部でも検索できます。</li>';
   if (!rows.length && state.q.trim()) {
     const sg = suggest(state.index, state.q).filter((s) => !state.group || state.byName.get(s.name)?._g === state.group);
     if (sg.length) {
-      empty = `<li class="status">該当する薬剤が ありません。 もしかして: ${sg.map((s) =>
-        `<button type="button" class="link-btn" data-suggest="${esc(s.term)}">${esc(s.term)}</button>${s.term !== s.name ? ` (${esc(s.name)})` : ''}`).join('、 ')}</li>`;
+      empty = `<li class="status">該当する薬剤がありません。もしかして: ${sg.map((s) =>
+        `<button type="button" class="link-btn" data-suggest="${esc(s.term)}">${esc(s.term)}</button>${s.term !== s.name ? ` (${esc(s.name)})` : ''}`).join('、')}</li>`;
     }
   }
   $('list').innerHTML = rows.length
@@ -142,14 +142,14 @@ async function loadDrug(name) {
 
 function quoteBlock(q, tr, loc) {
   if (!q && !loc) return '';
-  return `<details><summary>根拠 (引用または抜粋)${loc ? ' と 所在' : ''}</summary>
+  return `<details><summary>根拠 (引用または抜粋)${loc ? ' と所在' : ''}</summary>
     ${q ? `<blockquote>${esc(q)}</blockquote>` : ''}
     ${tr ? `<div class="tr">訳: ${esc(tr)}</div>` : ''}
     ${loc ? `<div class="loc">所在: ${esc(loc)}</div>` : ''}
   </details>`;
 }
 
-// 出典ごとの 作者の解釈 (区分ラベル + 文)。 休薬の推奨が ない 出典は 根拠に 見えないよう 強調する
+// 出典ごとの作者の解釈 (区分ラベル + 文)。休薬の推奨がない出典は根拠に見えないよう強調する
 const MENTION = { 薬剤名: '薬剤名あり', なし: '薬剤名なし' };
 const RECOMMEND = { 薬剤名: '薬剤名での推奨', クラス: 'クラス単位の推奨', なし: '休薬の推奨なし' };
 function interpBlock(ai) {
@@ -219,7 +219,7 @@ async function renderDetail(name) {
   let d;
   try { d = await loadDrug(name); } catch { d = undefined; }
   if (!d) {
-    view.innerHTML = `<a class="back" href="#/">← 一覧へ戻る</a><p>「${esc(name)}」は 見つかりませんでした。</p>`;
+    view.innerHTML = `<a class="back" href="#/">← 一覧へ戻る</a><p>「${esc(name)}」は見つかりませんでした。</p>`;
     return;
   }
   document.title = `${d.name} の休薬情報 — 休薬情報データベース`;
@@ -227,7 +227,7 @@ async function renderDetail(name) {
   const boxes = badgesOf(s, c).map(([k, label, v]) =>
     `<div class="box ${k}"><div class="k">${esc(label)}</div><div class="v">${esc(v)}</div></div>`).join('');
   const names = [...(d.aliases ?? []), ...(d.brand_names ?? [])];
-  const ex = (arr, label) => (arr?.length ? `<p class="hint">${label}: ${arr.map(esc).join('、 ')}</p>` : '');
+  const ex = (arr, label) => (arr?.length ? `<p class="hint">${label}: ${arr.map(esc).join('、')}</p>` : '');
   const refs = (d.references ?? []).map((r) => {
     const title = esc(`${r.source ? `[${r.source}] ` : ''}${r.title ?? r.url ?? ''}`);
     return `<li>${r.url ? extLink(r.url, title) : title}
@@ -239,9 +239,9 @@ async function renderDetail(name) {
     <a class="back" href="#/">← 一覧へ戻る</a>
     <h1>${esc(d.name)}</h1>
     <p class="cat">${esc(d.category ?? '')}</p>
-    ${names.length ? `<p class="alias">別名・商品名: ${names.map(esc).join('、 ')}</p>` : ''}
+    ${names.length ? `<p class="alias">別名・商品名: ${names.map(esc).join('、')}</p>` : ''}
     <div class="big">${boxes}</div>
-    <p class="hint">表示の日数は 現行ガイドラインの 最長値 (安全側) です。 ガイドラインごとの値は 下の表を 参照してください。</p>
+    <p class="hint">表示の日数は現行ガイドラインの最長値 (安全側) です。ガイドラインごとの値は下の表を参照してください。</p>
     ${s.note ? `<div class="note"><strong>周術期:</strong> ${md(s.note)}</div>` : ''}
     ${s.author_interpretation ? `<div class="interp"><strong>作者解釈:</strong> ${esc(s.author_interpretation)}</div>` : ''}
     ${c.note ? `<div class="note"><strong>造影CT:</strong> ${md(c.note)}</div>` : ''}
@@ -249,7 +249,7 @@ async function renderDetail(name) {
     ${ex(s.low_risk_surgery_examples, '低リスク手術の例')}
     ${d.guideline_variations?.surgery?.length ? `<h2>ガイドライン別 (周術期)</h2>${variationsTable(d.guideline_variations.surgery, 'surgery')}` : ''}
     ${d.guideline_variations?.contrast_ct?.length ? `<h2>ガイドライン別 (造影CT)</h2>${variationsTable(d.guideline_variations.contrast_ct, 'contrast')}` : ''}
-    ${refs ? `<h2>出典</h2><p class="hint">引用または抜粋は 一部、 参考資料・作者による注記を 含みます。 正確な記載は 原典で 確認してください。</p><ol class="refs">${refs}</ol>` : ''}
+    ${refs ? `<h2>出典</h2><p class="hint">引用または抜粋は一部、参考資料・作者による注記を含みます。正確な記載は原典で確認してください。</p><ol class="refs">${refs}</ol>` : ''}
     <div class="actions">
       <button type="button" class="btn" id="copy-info">内容をコピー</button>
       <button type="button" class="btn secondary" id="copy-link">リンクをコピー</button>
@@ -290,13 +290,13 @@ async function init() {
     state.byName = new Map(state.drugs.map((d) => [d.name, d]));
     state.index = buildIndex(idx.drugs);
   } catch (e) {
-    $('status').textContent = `データの読み込みに 失敗しました (${e.message})。 時間をおいて 再読み込みしてください。`;
+    $('status').textContent = `データの読み込みに失敗しました (${e.message})。時間をおいて再読み込みしてください。`;
     return;
   }
   const m = state.meta ?? {};
-  $('meta-line').textContent = `データ版 ${m.data_version ?? ''} (${m.data_updated_at ?? ''} 更新)・ 収載 ${state.drugs.length} 剤`;
+  $('meta-line').textContent = `データ版 ${m.data_version ?? ''} (${m.data_updated_at ?? ''} 更新)・収載 ${state.drugs.length} 剤`;
   renderGroups();
-  // ?q=アスピリン で 開いたら 検索済みの 状態に
+  // ?q=アスピリンで開いたら検索済みの状態に
   state.q = new URLSearchParams(location.search).get('q') ?? '';
   $('q').value = state.q;
   renderList();

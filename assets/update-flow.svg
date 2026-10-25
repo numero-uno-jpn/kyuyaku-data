@@ -19,31 +19,31 @@
 
   <!-- ① -->
   <rect x="40" y="24" width="640" height="124" rx="10" fill="#ffffff" stroke="#3d7a5a" stroke-width="2"/>
-  <text class="ttl" x="64" y="58">① 変化を 検知する (毎月・自動)</text>
+  <text class="ttl" x="64" y="58">① 変化を検知する (毎月・自動)</text>
   <text class="body" x="64" y="94">商品名・後発品 / 薬価基準 / 学会ガイドライン (Web・PDF)</text>
-  <text class="body" x="64" y="124">PMDA 添付文書の 改訂 / PMDA 新規承認薬 — 新しい ガイドラインは AI が 読み取り</text>
+  <text class="body" x="64" y="124">PMDA 添付文書の改訂 / PMDA 新規承認薬 — 新しいガイドラインは AI が読み取り</text>
 
   <line x1="360" y1="150" x2="360" y2="204" stroke="#3f4a45" stroke-width="2" marker-end="url(#arrow)"/>
-  <text class="lbl" x="378" y="182">通知 (Issue・メール) または 自動の 更新提案</text>
+  <text class="lbl" x="378" y="182">通知 (Issue・メール) または自動の更新提案</text>
 
   <!-- ② -->
   <rect x="40" y="210" width="640" height="104" rx="10" fill="#ffffff" stroke="#3d7a5a" stroke-width="2"/>
-  <text class="ttl" x="64" y="244">② 原文で 確認し、 作者が 承認して 反映</text>
-  <text class="body" x="64" y="282">AI が 原文を 読んで 照合 → 作者が 差分と 根拠を 確認・承認 → 記録</text>
+  <text class="ttl" x="64" y="244">② 原文で確認し、作者が承認して反映</text>
+  <text class="body" x="64" y="282">AI が原文を読んで照合 → 作者が差分と根拠を確認・承認 → 記録</text>
 
   <line x1="360" y1="316" x2="360" y2="370" stroke="#3f4a45" stroke-width="2" marker-end="url(#arrow)"/>
-  <text class="lbl" x="378" y="348">変更の たびに</text>
+  <text class="lbl" x="378" y="348">変更のたびに</text>
 
   <!-- ③ -->
   <rect x="40" y="376" width="640" height="124" rx="10" fill="#ffffff" stroke="#3d7a5a" stroke-width="2"/>
-  <text class="ttl" x="64" y="410">③ 誤りを 入れない (自動の 検査)</text>
-  <text class="body" x="64" y="446">引用が 原文に 実在するか / 数値が 原文に あるか</text>
-  <text class="body" x="64" y="476">既存の値が 意図せず 変わっていないか / 公開物の 整合性</text>
+  <text class="ttl" x="64" y="410">③ 誤りを入れない (自動の検査)</text>
+  <text class="body" x="64" y="446">引用が原文に実在するか / 数値が原文にあるか</text>
+  <text class="body" x="64" y="476">既存の値が意図せず変わっていないか / 公開物の整合性</text>
 
   <line x1="360" y1="502" x2="360" y2="556" stroke="#3f4a45" stroke-width="2" marker-end="url(#arrow)"/>
-  <text class="lbl" x="378" y="534">すべて 通過したものだけ</text>
+  <text class="lbl" x="378" y="534">すべて通過したものだけ</text>
 
   <!-- 反映 -->
   <rect x="40" y="562" width="640" height="56" rx="10" fill="#e3efe7" stroke="#3d7a5a" stroke-width="2"/>
-  <text class="fin" x="360" y="596" text-anchor="middle">正本 → 公開データ・API・参照アプリへ 自動反映</text>
+  <text class="fin" x="360" y="596" text-anchor="middle">正本 → 公開データ・API・参照アプリへ自動反映</text>
 </svg>
