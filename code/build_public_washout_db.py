@@ -90,11 +90,13 @@ def _is_pmda(v):
 
 
 def _filter_current_series(vs):
+    """同じ 系列の 旧版を 除く。 現行の 年は series_latest_year (系列全体で 値の 入った 最新の 版) を 優先し、
+    無い 古い データ では この 薬の variations の 最大 version_year を 使う。"""
     latest = {}
     for v in vs:
         sid, yr = v.get("series_id"), v.get("version_year")
         if sid and isinstance(yr, (int, float)):
-            latest[sid] = max(latest.get(sid, yr), yr)
+            latest[sid] = max(latest.get(sid, yr), yr, v.get("series_latest_year") or yr)
     out = []
     for v in vs:
         sid = v.get("series_id")
