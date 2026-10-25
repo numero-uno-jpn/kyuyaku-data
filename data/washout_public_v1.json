@@ -3,7 +3,7 @@
     "name": "休薬情報データベース (Kyuyaku Data)",
     "author": "梅谷 直亨 (Naoyuki Umetani)",
     "api_version": "1.1",
-    "data_version": "0.8.12",
+    "data_version": "0.8.13",
     "data_updated_at": "2026-10-25",
     "generated_at": "2026-10-25",
     "scope": "周術期・造影CT の休薬情報のみ",
@@ -79,7 +79,7 @@
             "high_risk_days": 4,
             "value_derivation": "direct",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Table 12: \"Aspirin — Minimum Time From Drug Interruption to Restoration of Platelet Function: 4 d.\"\nRec 7 (COR 1, LOE B-R): \"In patients with prior PCI undergoing NCS, it is recommended to continue\naspirin (75-100 mg), if possible, to reduce the risk of cardiac events.\" …",
+            "quote_excerpt": "Table 12: \"Aspirin — Minimum Time From Drug Interruption to Restoration of Platelet Function: 4 d.\"\nRec 7 (COR 1, LOE B-R): \"In patients with prior PCI undergoing NCS, it is recommended to continue\naspirin (75-100 mg), if possible, to reduce the risk of cardiac events.\"\nRec 11 (COR 2b, LOE B-R): \"In patients with CCD without prior PCI undergoing elective NCS, it may be\nreasonable to continue aspirin in selected patients when the risk of cardiac events outweighs the\nrisk of bleeding.\" …",
             "source_location": "p.72-76 Antiplatelet Therapy and Timing of Noncardiac Surgery in Patients With Coronary Artery Disease; p.76 Table 12 Duration of Antiplatelet Therapy Effect",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           },
@@ -90,7 +90,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Neuraxial anesthesia… 継続可",
             "source_title": "Regional Anesthesia in the Patient Receiving Antithrombotic or Thrombolytic Therapy — Fourth Edition (ASRA)",
-            "quote_excerpt": "Rec 13.1.1 (grade 1A): \"Nonsteroidal anti-inflammatory drugs appear to represent no added significant risk for the development of spinal hematoma in patients having epidural or spinal anesthesia. Nonsteroidal anti-inflammatory drugs (including aspirin) do not create a level of risk that will interfere with the performance of neuraxial blocks.\" …",
+            "quote_excerpt": "Rec 13.1.1 (grade 1A): \"Nonsteroidal anti-inflammatory drugs appear to represent no added significant risk for the development of spinal hematoma in patients having epidural or spinal anesthesia. Nonsteroidal anti-inflammatory drugs (including aspirin) do not create a level of risk that will interfere with the performance of neuraxial blocks.\"\np.299 (Interventional Pain): \"the length of discontinuation depends on the indication for aspirin administration, 6 days for primary prevention (patients with no overt cardiovascular disease) and 4 days for secondary prophylaxis\"\n",
             "source_location": "p.285 §13.1.1 (grade 1A) + p.299 Interventional Pain section",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
@@ -100,7 +100,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "High bleeding risk… 7日, No history of PCI, if… 3日, Previous PCI, bleeding… 継続",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "\"For patients undergoing high bleeding risk surgery (e.g. intracranial, spinal neurosurgery, or vitreoretinal eye\nsurgery), it is recommended to interrupt aspirin for at least 7 days pre-operatively.\" …",
+            "quote_excerpt": "\"For patients undergoing high bleeding risk surgery (e.g. intracranial, spinal neurosurgery, or vitreoretinal eye\nsurgery), it is recommended to interrupt aspirin for at least 7 days pre-operatively.\" (Class I, LoE C)\n\"In patients without a history of PCI, interruption of aspirin at least 3 days before NCS may be considered if\nthe bleeding risk outweighs the ischaemic risk, to reduce the risk of bleeding.\" (Class IIb, LoE B)\n\"In patients with a previous PCI, it is recommended to continue aspirin peri-operatively if the bleeding risk\nallows.\" …",
             "source_location": "p.3862 Recommendation Table 13; p.3857 Table 7 (PK/PD); Figure 5 p.3859",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           },
@@ -305,7 +305,7 @@
             "high_risk_days": 7,
             "value_derivation": "direct",
             "source_title": "Regional Anesthesia in the Patient Receiving Antithrombotic or Thrombolytic Therapy — Fourth Edition (ASRA)",
-            "quote_excerpt": "Rec 13.2.1 (grade 1C): \"the recommended time interval between discontinuation of thienopyridine therapy and neuraxial blockade is 10 days for ticlopidine, 5 to 7 days for clopidogrel, and 7 to 10 days for prasugrel\"\nRec 13.2.2 (grade 1A): \"thienopyridine therapy may be reinstituted 24 hours postoperatively\" …",
+            "quote_excerpt": "Rec 13.2.1 (grade 1C): \"the recommended time interval between discontinuation of thienopyridine therapy and neuraxial blockade is 10 days for ticlopidine, 5 to 7 days for clopidogrel, and 7 to 10 days for prasugrel\"\nRec 13.2.2 (grade 1A): \"thienopyridine therapy may be reinstituted 24 hours postoperatively\"\nRec 13.2.4 (grade 2C): \"Thienopyridine therapy may be resumed immediately after needle placement/catheter removal, provided a loading dose of the drugs is not administered.\"\n",
             "source_location": "p.286 §13.2 Rec 13.2.1-13.2.4 + p.271 Table 7 (Clopidogrel 7 d)",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
@@ -1919,7 +1919,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "出血リスク高・血栓リスク低〜中 5日, 出血リスク低〜中・血栓リスク低〜中 5日, 血栓リスク高・出血リスク高または低〜中 5日, 出血リスク最小 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "OAC Management Rec 1 (COR 1, LOE B-NR): \"For patients with CVD receiving OAC who require elective\nNCS, a multidisciplinary team-based approach to time-based interruption is recommended to balance\nthe competing risks of thromboembolism and perioperative bleeding (Tables 13 and 14).\" …",
+            "quote_excerpt": "OAC Management Rec 1 (COR 1, LOE B-NR): \"For patients with CVD receiving OAC who require elective\nNCS, a multidisciplinary team-based approach to time-based interruption is recommended to balance\nthe competing risks of thromboembolism and perioperative bleeding (Tables 13 and 14).\"\nOAC Bridging Rec 2 (COR 2a, LOE C-LD): \"In patients with CVD and high thrombotic risk (Table 14)\nundergoing NCS where interruption of vitamin K antagonist (VKA) is required, preoperative bridging\nwith parenteral heparin can be effective to reduce thromboembolic risk.\" …",
             "source_location": "p.78-79 Oral Anticoagulants; p.81-82 Table 13 VKA Schedule (+ footnotes); p.85-86 Table 15 Pharmacokinetics (Warfarin t1/2 36-48h; duration of action ~5 d beyond normalization of INR)",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           },
@@ -1928,7 +1928,7 @@
             "high_risk_days": 5,
             "value_derivation": "direct",
             "source_title": "Regional Anesthesia in the Patient Receiving Antithrombotic or Thrombolytic Therapy — Fourth Edition (ASRA)",
-            "quote_excerpt": "Rec 12.1 (grade 1B): \"We recommend that the anticoagulant therapy must be stopped (ideally 5 days prior to the planned procedure), and the INR normalized prior to initiation of neuraxial block\"\nTable 3: \"Discontinue warfarin at least 5 days before elective procedure; assess INR 1-2 d prior; if >1.5 consider 1-2 mg oral vitamin K\" …",
+            "quote_excerpt": "Rec 12.1 (grade 1B): \"We recommend that the anticoagulant therapy must be stopped (ideally 5 days prior to the planned procedure), and the INR normalized prior to initiation of neuraxial block\"\nTable 3: \"Discontinue warfarin at least 5 days before elective procedure; assess INR 1-2 d prior; if >1.5 consider 1-2 mg oral vitamin K\"\nTable 3 (Bridging for high thromboembolism risk): \"Last LMWH dose 24 h before surgery. IV heparin discontinued 4-6 h before surgery.\"\n",
             "source_location": "p.282 §12 Recommendations 12.1-12.10 (+ p.266 Table 3、Douketis らの推奨の紹介)",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
@@ -1939,7 +1939,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "High bleeding risk… 3〜5日, Minor surgical… 継続可, Major surgery requiring… 日数なし, Invasive procedures… 継続可",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "\"Minor surgical procedures and procedures where bleeding is easily controlled can be performed without VKA\ninterruption. The INR should be monitored and maintained at the lower level of the therapeutic range. Major\nsurgical procedures needing INR <=1.5 require VKA interruption, and heparin bridging should be considered.\" …",
+            "quote_excerpt": "\"Minor surgical procedures and procedures where bleeding is easily controlled can be performed without VKA\ninterruption. The INR should be monitored and maintained at the lower level of the therapeutic range. Major\nsurgical procedures needing INR <=1.5 require VKA interruption, and heparin bridging should be considered.\"\n\"In patients using VKA for AF or venous thromboembolism (VTE), invasive procedures with a low bleeding risk can be\nperformed without VKA interruption.\" …",
             "source_location": "p.3858 Table 8; p.3863-3864 Section 5.3.2.1 (5.3.2.1.1 MHV, 5.3.2.1.2 AF/VTE); Figure 8 p.3863; p.3868 Recommendation Table 14",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           },
@@ -2149,7 +2149,7 @@
             "high_risk_hours": 72,
             "value_derivation": "direct",
             "source_title": "Regional Anesthesia in the Patient Receiving Antithrombotic or Thrombolytic Therapy — Fourth Edition (ASRA)",
-            "quote_excerpt": "Rec 6.1 (grade 2C, NEW): \"We suggest that rivaroxaban be discontinued 72 hours prior to neuraxial block. Consider checking rivaroxaban or anti-factor Xa activity level if less than 72 hours. An acceptable level of residual rivaroxaban activity to proceed with neuraxial block remains undetermined\"\nRec 6.2 (NEW): \"neuraxial catheters be removed 6 hours prior to the first (postoperative) dose\" …",
+            "quote_excerpt": "Rec 6.1 (grade 2C, NEW): \"We suggest that rivaroxaban be discontinued 72 hours prior to neuraxial block. Consider checking rivaroxaban or anti-factor Xa activity level if less than 72 hours. An acceptable level of residual rivaroxaban activity to proceed with neuraxial block remains undetermined\"\nRec 6.2 (NEW): \"neuraxial catheters be removed 6 hours prior to the first (postoperative) dose\"\nRec 6.3 (NEW): \"we suggest that rivaroxaban dosing be held for 22 to 26 hours before or an anti-factor Xa activity calibrated to rivaroxaban be assessed before the catheter is removed\"\n",
             "source_location": "p.279 §6.0 Rec 6.1-6.3",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
@@ -2160,7 +2160,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Very high bleeding risk 3日, eGFR >=30 (high bleeding risk NCS) 2日 (48時間), eGFR 15-29 (high bleeding risk NCS) 2日 (48時間), eGFR 15-29 (low bleeding risk NCS) 2日 (36時間), eGFR >=30 (low bleeding risk NCS) 1日 (24時間) 他",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "Table 8: Rivaroxaban plasma half-life 7-11 h (11-13 h in the elderly); duration of action after last dose 24 h;\nrenal clearance 33%; o.d./b.i.d.\nFigure 10: Apixaban, rivaroxaban, edoxaban — eGFR >=30: >=24 h low / >=48 h high;\neGFR 15-29: >=36 h low / >=48 h high; eGFR <15: no formal indication for use. …",
+            "quote_excerpt": "Table 8: Rivaroxaban plasma half-life 7-11 h (11-13 h in the elderly); duration of action after last dose 24 h;\nrenal clearance 33%; o.d./b.i.d.\nFigure 10: Apixaban, rivaroxaban, edoxaban — eGFR >=30: >=24 h low / >=48 h high;\neGFR 15-29: >=36 h low / >=48 h high; eGFR <15: no formal indication for use.\n\"In patients receiving low-dose OACs as part of a vascular protection strategy, rivaroxaban should be paused for\nat least 24 h before surgery and resumed according to the post-operative bleeding risk.\" …",
             "source_location": "p.3858 Table 8; p.3865 Figure 9; p.3866 Figure 10; p.3868 Recommendation Table 14",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           },
@@ -2367,7 +2367,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Very high bleeding risk 4〜5日, eGFR 30-49 (high bleeding risk NCS) 4日 (96時間), eGFR 50-79 (high bleeding risk NCS) 3日 (72時間), eGFR >=80 (high bleeding risk NCS) 2日 (48時間), eGFR 30-49 (low bleeding risk NCS) 2日 (48時間) 他",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "Table 8: Dabigatran plasma half-life 12-14 h; duration of action after last dose 24 h; renal clearance 85%.\nFigure 10 (Timing of last NOAC dose before elective NCS according to renal function):\nDabigatran — eGFR >=80: >=24 h (low risk) / >=48 h (high risk);\neGFR 50-79: >=36 h / >=72 h; eGFR 30-49: >=48 h / >=96 h;\neGFR 15-29: Not indicated; eGFR <15: No formal indication for use. …",
+            "quote_excerpt": "Table 8: Dabigatran plasma half-life 12-14 h; duration of action after last dose 24 h; renal clearance 85%.\nFigure 10 (Timing of last NOAC dose before elective NCS according to renal function):\nDabigatran — eGFR >=80: >=24 h (low risk) / >=48 h (high risk);\neGFR 50-79: >=36 h / >=72 h; eGFR 30-49: >=48 h / >=96 h;\neGFR 15-29: Not indicated; eGFR <15: No formal indication for use.\n\"In non-minor bleeding risk procedures in patients using a NOAC, it is recommended to use an interruption regimen\nbased on the NOAC compound, renal function, and bleeding risk.\" …",
             "source_location": "p.3858 Table 8; p.3865 Figure 9; p.3866 Figure 10; p.3868 Recommendation Table 14",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           },
@@ -2543,7 +2543,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高出血リスク + CrCl <30 3日, 高出血リスク + CrCl >=30 2日, 低/中等度出血リスク + CrCl <30 2日, 低/中等度出血リスク + CrCl >=30 1日, 微小出血リスク 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Table 13 Preoperative DOAC Schedule (Apixaban, edoxaban, rivaroxaban):\n- High bleeding risk: withhold Day -2, -1, 0, +1, +2\n- Low/Moderate bleeding risk: withhold Day -1, 0\n- Minimal bleeding risk: administer throughout\nWith renal impairment (CrCl <30 mL/min):\n- High bleeding risk: withhold Day -3, -2, -1, 0, +1, +2\n- Low/Moderate: withhold Day -2, -1, 0 …",
+            "quote_excerpt": "Table 13 Preoperative DOAC Schedule (Apixaban, edoxaban, rivaroxaban):\n- High bleeding risk: withhold Day -2, -1, 0, +1, +2\n- Low/Moderate bleeding risk: withhold Day -1, 0\n- Minimal bleeding risk: administer throughout\nWith renal impairment (CrCl <30 mL/min):\n- High bleeding risk: withhold Day -3, -2, -1, 0, +1, +2\n- Low/Moderate: withhold Day -2, -1, 0\nTable 15: \"Apixaban t1/2 9-14 h, Renal Clearance 27%, Antidote/Reversal 4F-PCC, andexanet alfa\"\nTable 13 footnote: \"Minimal bleeding risk = 30-day risk of major bleeding 0% (eg, cataract surgery,\nminor dental/dermatological procedures). …",
             "source_location": "p.78 Oral Anticoagulants; p.80 Table 13 Preoperative DOAC Schedule; p.85-86 Table 15 (Apixaban t1/2 9-14 h, renal clearance 27%, factor Xa inhibitor, reversal 4F-PCC / andexanet alfa)",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           },
@@ -2552,7 +2552,7 @@
             "high_risk_hours": 72,
             "value_derivation": "direct",
             "source_title": "Regional Anesthesia in the Patient Receiving Antithrombotic or Thrombolytic Therapy — Fourth Edition (ASRA)",
-            "quote_excerpt": "Rec 7.1 (grade 2C, NEW): \"We suggest that apixaban be discontinued 72 hours prior to neuraxial block. Consider checking apixaban or anti-factor Xa activity level if less than 72 hours.\"\nRec 7.2 (NEW): \"neuraxial catheters be removed 6 hours prior to the first (postoperative) dose\" …",
+            "quote_excerpt": "Rec 7.1 (grade 2C, NEW): \"We suggest that apixaban be discontinued 72 hours prior to neuraxial block. Consider checking apixaban or anti-factor Xa activity level if less than 72 hours.\"\nRec 7.2 (NEW): \"neuraxial catheters be removed 6 hours prior to the first (postoperative) dose\"\nRec 7.3 (NEW): \"apixaban dosing be held for 26 to 30 hours or an anti-factor Xa assay calibrated to apixaban before the catheter is removed\"\n",
             "source_location": "p.279 §7.0 Rec 7.1-7.3",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
@@ -2563,7 +2563,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Very high bleeding risk 3日, eGFR >=30 (high bleeding risk NCS) 2日 (48時間), eGFR 15-29 (high bleeding risk NCS) 2日 (48時間), eGFR 15-29 (low bleeding risk NCS) 2日 (36時間), eGFR >=30 (low bleeding risk NCS) 1日 (24時間), eGFR <15 適応外 他",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "Table 8: Apixaban plasma half-life 12 h; duration of action after last dose 24 h; renal clearance 27%; b.i.d.\nFigure 10: Apixaban/rivaroxaban/edoxaban — eGFR >=30: >=24 h (low risk) / >=48 h (high risk);\neGFR 15-29: >=36 h (low risk) / >=48 h (high risk); eGFR <15: no formal indication for use. …",
+            "quote_excerpt": "Table 8: Apixaban plasma half-life 12 h; duration of action after last dose 24 h; renal clearance 27%; b.i.d.\nFigure 10: Apixaban/rivaroxaban/edoxaban — eGFR >=30: >=24 h (low risk) / >=48 h (high risk);\neGFR 15-29: >=36 h (low risk) / >=48 h (high risk); eGFR <15: no formal indication for use.\n\"In minor bleeding risk surgery and other procedures where bleeding is easily controlled, it is recommended to\nperform surgery without interruption of OAC therapy.\" …",
             "source_location": "p.3858 Table 8; p.3865 Figure 9; p.3866 Figure 10; p.3868 Recommendation Table 14",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           },
@@ -2752,7 +2752,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Very high bleeding risk 3日, eGFR >=30 (high bleeding risk NCS) 2日 (48時間), eGFR 15-29 (high bleeding risk NCS) 2日 (48時間), eGFR 15-29 (low bleeding risk NCS) 2日 (36時間), eGFR >=30 (low bleeding risk NCS) 1日 (24時間), eGFR <15 適応外 他",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "Table 8: Edoxaban plasma half-life 6-11 h; duration of action after last dose 24 h; renal clearance 37-50%; o.d.\nFigure 10: Apixaban, rivaroxaban, edoxaban — eGFR >=30: >=24 h low / >=48 h high;\neGFR 15-29: >=36 h low / >=48 h high; eGFR <15: no formal indication for use. …",
+            "quote_excerpt": "Table 8: Edoxaban plasma half-life 6-11 h; duration of action after last dose 24 h; renal clearance 37-50%; o.d.\nFigure 10: Apixaban, rivaroxaban, edoxaban — eGFR >=30: >=24 h low / >=48 h high;\neGFR 15-29: >=36 h low / >=48 h high; eGFR <15: no formal indication for use.\n\"Before interventions that carry a very high risk of bleeding—such as spinal or epidural anaesthesia, or lumbar puncture\nrequiring intact haemostasis-–interruption of NOACs for up to five half-lives (i.e. 3 days for FXa inhibitors or 4–5 days\nfor dabigatran) should be considered\" (p.3867)\n",
             "source_location": "p.3858 Table 8; p.3865 Figure 9; p.3866 Figure 10",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           },
@@ -2970,7 +2970,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "SC therapeutic UFH >10… 1日 (24時間), SC higher-dose UFH 7500… 1日 (12時間), IV heparin infusion 1日 (6時間), SC low-dose UFH 5000 U… 1日 (6時間)",
             "source_title": "Regional Anesthesia in the Patient Receiving Antithrombotic or Thrombolytic Therapy — Fourth Edition (ASRA)",
-            "quote_excerpt": "Rec 3.3.1 (grade 1A): \"Discontinue heparin infusion 4 to 6 hours and verify normal coagulation status prior to neuraxial blockade\"\nRec 3.4.1: \"in patients receiving SC low-dose UFH with dosing regimens of 5000 U BID or TID, neuraxial block occur 4 to 6 hours after heparin administration, or coagulation status be assessed\" …",
+            "quote_excerpt": "Rec 3.3.1 (grade 1A): \"Discontinue heparin infusion 4 to 6 hours and verify normal coagulation status prior to neuraxial blockade\"\nRec 3.4.1: \"in patients receiving SC low-dose UFH with dosing regimens of 5000 U BID or TID, neuraxial block occur 4 to 6 hours after heparin administration, or coagulation status be assessed\"\nRec 3.4.2: \"Preoperative “higher-dose” UFH for thromboprophylaxis (eg, individual heparin dose of 7500–10,000 U BID or a daily dose of ≤20,000 U). …",
             "source_location": "p.271 §3.3 Rec 3.3.1-3.3.6 + p.272 §3.4 Rec 3.4.1-3.4.5",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
@@ -3143,7 +3143,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Therapeutic dose 1日 (24時間), Prophylactic dose 1日 (12時間)",
             "source_title": "Regional Anesthesia in the Patient Receiving Antithrombotic or Thrombolytic Therapy — Fourth Edition (ASRA)",
-            "quote_excerpt": "Rec 4.5.1 (grade 1C): \"needle placement should occur at least 12 hours after a prophylactic LMWH dose\"\nRec 4.5.3 (grade 1C): \"In patients receiving higher (therapeutic) doses of LMWH ... we recommend delay of at least 24 hours prior to needle/catheter placement\"\nRec 4.6.2 (grade 1C): \"The catheter should be removed 12 hours after the last dose of LMWH. …",
+            "quote_excerpt": "Rec 4.5.1 (grade 1C): \"needle placement should occur at least 12 hours after a prophylactic LMWH dose\"\nRec 4.5.3 (grade 1C): \"In patients receiving higher (therapeutic) doses of LMWH ... we recommend delay of at least 24 hours prior to needle/catheter placement\"\nRec 4.6.2 (grade 1C): \"The catheter should be removed 12 hours after the last dose of LMWH. Subsequent LMWH dosing should occur at least 4 hours after catheter removal\"\n",
             "source_location": "p.273-274 §§4.5-4.6",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
@@ -3268,7 +3268,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Therapeutic dose 1日 (24時間), Prophylactic dose 1日 (12時間)",
             "source_title": "Regional Anesthesia in the Patient Receiving Antithrombotic or Thrombolytic Therapy — Fourth Edition (ASRA)",
-            "quote_excerpt": "Rec 4.5.1 (grade 1C): \"We recommend that needle placement should occur at least 12 hours after a prophylactic LMWH dose\"\nRec 4.5.3 (grade 1C): \"In patients receiving higher (therapeutic) doses of LMWH, such as enoxaparin 1 mg/kg every 12 hours, enoxaparin 1.5 mg/kg daily, dalteparin 120 U/kg every 12 hours, dalteparin 200 U/kg daily, or tinzaparin 175 U/kg daily, we recommend delay of at least …",
+            "quote_excerpt": "Rec 4.5.1 (grade 1C): \"We recommend that needle placement should occur at least 12 hours after a prophylactic LMWH dose\"\nRec 4.5.3 (grade 1C): \"In patients receiving higher (therapeutic) doses of LMWH, such as enoxaparin 1 mg/kg every 12 hours, enoxaparin 1.5 mg/kg daily, dalteparin 120 U/kg every 12 hours, dalteparin 200 U/kg daily, or tinzaparin 175 U/kg daily, we recommend delay of at least 24 hours prior to needle/catheter placement\"\n",
             "source_location": "p.274 §§4.5-4.6 (Rec 4.5.1, 4.5.3)",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
@@ -3366,7 +3366,7 @@
             "source": "ASRA 2018 (4th ed)",
             "value_derivation": "direct",
             "source_title": "Regional Anesthesia in the Patient Receiving Antithrombotic or Thrombolytic Therapy — Fourth Edition (ASRA)",
-            "quote_excerpt": "Rec 5.1 (grade 1C): \"we recommend that until further clinical experience is available performance of neuraxial techniques should occur under conditions used in clinical trials (single needle pass, atraumatic needle placement, avoidance of indwelling neuraxial catheters). …",
+            "quote_excerpt": "Rec 5.1 (grade 1C): \"we recommend that until further clinical experience is available performance of neuraxial techniques should occur under conditions used in clinical trials (single needle pass, atraumatic needle placement, avoidance of indwelling neuraxial catheters). If this is not feasible, an alternate method of prophylaxis should be considered\"\nRec 5.2 (grade 2C): \"neuraxial catheters be removed 6 hours prior to the first (postoperative) dose\"\n",
             "source_location": "p.274 §5.0 + Rec 5.1-5.2",
             "source_url": "https://doi.org/10.1097/AAP.0000000000000763"
           },
@@ -3643,7 +3643,7 @@
             "source": "KDIGO 2022",
             "value_derivation": "direct",
             "source_title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
-            "quote_excerpt": "Recommendation 4.1.1: \"We recommend treating patients with T2D, CKD, and an\neGFR ≥30 ml/min per 1.73 m² with metformin (1B).\"\nPractice Point 4.1.3: \"Adjust the dose of metformin when the eGFR is <45 ml/min\nper 1.73 m², and for some patients when the eGFR is 45-59 ml/min per 1.73 m².\" …",
+            "quote_excerpt": "Recommendation 4.1.1: \"We recommend treating patients with T2D, CKD, and an\neGFR ≥30 ml/min per 1.73 m² with metformin (1B).\"\nPractice Point 4.1.3: \"Adjust the dose of metformin when the eGFR is <45 ml/min\nper 1.73 m², and for some patients when the eGFR is 45-59 ml/min per 1.73 m².\"\nText (S77): \"Metformin should be initiated in patients with T2D and an eGFR\n≥30 ml/min per 1.73 m² and should be discontinued when eGFR falls below\n30 ml/min per 1.73 m² to reduce risk of lactic acidosis.\" …",
             "source_location": "p.S26 Practice Points 4.1.1-4.1.4 + Figure 27、p.S77-S80 本文",
             "source_url": "https://doi.org/10.1016/j.kint.2022.06.008"
           }
@@ -3839,7 +3839,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate- and high… 3日",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\" …",
+            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis (EDKA) is a rare but serious complication. …",
             "source_location": "p.3856 Section 5.2.9; p.3857 Recommendation Table 12",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
@@ -3974,7 +3974,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "1 泊以上の入院を要する手術 or bowel… 2日, Day-stay 当日休薬",
             "source_title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
-            "quote_excerpt": "Practice Point 1.3.3: \"It is reasonable to withhold SGLT2i during times of prolonged\nfasting, surgery, or critical medical illness (when patients may be at greater risk\nfor ketosis).\"\nFigure 6 perioperative footnote: \"withhold SGLT2i the day of day-stay procedures\nand limit fasting to minimum required; withhold SGLT2i at least 2 days in advance …",
+            "quote_excerpt": "Practice Point 1.3.3: \"It is reasonable to withhold SGLT2i during times of prolonged\nfasting, surgery, or critical medical illness (when patients may be at greater risk\nfor ketosis).\"\nFigure 6 perioperative footnote: \"withhold SGLT2i the day of day-stay procedures\nand limit fasting to minimum required; withhold SGLT2i at least 2 days in advance\nand the day of procedures/surgery requiring 1 or more days in hospital and/or\nbowel preparation ... and restart SGLT2i after procedure/surgery only when eating\nand drinking normally.\"\n",
             "source_location": "p.S21 Practice Point 1.3.3、p.S22/S47 Figure 6 脚注 (perioperative care)",
             "source_url": "https://doi.org/10.1016/j.kint.2022.06.008"
           },
@@ -3984,7 +3984,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate- and high… 3日",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\" …",
+            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis (EDKA) is a rare but serious complication. …",
             "source_location": "p.3856 Section 5.2.9; p.3857 Recommendation Table 12",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
@@ -4123,7 +4123,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "1 泊以上の入院を要する手術 or bowel… 2日, Day-stay 当日休薬",
             "source_title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
-            "quote_excerpt": "Practice Point 1.3.3: \"It is reasonable to withhold SGLT2i during times of prolonged\nfasting, surgery, or critical medical illness (when patients may be at greater risk\nfor ketosis).\"\nFigure 6 perioperative footnote: \"withhold SGLT2i the day of day-stay procedures\nand limit fasting to minimum required; withhold SGLT2i at least 2 days in advance …",
+            "quote_excerpt": "Practice Point 1.3.3: \"It is reasonable to withhold SGLT2i during times of prolonged\nfasting, surgery, or critical medical illness (when patients may be at greater risk\nfor ketosis).\"\nFigure 6 perioperative footnote: \"withhold SGLT2i the day of day-stay procedures\nand limit fasting to minimum required; withhold SGLT2i at least 2 days in advance\nand the day of procedures/surgery requiring 1 or more days in hospital and/or\nbowel preparation ... and restart SGLT2i after procedure/surgery only when eating\nand drinking normally.\"\n",
             "source_location": "p.S21 Practice Point 1.3.3、p.S22/S47 Figure 6 脚注",
             "source_url": "https://doi.org/10.1016/j.kint.2022.06.008"
           },
@@ -4133,7 +4133,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate- and high… 3日",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\" …",
+            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis (EDKA) is a rare but serious complication. …",
             "source_location": "p.3856 Section 5.2.9; p.3857 Recommendation Table 12",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
@@ -4272,7 +4272,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "1 泊以上の入院を要する手術 or bowel… 2日, Day-stay 当日休薬",
             "source_title": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease",
-            "quote_excerpt": "Practice Point 1.3.3: \"It is reasonable to withhold SGLT2i during times of prolonged\nfasting, surgery, or critical medical illness (when patients may be at greater risk\nfor ketosis).\"\nFigure 6 perioperative footnote: \"withhold SGLT2i the day of day-stay procedures\nand limit fasting to minimum required; withhold SGLT2i at least 2 days in advance …",
+            "quote_excerpt": "Practice Point 1.3.3: \"It is reasonable to withhold SGLT2i during times of prolonged\nfasting, surgery, or critical medical illness (when patients may be at greater risk\nfor ketosis).\"\nFigure 6 perioperative footnote: \"withhold SGLT2i the day of day-stay procedures\nand limit fasting to minimum required; withhold SGLT2i at least 2 days in advance\nand the day of procedures/surgery requiring 1 or more days in hospital and/or\nbowel preparation ... and restart SGLT2i after procedure/surgery only when eating\nand drinking normally.\"\n",
             "source_location": "p.S21 Practice Point 1.3.3、p.S22/S47 Figure 6 脚注",
             "source_url": "https://doi.org/10.1016/j.kint.2022.06.008"
           },
@@ -4282,7 +4282,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate- and high… 3日",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\" …",
+            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis (EDKA) is a rare but serious complication. …",
             "source_location": "p.3856 Section 5.2.9; p.3857 Recommendation Table 12",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
@@ -4400,7 +4400,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate- and high… 3日",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\" …",
+            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis (EDKA) is a rare but serious complication. …",
             "source_location": "p.3856 Section 5.2.9; p.3857 Recommendation Table 12",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
@@ -4520,7 +4520,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Intermediate- and high… 3日",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\" …",
+            "quote_excerpt": "\"It should be considered to interrupt SGLT-2 inhibitor therapy for at least 3 days before intermediate- and\nhigh-risk NCS.\" (Class IIa, LoE C)\n\"The US Food and Drug Administration (FDA) recommends interrupting SGLT-2 inhibitor therapy for at least 3-4\ndays before scheduled surgery and to be vigilant for symptoms related to EDKA, prompting measurement of ketones.\"\n\"Euglycaemic diabetic ketoacidosis (EDKA) is a rare but serious complication. …",
             "source_location": "p.3856 Section 5.2.9; p.3857 Recommendation Table 12",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
@@ -6996,7 +6996,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Higher infection-risk… 70日, Standard risk procedure 14日",
             "source_title": "BSR biologic DMARD safety guidelines in inflammatory arthritis",
-            "quote_excerpt": "For most biologics (exceptions: RTX and TCZ), consideration should be given to planning surgery when at least one dosing interval has elapsed for that specific drug; for higher risk procedures consider stopping 3-5 half-lives (if this is longer than one dosing interval) before surgery (grade 2B, SOA 97%). …",
+            "quote_excerpt": "For most biologics (exceptions: RTX and TCZ), consideration should be given to planning surgery when at least one dosing interval has elapsed for that specific drug; for higher risk procedures consider stopping 3-5 half-lives (if this is longer than one dosing interval) before surgery (grade 2B, SOA 97%). Table 7: Adalimumab - Every 2 weeks - Week 3 - One half-life 14 days - Five half-lives 70 days.",
             "source_location": "p.e29 Peri-operative care (ii); p.e30 Table 7",
             "source_url": "https://doi.org/10.1093/rheumatology/key208"
           },
@@ -7123,7 +7123,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Every 8 weeks dosing… 56日, Higher infection-risk… 45日, Every 6 weeks dosing… 42日, Every 4 weeks dosing… 28日",
             "source_title": "BSR biologic DMARD safety guidelines in inflammatory arthritis",
-            "quote_excerpt": "Table 7: Infliximab - Every 4, 6 or 8 weeks - Week 5, 7 or 9 - One half-life 9 days - Five half-lives 45 days. \"With INF, five half-lives of the drug (45 days) may actually be shorter than the dosing interval, for example, for patients receiving INF every 8 weeks. …",
+            "quote_excerpt": "Table 7: Infliximab - Every 4, 6 or 8 weeks - Week 5, 7 or 9 - One half-life 9 days - Five half-lives 45 days. \"With INF, five half-lives of the drug (45 days) may actually be shorter than the dosing interval, for example, for patients receiving INF every 8 weeks. In this situation, ensuring that one dosing interval has elapsed before surgery should be sufficient even with procedures deemed to have a higher risk of infection.\"",
             "source_location": "p.e29 Peri-operative care (ii); p.e30 Table 7 and body text",
             "source_url": "https://doi.org/10.1093/rheumatology/key208"
           },
@@ -7782,7 +7782,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "RA/AS/PsA/JIA 180日, not-severe SLE 180日, severe SLE 90日",
             "source_title": "2022 ACR/AAHKS Guideline for the Perioperative Management of Antirheumatic Medication in Patients With Rheumatic Diseases Undergoing Elective Total Hip or Total Knee Arthroplasty",
-            "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding all biologics, including rituximab, prior to surgery and planning the surgery after the next dose is due is conditionally recommended. Perioperative management of rituximab has been a challenge given the long dosing interval of 6 months and the recognized risk of severe infection linked to its use. …",
+            "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding all biologics, including rituximab, prior to surgery and planning the surgery after the next dose is due is conditionally recommended. Perioperative management of rituximab has been a challenge given the long dosing interval of 6 months and the recognized risk of severe infection linked to its use. In this updated guideline, we have separated the perioperative use of rituximab in SLE from the perioperative management of rituximab in other diseases. …",
             "source_location": "p.4 Table 2 (biologics withhold + severe SLE continue + not-severe SLE withhold の 3 行に収載); p.5 Table 3 rows 2-4; pp.6-8 discussion",
             "source_url": "https://doi.org/10.1002/acr.24893"
           },
@@ -8416,7 +8416,7 @@
             "high_risk_days": 3,
             "value_derivation": "direct",
             "source_title": "2022 ACR/AAHKS Guideline for the Perioperative Management of Antirheumatic Medication in Patients With Rheumatic Diseases Undergoing Elective Total Hip or Total Knee Arthroplasty",
-            "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding tofacitinib, baricitinib, and upadacitinib for at least 3 days prior to surgery is conditionally recommended. This conditional recommendation was changed from the prior guideline. …",
+            "quote_excerpt": "For patients with RA, AS, PsA, or JIA undergoing THA or TKA, withholding tofacitinib, baricitinib, and upadacitinib for at least 3 days prior to surgery is conditionally recommended. This conditional recommendation was changed from the prior guideline. For the previous guideline, while the short serum half-life of tofacitinib was known, concern for a longer duration of the immune effect prompted the recommendation to withhold tofacitinib for 7 days prior to surgery. …",
             "source_location": "p.4 Table 2 (JAK inhibitors: withhold 3 days prior); p.5 Table 3 row 3; p.6 discussion",
             "source_url": "https://doi.org/10.1002/acr.24893"
           },
@@ -9270,7 +9270,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "not severe SLE 7日, severe SLE 継続可",
             "source_title": "2022 ACR/AAHKS Guideline for the Perioperative Management of Antirheumatic Medication in Patients With Rheumatic Diseases Undergoing Elective Total Hip or Total Knee Arthroplasty",
-            "quote_excerpt": "For patients with SLE (not severe) undergoing THA or TKA, withholding the current dose of mycophenolate mofetil, mycophenolic acid, azathioprine, cyclosporine, mizoribine, or tacrolimus 1 week prior to surgery is conditionally recommended. …",
+            "quote_excerpt": "For patients with SLE (not severe) undergoing THA or TKA, withholding the current dose of mycophenolate mofetil, mycophenolic acid, azathioprine, cyclosporine, mizoribine, or tacrolimus 1 week prior to surgery is conditionally recommended. / For patients with severe SLE who have been deemed appropriate to undergo THA or TKA, continuing the usual dose of mycophenolate mofetil, mycophenolic acid (Myfortic), azathioprine, mizoribine, cyclosporine, or tacrolimus, anifrolumab, and voclosporin through surgery is conditionally recommended.",
             "source_location": "p.4 Table 2 (Severe SLE continue と Not severe SLE withhold の両方に収載); p.5 Table 3 rows 4 and 6",
             "source_url": "https://doi.org/10.1002/acr.24893"
           },
@@ -12969,7 +12969,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -13075,7 +13075,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -13180,7 +13180,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -13282,7 +13282,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -13387,7 +13387,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -14213,7 +14213,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -14324,7 +14324,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -14439,7 +14439,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -14546,7 +14546,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -14657,7 +14657,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -14766,7 +14766,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -14870,7 +14870,7 @@
             "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
-            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\" …",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors (subsumed under RAASi)",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
           }
@@ -14979,7 +14979,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Diuretics used to treat… 当日休薬, Diuretics used for… 継続 (用量調整)",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "\"For patients on diuretics to treat hypertension, transient discontinuation of diuretics on the day of NCS\nshould be considered.\" (Class IIa, LoE B)\n\"In general, therapy for treatment of hypertension should be continued to the day of surgery and resumed orally\nwhen possible. However, the benefit for continuing diuretics as antihypertensive therapy is unclear.\" …",
+            "quote_excerpt": "\"For patients on diuretics to treat hypertension, transient discontinuation of diuretics on the day of NCS\nshould be considered.\" (Class IIa, LoE B)\n\"In general, therapy for treatment of hypertension should be continued to the day of surgery and resumed orally\nwhen possible. However, the benefit for continuing diuretics as antihypertensive therapy is unclear.\"\n\"In HF, the dosage of diuretics should be adjusted well in advance for an optimal fluid balance before surgery,\nand to avoid fluid retention or dehydration.\" …",
             "source_location": "p.3856 Section 5.2.7; p.3857 Recommendation Table 12",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
@@ -15270,7 +15270,7 @@
             "value_derivation": "direct",
             "dose_dependent_summary": "Diuretics used to treat… 当日休薬, Diuretics used for… 継続 (用量調整)",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
-            "quote_excerpt": "\"For patients on diuretics to treat hypertension, transient discontinuation of diuretics on the day of NCS\nshould be considered.\" (Class IIa, LoE B)\n\"In general, therapy for treatment of hypertension should be continued to the day of surgery and resumed orally\nwhen possible. However, the benefit for continuing diuretics as antihypertensive therapy is unclear.\" …",
+            "quote_excerpt": "\"For patients on diuretics to treat hypertension, transient discontinuation of diuretics on the day of NCS\nshould be considered.\" (Class IIa, LoE B)\n\"In general, therapy for treatment of hypertension should be continued to the day of surgery and resumed orally\nwhen possible. However, the benefit for continuing diuretics as antihypertensive therapy is unclear.\"\n\"In HF, the dosage of diuretics should be adjusted well in advance for an optimal fluid balance before surgery,\nand to avoid fluid retention or dehydration.\" …",
             "source_location": "p.3856 Section 5.2.7; p.3857 Recommendation Table 12",
             "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }

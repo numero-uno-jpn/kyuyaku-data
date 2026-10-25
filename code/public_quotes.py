@@ -4,8 +4,8 @@
 
 方針 (2026-10-18 確定):
 - 引用は著作権法 32 条の範囲に収める: 和文 300 字 / 英文 600 字以内。
-- 上限内の原文はそのまま公開。上限超過は台帳 (public_quote_excerpts.json) の
-  approved 抜粋のみ公開。未承認は引用なし (所在 + URL のみ)。
+- 上限内の原文はそのまま公開。上限超過は、台帳 (public_quote_excerpts.json) に
+  approved の抜粋があればそれを、無ければ上限の手前の文の区切りで機械的に切って公開 (2026-10-25 変更)。
 - 抜粋は原文の連続した部分文字列 (最大 2 断片を SEP で連結) に限る → 機械的に検証できる。
 """
 import hashlib
@@ -101,6 +101,34 @@ def with_page(url, page):
     return f"{url}#page={page}"
 
 
+def cut_to_limit(text):
+    """上限 (和文 300 / 英文 600 字) を超える引用を、上限の手前の文の区切り (「。」「.」) で切り「 …」を付ける。
+    区切りが前半に無ければ改行、次に空白・読点で切る。上限の判定は安全側に全文字数で行う。"""
+    t = (text or '').strip()
+    limit = limit_for(t)
+    if len(t) <= limit:
+        return t
+    lim = limit - 2
+    # 文の区切り: 「。」と、後ろに空白・改行・引用符・閉じ括弧が続く「.」 (数字の小数点や「Rec 13.2」は除く)
+    # 直後の閉じ括弧・閉じ引用符 (「…。」」) は文に含める
+    ends = []
+    for m in re.finditer(r'。|(?<!\d)\.(?=[\s"”)\]」』]|$)', t):
+        if m.start() >= lim:
+            break
+        e = m.end()
+        while e < len(t) and t[e] in '」』"”':
+            e += 1
+        if e <= lim:
+            ends.append(e)
+    if ends and ends[-1] >= lim * 0.5:
+        return t[:ends[-1]].rstrip() + ' …'
+    for seps in (('\n',), (' ', '、', ',')):
+        idx = max(t.rfind(s, 0, lim) for s in seps)
+        if idx >= lim * 0.5:
+            return t[:idx].rstrip() + ' …'
+    return t[:lim].rstrip() + ' …'
+
+
 def public_quote_fields(source, quote, translation, entries, warnings):
     """1 レコード分の公開引用 field を返す (dict)。entries は台帳の entries。"""
     if not quote:
@@ -118,7 +146,9 @@ def public_quote_fields(source, quote, translation, entries, warnings):
         out["quote_excerpt"] = ent["excerpt"]
         translation = ent.get("translation_excerpt")
     else:
-        warnings["unapproved"] = warnings.get("unapproved", 0) + 1
+        # 上限超過で承認済みの抜粋が無いものは、文の区切りで機械的に切る (和訳は全文の訳なので出さない)
+        out["quote_excerpt"] = cut_to_limit(quote)
+        warnings["cut"] = warnings.get("cut", 0) + 1
         translation = None
     # 和訳は任意。引用とは別に数え、和文上限を超える訳は出さない
     if translation:

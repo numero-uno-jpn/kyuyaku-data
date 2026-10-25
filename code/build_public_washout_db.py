@@ -7,8 +7,8 @@
 - drug_list.json + guideline_variations.json をマージし、公開して安全な field だけを抽出。
   → verbatim quote / 内部メモ / 内部マーカーは **構造的に除去** (再混入を生成時に防止)。
 - 2026-10-18 追加: 根拠の透明性のため「短い引用」だけを quote_excerpt として出す
-  (和文 300 / 英文 600 字以内。超過分は台帳 public_quote_excerpts.json の approved 抜粋のみ。
-  ロジックは tools/public_quotes.py)。所在 (location) と PDF の #page=N 付き URL も出す。
+  (和文 300 / 英文 600 字以内。超過分は台帳 public_quote_excerpts.json の approved 抜粋、
+  無ければ文の区切りで機械的に切る。ロジックは tools/public_quotes.py)。所在 (location) と PDF の #page=N 付き URL も出す。
 
 入力: frontend/data/drug_list.json, frontend/data/guideline_variations.json,
       frontend/data/public_quote_excerpts.json (tools/prepare_quote_excerpts.py で準備)
@@ -47,8 +47,6 @@ VAR_CONTRAST_KEEP = ["source", "days", "hours", "day_of", "value_derivation", "d
                      "version_label", "version_year"]
 # 参照の citation field (quote / quote_translation はそのまま出さず、_public_reference で短い引用に置換)
 REF_KEEP = ["source", "title", "url", "verification_status", "year", "author_interpretation"]
-# _build_guideline_variations.py が variation の quote を切り詰める長さ
-GV_QUOTE_MAX = 400
 
 
 def _pick(d, keys):
@@ -150,10 +148,6 @@ def _public_variations(gv_entry, keep, entries, warnings, gl_titles):
             if gl_titles.get(v.get("_gl_id")):
                 rec["source_title"] = gl_titles[v["_gl_id"]]
             q, page = public_quote_fields(v.get("source"), v.get("quote"), None, entries, warnings)
-            # guideline_variations の quote は生成時に 400 字で切り詰められている → 続きがあることを示す
-            if len(v.get("quote") or "") >= GV_QUOTE_MAX and q.get("quote_excerpt") \
-                    and not q["quote_excerpt"].endswith("…"):
-                q["quote_excerpt"] += " …"
             rec.update(q)
             if v.get("source_location"):
                 rec["source_location"] = v["source_location"]
@@ -332,9 +326,8 @@ def main():
     open(OUT, "a", encoding="utf-8").write("\n")
     print(f"✓ 生成: {os.path.relpath(OUT, ROOT)} ({len(out['drugs'])} 剤)")
     print("  ✓ verbatim quote / 内部 field の混入なし、quote_excerpt は全件上限内")
-    if warnings.get("unapproved"):
-        print(f"  ⓘ 上限超過で抜粋未承認のため引用を省略: {warnings['unapproved']} 件"
-              " (python tools/prepare_quote_excerpts.py --report で確認)")
+    if warnings.get("cut"):
+        print(f"  ⓘ 上限超過で文の区切りで切った引用: {warnings['cut']} 件 (承認済みの抜粋がある引用はそれを使用)")
     if warnings.get("translation_over"):
         print(f"  ⓘ 和訳が和文上限を超えるため和訳を省略: {warnings['translation_over']} 件")
     return 0
