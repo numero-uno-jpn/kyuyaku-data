@@ -29,7 +29,7 @@ from public_quotes import load_excerpts, public_quote_fields, with_page, within_
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                                 "backend", "data", "references", "verification"))
-from _washout_days import effective_days as _eff, DAY_OF_RANK  # 比較・表示用日数の単一規則 (アプリと同じ)
+from _washout_days import display_days  # 日数の規則は daysBadge.js (アプリと同じ実装を呼ぶ)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DL = os.path.join(ROOT, "frontend", "data", "drug_list.json")
@@ -81,63 +81,27 @@ def load_gl_titles():
     return titles
 
 
-# --- アプリの daysBadge.js と同じ「表示推奨値」を算出 ---
-# 優先: 現行 series の GL 最大値 > PMDA 最大値 > drug_list master (安全側=長い方)
-def _is_pmda(v):
-    return "PMDA" in (v.get("source") or "")
+# --- 表示推奨値 (アプリのバッジと同じ値) ---
+# 日数の決め方 (現行 GL 最大 > 添付文書最大 > 採用値、時間の切り上げ、当日休薬) は
+# frontend/js/utils/daysBadge.js だけにある。ここは _washout_days.display_days で結果を受け取るだけ
+def _display_pair(pair):
+    """(日数, 当日休薬か)。当日休薬が最長のときは (None, True)、記載なしは (None, False)。"""
+    days, day_of = pair
+    if days is None:
+        return None, bool(day_of)
+    return (int(days) if float(days).is_integer() else days), False
 
 
-def _filter_current_series(vs):
-    """同じ系列の旧版を除く。現行の年は series_latest_year (系列全体で値の入った最新の版) を優先し、
-    無い古いデータではこの薬の variations の最大 version_year を使う。"""
-    latest = {}
-    for v in vs:
-        sid, yr = v.get("series_id"), v.get("version_year")
-        if sid and isinstance(yr, (int, float)):
-            latest[sid] = max(latest.get(sid, yr), yr, v.get("series_latest_year") or yr)
-    out = []
-    for v in vs:
-        sid = v.get("series_id")
-        if sid and sid in latest:
-            if v.get("version_year") == latest[sid]:
-                out.append(v)
-        else:
-            out.append(v)
-    return out
-
-
-# slot → (日数 key, 時間 key, 当日休薬 key)
-SLOT_KEYS = {
-    "high": ("high_risk_days", "high_risk_hours", "high_risk_day_of"),
-    "low": ("low_risk_days", "low_risk_hours", "low_risk_day_of"),
-    "contrast": ("days", "hours", "day_of"),
-}
-
-
-def _nums(vs, slot):
-    dk, hk, ok = SLOT_KEYS[slot]
-    out = []
-    for v in vs:
-        e = _eff(v.get(dk), v.get(hk), bool(v.get(ok)))
-        if e is not None:
-            out.append(e)
-    return out
-
-
-def effective_days(variations, master, slot, master_day_of=False):
-    """daysBadge 相当: 現行GL最大 > PMDA最大 > master。全て無ければ None。
-    比較は _washout_days.effective_days (時間は日数に切り上げ、当日休薬は 0.5)。
-    master_day_of: drug_list 本体の当日休薬の印 (このとき master は None)。
-    戻り値 (日数, 当日休薬か): 当日休薬が最長のときは (None, True)。"""
-    variations = variations or []
-    gl = _nums(_filter_current_series([v for v in variations if not _is_pmda(v)]), slot)
-    pm = _nums([v for v in variations if _is_pmda(v)], slot)
-    best = max(gl) if gl else (max(pm) if pm else None)
-    if best is None:
-        return (None, True) if master_day_of else (master, False)
-    if best == DAY_OF_RANK:
-        return None, True
-    return (int(best) if float(best).is_integer() else best), False
+def _display_days_all(dl_drugs, gv_drugs):
+    """全剤の高・低・造影の表示推奨値を 1 回の呼び出しでまとめて計算する。"""
+    req = []
+    for d in dl_drugs:
+        g = gv_drugs.get(d.get("name"), {})
+        req.append({**d,
+                    "surgery": {**(d.get("surgery") or {}), "guideline_variations": g.get("surgery") or []},
+                    "contrast_ct": {**(d.get("contrast_ct") or {}), "guideline_variations": g.get("contrast_ct") or []}})
+    return {name: {slot: _display_pair(v) for slot, v in slots.items()}
+            for name, slots in display_days(req).items()}
 
 
 def _public_variations(gv_entry, keep, entries, warnings, gl_titles):
@@ -180,18 +144,14 @@ def build(warnings=None):
     gl_titles = load_gl_titles()
     entries = load_excerpts().get("entries", {})
 
+    displays = _display_days_all(dl["drugs"], gv_drugs)
     drugs_out = []
     for d in dl["drugs"]:
         name = d.get("name")
         surg = d.get("surgery") or {}
         cont = d.get("contrast_ct") or {}
         gentry = gv_drugs.get(name, {})
-        _hi = effective_days(gentry.get("surgery"), surg.get("high_risk_days_before"), "high",
-                             bool(surg.get("high_risk_day_of")))
-        _lo = effective_days(gentry.get("surgery"), surg.get("low_risk_days_before"), "low",
-                             bool(surg.get("low_risk_day_of")))
-        _co = effective_days(gentry.get("contrast_ct"), cont.get("days_before"), "contrast",
-                             bool(cont.get("day_of")))
+        _hi, _lo, _co = (displays[name][slot] for slot in ("high", "low", "contrast"))
 
         rec = {
             "name": name,
