@@ -3,7 +3,7 @@
     "name": "休薬情報データベース (Kyuyaku Data)",
     "author": "梅谷 直亨 (Naoyuki Umetani)",
     "api_version": "1.1",
-    "data_version": "0.8.23",
+    "data_version": "0.8.24",
     "data_updated_at": "2026-10-26",
     "generated_at": "2026-10-26",
     "scope": "周術期・造影CT の休薬情報のみ",
@@ -3698,7 +3698,9 @@
           "source": "PMDA",
           "title": "メトグルコ錠250mg／メトグルコ錠500mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/400093_3962002F2027_1_22",
-          "verification_status": "unverified"
+          "verification_status": "verified",
+          "quote_excerpt": "1.1 重篤な乳酸アシドーシスを起こすことがあり、死亡に至った例も報告されている。／2.3 重症感染症、手術前後、重篤な外傷のある患者［インスリン注射による血糖管理が望まれるので本剤の投与は適さない。また、乳酸アシドーシスを起こしやすい。］／(8.1) リスク因子としては、腎機能障害、肝機能障害、低酸素血症を伴いやすい状態、脱水（利尿作用を有する薬剤の併用を含む）、過度のアルコール摂取、感染症、高齢者等が知られている。／9.2 腎臓における排泄が減少しメトホルミンの血中濃度が上昇するため、乳酸アシドーシス等の発現リスクが高くなる可能性がある。",
+          "location_in_source": "1.1 警告 / 2.3 禁忌 / 8.1 重要な基本的注意 / 9.2 腎機能障害患者"
         },
         {
           "source": "JDS",
@@ -3851,7 +3853,9 @@
           "source": "PMDA",
           "title": "スーグラ錠25mg／スーグラ錠50mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/800126_3969018F1022_1_16",
-          "verification_status": "unverified"
+          "verification_status": "verified",
+          "quote_excerpt": "8.6 本剤の作用機序である尿中グルコース排泄促進作用により、血糖コントロールが良好であっても脂肪酸代謝が亢進し、ケトーシスがあらわれ、ケトアシドーシスに至ることがある。／(8.6.1 患者への指導) 血糖値が高値でなくともケトアシドーシスが発現しうること。",
+          "location_in_source": "8.6 重要な基本的注意 / 8.6.1 (患者への指導)"
         },
         {
           "source": "JDS SGLT2阻害薬適正使用委員会",
@@ -3996,7 +4000,9 @@
           "source": "PMDA",
           "title": "フォシーガ錠5mg／フォシーガ錠10mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/670227_3969019F1027_2_17",
-          "verification_status": "unverified"
+          "verification_status": "verified",
+          "quote_excerpt": "8.5 本剤の作用機序である尿中グルコース排泄促進作用により、血糖コントロールが良好であっても脂肪酸代謝が亢進し、ケトーシスがあらわれ、ケトアシドーシスに至ることがある。／(8.5.1 患者への指導) 血糖値が高値でなくともケトアシドーシスが発現しうること。",
+          "location_in_source": "8.5 重要な基本的注意 / 8.5.1 (患者への指導)"
         },
         {
           "source": "JDS SGLT2阻害薬適正使用委員会",
@@ -4145,7 +4151,9 @@
           "source": "PMDA",
           "title": "ジャディアンス錠10mg／ジャディアンス錠25mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/650168_3969023F1023_1_19",
-          "verification_status": "unverified"
+          "verification_status": "verified",
+          "quote_excerpt": "8.6 本剤の作用機序である尿中グルコース排泄促進作用により、血糖コントロールが良好であっても脂肪酸代謝が亢進し、ケトーシスがあらわれ、ケトアシドーシスに至ることがある。／(8.6.1 患者への指導) 血糖値が高値でなくともケトアシドーシスが発現しうること。",
+          "location_in_source": "8.6 重要な基本的注意 / 8.6.1 (患者への指導)"
         },
         {
           "source": "JDS SGLT2阻害薬適正使用委員会",
@@ -4318,7 +4326,9 @@
           "source": "PMDA",
           "title": "カナグル錠100mg / OD錠100mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/400315_3969022F1029_1_25",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "8.7 本剤の作用機序である尿中グルコース排泄促進作用により、血糖コントロールが良好であっても脂肪酸代謝が亢進し、ケトーシスがあらわれ、ケトアシドーシスに至ることがある。／(8.7.1 患者への指導) 血糖値が高値でなくともケトアシドーシスが発現しうること。",
+          "location_in_source": "8.7 重要な基本的注意 / 8.7.1 (患者への指導)"
         }
       ]
     },
@@ -4436,7 +4446,9 @@
           "source": "PMDA",
           "title": "デベルザ錠20mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/270072_3969021F1032_1_12",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "8.6 本剤の作用機序である尿中グルコース排泄促進作用により、血糖コントロールが良好であっても脂肪酸代謝が亢進し、ケトーシスがあらわれ、ケトアシドーシスに至ることがある。／(8.6.1 患者への指導) 血糖値が高値でなくともケトアシドーシスが発現しうること。",
+          "location_in_source": "8.6 重要な基本的注意 / 8.6.1 (患者への指導)"
         }
       ]
     },
@@ -4556,7 +4568,9 @@
           "source": "PMDA",
           "title": "ルセフィ錠2.5mg/5mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/400059_3969020F1020_1_13",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "8.6 本剤の作用機序である尿中グルコース排泄促進作用により、血糖コントロールが良好であっても脂肪酸代謝が亢進し、ケトーシスがあらわれ、ケトアシドーシスに至ることがある。／(8.6.1 患者への指導) 血糖値が高値でなくともケトアシドーシスが発現しうること。",
+          "location_in_source": "8.6 重要な基本的注意 / 8.6.1 (患者への指導)"
         }
       ]
     },
@@ -6135,7 +6149,9 @@
           "source": "PMDA",
           "title": "ビクトーザ皮下注18mg / サクセンダ皮下注添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/620023_2499410G1021_1_14",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "9.1.5 GLP-1受容体作動薬又はGIP/GLP-1受容体作動薬を投与中の患者において、術前の絶食指示を遵守したにもかかわらず、全身麻酔又は深い鎮静下で誤嚥が生じた症例が報告されている。本剤は胃内容排出遅延作用があり、胃内容物残留リスクが高まるおそれがある。",
+          "location_in_source": "9.1.5 全身麻酔又は深い鎮静下の患者"
         },
         {
           "source": "KEGG MEDICUS",
@@ -6245,7 +6261,9 @@
           "source": "PMDA",
           "title": "トルリシティ皮下注0.75mgアテオス添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/530471_2499416G1029_1_24",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "9.1.5 GLP-1受容体作動薬又はGIP/GLP-1受容体作動薬を投与中の患者において、術前の絶食指示を遵守したにもかかわらず、全身麻酔又は深い鎮静下で誤嚥が生じた症例が報告されている。本剤は胃内容排出遅延作用があり、胃内容物残留リスクが高まるおそれがある。",
+          "location_in_source": "9.1.5 全身麻酔又は深い鎮静下の患者"
         },
         {
           "source": "KEGG MEDICUS",
@@ -6367,7 +6385,9 @@
           "source": "PMDA",
           "title": "オゼンピック皮下注 / ウゴービ皮下注添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/620023_2499418G4027_1_07",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "9.1.5 GLP-1受容体作動薬又はGIP/GLP-1受容体作動薬を投与中の患者において、術前の絶食指示を遵守したにもかかわらず、全身麻酔又は深い鎮静下で誤嚥が生じた症例が報告されている。本剤は胃内容排出遅延作用があり、胃内容物残留リスクが高まるおそれがある。",
+          "location_in_source": "9.1.5 全身麻酔又は深い鎮静下の患者"
         },
         {
           "source": "KEGG MEDICUS",
@@ -6460,7 +6480,9 @@
           "source": "PMDA",
           "title": "リベルサス錠3/7/14mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/620023_2499014F1021_1_07",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "9.1.6 GLP-1受容体作動薬又はGIP/GLP-1受容体作動薬を投与中の患者において、術前の絶食指示を遵守したにもかかわらず、全身麻酔又は深い鎮静下で誤嚥が生じた症例が報告されている。本剤は胃内容排出遅延作用があり、胃内容物残留リスクが高まるおそれがある。",
+          "location_in_source": "9.1.6 全身麻酔又は深い鎮静下の患者"
         },
         {
           "source": "KEGG MEDICUS",
@@ -6562,7 +6584,9 @@
           "source": "PMDA",
           "title": "ソリクア配合注ソロスター添付文書 (PMDA、インスリン グラルギン配合剤。単剤リキスミアは PMDA・KEGG 掲載なし)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/780069_3969501G1023_1_06",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "9.1.6 GLP-1受容体作動薬又はGIP/GLP-1受容体作動薬を投与中の患者において、術前の絶食指示を遵守したにもかかわらず、全身麻酔又は深い鎮静下で誤嚥が生じた症例が報告されている。リキシセナチドは胃内容排出遅延作用があり、胃内容物残留リスクが高まるおそれがある。",
+          "location_in_source": "9.1.6 全身麻酔又は深い鎮静下の患者"
         },
         {
           "source": "KEGG MEDICUS",
@@ -6682,7 +6706,9 @@
           "source": "PMDA",
           "title": "マンジャロ皮下注アテオス添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/530471_2499422G1024_1_11",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "9.1.6 GLP-1受容体作動薬又はGIP/GLP-1受容体作動薬を投与中の患者において、術前の絶食指示を遵守したにもかかわらず、全身麻酔又は深い鎮静下で誤嚥が生じた症例が報告されている。本剤は胃内容排出遅延作用があり、胃内容物残留リスクが高まるおそれがある。",
+          "location_in_source": "9.1.6 全身麻酔又は深い鎮静下の患者"
         },
         {
           "source": "KEGG MEDICUS",
@@ -9376,7 +9402,9 @@
           "source": "PMDA",
           "title": "サーティカン錠0.25/0.5/0.75mg 添付文書 (PMDA 移植適応)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/300242_3999022F1028_1_14",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "11.1.6 創傷治癒不良 創傷治癒不良（1.3％）や創傷治癒不良による創傷感染（1.0％）、瘢痕ヘルニア（0.7％）、創離開（0.6％）等の合併症があらわれることがある。",
+          "location_in_source": "11.1.6 重大な副作用 (創傷治癒不良)"
         },
         {
           "source": "PMDA",
@@ -9452,15 +9480,15 @@
           "source": "PMDA",
           "title": "ラパリムス錠1mg / 顆粒0.2% 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/620095_4291035F1023_1_15",
-          "verification_status": "landing_only",
+          "verification_status": "verified",
           "author_interpretation": {
             "context": "添付文書",
             "mention": "薬剤名",
             "recommendation": "薬剤名",
             "text": "手術前の休薬を薬剤名で求める (2026 年 4 月改訂) が、日数はない。"
           },
-          "quote_excerpt": "本剤投与により、創傷治癒不良のおそれがある。海外で肺移植患者において気管支吻合部離開例（致死的）が報告されているので、肺移植登録患者では本剤の投与を中止し、移植までに十分な休薬期間を確保すること。また、その他の手術時においても、創傷治癒不良の影響を考慮し、手術前の休薬期間を設けることが望ましい。",
-          "location_in_source": "8.5 (重要な基本的注意)"
+          "quote_excerpt": "8.5 本剤投与により、創傷治癒不良のおそれがある。海外で肺移植患者において気管支吻合部離開例（致死的）が報告されているので、肺移植登録患者では本剤の投与を中止し、移植までに十分な休薬期間を確保すること。また、その他の手術時においても、創傷治癒不良の影響を考慮し、手術前の休薬期間を設けることが望ましい。",
+          "location_in_source": "8.5 重要な基本的注意 (11.1.9 創傷治癒不良)"
         },
         {
           "source": "KEGG MEDICUS",
@@ -9956,7 +9984,9 @@
           "source": "PMDA",
           "title": "ウェールナラ配合錠 / メノエイドコンビパッチ添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/650034_2482800S1026_2_04",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "11.1.2 静脈血栓塞栓症、血栓性静脈炎（いずれも頻度不明）",
+          "location_in_source": "11.1.2 重大な副作用"
         },
         {
           "source": "UKCPA (英国臨床薬剤師会) 周術期薬剤ハンドブック",
@@ -10042,13 +10072,15 @@
           "source": "PMDA",
           "title": "ノルバデックス錠10/20mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/670227_4291003F1163_1_20",
-          "verification_status": "landing_only",
+          "verification_status": "verified",
           "author_interpretation": {
             "context": "添付文書",
             "mention": "薬剤名",
             "recommendation": "なし",
             "text": "添付文書 (ノルバデックス錠) に周術期の休薬の記載はない。"
-          }
+          },
+          "quote_excerpt": "11.1.3 本剤の投与により、肺塞栓症、下肢静脈血栓症、脳血栓症、下肢血栓性静脈炎等の血栓塞栓症、静脈炎があらわれることがある。",
+          "location_in_source": "11.1.3 重大な副作用 (血栓塞栓症、静脈炎)"
         },
         {
           "source": "KEGG MEDICUS",
@@ -10204,15 +10236,15 @@
           "source": "PMDA",
           "title": "ビビアント錠20mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/672212_3999027F1020_2_03",
-          "verification_status": "landing_only",
+          "verification_status": "verified",
           "author_interpretation": {
             "context": "添付文書",
             "mention": "薬剤名",
             "recommendation": "薬剤名",
             "text": "手術 (術後の長期不動) の前の中止を薬剤名で指示するが、日数はない。長期不動状態にある患者は禁忌 (2.2)。"
           },
-          "quote_excerpt": "長期不動状態（術後回復期、長期安静期等）に入る前に本剤の投与を中止し、完全に歩行可能になるまでは投与を再開しないこと。",
-          "location_in_source": "2.2 (禁忌)、8.2 (重要な基本的注意)"
+          "quote_excerpt": "8.1 本剤の投与により、静脈血栓塞栓症があらわれることがあるので、患者に対し、下肢の疼痛・浮腫、突然の呼吸困難、息切れ、胸痛、急性視力障害等の症状が認められた場合には直ちに医師等に相談するよう、あらかじめ説明すること。／(8.2) 長期不動状態（術後回復期、長期安静期等）に入る前に本剤の投与を中止し、完全に歩行可能になるまでは投与を再開しないこと",
+          "location_in_source": "8.1・8.2 重要な基本的注意"
         },
         {
           "source": "KEGG MEDICUS",
@@ -11213,13 +11245,15 @@
           "source": "PMDA",
           "title": "バイアグラ錠25mg／バイアグラ錠50mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/671450_2590018F1020_1_05",
-          "verification_status": "unverified",
+          "verification_status": "verified",
           "author_interpretation": {
             "context": "添付文書",
             "mention": "薬剤名",
             "recommendation": "なし",
             "text": "添付文書 (2024 年 7 月改訂第 8 版、バイアグラ) に手術・周術期の休薬の記載はない (硝酸剤との併用禁忌のみ)。"
-          }
+          },
+          "quote_excerpt": "1.1 本剤と硝酸剤あるいは一酸化窒素（NO）供与剤（ニトログリセリン、亜硝酸アミル、硝酸イソソルビド、ニコランジル等）との併用により降圧作用が増強し、過度に血圧を下降させることがある／2.2 硝酸剤あるいは一酸化窒素（NO）供与剤（ニトログリセリン、亜硝酸アミル、硝酸イソソルビド、ニコランジル等）を投与中の患者",
+          "location_in_source": "1.1 警告 / 2.2 禁忌"
         },
         {
           "source": "KEGG MEDICUS",
@@ -11315,13 +11349,15 @@
           "source": "PMDA",
           "title": "シアリス錠5mg／シアリス錠10mg／シアリス錠20mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/530263_2590016F5026_1_05",
-          "verification_status": "unverified",
+          "verification_status": "verified",
           "author_interpretation": {
             "context": "添付文書",
             "mention": "薬剤名",
             "recommendation": "なし",
             "text": "添付文書 (2024 年 11 月改訂第 4 版、シアリス。前立腺肥大症用のザルティアも同じく周術期の記載なし) に手術・周術期の休薬の記載はない (硝酸剤との併用禁忌のみ)。"
-          }
+          },
+          "quote_excerpt": "1.1 本剤と硝酸剤又は一酸化窒素（NO）供与剤（ニトログリセリン、亜硝酸アミル、硝酸イソソルビド、ニコランジル等）との併用により降圧作用が増強し、過度に血圧を下降させることがある／2.2 硝酸剤又は一酸化窒素（NO）供与剤（ニトログリセリン、亜硝酸アミル、硝酸イソソルビド、ニコランジル等）を投与中の患者",
+          "location_in_source": "1.1 警告 / 2.2 禁忌"
         },
         {
           "source": "KEGG MEDICUS",
@@ -11416,13 +11452,15 @@
           "source": "PMDA",
           "title": "バルデナフィル錠5mg／10mg／20mg「FCI」添付文書 (PMDA、先発品レビトラは販売中止)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/670082_259000BF1037_1_05",
-          "verification_status": "unverified",
+          "verification_status": "verified",
           "author_interpretation": {
             "context": "添付文書",
             "mention": "薬剤名",
             "recommendation": "なし",
             "text": "添付文書 (2026 年 3 月改訂第 2 版、後発品「FCI」) に手術・周術期の休薬の記載はない (硝酸剤との併用禁忌のみ)。"
-          }
+          },
+          "quote_excerpt": "1.1 本剤と硝酸剤又は一酸化窒素（NO）供与剤（ニトログリセリン、亜硝酸アミル、硝酸イソソルビド、ニコランジル等）との併用により降圧作用が増強し、過度に血圧を下降させることがある／2.2 硝酸剤あるいは一酸化窒素（NO）供与剤（ニトログリセリン、亜硝酸アミル、硝酸イソソルビド、ニコランジル等）を投与中の患者",
+          "location_in_source": "1.1 警告 / 2.2 禁忌"
         },
         {
           "source": "KEGG MEDICUS",
@@ -12023,7 +12061,8 @@
           "title": "エフピーOD錠 2.5 (セレギリン塩酸塩) 添付文書 (2024/2 改訂第 1 版)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/170654_1169010F2020_1_16",
           "verification_status": "verified",
-          "location_in_source": "§ 10.1 併用禁忌 (§ 2.2 も参照)"
+          "quote_excerpt": "2.2 ペチジン塩酸塩含有製剤、トラマドール塩酸塩又はタペンタドール塩酸塩を投与中の患者／(10.1 ペチジン等) 高度の興奮、精神錯乱等の発現が報告されている。",
+          "location_in_source": "2.2 禁忌 / 10.1 併用禁忌"
         },
         {
           "source": "KEGG MEDICUS",
@@ -12100,7 +12139,8 @@
           "title": "アジレクト錠 0.5/1mg (ラサギリンメシル酸塩) 添付文書 (2025/1 改訂第 3 版)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/400256_1169017F1025_1_09",
           "verification_status": "verified",
-          "location_in_source": "§ 10.1 併用禁忌 (§ 2.1、2.2 も参照)"
+          "quote_excerpt": "2.2 ペチジン塩酸塩含有製剤、トラマドール塩酸塩又はタペンタドール塩酸塩を投与中の患者／(10.1 ペチジン等) セロトニン症候群等の重篤な副作用発現のおそれがある。",
+          "location_in_source": "2.2 禁忌 / 10.1 併用禁忌"
         },
         {
           "source": "KEGG MEDICUS",
@@ -12173,9 +12213,11 @@
         },
         {
           "source": "PMDA",
-          "title": "添付文書 (PMDA iyakuSearch で薬剤名検索)",
-          "url": "https://www.info.pmda.go.jp/go/pack/1169018F1020_2_03/",
-          "verification_status": "landing_only"
+          "title": "エクフィナ錠50mg (サフィナミド) 添付文書 (JAPIC 掲載、2024年1月改訂第5版)",
+          "url": "https://pins.japic.or.jp/pdf/newPINS/00068283.pdf",
+          "verification_status": "verified",
+          "quote_excerpt": "2.2 ペチジン塩酸塩含有製剤、トラマドール塩酸塩含有製剤又はタペンタドール塩酸塩を投与中の患者／(10.1 ペチジン等) セロトニン症候群等の重篤な副作用発現のおそれがある。",
+          "location_in_source": "2.2 禁忌 / 10.1 併用禁忌"
         },
         {
           "source": "KEGG MEDICUS",
@@ -12587,7 +12629,9 @@
           "source": "PMDA",
           "title": "スチバーガ錠40mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/630004_4291029F1028_1_14",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "8.4 創傷治癒を遅らせる可能性があるので、手術が予定されている場合には、手術の前に本剤の投与を中断すること。",
+          "location_in_source": "8.4 重要な基本的注意"
         },
         {
           "source": "KEGG MEDICUS",
@@ -12660,7 +12704,9 @@
           "source": "PMDA",
           "title": "ネクサバール錠200mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/630004_4291017F1025_1_33",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "8.7 創傷治癒を遅らせる可能性があるので、手術時は投与を中断することが望ましい。",
+          "location_in_source": "8.7 重要な基本的注意"
         },
         {
           "source": "KEGG MEDICUS",
@@ -12743,7 +12789,9 @@
           "source": "PMDA",
           "title": "スーテントカプセル12.5mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/672212_4291018M1029_3_04",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "8.10 創傷治癒を遅らせる可能性があるため、手術時は投与を中断することが望ましい。",
+          "location_in_source": "8.10 重要な基本的注意"
         },
         {
           "source": "KEGG MEDICUS",
@@ -12816,7 +12864,9 @@
           "source": "PMDA",
           "title": "ヴォトリエント錠200mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/300242_4291028F1023_2_07",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "8.5 創傷治癒を遅らせる可能性があるので、外科的処置が予定されている場合には、外科的処置の前に本剤の投与を中断すること。",
+          "location_in_source": "8.5 重要な基本的注意 (11.1.13 創傷治癒遅延)"
         },
         {
           "source": "KEGG MEDICUS",
@@ -12890,7 +12940,9 @@
           "source": "PMDA",
           "title": "レンビマカプセル4mg/10mg 添付文書 (PMDA)",
           "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/170033_4291039M1020_1_21",
-          "verification_status": "landing_only"
+          "verification_status": "verified",
+          "quote_excerpt": "8.6 創傷治癒を遅らせる可能性があるので、外科的処置が予定されている場合には、外科的処置の前に本剤の投与を中断すること。",
+          "location_in_source": "8.6 重要な基本的注意 (11.1.16 創傷治癒遅延)"
         },
         {
           "source": "KEGG MEDICUS",
