@@ -3,9 +3,9 @@
     "name": "休薬情報データベース (Kyuyaku Data)",
     "author": "梅谷 直亨 (Naoyuki Umetani)",
     "api_version": "1.1",
-    "data_version": "0.8.24",
-    "data_updated_at": "2026-10-26",
-    "generated_at": "2026-10-26",
+    "data_version": "0.8.25",
+    "data_updated_at": "2026-10-30",
+    "generated_at": "2026-10-30",
     "scope": "周術期・造影CT の休薬情報のみ",
     "drug_count": 157,
     "license": "CC BY 4.0",
@@ -14,7 +14,7 @@
     "attribution": "梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data",
     "disclaimer": "本データは意思決定支援のための参考情報です。最終的な休薬判断は医療者の責任で行ってください。内容は無保証で、継続的に更新されます。",
     "verbatim_quotes": "quote_excerpt は一次資料 (学会GL / PMDA添付文書等) からの引用または抜粋です (一部、参考資料・作者による注記を含みます。極端に長いものは抜粋、' … ' は中略)。正確な記載は location_in_source / source_location と url / source_url (PDF は該当頁に移動) で原典を確認してください。",
-    "value_semantics": "high_risk_days_before 等は作者の採用値 (primary)。display_* は現行GLの最長値 (安全側) — 消費側は display_* の使用を推奨。各GLの個別値は guideline_variations 参照。日数は 0 = 休薬不要、null = 記載なし。*_day_of / day_of: true は「手術当日の休薬」 (前日まで服用可、日数は null。作者の採用値の high_risk_day_of 等も同じ)。*_hours は原文が時間の値 (日数は null)。display_* では時間を日数に切り上げ (手術時刻が動くため前日から休薬する扱い)、当日休薬は 0 日より長く 1 日より短いとして比較。",
+    "value_semantics": "high_risk_days_before 等は作者の採用値 (primary)。display_* は現行GLの最長値 (安全側。現行GLに値がない剤は PMDA 添付文書の最長値、それもなければ作者の採用値。現行GLに値があれば、添付文書や作者の採用値の方が長くても現行GLの値を使う) — 消費側は display_* の使用を推奨。各GLの個別値は guideline_variations 参照 (添付文書やガイドラインが日数を書かずに手術前後の休薬・禁忌を求める場合、その行は 1 日として記録する)。日数は 0 = 休薬不要、null = 記載なし。*_day_of / day_of: true は「手術当日の休薬」 (前日まで服用可、日数は null。作者の採用値の high_risk_day_of 等も同じ)。*_hours は原文が時間の値 (日数は null)。display_* では時間を日数に切り上げ (手術時刻が動くため前日から休薬する扱い)、当日休薬は 0 日より長く 1 日より短いとして比較。",
     "source_of_truth": "https://github.com/numero-uno-jpn/kyuyaku-data"
   },
   "drugs": [
@@ -1298,7 +1298,7 @@
           "白内障手術"
         ],
         "note": "末梢動脈疾患 (PAD)・肺高血圧症に使う。可逆的な阻害で、効果は比較的短時間で消失する。",
-        "author_interpretation": "手術のガイドラインと添付文書に休薬の記載はない。区域麻酔のガイドラインは現行の改訂第 2 版で休薬期間の表から外し、休薬不要とも書いていない。内視鏡のガイドラインはクラス単位。よって日数は空 (記載なし) とした。初版 (JSA 2016) の高リスク 1 日は旧版の値は表示に使わない。"
+        "author_interpretation": "手術のガイドラインと添付文書に休薬の記載はない。区域麻酔のガイドラインは現行の改訂第 2 版で休薬期間の表から外し、休薬不要とも書いていない。内視鏡のガイドラインはクラス単位。よって日数は空 (記載なし) とした。初版 (JSA 2016) の高リスク 1 日は旧版の値で、表示には使わない。"
       },
       "contrast_ct": {
         "required": false,
@@ -3103,7 +3103,7 @@
       "surgery": {
         "required": true,
         "high_risk_days_before": 1,
-        "low_risk_days_before": 1,
+        "low_risk_days_before": 0,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
         "display_high_risk_days_before": 1,
@@ -3329,7 +3329,7 @@
       "surgery": {
         "required": true,
         "high_risk_days_before": 2,
-        "low_risk_days_before": 1,
+        "low_risk_days_before": 0,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
         "display_high_risk_days_before": 3,
@@ -7773,7 +7773,7 @@
       "surgery": {
         "required": true,
         "high_risk_days_before": 180,
-        "low_risk_days_before": 0,
+        "low_risk_days_before": 90,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
         "display_high_risk_days_before": 180,
@@ -9472,7 +9472,12 @@
         "note": null
       },
       "guideline_variations": {
-        "surgery": [],
+        "surgery": [
+          {
+            "source": "PMDA 添付文書",
+            "high_risk_days": 1
+          }
+        ],
         "contrast_ct": []
       },
       "references": [
@@ -10226,7 +10231,8 @@
       "guideline_variations": {
         "surgery": [
           {
-            "source": "PMDA 添付文書"
+            "source": "PMDA 添付文書",
+            "high_risk_days": 1
           }
         ],
         "contrast_ct": []
@@ -11929,7 +11935,7 @@
       "generic_brands": [],
       "surgery": {
         "required": true,
-        "high_risk_days_before": 5,
+        "high_risk_days_before": 14,
         "low_risk_days_before": 5,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
@@ -11942,7 +11948,7 @@
         ],
         "low_risk_surgery_examples": [],
         "note": "CYP 誘導効果が遷延。JAMA 2001 では hypericin 半減期 43 h に基づき 5 日休薬を推奨。フェンタニル / ミダゾラム / シクロスポリン等の血中濃度低下を予防",
-        "author_interpretation": null
+        "author_interpretation": "休薬の理由は出血ではなく、CYP の誘導による麻酔薬などとの相互作用で、手術の出血リスクによらない。JAMA 2001 の総説は、成分 (ヒペリシン) の半減期 43 時間に基づき、少なくとも 5 日前の中止を示す。ASA の患者向け資料は、本剤が麻酔の効果を延ばしうるとし、サプリメントを手術の少なくとも 2 週前に中止するよう勧めることがあるとする。よって高リスクは最も長い ASA の 14 日、低リスクは出血リスクによらないため JAMA 2001 の 5 日とした。"
       },
       "contrast_ct": {
         "required": false,
@@ -13018,12 +13024,22 @@
           {
             "source": "ACC/AHA 2024",
             "high_risk_hours": 24,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\nSame recommendation applies to ACEi and ARB collectively as RAAS inhibitors.\n",
+            "source_location": "p.3855 Section 5.2.4; p.3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -13124,12 +13140,22 @@
           {
             "source": "ACC/AHA 2024",
             "high_risk_hours": 24,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -13229,12 +13255,22 @@
           {
             "source": "ACC/AHA 2024",
             "high_risk_hours": 24,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -13331,12 +13367,22 @@
           {
             "source": "ACC/AHA 2024",
             "high_risk_hours": 24,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -13436,12 +13482,22 @@
           {
             "source": "ACC/AHA 2024",
             "high_risk_hours": 24,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -13537,6 +13593,26 @@
           {
             "source": "PMDA 添付文書",
             "high_risk_hours": 24
+          },
+          {
+            "source": "ACC/AHA 2024",
+            "high_risk_hours": 24,
+            "value_derivation": "class",
+            "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
+            "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
+            "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
+            "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -13622,7 +13698,28 @@
         "note": null
       },
       "guideline_variations": {
-        "surgery": [],
+        "surgery": [
+          {
+            "source": "ACC/AHA 2024",
+            "high_risk_hours": 24,
+            "value_derivation": "class",
+            "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
+            "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
+            "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
+            "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
+          }
+        ],
         "contrast_ct": []
       },
       "references": [
@@ -13712,6 +13809,26 @@
           {
             "source": "PMDA 添付文書",
             "high_risk_hours": 24
+          },
+          {
+            "source": "ACC/AHA 2024",
+            "high_risk_hours": 24,
+            "value_derivation": "class",
+            "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
+            "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
+            "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
+            "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -13795,6 +13912,26 @@
           {
             "source": "PMDA 添付文書",
             "high_risk_hours": 24
+          },
+          {
+            "source": "ACC/AHA 2024",
+            "high_risk_hours": 24,
+            "value_derivation": "class",
+            "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
+            "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
+            "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
+            "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -13883,6 +14020,26 @@
           {
             "source": "PMDA 添付文書",
             "high_risk_hours": 24
+          },
+          {
+            "source": "ACC/AHA 2024",
+            "high_risk_hours": 24,
+            "value_derivation": "class",
+            "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
+            "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
+            "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
+            "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -13976,6 +14133,26 @@
           {
             "source": "PMDA 添付文書",
             "high_risk_hours": 24
+          },
+          {
+            "source": "ACC/AHA 2024",
+            "high_risk_hours": 24,
+            "value_derivation": "class",
+            "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
+            "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
+            "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
+            "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -14067,6 +14244,26 @@
           {
             "source": "PMDA 添付文書",
             "high_risk_hours": 24
+          },
+          {
+            "source": "ACC/AHA 2024",
+            "high_risk_hours": 24,
+            "value_derivation": "class",
+            "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
+            "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
+            "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
+            "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -14160,6 +14357,26 @@
           {
             "source": "PMDA 添付文書",
             "high_risk_hours": 24
+          },
+          {
+            "source": "ACC/AHA 2024",
+            "high_risk_hours": 24,
+            "value_derivation": "class",
+            "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
+            "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
+            "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
+            "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
+            "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\n\"In patients with stable HF, peri-operative continuation of RAAS inhibitors may be considered.\"\n(Class IIb, LoE C)\n\"Discontinuation of these drugs in the 24 h before surgery was associated with a lower risk of intra-operative\nhypotension (adjusted RR, 0.80; 95% CI, 0.72-0.93; P < 0.001), and associated with a reduction in the composite end-point …",
+            "source_location": "p.3855 Section 5.2.4; p.3856-3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -14262,12 +14479,22 @@
           {
             "source": "ACC/AHA 2024",
             "high_risk_hours": 24,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\nSame recommendation applies to ACEi and ARB collectively as RAAS inhibitors.\n",
+            "source_location": "p.3855 Section 5.2.4; p.3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -14373,12 +14600,22 @@
           {
             "source": "ACC/AHA 2024",
             "high_risk_hours": 24,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\nSame recommendation applies to ACEi and ARB collectively as RAAS inhibitors.\n",
+            "source_location": "p.3855 Section 5.2.4; p.3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -14488,12 +14725,22 @@
           {
             "source": "ACC/AHA 2024",
             "high_risk_hours": 24,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\nSame recommendation applies to ACEi and ARB collectively as RAAS inhibitors.\n",
+            "source_location": "p.3855 Section 5.2.4; p.3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -14595,12 +14842,22 @@
           {
             "source": "ACC/AHA 2024",
             "high_risk_hours": 24,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\nSame recommendation applies to ACEi and ARB collectively as RAAS inhibitors.\n",
+            "source_location": "p.3855 Section 5.2.4; p.3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -14706,12 +14963,22 @@
           {
             "source": "ACC/AHA 2024",
             "high_risk_hours": 24,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\nSame recommendation applies to ACEi and ARB collectively as RAAS inhibitors.\n",
+            "source_location": "p.3855 Section 5.2.4; p.3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -14815,12 +15082,22 @@
           {
             "source": "ACC/AHA 2024",
             "high_risk_hours": 24,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "高血圧治療のため + 血圧コントロール良好 +… 1日 (24時間), HFrEF 継続可",
             "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
             "quote_excerpt": "Rec 1 (COR 2b, LOE B-R): \"In select* patients on chronic renin-angiotensin-aldosterone system\ninhibitors (RAASi) for HTN undergoing elevated-risk NCS, omission 24 hours before surgery may\nbe beneficial to limit intraoperative hypotension.\"\nRec 2 (COR 2a, LOE C-EO): \"In patients on chronic RAASi for HFrEF, perioperative continuation\nis reasonable.†\"\nFootnote *: \"Patients with controlled BP and undergoing elevated-risk surgical procedures.\"\nFootnote †: \"Modified from the “2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure.”\"\n",
             "source_location": "p.70 Renin-Angiotensin-Aldosterone System Inhibitors",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Patients without heart… 当日休薬, Patients with stable… 日数なし",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"In patients without HF, withholding RAAS inhibitors on the day of NCS should be considered to prevent\nperi-operative hypotension.\" (Class IIa, LoE B)\nSame recommendation applies to ACEi and ARB collectively as RAAS inhibitors.\n",
+            "source_location": "p.3855 Section 5.2.4; p.3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -14991,8 +15268,8 @@
         "low_risk_day_of": false,
         "display_high_risk_days_before": null,
         "display_high_risk_day_of": true,
-        "display_low_risk_days_before": null,
-        "display_low_risk_day_of": true,
+        "display_low_risk_days_before": 0,
+        "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [],
         "low_risk_surgery_examples": [
           "皮膚生検",
@@ -15027,8 +15304,7 @@
           {
             "source": "ESC 2022 non-cardiac",
             "high_risk_day_of": true,
-            "low_risk_day_of": true,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "Diuretics used to treat… 当日休薬, Diuretics used for… 継続 (用量調整)",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
             "quote_excerpt": "\"For patients on diuretics to treat hypertension, transient discontinuation of diuretics on the day of NCS\nshould be considered.\" (Class IIa, LoE B)\n\"In general, therapy for treatment of hypertension should be continued to the day of surgery and resumed orally\nwhen possible. However, the benefit for continuing diuretics as antihypertensive therapy is unclear.\"\n\"In HF, the dosage of diuretics should be adjusted well in advance for an optimal fluid balance before surgery,\nand to avoid fluid retention or dehydration.\" …",
@@ -15095,8 +15371,8 @@
         "low_risk_days_before": 0,
         "high_risk_day_of": true,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": 0,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [],
@@ -15129,6 +15405,16 @@
             "quote_excerpt": "BP Rec 1 (2a, C-EO): \"In most* patients with HTN planned for elective NCS, it is reasonable to continue medical therapy\nfor HTN throughout the perioperative period.†\"\nHF Rec 2 (2a, C-LD): \"In patients with compensated HF undergoing NCS, it is reasonable to continue GDMT\n(excluding SGLT2i) in the perioperative period, unless contraindicated, to reduce the risk of worsening HF.\"\n",
             "source_location": "p.40 Preoperative Blood Pressure Management Rec 1 + p.42 HF Rec 2 (MRA は HFrEF の GDMT)",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Diuretics used to treat… 当日休薬, Diuretics used for… 継続 (用量調整)",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"For patients on diuretics to treat hypertension, transient discontinuation of diuretics on the day of NCS\nshould be considered.\" (Class IIa, LoE B)\n\"In general, therapy for treatment of hypertension should be continued to the day of surgery and resumed orally\nwhen possible. However, the benefit for continuing diuretics as antihypertensive therapy is unclear.\"\n\"In HF, the dosage of diuretics should be adjusted well in advance for an optimal fluid balance before surgery,\nand to avoid fluid retention or dehydration.\" …",
+            "source_location": "p.3856 Section 5.2.7; p.3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -15187,8 +15473,8 @@
         "low_risk_days_before": 0,
         "high_risk_day_of": true,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": 0,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [],
@@ -15221,6 +15507,16 @@
             "quote_excerpt": "BP Rec 1 (2a, C-EO): \"In most* patients with HTN planned for elective NCS, it is reasonable to continue medical therapy\nfor HTN throughout the perioperative period.†\"\nHF Rec 2 (2a, C-LD): \"In patients with compensated HF undergoing NCS, it is reasonable to continue GDMT\n(excluding SGLT2i) in the perioperative period, unless contraindicated, to reduce the risk of worsening HF.\"\n",
             "source_location": "p.40 Preoperative Blood Pressure Management Rec 1 + p.42 HF Rec 2 (MRA は HFrEF の GDMT)",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Diuretics used to treat… 当日休薬, Diuretics used for… 継続 (用量調整)",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"For patients on diuretics to treat hypertension, transient discontinuation of diuretics on the day of NCS\nshould be considered.\" (Class IIa, LoE B)\n\"In general, therapy for treatment of hypertension should be continued to the day of surgery and resumed orally\nwhen possible. However, the benefit for continuing diuretics as antihypertensive therapy is unclear.\"\n\"In HF, the dosage of diuretics should be adjusted well in advance for an optimal fluid balance before surgery,\nand to avoid fluid retention or dehydration.\" …",
+            "source_location": "p.3856 Section 5.2.7; p.3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -15282,8 +15578,8 @@
         "low_risk_day_of": false,
         "display_high_risk_days_before": null,
         "display_high_risk_day_of": true,
-        "display_low_risk_days_before": null,
-        "display_low_risk_day_of": true,
+        "display_low_risk_days_before": 0,
+        "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [],
         "low_risk_surgery_examples": [
           "皮膚生検",
@@ -15318,8 +15614,7 @@
           {
             "source": "ESC 2022 non-cardiac",
             "high_risk_day_of": true,
-            "low_risk_day_of": true,
-            "value_derivation": "direct",
+            "value_derivation": "class",
             "dose_dependent_summary": "Diuretics used to treat… 当日休薬, Diuretics used for… 継続 (用量調整)",
             "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
             "quote_excerpt": "\"For patients on diuretics to treat hypertension, transient discontinuation of diuretics on the day of NCS\nshould be considered.\" (Class IIa, LoE B)\n\"In general, therapy for treatment of hypertension should be continued to the day of surgery and resumed orally\nwhen possible. However, the benefit for continuing diuretics as antihypertensive therapy is unclear.\"\n\"In HF, the dosage of diuretics should be adjusted well in advance for an optimal fluid balance before surgery,\nand to avoid fluid retention or dehydration.\" …",
@@ -15383,8 +15678,8 @@
         "low_risk_days_before": 0,
         "high_risk_day_of": true,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": 0,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [],
@@ -15409,6 +15704,24 @@
             "source": "PMDA 添付文書",
             "high_risk_days": 1,
             "low_risk_days": 0
+          },
+          {
+            "source": "ACC/AHA 2024",
+            "value_derivation": "direct",
+            "source_title": "2024 AHA/ACC/ACS/ASNC/HRS/SCA/SCCT/SCMR/SVM Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery",
+            "quote_excerpt": "BP Rec 1 (2a, C-EO): \"In most* patients with HTN planned for elective NCS, it is reasonable to continue medical therapy\nfor HTN throughout the perioperative period.†\"\nHF Rec 2 (2a, C-LD): \"In patients with compensated HF undergoing NCS, it is reasonable to continue GDMT\n(excluding SGLT2i) in the perioperative period, unless contraindicated, to reduce the risk of worsening HF.\"\n",
+            "source_location": "p.40 Preoperative Blood Pressure Management Rec 1 + p.42 HF Rec 2 (MRA は HFrEF の GDMT)",
+            "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Diuretics used to treat… 当日休薬, Diuretics used for… 継続 (用量調整)",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"For patients on diuretics to treat hypertension, transient discontinuation of diuretics on the day of NCS\nshould be considered.\" (Class IIa, LoE B)\n\"In general, therapy for treatment of hypertension should be continued to the day of surgery and resumed orally\nwhen possible. However, the benefit for continuing diuretics as antihypertensive therapy is unclear.\"\n\"In HF, the dosage of diuretics should be adjusted well in advance for an optimal fluid balance before surgery,\nand to avoid fluid retention or dehydration.\" …",
+            "source_location": "p.3856 Section 5.2.7; p.3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []
@@ -15464,8 +15777,8 @@
         "low_risk_days_before": 0,
         "high_risk_day_of": true,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": 0,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [],
@@ -15498,6 +15811,16 @@
             "quote_excerpt": "BP Rec 1 (2a, C-EO): \"In most* patients with HTN planned for elective NCS, it is reasonable to continue medical therapy\nfor HTN throughout the perioperative period.†\"\nHF Rec 2 (2a, C-LD): \"In patients with compensated HF undergoing NCS, it is reasonable to continue GDMT\n(excluding SGLT2i) in the perioperative period, unless contraindicated, to reduce the risk of worsening HF.\"\n",
             "source_location": "p.40 Preoperative Blood Pressure Management Rec 1 + p.42 HF Rec 2 (MRA は HFrEF の GDMT)",
             "source_url": "https://doi.org/10.1161/CIR.0000000000001285"
+          },
+          {
+            "source": "ESC 2022 non-cardiac",
+            "high_risk_day_of": true,
+            "value_derivation": "class",
+            "dose_dependent_summary": "Diuretics used to treat… 当日休薬, Diuretics used for… 継続 (用量調整)",
+            "source_title": "2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+            "quote_excerpt": "\"For patients on diuretics to treat hypertension, transient discontinuation of diuretics on the day of NCS\nshould be considered.\" (Class IIa, LoE B)\n\"In general, therapy for treatment of hypertension should be continued to the day of surgery and resumed orally\nwhen possible. However, the benefit for continuing diuretics as antihypertensive therapy is unclear.\"\n\"In HF, the dosage of diuretics should be adjusted well in advance for an optimal fluid balance before surgery,\nand to avoid fluid retention or dehydration.\" …",
+            "source_location": "p.3856 Section 5.2.7; p.3857 Recommendation Table 12",
+            "source_url": "https://doi.org/10.1093/eurheartj/ehac270"
           }
         ],
         "contrast_ct": []

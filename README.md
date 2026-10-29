@@ -293,6 +293,7 @@ AI は、原文にない数値や引用をもっともらしく作り出すこ�
 
 | 項目 | 意味 |
 |---|---|
+| `surgery.required` | 手術前の休薬の対象か。`true` で日数がすべて `null` の剤は、休薬の対象だが資料に日数の記載がない (休薬不要なら日数は `0`) |
 | `surgery.display_high_risk_days_before` / `display_low_risk_days_before` | リスクの高い / 低い手術の前の休薬日数 (**安全側の値。利用時はこちらを推奨**)。`0` は休薬不要、`null` は記載なし (ただし次の `*_day_of` が `true` なら当日休薬) |
 | `surgery.display_high_risk_day_of` / `display_low_risk_day_of` | `true` は安全側の値が **手術当日の休薬** (前日まで服用可) であること。このとき日数は `null` |
 | `surgery.high_risk_days_before` / `low_risk_days_before` | 作者の採用値 (表示用の値の決定に使う第 3 候補) |
