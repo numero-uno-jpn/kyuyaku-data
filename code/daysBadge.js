@@ -5,6 +5,7 @@
  *
  * 表示規則:
  *   - GL 値あり           → GL 値を表示 (複数 GL で相違 → 最長値)
+ *   - GL 値がクラス単位のものだけ + 添付文書が日数を明記 (days_explicit) して長い → 添付文書の値
  *   - GL 値なし + PMDA 値 → PMDA 値を表示
  *   - どちらもなし          → drug_list 値 (フォールバック)
  *   - user override あり    → `Nday✏` (鉛筆マーク)
@@ -107,6 +108,12 @@
     return !!(variation?.source?.includes('PMDA') || variation?._source === 'pmda_package_insert')
   }
 
+  /** この slot に値を持つ GL variation がすべてクラス単位の推奨 (value_derivation: class) か。*/
+  function isClassOnly(variations, k) {
+    const withValue = (variations || []).filter(v => effectiveDays(v?.[k?.variationKey], v?.[k?.hoursKey], v?.[k?.dayOfKey]) != null)
+    return withValue.length > 0 && withValue.every(v => v?.value_derivation === 'class')
+  }
+
   /** variations 配列から比較用日数 (日数 / 時間の切り上げ / 当日休薬 0.5) を unique 収集。*/
   function collectNums(variations, k) {
     const nums = []
@@ -159,6 +166,16 @@
     // user override
     if (hasOverride(drug, kind, slot)) {
       return { value: currentValue, prefix: '', suffix: '✏', reason: 'override', uniqueValues: glValues, glValues, pmdaValues, hasGlPmdaConflict: false, hourNotes }
+    }
+
+    // methodology 5.1 の原則: 現行 GL の値がクラス単位のものだけで、
+    // 添付文書が薬剤名で日数を明記している (days_explicit) 場合は、長い方を表示する
+    if (glValues.length && isClassOnly(glVariations, k)) {
+      const explicitValues = collectNums(pmdaVariations.filter(v => v?.days_explicit), k)
+      const maxGl = Math.max(...glValues)
+      if (explicitValues.length && Math.max(...explicitValues) > maxGl) {
+        return { value: Math.max(...explicitValues), prefix: '', suffix: '', reason: 'label_over_class', uniqueValues: glValues, glValues, pmdaValues, hasGlPmdaConflict: true, hourNotes: collectHourNotes(pmdaVariations, k) }
+      }
     }
 
     // 層 1: GL 値
@@ -286,6 +303,10 @@
         return `ガイドライン由来の目安値。<br><br>⚠ PMDA 添付文書の休薬期間: **${pmdaList}**。ガイドラインの値と異なるため併記。`
       }
       return '資料 (ガイドライン / 添付文書) 由来の目安値。'
+    }
+    if (b.reason === 'label_over_class') {
+      const glList = b.glValues.slice().sort((a, c) => a - c).map(v => formatDaysValue(v)).join(' / ')
+      return `ガイドラインは薬効クラス単位の値 (**${glList}**) だけのため、薬剤名で日数を明記した PMDA 添付文書の **${formatDaysValue(b.value)}** を表示。`
     }
     if (b.reason === 'pmda') {
       const list = b.pmdaValues.map(v => formatDaysValue(v)).join(' / ')

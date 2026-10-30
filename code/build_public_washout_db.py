@@ -212,7 +212,7 @@ def build(warnings=None):
             "attribution": "梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data",
             "disclaimer": "本データは意思決定支援のための参考情報です。最終的な休薬判断は医療者の責任で行ってください。内容は無保証で、継続的に更新されます。",
             "verbatim_quotes": "quote_excerpt は一次資料 (学会GL / PMDA添付文書等) からの引用または抜粋です (一部、参考資料・作者による注記を含みます。極端に長いものは抜粋、' … ' は中略)。正確な記載は location_in_source / source_location と url / source_url (PDF は該当頁に移動) で原典を確認してください。",
-            "value_semantics": "high_risk_days_before 等は作者の採用値 (primary)。display_* は現行GLの最長値 (安全側。現行GLに値がない剤は PMDA 添付文書の最長値、それもなければ作者の採用値。現行GLに値があれば、添付文書や作者の採用値の方が長くても現行GLの値を使う) — 消費側は display_* の使用を推奨。各GLの個別値は guideline_variations 参照 (添付文書やガイドラインが日数を書かずに手術前後の休薬・禁忌を求める場合、その行は 1 日として記録する)。日数は 0 = 休薬不要、null = 記載なし。*_day_of / day_of: true は「手術当日の休薬」 (前日まで服用可、日数は null。作者の採用値の high_risk_day_of 等も同じ)。*_hours は原文が時間の値 (日数は null)。display_* では時間を日数に切り上げ (手術時刻が動くため前日から休薬する扱い)、当日休薬は 0 日より長く 1 日より短いとして比較。",
+            "value_semantics": "high_risk_days_before 等は作者の採用値 (primary)。display_* は現行GLの最長値 (安全側。現行GLに値がない剤は PMDA 添付文書の最長値、それもなければ作者の採用値。現行GLに値があれば、添付文書や作者の採用値の方が長くても現行GLの値を使う。ただし現行GLの値がクラス単位 (value_derivation: class) だけで、添付文書が薬剤名で日数を明記していれば長い方) — 消費側は display_* の使用を推奨。各GLの個別値は guideline_variations 参照 (添付文書やガイドラインが日数を書かずに手術前後の休薬・禁忌を求める場合、その行は 1 日として記録する)。日数は 0 = 休薬不要、null = 記載なし。*_day_of / day_of: true は「手術当日の休薬」 (前日まで服用可、日数は null。作者の採用値の high_risk_day_of 等も同じ)。*_hours は原文が時間の値 (日数は null)。display_* では時間を日数に切り上げ (手術時刻が動くため前日から休薬する扱い)、当日休薬は 0 日より長く 1 日より短いとして比較。",
             "source_of_truth": "https://github.com/numero-uno-jpn/kyuyaku-data",
         },
         "drugs": drugs_out,
