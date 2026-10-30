@@ -114,7 +114,7 @@ suggest(index, 'ワルハリソ');    // 何も当たらない時の「もしか
 | `guideline_variations.surgery[]` / `contrast_ct[]` | ガイドライン別の個別値 + 出典ラベル (+ eGFR/用量別の `dose_dependent_summary`)。`source_location` (所在) / `source_url` / `quote_excerpt` (引用または抜粋) を含む場合あり |
 | `guideline_variations.*[].high_risk_hours` / `low_risk_hours` / `hours` | 原文が時間で書かれた値 (日数の欄は `null`)。表示推奨値の計算では日数に切り上げる (12 時間 → 1 日、48 時間 → 2 日。手術時刻が当日動くため前日から休薬する扱い) |
 | `guideline_variations.*[].high_risk_day_of` / `low_risk_day_of` / `day_of` | `true` は原文が「手術当日の休薬」 (日数の欄は `null`) |
-| `guideline_variations.*[].value_derivation` | **値の出どころ** (重要)。`direct` = ガイドラインがその薬剤の値を直接記載 / `class` = ガイドラインは薬効クラス (SGLT2 阻害薬等) 単位で推奨しており、その値を個別薬に当てはめた / `derived` = ガイドラインの半減期 × N 倍ルール等から作者が計算した値。未設定は未分類 (PMDA 添付文書等の手入力値。添付文書やガイドラインが日数を書かずに手術前後の休薬・禁忌を求める場合、その行は 1 日として記録する)。**`direct` 以外はガイドラインにその日数が明記されているわけではない** |
+| `guideline_variations.*[].value_derivation` | **値の出どころ** (重要)。`direct` = ガイドラインがその薬剤の値を直接記載 / `class` = ガイドラインは薬効クラス (SGLT2 阻害薬等) 単位で推奨しており、その値を個別薬に当てはめた / `derived` = ガイドラインの半減期 × N 倍ルール等から作者が計算した値。未設定は未分類 (PMDA 添付文書等の手入力値。添付文書やガイドラインが日数を書かずに手術前後の休薬・禁忌を求める場合、その行は 1 日として記録する。ただし経口血糖降下薬の「手術前後は禁忌・不適」など、手術で食事がとれないための指示は当日休薬)。**`direct` 以外はガイドラインにその日数が明記されているわけではない** |
 | `references[]` | 出典 (source / title / url / verification_status) + `location_in_source` (所在)。`quote_excerpt` (引用または抜粋) / `quote_translation_excerpt` (英文引用の和訳) を含む場合あり |
 | `quote_excerpt` | 一次資料からの引用または抜粋 (一部、参考資料・作者による注記を含む)。和文 300 / 英文 600 字を超えるものは抜粋 (最大 2 断片を ` … ` で連結)、抜粋が未確定のものは省略 (所在 + URL のみ) |
 | `url` / `source_url` の `#page=N` | PDF の該当頁 (PDF のページ番号。印刷ページ番号とは異なることがある) |

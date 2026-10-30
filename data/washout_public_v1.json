@@ -3,7 +3,7 @@
     "name": "休薬情報データベース (Kyuyaku Data)",
     "author": "梅谷 直亨 (Naoyuki Umetani)",
     "api_version": "1.1",
-    "data_version": "0.8.27",
+    "data_version": "0.8.31",
     "data_updated_at": "2026-10-30",
     "generated_at": "2026-10-30",
     "scope": "周術期・造影CT の休薬情報のみ",
@@ -14,7 +14,7 @@
     "attribution": "梅谷 直亨, 休薬情報データベース (Kyuyaku Data), https://github.com/numero-uno-jpn/kyuyaku-data",
     "disclaimer": "本データは意思決定支援のための参考情報です。最終的な休薬判断は医療者の責任で行ってください。内容は無保証で、継続的に更新されます。",
     "verbatim_quotes": "quote_excerpt は一次資料 (学会GL / PMDA添付文書等) からの引用または抜粋です (一部、参考資料・作者による注記を含みます。極端に長いものは抜粋、' … ' は中略)。正確な記載は location_in_source / source_location と url / source_url (PDF は該当頁に移動) で原典を確認してください。",
-    "value_semantics": "high_risk_days_before 等は作者の採用値 (primary)。display_* は現行GLの最長値 (安全側。現行GLに値がない剤は PMDA 添付文書の最長値、それもなければ作者の採用値。現行GLに値があれば、添付文書や作者の採用値の方が長くても現行GLの値を使う。ただし現行GLの値がクラス単位 (value_derivation: class) だけで、添付文書が薬剤名で日数を明記していれば長い方) — 消費側は display_* の使用を推奨。各GLの個別値は guideline_variations 参照 (添付文書やガイドラインが日数を書かずに手術前後の休薬・禁忌を求める場合、その行は 1 日として記録する)。日数は 0 = 休薬不要、null = 記載なし。*_day_of / day_of: true は「手術当日の休薬」 (前日まで服用可、日数は null。作者の採用値の high_risk_day_of 等も同じ)。*_hours は原文が時間の値 (日数は null)。display_* では時間を日数に切り上げ (手術時刻が動くため前日から休薬する扱い)、当日休薬は 0 日より長く 1 日より短いとして比較。",
+    "value_semantics": "high_risk_days_before 等は作者の採用値 (primary)。display_* は現行GLの最長値 (安全側。現行GLに値がない剤は PMDA 添付文書の最長値、それもなければ作者の採用値。現行GLに値があれば、添付文書や作者の採用値の方が長くても現行GLの値を使う。ただし現行GLの値がクラス単位 (value_derivation: class) だけで、添付文書が薬剤名で日数を明記していれば長い方) — 消費側は display_* の使用を推奨。各GLの個別値は guideline_variations 参照 (添付文書やガイドラインが日数を書かずに手術前後の休薬・禁忌を求める場合、その行は 1 日として記録する。ただし経口血糖降下薬の「手術前後は禁忌・不適」など、手術で食事がとれないための指示は当日休薬)。日数は 0 = 休薬不要、null = 記載なし。*_day_of / day_of: true は「手術当日の休薬」 (前日まで服用可、日数は null。作者の採用値の high_risk_day_of 等も同じ)。*_hours は原文が時間の値 (日数は null)。display_* では時間を日数に切り上げ (手術時刻が動くため前日から休薬する扱い)、当日休薬は 0 日より長く 1 日より短いとして比較。",
     "source_of_truth": "https://github.com/numero-uno-jpn/kyuyaku-data"
   },
   "drugs": [
@@ -288,7 +288,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "コンプラビン / ロレアス配合錠 (アスピリン併用) の場合も本エントリの休薬期間 (長い側) に従う。**⚠️ PCI ステント留置後の待機的非心臓手術**: JCS 2020 図 4 (p.36) はデバイス種類 (POBA / DCB / BMS / DES) と経過期間 (2 週 / 1 ヶ月 / 3 ヶ月 / 6 ヶ月) で手術可否を段階的に判定。特に DES long-DAPT 適用例 (ACS 後 / 複雑手技 PCI) では **PCI 後 3 ヶ月以内は手術延期を強く検討** (Class III Harm)、**6 ヶ月以降で手術可** (Class I B)。詳細は表参照 → 循環器科医との協議必須。",
+        "note": "コンプラビン / ロレアス配合錠 (アスピリン併用) の場合も本エントリの休薬期間 (長い側) に従う。**⚠️ PCI ステント留置後の待機的非心臓手術**: JCS 2020 図 4 (p.36) はデバイス種類 (POBA / DCB / BMS / DES) と経過期間 (2 週 / 1 ヶ月 / 3 ヶ月 / 6 ヶ月) で手術可否を段階的に判定。特に DES long-DAPT 適用例 (ACS 後 / 複雑手技 PCI) では **PCI 後 3 ヶ月以内は手術延期を強く検討** (Class III Harm)、**6 ヶ月以降で手術可** (Class I B)。詳細は表参照 → 循環器科医との協議必須。ESC 2022 は、待機的な非心臓手術を、待機的 PCI 後は 6 か月、ACS 後は 12 か月まで延期することを推奨する。",
         "author_interpretation": "表示の高リスク 7 日は、区域麻酔の JSA 改訂第 2 版 (7 日)・ ASRA 2025 (5〜7 日) と ACC/AHA 2024 (5〜7 日) の上限。ESC 2022・ JCS 2020 は 5 日 (JCS は遅くとも 5 日前)。添付文書の 14 日は、GL の値があるため表示には使わない (方法 5.1)。低リスク 0 は体表面のブロックを休薬なしとする JSA 改訂第 2 版による。JCS 2020 は出血リスクの低い手術で血栓リスクが低ければ休薬も可能とするが、求めてはいない。区域麻酔の初版 (JSA 2016) も 7 日。"
       },
       "contrast_ct": {
@@ -497,7 +497,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "**⚠️ PCI ステント留置後の待機的非心臓手術**: JCS 2020 図 4 (p.36) はデバイス種類 × 経過期間で手術可否を判定。プラスグレルは ACS/PCI 患者で使用されることが多いため、DES long-DAPT 適用例では **PCI 後 3 ヶ月以内は手術延期を強く検討** (Class III Harm)、**6 ヶ月以降で手術可** (Class I B)。循環器科医との協議必須。",
+        "note": "**⚠️ PCI ステント留置後の待機的非心臓手術**: JCS 2020 図 4 (p.36) はデバイス種類 × 経過期間で手術可否を判定。プラスグレルは ACS/PCI 患者で使用されることが多いため、DES long-DAPT 適用例では **PCI 後 3 ヶ月以内は手術延期を強く検討** (Class III Harm)、**6 ヶ月以降で手術可** (Class I B)。循環器科医との協議必須。ESC 2022 は、待機的な非心臓手術を、待機的 PCI 後は 6 か月、ACS 後は 12 か月まで延期することを推奨する。",
         "author_interpretation": "表示の高リスク 10 日は、ASRA 2025・ ACC/AHA 2024 の 7〜10 日の上限。JSA 改訂第 2 版・ ESC 2022 は 7 日 (JSA は二次予防で 5 日も許容)、JCS 2020 は遅くとも 7 日前。添付文書の 14 日は、GL の値があるため表示には使わない (方法 5.1)。低リスク 0 は体表面のブロックを休薬なしとする JSA 改訂第 2 版による。JCS 2020 は出血リスクの低い手術で血栓リスクが低ければ休薬も可能とするが、求めてはいない。区域麻酔の初版 (JSA 2016) も 10 日。"
       },
       "contrast_ct": {
@@ -674,7 +674,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "冠動脈バイパス術 (CABG) では中止後 3 日以上 (JCS 2020)。⚠️ PCI ステント留置後の待機的な非心臓手術は、デバイスの種類と留置後の期間で手術の可否が決まる (JCS 2020 図 4)。DES で長期の DAPT 中は、PCI 後 3 か月以内の手術は延期を強く検討し、6 か月以降なら手術可。循環器内科と相談する。",
+        "note": "冠動脈バイパス術 (CABG) では中止後 3 日以上 (JCS 2020)。⚠️ PCI ステント留置後の待機的な非心臓手術は、デバイスの種類と留置後の期間で手術の可否が決まる (JCS 2020 図 4)。DES で長期の DAPT 中は、PCI 後 3 か月以内の手術は延期を強く検討し、6 か月以降なら手術可。循環器内科と相談する。ESC 2022 は、待機的な非心臓手術を、待機的 PCI 後は 6 か月、ACS 後は 12 か月まで延期することを推奨する。",
         "author_interpretation": "表示の高リスク 5 日は、区域麻酔の ASRA 2025・ JSA 改訂第 2 版と添付文書の値。ESC 2022・ ACC/AHA 2024 は 3〜5 日、JCS 2020 は遅くとも 3 日前。低リスク 0 は体表面のブロックを休薬なしとする JSA 改訂第 2 版による。JCS 2020 は出血リスクの低い手術で血栓リスクが低ければ休薬も可能とするが、求めてはいない。区域麻酔の初版 (JSA 2016) に本剤の記載はない。ASRA の第 4 版 (2018) は 5〜7 日 (旧版の値は表示に使わない)。"
       },
       "contrast_ct": {
@@ -3788,8 +3788,8 @@
         "low_risk_days_before": 0,
         "high_risk_day_of": true,
         "low_risk_day_of": false,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": 0,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
@@ -3814,13 +3814,13 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1,
-            "low_risk_days": 0
+            "low_risk_days": 0,
+            "high_risk_day_of": true
           },
           {
             "source": "JDS 2020 メトホルミン Recommendation",
-            "high_risk_days": 1,
-            "low_risk_days": 0
+            "low_risk_days": 0,
+            "high_risk_day_of": true
           },
           {
             "source": "ACC/AHA 2024",
@@ -3997,7 +3997,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           },
           {
             "source": "JCS/JHFS 2023 SGLT2 HF",
@@ -4123,7 +4123,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           },
           {
             "source": "ACC/AHA 2024",
@@ -4274,7 +4274,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           },
           {
             "source": "ACC/AHA 2024",
@@ -4425,7 +4425,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           },
           {
             "source": "ACC/AHA 2024",
@@ -4566,7 +4566,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           },
           {
             "source": "JCS/JHFS 2023 SGLT2 HF",
@@ -4688,7 +4688,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           },
           {
             "source": "JCS/JHFS 2023 SGLT2 HF",
@@ -4792,8 +4792,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -4817,7 +4817,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -4859,8 +4859,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -4884,7 +4884,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -4935,8 +4935,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -4960,7 +4960,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5012,8 +5012,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -5037,7 +5037,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5089,8 +5089,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -5114,7 +5114,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5163,8 +5163,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -5188,7 +5188,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5244,12 +5244,12 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
-          "腹部外科"
+          "大手術全般"
         ],
         "low_risk_surgery_examples": [
           "小手術"
@@ -5269,7 +5269,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5310,12 +5310,12 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
-          "腹部外科"
+          "大手術全般"
         ],
         "low_risk_surgery_examples": [
           "小手術"
@@ -5335,7 +5335,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5393,12 +5393,12 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
-          "腹部外科"
+          "大手術全般"
         ],
         "low_risk_surgery_examples": [
           "小手術"
@@ -5418,7 +5418,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5476,8 +5476,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -5501,7 +5501,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5549,8 +5549,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -5574,7 +5574,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5622,8 +5622,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -5647,7 +5647,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5696,8 +5696,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -5721,7 +5721,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5773,8 +5773,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -5798,7 +5798,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5844,8 +5844,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -5869,7 +5869,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -5919,8 +5919,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -5944,7 +5944,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -6141,8 +6141,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -6166,7 +6166,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -6204,8 +6204,8 @@
         "low_risk_days_before": null,
         "high_risk_day_of": true,
         "low_risk_day_of": true,
-        "display_high_risk_days_before": 1,
-        "display_high_risk_day_of": false,
+        "display_high_risk_days_before": null,
+        "display_high_risk_day_of": true,
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": true,
         "high_risk_surgery_examples": [
@@ -6229,7 +6229,7 @@
         "surgery": [
           {
             "source": "PMDA 添付文書",
-            "high_risk_days": 1
+            "high_risk_day_of": true
           }
         ],
         "contrast_ct": []
@@ -8608,10 +8608,7 @@
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
-          "人工関節置換術",
-          "脊椎手術",
-          "心臓外科",
-          "腹部外科"
+          "人工関節置換術"
         ],
         "low_risk_surgery_examples": [
           "皮膚生検",
@@ -8711,10 +8708,7 @@
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
-          "人工関節置換術",
-          "脊椎手術",
-          "心臓外科",
-          "腹部外科"
+          "人工関節置換術"
         ],
         "low_risk_surgery_examples": [
           "皮膚生検",
@@ -8894,9 +8888,7 @@
         "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
-          "人工関節置換術",
-          "脊椎手術",
-          "心臓外科"
+          "人工関節置換術"
         ],
         "low_risk_surgery_examples": [
           "皮膚生検",
@@ -9263,23 +9255,22 @@
       "surgery": {
         "required": true,
         "high_risk_days_before": 7,
-        "low_risk_days_before": 0,
+        "low_risk_days_before": null,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
         "display_high_risk_days_before": 7,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 0,
+        "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
-          "人工関節置換術",
-          "脊椎手術"
+          "人工関節置換術"
         ],
         "low_risk_surgery_examples": [
           "皮膚生検",
           "歯科抜歯"
         ],
         "note": "⚠ 臓器移植後の拒絶反応抑制目的で処方されている場合は休薬絶対禁忌 → 必ず移植主治医に確認。自己免疫疾患 (RA / 重症筋無力症等) では大手術前 1 週間休薬を考慮",
-        "author_interpretation": null
+        "author_interpretation": "表示の高リスク 7 日は、ACR/AAHKS 2022 の人工股関節・膝関節置換術で、重症でない SLE の患者の値 (最終投与から 1 週間後に手術)。重症の SLE は継続とする。臓器移植後の患者は対象外で、休薬しない (移植の担当医に確認)。ほかの手術については資料がないため、低リスクは空 (記載なし) とした。"
       },
       "contrast_ct": {
         "required": false,
@@ -9365,23 +9356,22 @@
       "surgery": {
         "required": true,
         "high_risk_days_before": 7,
-        "low_risk_days_before": 0,
+        "low_risk_days_before": null,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
         "display_high_risk_days_before": 7,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 0,
+        "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
-          "人工関節置換術",
-          "脊椎手術"
+          "人工関節置換術"
         ],
         "low_risk_surgery_examples": [
           "皮膚生検",
           "歯科抜歯"
         ],
         "note": "⚠ 移植後の拒絶反応抑制は休薬絶対禁忌 → 必ず移植主治医に確認。自己免疫疾患では大手術前 1 週間休薬を考慮",
-        "author_interpretation": null
+        "author_interpretation": "表示の高リスク 7 日は、ACR/AAHKS 2022 の人工股関節・膝関節置換術で、重症でない SLE の患者の値 (最終投与から 1 週間後に手術)。重症の SLE は継続とする。臓器移植後の患者は対象外で、休薬しない (移植の担当医に確認)。ほかの手術については資料がないため、低リスクは空 (記載なし) とした。"
       },
       "contrast_ct": {
         "required": false,
@@ -9455,23 +9445,22 @@
       "surgery": {
         "required": true,
         "high_risk_days_before": 7,
-        "low_risk_days_before": 0,
+        "low_risk_days_before": null,
         "high_risk_day_of": false,
         "low_risk_day_of": false,
         "display_high_risk_days_before": 7,
         "display_high_risk_day_of": false,
-        "display_low_risk_days_before": 0,
+        "display_low_risk_days_before": null,
         "display_low_risk_day_of": false,
         "high_risk_surgery_examples": [
-          "人工関節置換術",
-          "脊椎手術"
+          "人工関節置換術"
         ],
         "low_risk_surgery_examples": [
           "皮膚生検",
           "歯科抜歯"
         ],
         "note": "⚠ 臓器移植目的は休薬絶対禁忌 → 移植主治医確認必須。SLE / ネフローゼ等の自己免疫疾患では術前 1 週間休薬を考慮",
-        "author_interpretation": null
+        "author_interpretation": "表示の高リスク 7 日は、ACR/AAHKS 2022 の人工股関節・膝関節置換術で、重症でない SLE の患者の値 (最終投与から 1 週間後に手術)。重症の SLE は継続とする。臓器移植後の患者は対象外で、休薬しない (移植の担当医に確認)。ほかの手術については資料がないため、低リスクは空 (記載なし) とした。"
       },
       "contrast_ct": {
         "required": false,
@@ -13224,7 +13213,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "ACE阻害薬・ARB は麻酔導入時の遷延性低血圧リスクのため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ) ",
+        "note": "ACE阻害薬・ARB は麻酔導入時の遷延性低血圧リスクのため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -13340,7 +13329,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "ACE 阻害薬 / ARB は麻酔導入時の遷延性低血圧 (vasoplegic syndrome) リスクのため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ) ",
+        "note": "ACE 阻害薬 / ARB は麻酔導入時の遷延性低血圧 (vasoplegic syndrome) リスクのため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -13455,7 +13444,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -13567,7 +13556,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -13682,7 +13671,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -13797,7 +13786,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -13906,7 +13895,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "販売中止 (国内に製品なし。古い持参薬・薬歴の照合用に収載)。全身麻酔の導入時の遷延性低血圧を防ぐため。",
+        "note": "販売中止 (国内に製品なし。古い持参薬・薬歴の照合用に収載)。全身麻酔の導入時の遷延性低血圧を防ぐため。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": "本剤は販売中止で、現行の添付文書はない。手術のガイドラインの記述はクラス単位で、JSH 2019 は降圧薬全体を「手術当日まで服用が原則」、ESC 2022 は RAAS 阻害薬を「心不全がなければ手術当日に休薬を考慮」とする。よって高リスク 1 日は他の ACE 阻害薬の添付文書 (手術前 24 時間は投与しないことが望ましい) を日数に切り上げたもの。"
       },
       "contrast_ct": {
@@ -14013,7 +14002,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -14116,7 +14105,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -14224,7 +14213,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -14337,7 +14326,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -14448,7 +14437,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -14561,7 +14550,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -14679,7 +14668,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。プレミネント配合錠 (+ HCTZ) も本基準",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。プレミネント配合錠 (+ HCTZ) も本基準。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -14800,7 +14789,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。エカード (+ HCTZ) / ユニシア (+ アムロジピン) 配合錠も本基準",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。エカード (+ HCTZ) / ユニシア (+ アムロジピン) 配合錠も本基準。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -14925,7 +14914,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。配合錠 (コディオ / エックスフォージ / アテディオ) も本基準",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。配合錠 (コディオ / エックスフォージ / アテディオ) も本基準。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -15042,7 +15031,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。配合錠 (ミコンビ + HCTZ / ミカムロ + アムロジピン / ミカトリオ + アムロジピン + HCTZ) も本基準",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。配合錠 (ミコンビ + HCTZ / ミカムロ + アムロジピン / ミカトリオ + アムロジピン + HCTZ) も本基準。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -15163,7 +15152,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。イルトラ (+ トリクロルメチアジド) / アイミクス (+ アムロジピン) 配合錠も本基準",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。イルトラ (+ トリクロルメチアジド) / アイミクス (+ アムロジピン) 配合錠も本基準。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -15282,7 +15271,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。ザクラス配合錠 (+ アムロジピン) も本基準",
+        "note": "全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (米国 ACC/AHA 2024 も 24 時間。表示は 1 日に切り上げ)。ザクラス配合錠 (+ アムロジピン) も本基準。心不全 (HFrEF) の治療で使っている場合は、ACC/AHA 2024 は周術期の継続を妥当とし、ESC 2022 も安定した心不全では継続を考慮する。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -15396,7 +15385,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "ARB と同様、全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (表示は 1 日に切り上げ)。心不全治療継続が重要な症例は循環器科と協議",
+        "note": "ARB と同様、全身麻酔導入時の遷延性低血圧予防のため休薬。添付文書は「手術前 24 時間は投与しないことが望ましい」 (表示は 1 日に切り上げ)。心不全治療継続が重要な症例は循環器科と協議。ARNI の周術期のデータはなく、ACE 阻害薬より低血圧が多いとされる (ESC 2022)。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -15495,7 +15484,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "術中脱水・低 K 血症・低血圧予防のため当日朝休薬。心不全管理上必要な場合は継続",
+        "note": "術中脱水・低 K 血症・低血圧予防のため当日朝休薬。心不全の治療で使っている場合は継続し、手術の前から用量を調整して体液量を整える (ESC 2022)。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -15600,7 +15589,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "術中脱水・電解質異常予防のため当日朝休薬",
+        "note": "術中脱水・電解質異常予防のため当日朝休薬。心不全の治療で使っている場合は継続し、手術の前から用量を調整して体液量を整える (ESC 2022)。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -15702,7 +15691,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "術中脱水・電解質異常予防のため当日朝休薬",
+        "note": "術中脱水・電解質異常予防のため当日朝休薬。心不全の治療で使っている場合は継続し、手術の前から用量を調整して体液量を整える (ESC 2022)。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -15805,7 +15794,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "脱水・低 K 血症予防のため当日朝休薬。配合錠形態 (プレミネント / エカード / コディオ / ミコンビ / ミカトリオ) は各 ARB 側エントリで判定",
+        "note": "脱水・低 K 血症予防のため当日朝休薬。配合錠形態 (プレミネント / エカード / コディオ / ミコンビ / ミカトリオ) は各 ARB 側エントリで判定。心不全の治療で使っている場合は継続し、手術の前から用量を調整して体液量を整える (ESC 2022)。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -15907,7 +15896,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "脱水・低 K 血症予防のため当日朝休薬",
+        "note": "脱水・低 K 血症予防のため当日朝休薬。心不全の治療で使っている場合は継続し、手術の前から用量を調整して体液量を整える (ESC 2022)。",
         "author_interpretation": null
       },
       "contrast_ct": {
@@ -16006,7 +15995,7 @@
           "皮膚生検",
           "歯科抜歯"
         ],
-        "note": "脱水・低 K 血症予防のため当日朝休薬",
+        "note": "脱水・低 K 血症予防のため当日朝休薬。心不全の治療で使っている場合は継続し、手術の前から用量を調整して体液量を整える (ESC 2022)。",
         "author_interpretation": null
       },
       "contrast_ct": {
